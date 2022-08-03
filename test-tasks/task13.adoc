@@ -1,5 +1,5 @@
 = Тестовое задание 13
-:imagesdir: ../../../assets/img/process/interview/tasks
+:imagesdir: ../assets/img/test-tasks
 
 Реализовать REST API согласно Open API Specification:
 

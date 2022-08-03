@@ -1,5 +1,5 @@
 = Тестовое задание 8
-:imagesdir: ../../../assets/img/process/interview/tasks
+:imagesdir: ../assets/img/test-tasks
 
 Создайте мини веб приложение *Monitor Sensors*.
 
