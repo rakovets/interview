@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<title>Тестовое задание 10</title>
+<meta name="author" content="Community and Dmitry Rakovets">
+<title>Interview - Questions</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -435,149 +436,38 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>Тестовое задание 10</h1>
+<h1>Interview - Questions</h1>
+<div class="details">
+<span id="author" class="author">Community and Dmitry Rakovets</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_навигация">1. Навигация</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Payment cards</strong></p>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_технологии">Технологии</h2>
+<h2 id="_навигация">1. Навигация</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Java 11, Spring Boot, Spring Data, MySQL, Swagger UI</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_условие">Условие</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Дано:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
-<p>Клиент</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>ФИО</p>
+<p><a href="/">На главную</a></p>
 </li>
-<li>
-<p>Номер телефона</p>
-</li>
-<li>
-<p>Email</p>
-</li>
-<li>
-<p>Статус</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Платежная карта</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Номер</p>
-</li>
-<li>
-<p>Валюта</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>BYN</p>
-</li>
-<li>
-<p>EUR</p>
-</li>
-<li>
-<p>USD</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Тип</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Classic</p>
-</li>
-<li>
-<p>Gold</p>
-</li>
-<li>
-<p>Platinum</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Необходимо реализовать REST сервис, который имеет:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Метод заведения клиента в системе.</p>
-</li>
-<li>
-<p>Метод оформления карты и привязки к определенному клиенту (на основании выбранного типа карты, клиенту присваивается соответствующий статус: <code>Classic</code> – <code>0</code>, <code>Gold</code> – <code>1</code>, <code>Platinum</code> – <code>2</code>).</p>
-</li>
-<li>
-<p>Метод, который возвращает постранично список номеров телефонов в зависимости от указанных параметров (количество записей, номер страницы, тип карты, валюта).</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_требования">Требования</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Результат выполнения задания размещается на сервисе GitHub, ссылка на репозиторий отправляется рекрутеру для проверки задания.</p>
-</li>
-<li>
-<p>Выполнять задание необходимо самостоятельно, без уточнения дополнительных деталей (как понимаем, так и делаем).</p>
-</li>
-<li>
-<p>Нельзя использовать связи Hibernate (one to one, one to many, many to many).</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_будет_плюсом">Будет плюсом</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Организовать безопасный доступ к методам с помощью Spring Security (JWT, Basic Auth).</p>
-</li>
-<li>
-<p>Покрытие методов тестами.</p>
-</li>
-<li>
-<p>Для всех методов сделать описание для Swagger c помощью аннотаций.</p>
-</li>
-</ol>
+</ul>
 </div>
 </div>
 </div>
