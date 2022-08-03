@@ -1,0 +1,145 @@
+= Тестовое задание 13
+:imagesdir: ../assets/img/test-tasks
+
+Реализовать REST API согласно Open API Specification:
+
+[source, json]
+----
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "reposService",
+    "version" : "0.0.1-SNAPSHOT"
+  },
+  "servers" : [ {
+    "url" : "/reposService"
+  } ],
+  "paths" : {
+    "/api/v1/repository/{id}/children" : {
+      "get" : {
+        "operationId" : "getChildren",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ReposItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/repository/{id}" : {
+      "get" : {
+        "operationId" : "getItem",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ReposItem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/repository/root" : {
+      "get" : {
+        "operationId" : "root",
+        "responses" : {
+          "default" : {
+            "description" : "default response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ReposItem"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ReposItem" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "content" : {
+            "type" : "string"
+          },
+          "folder" : {
+            "type" : "boolean"
+          },
+          "parent" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      }
+    }
+  }
+}
+----
+
+Сервис возвращает некий репозитарий, хранящий древовидную структуру из элементов.
+Каждый элемент – набор полей
+
+[source, java]
+----
+Integer id; // идентификатор элемента
+String name; // наименование элемента
+String content; // содержимое
+boolean folder; // признак – является ли элемент папкой (может содержать другие элементы)
+Integer parent; // ссылка на родительский элемент
+----
+
+Приложение должно иметь следующую структуру:
+
+image::layout-1.png[]
+
+1. Дерево репозитария
+2. Документ
+3. Закладки
+
+* После запуска приложение должно отобразить дерево в зоне 1.
+* При двойном клике на элементе с признаком folder==false должна появиться новая закладка, и в зоне 2 отобразится содержимое поля content и кнопку, при нажатии на которую открывается диалог с содержимым поля content. Функционал, отображающий область 2 и нажатие кнопки, должен быть реализован в виде отдельного бина.
+* При переходе по закладкам должны отображаться соответствующие данные
+* Интерфейс должен быть реализован на JSF с использованием библиотеки primrfaces.
+* Проект должен собираться с помощью maven.
+* Поле content представляет собой xml, содержащий объект o1 с полями f1 и f2 или объект o2 с полями f3 и f4. Для каждого вида объекта должна быть своя форма с соответствующими полями

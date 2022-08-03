@@ -1,0 +1,54 @@
+= Interview - Tests Tasks
+:docinfo: shared
+:docinfodir: ../
+:imagesdir: ../assets/img/test-tasks
+Community and Dmitry Rakovets
+:source-highlighter: rouge
+:toc: left
+:toclevels: 1
+:figure-caption!:
+
+NOTE: Задания, в большинстве своем, представляют собой примеры, которые предлагают различные компании в качестве практического тестового задания для того, что бы отобрать специалистов на работу, стажировку или обучение.
+
+WARNING: Задания представлены беспорядочно, т.е. они следуют не в порядке повышения уровня сложности, а рандомно.
+
+WARNING: Задания требуют различную степень подготовки и должно выбираться с учетов текущих знаний и умений.
+
+== Навигация
+
+* link:/[На главную]
+
+:leveloffset: +1
+
+include::task1.adoc[Тестовое задание 1]
+
+include::task2.adoc[Тестовое задание 2]
+
+include::task3.adoc[Тестовое задание 3]
+
+include::task4.adoc[Тестовое задание 4]
+
+include::task5.adoc[Тестовое задание 5]
+
+include::task6.adoc[Тестовое задание 6]
+
+include::task7.adoc[Тестовое задание 7]
+
+include::task8.adoc[Тестовое задание 8]
+
+include::task9.adoc[Тестовое задание 9]
+
+include::task10.adoc[Тестовое задание 10]
+
+include::task11.adoc[Тестовое задание 11]
+
+include::task12.adoc[Тестовое задание 12]
+
+include::task13.adoc[Тестовое задание 13]
+
+include::task14.adoc[Тестовое задание 14]
+
+include::task15.adoc[Тестовое задание 15]
+
+:leveloffset: -1
+

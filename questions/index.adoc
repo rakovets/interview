@@ -1,0 +1,32 @@
+= Interview - Questions
+:docinfo: shared
+:docinfodir: ../
+Community and Dmitry Rakovets
+:source-highlighter: rouge
+:toc: left
+:toclevels: 1
+:figure-caption!:
+
+
+== Навигация
+
+* link:/[На главную]
+
+:leveloffset: +1
+
+include::algorithm.adoc[]
+
+include::java-core1.adoc[]
+
+include::java-core2.adoc[]
+
+include::jpa.adoc[]
+
+include::patterns.adoc[]
+
+include::spring.adoc[]
+
+include::sql.adoc[]
+
+:leveloffset: -1
+
