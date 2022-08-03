@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="Community and Dmitry Rakovets">
-<title>Interview</title>
+<title>Тестовое задание 9</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,112 +436,84 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>Interview</h1>
-<div class="details">
-<span id="author" class="author">Community and Dmitry Rakovets</span><br>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_тестовые_задания">1. Тестовые задания</a></li>
-<li><a href="#_практические_задачи">2. Практические задачи</a></li>
-<li><a href="#_вопросы">3. Вопросы</a></li>
-<li><a href="#_вопросы_с_ответами">4. Вопросы с ответами</a></li>
-</ul>
-</div>
+<h1>Тестовое задание 9</h1>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-Этапы интервью очень сильно разнятся от компании к компании. Иногда техническое интервью может проходить дважды, у самой компании и у клиента этой компании.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p><strong>Documents management system</strong></p>
 </div>
 <div class="paragraph">
-<p>Возможные <strong>этапы интервью</strong>:</p>
+<p>Необходимо реализовать пример системы для работы с документами (<strong>document
+management system</strong>)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_страницы">Страницы</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Список документов. Необходимо наличие фильтрации по критериям, сортировки,
+постраничного просмотра (Pagination).
+Критерии: дата создания, с кем заключен контракт, кто заключал контракт, срок исполнения контракта
+Пагинация средствами серверной части, а не только фронта.</p>
+</li>
+<li>
+<p>Детальный просмотр документа (отдельный скрин).</p>
+</li>
+<li>
+<p>Для пользователя добавление/редактирование документа (отдельный скрин).
+Необходимо наличие валидации вводимых данных - кнопка сабмита дизейблится, а поля ввода подсвечиваются красным итд.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_технологии">Технологии</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Angular последней версии (Single Page Application) или HTML/JS/CSS</p>
+</li>
+<li>
+<p>Серверная часть - Java 8, Spring MVC, Swagger, Spring Data, H2 (MySQL), Gradle, Tomcat.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Визуальную часть делать можно простой, без наворотов (можно сделать на базе bootstrap).</p>
+</div>
+<div class="paragraph">
+<p>Архитектура - 3 уровневая с разделением по слоям - Controller, Service, Repository. Общие вещи не дублировать, а делать через наследование от базовых классов (по возможности использовать generics).</p>
+</div>
+<div class="paragraph">
+<p>Объект "Документ" из себя представляет описание документа - можно добавить произвольных атрибутов - дата создания, статус, автор документа, файл документа (файл любого формата) и тд.</p>
+</div>
+<div class="paragraph">
+<p>Можно добавить по своему усмотрению:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Предварительный отбор с помощью тестового задания</strong></p>
+<p>Авторизация и 2 вида пользователей: администратор и простой пользователь.</p>
 </li>
 <li>
-<p><strong>Предварительный отбор с помощью HR-специалиста</strong></p>
-</li>
-<li>
-<p><strong>Интервью с техническим специалистом</strong>. Каждый специалист выбирает свой подход к такому интервью. Наиболее частые подходы</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Вопрос-ответ</strong></p>
-</li>
-<li>
-<p><strong>Решение алгоритмических задач</strong></p>
-</li>
-<li>
-<p><strong>Разговор о вашем опыте</strong> (обычно с уточняющими вопросами)</p>
-</li>
-<li>
-<p><strong>Проверка на умение думать</strong>: ставится задача, которую требуется решить, кандидат пытается ее решить, детально описывая что он делает (в процессе  обычно можно задавать уточняющие вопросы)</p>
+<p>Админ видит все доки и всех пользователей</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p><strong>FIT-интервью</strong> в команду.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_тестовые_задания">1. Тестовые задания</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p><strong>Задания</strong>, в большинстве своем, представляют собой примеры, которые предлагают различные компании в качестве <strong>практического тестового задания</strong> для того, что бы отобрать специалистов на работу, стажировку или обучение</p>
+<p>В проект добавить файл readme с краткой инструкцией по запуску приложения. Структуру БД создавать с помощью скриптов.</p>
 </div>
 <div class="paragraph">
-<p><a href="./test-tasks">Тестовые задания</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_практические_задачи">2. Практические задачи</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Задачи</strong>, которые предлагают различные компании в качестве <strong>практических задач</strong> в процессе проведения технического интервью (т.е. вы их решаете и при этом шарите свой экран).</p>
-</div>
-<div class="paragraph">
-<p><a href="tasks">Практические задачи</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы">3. Вопросы</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Вопросы</strong>, которые задают специалисты на техническом интервью.</p>
-</div>
-<div class="paragraph">
-<p><a href="./questions/">Вопросы</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы_с_ответами">4. Вопросы с ответами</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="./questions-answers/">Вопросы</a></p>
+<p>Проект должен запускаться из командной строки. Независимо от операционной системы компьютера (Linux, Windows)</p>
 </div>
 </div>
 </div>

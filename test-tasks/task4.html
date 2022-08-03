@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="Community and Dmitry Rakovets">
-<title>Interview</title>
+<title>Тестовое задание 4</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,112 +436,405 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>Interview</h1>
-<div class="details">
-<span id="author" class="author">Community and Dmitry Rakovets</span><br>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_тестовые_задания">1. Тестовые задания</a></li>
-<li><a href="#_практические_задачи">2. Практические задачи</a></li>
-<li><a href="#_вопросы">3. Вопросы</a></li>
-<li><a href="#_вопросы_с_ответами">4. Вопросы с ответами</a></li>
-</ul>
-</div>
+<h1>Тестовое задание 4</h1>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock warning">
-<table>
+<div class="paragraph">
+<p>Для решения этого задания требуется от 12 до 48 рабочих часов. Это не значит, что вы решите ее за 12-48 часов. Можно потратить столько часов, сколько вы считаете нужным.</p>
+</div>
+<div class="paragraph">
+<p>Мы предлагаем вам потратить хотя бы несколько часов на чтение задачи и моделирование решения. Мы протестировали эту задачу на наших инженерах: несколько младших разработчиков в среднем тратили 10 часов на чтение и размышления и примерно 2 часа на программирование.</p>
+</div>
+<div class="paragraph">
+<p><strong>Прикладная теория музыки</strong></p>
+</div>
+<div class="paragraph">
+<p>В теории музыки <strong>интервал</strong> — это расстояние между двумя <strong>нотами</strong>. Это расстояние указывается с помощью <em>буквы</em> и <em>числа</em>. Например, допустимые названия интервалов - <code>M3</code>, <code>P5</code> или <code>m7</code>. <em>Буква</em> и <em>цифра</em> в названии интервала означают определенные вещи.</p>
+</div>
+<div class="paragraph">
+<p>Как и в математике, если мы говорим, что расстояние на сантиметровой линейке между <code>3</code> и <code>5</code> равно <code>2</code> сантиметрам, в музыке мы говорим, что расстояние между <code>C</code> и <code>E</code> (или <code>do</code> и <code>mi</code>) равно <code>M3</code>.</p>
+</div>
+<div class="paragraph">
+<p>Для этой задачи мы используем следующие имена <strong>нот</strong>:
+<code>C</code> <code>D</code> <code>E</code> <code>F</code> <code>G</code> <code>A</code> <code>B</code></p>
+</div>
+<div class="paragraph">
+<p>Весь список <strong>интервалов</strong>, которые мы используем в этой задаче:
+<code>m2</code>, <code>M2</code>, <code>m3</code>, <code>M3</code>, <code>P4</code>, <code>P5</code>, <code>m6</code>, <code>M6</code>, <code>m7</code>, <code>M7</code>, <code>P8</code></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Нотный стан (Нотоносец) в музыкальной нотации — набор параллельных горизонтальных линий (нотных линеек), на которых (и между которыми)записываются ноты.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><strong>Номер интервала</strong> — это количество <strong>названий букв</strong> или <strong>позиций нотного стана</strong> (строк и пробелов), которые он содержит, <strong>включая позиции обеих нот</strong>, образующих <strong>интервал</strong>. Например, интервал <code>C</code> – <code>G</code> является пятым (обозначается <code>P5</code>), потому что ноты от <code>C</code> до <code>G</code> над ним содержат пять буквенных имен (<code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>, <code>G</code>) и занимают пять последовательных <em>позиций нотного стана</em>, включая <em>позиции</em> of <code>C</code> и <code>G</code>. <em>Интервал</em> от <code>A</code> до <code>A</code> содержит <code>8</code> <em>нот</em> (<code>A</code> <code>B</code> <code>C</code> <code>D</code> <code>E</code> <code>F</code> <code>G</code> <code>A</code>) и называется <code>P8</code>. Мы будем называть это число <strong>диатонической степенью</strong> (обратите внимание: термин «степень», который мы здесь используем, может не соответствовать фактическому термину в музыке).</p>
+</div>
+<div class="paragraph">
+<p>Единица расстояния между нотами называется <strong>полутоном</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Названия букв могут быть изменены случайно. <strong>Диез</strong> <code><mark></code> поднимает ноту на полтона, а <strong>бемоль</strong> <code>b</code>** опускает его на полтона. К ноте можно добавить не более <code></mark></code> и двух <code>b</code>.</p>
+</div>
+<div class="paragraph">
+<p>В следующей таблице показаны 12 нот <strong>хроматической гаммы</strong>, построенной на <code>C</code>. Расстояние между каждой <strong>нотой</strong> в таблице составляет <strong>полутон</strong>. Обратите внимание, что одну и ту же <strong>ноту</strong> можно описать разными буквами. Например, если мы поднимем <code>C</code> на полутон, мы получим <code>C#</code>. А если понизить <code>D</code> на полутон, мы получим <code>Db</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>C</code> <code>C#</code>/<code>Db</code> <code>D</code> <code>D#</code>/<code>Eb</code> <code>E</code> <code>F</code> <code>F#</code>/<code>Gb</code> <code>G</code> <code>G#</code>/<code>Ab</code> <code>A</code> <code>A#</code>/<code>Bb</code> <code>B</code></p>
+</div>
+<div class="paragraph">
+<p>Например, расстояние в <code>4</code> <em>полутона</em> между <code>C</code> и <code>E</code>, расстояние в <code>5</code> <em>полутонов</em> между <code>D</code> и <code>G</code> и расстояние в <code>1</code> <em>полутон</em> между <code>Bb</code> и <code>B</code>.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Знаки альтерации</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>sharp</strong>/<strong>диез</strong> <code>#</code></p>
+</li>
+<li>
+<p><strong>flat</strong>/<strong>бемоль</strong> <code>b</code></p>
+</li>
+<li>
+<p><strong>natural</strong>/<strong>бекар</strong> <code>♮</code></p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Если мы добавим какие-либо <strong>знаки альтерации</strong> к нотам, образующим <strong>интервал</strong>, по определению <strong>ноты</strong> не меняют своей <strong>степени</strong>. Как следствие, любой <strong>интервал</strong> имеет тот же номер <strong>интервала</strong>, что и соответствующий естественный интервал (означает интервал, образованный теми же нотами, без <strong>знаки альтерации</strong>). Например, интервалы <code>C</code> – <code>G#</code> (охватывающие <code>8</code> <em>полутонов</em>) и <code>C#</code> – <code>G</code> (охватывающие <code>6</code> полутонов) являются <code>P5</code>, как соответствующий естественный интервал <code>C</code> – <code>G</code> (<code>7</code> <em>полутонов</em>).</p>
+</div>
+<div class="paragraph">
+<p>Обратите внимание, что <strong>числа интервалов</strong> представляют собой количество содержащихся <strong>степеней</strong> или <strong>имен нот</strong>, включая их, но не разницу между конечными точками. Другими словами, вы считаете <em>первую ноту за 1, а не за 0</em>. По этой логике интервал <code>C</code> – <code>D</code> является вторым (<code>M2</code>), но <code>D</code> находится только на одну степень выше <code>C</code>. Аналогично, <code>C</code> – <code>E</code> является третьим (<code>M3</code>), но <code>E</code> всего на две степени выше <code>C</code>, и так далее.</p>
+</div>
+<div class="paragraph">
+<p>Мы будем <em>использовать только интервалы до октавы</em> (<code>P8</code>, <code>12</code> <em>полутонов</em>).</p>
+</div>
+<div class="paragraph">
+<p>Чтобы построить <em>интервал</em> из данной <em>ноты</em>, вам сначала нужно найти <strong>диатонический степень</strong> ноты ниже или выше данной ноты.</p>
+</div>
+<div class="paragraph">
+<p>Затем вам нужно отсчитать количество <em>полутонов</em> от <em>начальной ноты</em>. В последовательности <code>C</code> <code>D</code> <code>E</code> <code>F</code> <code>G</code> <code>A</code> <code>B</code> есть один полутон между <code>E</code> и <code>F</code> и <code>B</code> и <code>C</code>. Между другими нотами есть два полутона.</p>
+</div>
+<div class="paragraph">
+<p>Здесь один дефис означает один полутон:</p>
+</div>
+<div class="paragraph">
+<p><code>C&#8212;&#8203;D&#8212;&#8203;E-F&#8212;&#8203;G&#8212;&#8203;A&#8212;&#8203;B-C</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_как_подсчитать_количество_полутонов">Как подсчитать количество полутонов?</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Давайте посчитаем количество полутонов между <code>C</code> и <code>G</code>: от <code>C</code> до <code>D</code> - <code>2</code> полутона, от <code>D</code> до <code>E</code> - <code>2</code> полутона, от <code>E</code> до <code>F</code> - <code>1</code> полутон, от <code>F</code> до <code>G</code> - <code>2</code> полутона. <code>2 + 2 + 1 + 2 = 7</code> полутонов.</p>
+</li>
+<li>
+<p>Давайте найдем количество полутонов между <code>A</code> и <code>C</code>: от <code>A</code> до <code>B</code> - <code>2</code> полутона, от <code>B</code> до <code>C</code> - <code>1</code> полутон. <code>2 + 1 = 3</code> полутона.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_как_подсчитать_количество_интервалов">Как подсчитать количество интервалов?</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Давайте найдем наш первый интервал - <code>P5</code> (<strong>perfect fifth</strong>) от <code>Ab</code>. <code>P5</code> означает: найти расстояние в <code>5</code> степеней и <code>7</code> полутонов.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Сначала найдите <code>5</code>-ю степень от <code>A</code>, игнорируя <code>b</code>: (<code>A</code> <code>B</code> <code>C</code> <code>D</code> <code>E</code>) - <code>E</code> - это нота <code>5</code>-й степени от <code>A</code>.</p>
+</li>
+<li>
+<p>Теперь посчитайте полутоны: от <code>Ab</code> до <code>B</code> - <code>3</code> полутона (от <code>Ab</code> до <code>A</code> - <code>1</code> полутон, от <code>A</code> до <code>B</code> - <code>2</code> полутона), от <code>B</code> до <code>C</code> - <code>1</code> полутон, от <code>C</code> до <code>D</code> - <code>2</code> полутона, от <code>D</code> до <code>E</code> - <code>2</code> полутона. <code>3 + 1 + 2 + 2 = 8</code> полутонов. Это слишком много, нам нужно всего <code>7</code> полутонов, но нам нужно оставаться на <code>E</code>. Для этого понизьте <code>E</code> на один полутон, используя <strong>знак альтерации</strong> <code>b</code>.</p>
+</li>
+<li>
+<p>На расстоянии <code>P5</code> от <code>Ab</code> находится нота <code>Eb</code>.</p>
+</li>
+<li>
+<p>Примечание: вы не можете написать <code>D#</code> в качестве ответа, потому что даже если <code>D#</code> составляет <code>7</code> полутонов от <code>Ab</code>, он имеет другую степень (он находится всего на <code>4</code> степени от <code>A</code> до <code>D</code>).</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_пример">Пример</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Чтобы показать вам, как работать со <strong>знаками альтерации</strong>, давайте найдем <code>P5</code> (<code>5</code>-я ступень, <code>7</code> полутонов) из <code>A#</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Как и в предыдущем примере, найдите <code>5</code>-ю ступень из <code>A</code>, игнорируя <code><mark></code>: (<code>A</code> <code>B</code> <code>C</code> <code>D</code> <code>E</code>) - <code>E</code> - пятая нота из <code>A</code> (и из <code>A</mark></code>).</p>
+</li>
+<li>
+<p>Теперь посчитаем полутоны: от <code>A#</code> до <code>B</code>- <code>1</code> полутон, от <code>B</code> до <code>C</code> - <code>1</code> полутон, от <code>C</code> до <code>D</code> - <code>2`полутона, от `D</code> до <code>E</code> - <code>2</code> полутона. <code>1 + 1 + 2 + 2 = 6</code> полутонов. Нам нужно добавить всего один полутон, добавив <code><mark></code>: <code>E</mark></code></p>
+</li>
+<li>
+<p>На расстоянии <code>P5</code> от <code>A#</code> находится нота <code>E#</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_пример_2">Пример</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Давайте найдем <code>m2</code> (<code>2</code>-я степень, <code>1</code> полутон) от <code>Fb</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Найти вторую ступень легко: (<code>F</code> <code>G</code>) - <code>G</code> - вторая нота от <code>F</code>.</p>
+</li>
+<li>
+<p>Теперь посчитаем полутоны: от <code>Fb</code> до <code>G</code> - <code>3</code> полутона. Это слишком много, нам нужен только один. Итак, мы должны понизить <code>G</code> на <code>2</code> полутона. Для этого добавьте к ноте <code>G</code> два <code>b</code>: <code>Gbb</code>.</p>
+</li>
+<li>
+<p>На расстоянии <code>m2</code> от <code>Fb</code> находится нота <code>Gbb</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Названия интервалов, качество и количество</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
 <tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-Этапы интервью очень сильно разнятся от компании к компании. Иногда техническое интервью может проходить дважды, у самой компании и у клиента этой компании.
-</td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">полутон</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">степень</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>m2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Minor Second</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>M2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Major Second</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>m3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Minor Third</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>M3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Major Third</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>P4</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Perfect Fourth</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>P5</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Perfect Fifth</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>m6</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Minor Sixth</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>M6</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Major Sixth</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>m7</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Minor Seventh</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>M7</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Major Seventh</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>P8</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Perfect Octave</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+</tr>
+</tbody>
 </table>
+<div class="paragraph">
+<p>Ваша задача реализовать две функции, которые будут работать с интервалами: одна будет строить интервал, а вторая определять интервал.</p>
+</div>
+<div class="sect2">
+<h3 id="_требования">Требования:</h3>
+<div class="sect3">
+<h4 id="_intervalconstruction">intervalConstruction()</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Функция <code>intervalConstruction()</code> должна принимать массив строк в качестве входных данных и возвращать строку.</p>
+</li>
+<li>
+<p>Массив состоит из трех или двух элементов.</p>
+</li>
+<li>
+<p>Первый элемент в массиве — это имя интервала, второй — начальная нота, а третий указывает, идет ли интервал по возрастанию или по убыванию.</p>
+</li>
+<li>
+<p>Если в массиве нет третьего элемента, по умолчанию порядок построения возрастает.</p>
+</li>
+<li>
+<p>Функция должна вернуть строку, содержащую название заметки.</p>
+</li>
+<li>
+<p>В строке возврата разрешены только следующие имена заметок:</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Возможные <strong>этапы интервью</strong>:</p>
+<p><code>Cbb Cb C C# C<mark> Dbb Db D D# D</mark> Ebb Eb E E# E<mark> Fbb Fb F F# F</mark> Gbb Gb G G# G<mark> Abb Ab A A# A</mark> Bbb Bb B B# B##</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Предварительный отбор с помощью тестового задания</strong></p>
+<p>Если во входном массиве больше или меньше элементов, должно быть выдано исключение: <code>Illegal number of elements in input array</code></p>
 </li>
 <li>
-<p><strong>Предварительный отбор с помощью HR-специалиста</strong></p>
+<p>Соглашение: <code>['a', 'b']</code> здесь означает массив строк.</p>
 </li>
-<li>
-<p><strong>Интервью с техническим специалистом</strong>. Каждый специалист выбирает свой подход к такому интервью. Наиболее частые подходы</p>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="_примеры_ввода_и_значение">Примеры ввода и значение:</h5>
+<div class="paragraph">
+<p>Обратите внимание: данные, которые получит ваша функция, будут выглядеть как массив строк, как определено на вашем языке. Никакого дополнительного разбора не требуется! Форма <code>['', '']</code> - это просто соглашение!</p>
+</div>
+<div class="paragraph">
+<p>Допускаются следующие примечания:</p>
+</div>
+<div class="paragraph">
+<p><code>Cb C C# Db D D# Eb E E# Fb F F# Gb G G# Ab A A# Bb B B#</code></p>
+</div>
+<div class="paragraph">
+<p>Допускаются следующие интервалы ввода:</p>
+</div>
+<div class="paragraph">
+<p><code>m2 M2 m3 M3 P4 P5 m6 M6 m7 M7 P8</code></p>
+</div>
+<div class="paragraph">
+<p><code>['M3','A','asc']</code> - построить возрастающий интервал M3, начиная с A
+<code>['m7, 'Fb', 'dsc']</code> - построить убывающий интервал m7, начиная с Fb
+<code>['P5', 'C']</code> - построить восходящий интервал P5, начиная с C
+<code>['P4', 'E#]</code> - построить восходящий интервал P4, начиная с E #</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_intervalidentification">intervalIdentification()</h4>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Вопрос-ответ</strong></p>
+<p>Функция <code>intervalIdentification()</code> должна принимать в качестве входных данных массив строк и возвращать строку.</p>
 </li>
 <li>
-<p><strong>Решение алгоритмических задач</strong></p>
+<p>Массив состоит из трех или двух элементов.</p>
 </li>
 <li>
-<p><strong>Разговор о вашем опыте</strong> (обычно с уточняющими вопросами)</p>
+<p>Первый элемент - это первая нота в интервале, второй элемент - это последняя нота в интервале, третий указывает, идет ли интервал по возрастанию или по убыванию.</p>
 </li>
 <li>
-<p><strong>Проверка на умение думать</strong>: ставится задача, которую требуется решить, кандидат пытается ее решить, детально описывая что он делает (в процессе  обычно можно задавать уточняющие вопросы)</p>
+<p>Если в массиве нет третьего элемента, по умолчанию интервал считается возрастающим.</p>
+</li>
+<li>
+<p>Функция должна вернуть строку - название интервала.</p>
+</li>
+<li>
+<p>В строке возврата разрешены только следующие интервалы:</p>
 </li>
 </ul>
 </div>
-</li>
+<div class="paragraph">
+<p><code>m2 M2 m3 M3 P4 P5 m6 M6 m7 M7 P8</code></p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><strong>FIT-интервью</strong> в команду.</p>
+<p>Если интервал не подходит под описание, должно быть выдано исключение: <code>Cannot identify the interval</code>.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_тестовые_задания">1. Тестовые задания</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p><strong>Задания</strong>, в большинстве своем, представляют собой примеры, которые предлагают различные компании в качестве <strong>практического тестового задания</strong> для того, что бы отобрать специалистов на работу, стажировку или обучение</p>
+<p>Соглашение: <code>['a', 'b']</code> здесь означает массив строк.</p>
 </div>
+<div class="sect4">
+<h5 id="_примеры_ввода_и_значение_2">Примеры ввода и значение:</h5>
 <div class="paragraph">
-<p><a href="./test-tasks">Тестовые задания</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_практические_задачи">2. Практические задачи</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Задачи</strong>, которые предлагают различные компании в качестве <strong>практических задач</strong> в процессе проведения технического интервью (т.е. вы их решаете и при этом шарите свой экран).</p>
+<p>Обратите внимание: данные, которые получит ваша функция, будут выглядеть как массив строк, как определено на вашем языке. Никакого дополнительного разбора не требуется! Форма <code>['', '']</code> - это просто соглашение!</p>
 </div>
 <div class="paragraph">
-<p><a href="tasks">Практические задачи</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы">3. Вопросы</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Вопросы</strong>, которые задают специалисты на техническом интервью.</p>
+<p>Допускаются следующие примечания:</p>
 </div>
 <div class="paragraph">
-<p><a href="./questions/">Вопросы</a></p>
+<p><code>Cbb Cb C C# C<mark> Dbb Db D D# D</mark> Ebb Eb E E# E<mark> Fbb Fb F F# F</mark> Gbb Gb G G# G<mark> Abb Ab A A# A</mark> Bbb Bb B B# B##</code></p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы_с_ответами">4. Вопросы с ответами</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p><a href="./questions-answers/">Вопросы</a></p>
+<p><code>['C', 'D']</code> - найти возрастающий интервал между <code>C</code> и <code>D</code>
+<code>['C#', 'Fb']</code> - найти возрастающий интервал между <code>C#</code> и <code>Fb</code>
+<code>['A', 'G#', 'asc']</code> - найти возрастающий интервал между <code>A</code> и <code>G#</code></p>
+</div>
+<div class="paragraph">
+<p>Вы можете найти больше примеров здесь. Мы протестируем ваше решение на этом и подобных примерах.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>

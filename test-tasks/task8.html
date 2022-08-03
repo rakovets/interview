@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="Community and Dmitry Rakovets">
-<title>Interview</title>
+<title>Тестовое задание 8</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,112 +436,189 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>Interview</h1>
-<div class="details">
-<span id="author" class="author">Community and Dmitry Rakovets</span><br>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_тестовые_задания">1. Тестовые задания</a></li>
-<li><a href="#_практические_задачи">2. Практические задачи</a></li>
-<li><a href="#_вопросы">3. Вопросы</a></li>
-<li><a href="#_вопросы_с_ответами">4. Вопросы с ответами</a></li>
-</ul>
-</div>
+<h1>Тестовое задание 8</h1>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-Этапы интервью очень сильно разнятся от компании к компании. Иногда техническое интервью может проходить дважды, у самой компании и у клиента этой компании.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Создайте мини веб приложение <strong>Monitor Sensors</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Приложение состоит из трех форм.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../assets/img/process/interview/tasks/form-1.png" alt="form 1">
+</div>
+<div class="title">Figure 1. Форма логина</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../assets/img/process/interview/tasks/form-2.png" alt="form 2">
+</div>
+<div class="title">Figure 2. Форма Таблица датчиков</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../assets/img/process/interview/tasks/form-3.png" alt="form 3">
+</div>
+<div class="title">Figure 3. Форма добавление/редактирование датчиков</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Приложение должно состоять из серверной и клиентской части.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Возможные <strong>этапы интервью</strong>:</p>
+<p>Для разработки серверной части используйте: Java, Spring MVC, Spring Security</p>
 </div>
+<div class="paragraph">
+<p>Для клиентской: Angular 2+</p>
+</div>
+<div class="paragraph">
+<p>В системе все данные хранятся в БД (можно выбрать любую реляционную БД).</p>
+</div>
+<div class="paragraph">
+<p>В качестве ORM предпочтительно использовать – Hibernate</p>
+</div>
+<div class="paragraph">
+<p>Web Server – Apache Tomcat</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_описание">Описание</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>В системе 2 предустановленных пользователя:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>admin c ролью Administrator</p>
+</li>
+<li>
+<p>user c ролью Viewer</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Предварительный отбор с помощью тестового задания</strong></p>
+<p>Для аутентификации и авторизации используются Spring Security.</p>
 </li>
 <li>
-<p><strong>Предварительный отбор с помощью HR-специалиста</strong></p>
+<p>Пользователю с ролью Administrator разрешен доступ ко всем формам и разрешены все действиям в приложении.</p>
 </li>
 <li>
-<p><strong>Интервью с техническим специалистом</strong>. Каждый специалист выбирает свой подход к такому интервью. Наиболее частые подходы</p>
+<p>Пользователю с ролью Viewer разрешен только доступ к формам Логин, Таблица датчиков. На форме Таблица датчиков разрешены действия, связанные только с просмотром данных, без права добавления, удаления либо изменения записей.</p>
+</li>
+<li>
+<p>Для не авторизированных пользователей доступна только форма Логин</p>
+</li>
+<li>
+<p>После ввода логина и пароля, авторизированного пользователя система перенаправляет на форму Таблица датчиков.</p>
+</li>
+<li>
+<p>Если пользователь не прошел авторизацию, то перенаправления не происходит, а пользователю выдается сообщение об ошибке авторизации.</p>
+</li>
+<li>
+<p>Данные для таблицы берутся посредством запросов с серверной части (данные хранятся в БД).</p>
+</li>
+<li>
+<p>Пользователю с ролью Viewer и Administrator разрешено просматривать данные таблицы, использовать пейджинг (количество записей на странице 4), использовать поиск по данным.</p>
+</li>
+<li>
+<p>Поиск по данным представляет из себя поле ввода текста и кнопку поиска. Поиск происходит по частичному совпадению введенного текста в любом поле записи (включая поля, не показанные в таблице – description).</p>
+</li>
+<li>
+<p>После окончания поиска в таблице остаются только подходящие записи.</p>
+</li>
+<li>
+<p>При наведении на имя (поле Name) датчика показывается hint с полным описанием датчика (поле description).</p>
+</li>
+<li>
+<p>Пользователю с ролью Administrator разрешены дополнительно действия -</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Вопрос-ответ</strong></p>
+<p>добавление нового датчика (переход на форму 3)</p>
 </li>
 <li>
-<p><strong>Решение алгоритмических задач</strong></p>
+<p>редактирование выделенного датчика (переход на форму 3)</p>
 </li>
 <li>
-<p><strong>Разговор о вашем опыте</strong> (обычно с уточняющими вопросами)</p>
-</li>
-<li>
-<p><strong>Проверка на умение думать</strong>: ставится задача, которую требуется решить, кандидат пытается ее решить, детально описывая что он делает (в процессе  обычно можно задавать уточняющие вопросы)</p>
+<p>удаление выделенного датчика.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>FIT-интервью</strong> в команду.</p>
+<p>По кнопке logout – пользователь выходит из системы и его перенаправляет на форму логин</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_тестовые_задания">1. Тестовые задания</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Задания</strong>, в большинстве своем, представляют собой примеры, которые предлагают различные компании в качестве <strong>практического тестового задания</strong> для того, что бы отобрать специалистов на работу, стажировку или обучение</p>
-</div>
-<div class="paragraph">
-<p><a href="./test-tasks">Тестовые задания</a></p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_практические_задачи">2. Практические задачи</h2>
+<h2 id="_форма_3_добавлениередактирование_датчиков">Форма 3. Добавление/редактирование датчиков</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Задачи</strong>, которые предлагают различные компании в качестве <strong>практических задач</strong> в процессе проведения технического интервью (т.е. вы их решаете и при этом шарите свой экран).</p>
+<p>Звездочкой отмечены обязательные поля:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong> – текстовое поле. Обязательное. Валидация – не пустое поле и количество символов не превышает 30.</p>
+</li>
+<li>
+<p><strong>Model</strong> – текстовое поле. Обязательное. Валидация – не пустое поле и количество символов не превышает 15.</p>
+</li>
+<li>
+<p><strong>Range from</strong>, <strong>to</strong> – числовое поле. Диапазон значений датчика, в котором предусмотрена его работа. Валидация – при вводе двух значений, from должно быть меньше to. Целые числа.</p>
+</li>
+<li>
+<p><strong>Type</strong> – список выбора. Предустановленные данные, берутся из БД. Значения - <code>Pressure</code>, <code>Voltage</code>, <code>Temperature</code>, <code>Humidity</code>.</p>
+</li>
+<li>
+<p><strong>Unit</strong> – список выбора. Предустановленные данные, берутся из БД. Значения - <code>bar</code>, <code>voltage</code>, <code>°С</code>, <code>%</code>.</p>
+</li>
+<li>
+<p><strong>Location</strong> – местоположение сенсора. Текстовое поле. Валидация не больше 40 символов.</p>
+</li>
+<li>
+<p><strong>Description</strong> – описание датчика. Валидация не больше 200 символов.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p><a href="tasks">Практические задачи</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы">3. Вопросы</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Вопросы</strong>, которые задают специалисты на техническом интервью.</p>
+<p><code>Save</code> – сохраняет или изменяет сенсор.
+<code>Cancel</code> отменяет ввод и закрывает форму перенаправляя на форму Таблица датчиков.</p>
 </div>
 <div class="paragraph">
-<p><a href="./questions/">Вопросы</a></p>
+<p>После выполнения задания нужно предоставить:</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы_с_ответами">4. Вопросы с ответами</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="./questions-answers/">Вопросы</a></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Readme файл с описанием шагов, которые нужно сделать для запуска системы.</p>
+</li>
+<li>
+<p>SQL скрипты для создания начальной структуры БД. Скрипты для инициализации данных</p>
+</li>
+<li>
+<p>Исходные коды, выложенные на Git.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>

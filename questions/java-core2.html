@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="Community and Dmitry Rakovets">
-<title>Interview</title>
+<title>Java Core (продвинутая)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,112 +436,374 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>Interview</h1>
-<div class="details">
-<span id="author" class="author">Community and Dmitry Rakovets</span><br>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_тестовые_задания">1. Тестовые задания</a></li>
-<li><a href="#_практические_задачи">2. Практические задачи</a></li>
-<li><a href="#_вопросы">3. Вопросы</a></li>
-<li><a href="#_вопросы_с_ответами">4. Вопросы с ответами</a></li>
-</ul>
-</div>
+<h1>Java Core (продвинутая)</h1>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_дженерики">Дженерики</h2>
 <div class="sectionbody">
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-Этапы интервью очень сильно разнятся от компании к компании. Иногда техническое интервью может проходить дважды, у самой компании и у клиента этой компании.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Возможные <strong>этапы интервью</strong>:</p>
-</div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><strong>Предварительный отбор с помощью тестового задания</strong></p>
+<p>Что такое дженерики?</p>
 </li>
 <li>
-<p><strong>Предварительный отбор с помощью HR-специалиста</strong></p>
+<p>Для чего нужны дженерики?</p>
 </li>
 <li>
-<p><strong>Интервью с техническим специалистом</strong>. Каждый специалист выбирает свой подход к такому интервью. Наиболее частые подходы</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Вопрос-ответ</strong></p>
+<p>Что такое сырые типы (raw type)?</p>
 </li>
 <li>
-<p><strong>Решение алгоритмических задач</strong></p>
+<p>Что такое вайлдкарды?</p>
 </li>
 <li>
-<p><strong>Разговор о вашем опыте</strong> (обычно с уточняющими вопросами)</p>
+<p>Расскажите про принцип PECS8.</p>
 </li>
-<li>
-<p><strong>Проверка на умение думать</strong>: ставится задача, которую требуется решить, кандидат пытается ее решить, детально описывая что он делает (в процессе  обычно можно задавать уточняющие вопросы)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>FIT-интервью</strong> в команду.</p>
-</li>
-</ul>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовые_задания">1. Тестовые задания</h2>
+<h2 id="_коллекции">Коллекции</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><strong>Задания</strong>, в большинстве своем, представляют собой примеры, которые предлагают различные компании в качестве <strong>практического тестового задания</strong> для того, что бы отобрать специалистов на работу, стажировку или обучение</p>
-</div>
-<div class="paragraph">
-<p><a href="./test-tasks">Тестовые задания</a></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Что такое «коллекция»?</p>
+</li>
+<li>
+<p>Расскажите про иерархию коллекций</p>
+</li>
+<li>
+<p>Почему Map — это не Collection, в то время как List и Set являются Collection?</p>
+</li>
+<li>
+<p>В чем разница между классами java.util.Collection и java.util.Collections?</p>
+</li>
+<li>
+<p>Какая разница между итераторами с fail-fast и fail-safe поведением? (С примерами)</p>
+</li>
+<li>
+<p>Чем различаются Enumeration и Iterator?</p>
+</li>
+<li>
+<p>Как между собой связаны Iterable, Iterator и «for-each»?</p>
+</li>
+<li>
+<p>Можно ли итерируясь по ArrayList удалить элемент? Какое вылетит исключение?</p>
+</li>
+<li>
+<p>Как поведёт себя коллекция, если вызвать iterator.remove()?</p>
+</li>
+<li>
+<p>Чем Set отличается от List?</p>
+</li>
+<li>
+<p>Расскажите про интерфейс Set.</p>
+</li>
+<li>
+<p>Расскажите про реализации интерфейса Set</p>
+</li>
+<li>
+<p>В чем отличия TreeSet и HashSet?</p>
+</li>
+<li>
+<p>Чем LinkedHashSet отличается от HashSet?</p>
+</li>
+<li>
+<p>Что будет, если добавлять элементы в TreeSet по возрастанию?</p>
+</li>
+<li>
+<p>Как устроен HashSet, сложность основных операций.</p>
+</li>
+<li>
+<p>Как устроен LinkedHashSet, сложность основных операций.</p>
+</li>
+<li>
+<p>Как устроен TreeSet, сложность основных операций.</p>
+</li>
+<li>
+<p>Расскажите про интерфейс List</p>
+</li>
+<li>
+<p>Как устроен ArrayList, сложность основных операций.</p>
+</li>
+<li>
+<p>Как устроен LinkedList, сложность основных операций.</p>
+</li>
+<li>
+<p>Почему LinkedList реализует и List, и Deque?</p>
+</li>
+<li>
+<p>Чем отличаются ArrayList и LinkedList?</p>
+</li>
+<li>
+<p>Что такое Queue?</p>
+</li>
+<li>
+<p>Что такое Dequeue? Чем отличается от Queue?</p>
+</li>
+<li>
+<p>Приведите пример реализации Dequeue.</p>
+</li>
+<li>
+<p>Какая коллекция реализует FIFO?</p>
+</li>
+<li>
+<p>Какая коллекция реализует LIFO?</p>
+</li>
+<li>
+<p>Оцените количество памяти на хранение одного примитива типа byte в LinkedList?</p>
+</li>
+<li>
+<p>Оцените количество памяти на хранение одного примитива типа byte в ArrayList?</p>
+</li>
+<li>
+<p>Какие существуют реализации Map?</p>
+</li>
+<li>
+<p>Как устроена HashMap, сложность основных операций? (Расскажите про принцип корзин)</p>
+</li>
+<li>
+<p>Что такое LinkedHashMap?</p>
+</li>
+<li>
+<p>Как устроена TreeMap, сложность основных операций?</p>
+</li>
+<li>
+<p>Что такое WeakHashMap?</p>
+</li>
+<li>
+<p>Как работает HashMap при попытке сохранить в него два элемента по ключам с одинаковым hashCode(), но для которых equals() == false?37. Что будет, если мы кладем в HashMap ключ, у которого equals и hashCode определены некорректно?</p>
+</li>
+<li>
+<p>Возможна ли ситуация, когда HashMap выродится в список даже с ключами имеющими разные hashCode()?</p>
+</li>
+<li>
+<p>Почему нельзя использовать byte[] в качестве ключа в HashMap?</p>
+</li>
+<li>
+<p>Будет ли работать HashMap, если все добавляемые ключи будут иметь одинаковый hashCode()?</p>
+</li>
+<li>
+<p>Какое худшее время работы метода get(key) для ключа, которого нет в HashMap?</p>
+</li>
+<li>
+<p>Какое худшее время работы метода get(key) для ключа, который есть в HashMap?</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_практические_задачи">2. Практические задачи</h2>
+<h2 id="_функциональные_интерфейсы">Функциональные интерфейсы</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><strong>Задачи</strong>, которые предлагают различные компании в качестве <strong>практических задач</strong> в процессе проведения технического интервью (т.е. вы их решаете и при этом шарите свой экран).</p>
-</div>
-<div class="paragraph">
-<p><a href="tasks">Практические задачи</a></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Что такое функциональный интерфейс?</p>
+</li>
+<li>
+<p>Для чего нужна аннотация @FunctionalInterface?</p>
+</li>
+<li>
+<p>Какие встроенные функциональные интерфейсы вы знаете?</p>
+</li>
+<li>
+<p>Что такое ссылка на метод?</p>
+</li>
+<li>
+<p>Что такое лямбда-выражение? Чем его можно заменить?</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_вопросы">3. Вопросы</h2>
+<h2 id="_stream_api">Stream API</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><strong>Вопросы</strong>, которые задают специалисты на техническом интервью.</p>
-</div>
-<div class="paragraph">
-<p><a href="./questions/">Вопросы</a></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Что такое Stream API? Для чего нужны стримы?</p>
+</li>
+<li>
+<p>Почему Stream называют ленивым?</p>
+</li>
+<li>
+<p>Какие существуют способы создания стрима?</p>
+</li>
+<li>
+<p>Как из коллекции создать стрим?</p>
+</li>
+<li>
+<p>Какие промежуточные методы в стримах вы знаете?</p>
+</li>
+<li>
+<p>Расскажите про метод peak().</p>
+</li>
+<li>
+<p>Расскажите про метод map().</p>
+</li>
+<li>
+<p>Расскажите про метод flatMap().</p>
+</li>
+<li>
+<p>Чем отличаются методы map() и flatMap().</p>
+</li>
+<li>
+<p>Расскажите про метод filter()</p>
+</li>
+<li>
+<p>Расскажите про метод limit()</p>
+</li>
+<li>
+<p>Расскажите про метод skip()</p>
+</li>
+<li>
+<p>Расскажите про метод sorted()</p>
+</li>
+<li>
+<p>Расскажите про метод distinct()</p>
+</li>
+<li>
+<p>Какие терминальные методы в стримах вы знаете?</p>
+</li>
+<li>
+<p>Расскажите про метод collect()</p>
+</li>
+<li>
+<p>Расскажите про метод reduce()</p>
+</li>
+<li>
+<p>Расскажите про класс Collectors и его методы.</p>
+</li>
+<li>
+<p>Расскажите о параллельной обработке в Java 8.</p>
+</li>
+<li>
+<p>Что такое IntStream и DoubleStream?11.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_вопросы_с_ответами">4. Вопросы с ответами</h2>
+<h2 id="_java_8">Java 8</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><a href="./questions-answers/">Вопросы</a></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Какие нововведения появились в java 8?</p>
+</li>
+<li>
+<p>Какие новые классы для работы с датами появились в java 8?</p>
+</li>
+<li>
+<p>Расскажите про класс Optional</p>
+</li>
+<li>
+<p>Что такое Nashorn?</p>
+</li>
+<li>
+<p>Что такое jjs?</p>
+</li>
+<li>
+<p>Какой класс появился в Java 8 для кодирования/декодирования данных?</p>
+</li>
+<li>
+<p>Как создать Base64 кодировщик и декодировщик?</p>
+</li>
+<li>
+<p>Какие дополнительные методы для работы с ассоциативными массивами (maps) появились в Java 8?</p>
+</li>
+<li>
+<p>Что такое LocalDateTime?</p>
+</li>
+<li>
+<p>Что такое ZonedDateTime?</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_многопоточность">Многопоточность</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Чем процесс отличается от потока?</p>
+</li>
+<li>
+<p>Чем Thread отличается от Runnable? Когда нужно использовать Thread, а когда Runnable?(Ответ что тред - это класс, а ранбл интерфейс - считается не полным, нужно рассказать подробно)</p>
+</li>
+<li>
+<p>Что такое монитор? Как монитор реализован в java?</p>
+</li>
+<li>
+<p>Что такое синхронизация? Какие способы синхронизации существуют в java?</p>
+</li>
+<li>
+<p>Как работают методы wait(), notify() и notifyAll()?</p>
+</li>
+<li>
+<p>В каких состояниях может находиться поток?</p>
+</li>
+<li>
+<p>Что такое семафор? Как он реализован в Java?</p>
+</li>
+<li>
+<p>Что обозначает ключевое слово volatile? Почему операции над volatile переменными не атомарны?</p>
+</li>
+<li>
+<p>Для чего нужны Atomic типы данных? Чем отличаются от volatile?</p>
+</li>
+<li>
+<p>Что такое потоки демоны? Для чего они нужны? Как создать поток-демон?</p>
+</li>
+<li>
+<p>Что такое приоритет потока? На что он влияет? Какой приоритет у потоков по умолчанию?</p>
+</li>
+<li>
+<p>Как работает Thread.join()? Для чего он нужен?</p>
+</li>
+<li>
+<p>Чем отличаются методы yeld() и sleep()?</p>
+</li>
+<li>
+<p>Как правильно остановить поток? Для чего нужны методы .stop(), .interrupt(), .interrupted(), .isInterrupted().</p>
+</li>
+<li>
+<p>Чем Runnable отличается от Callable?</p>
+</li>
+<li>
+<p>Что такое FutureTask?</p>
+</li>
+<li>
+<p>Что такое deadlock?</p>
+</li>
+<li>
+<p>Что такое livelock?</p>
+</li>
+<li>
+<p>Что такое race condition?</p>
+</li>
+<li>
+<p>Что такое Фреймворк for/join? Для чего он нужен?</p>
+</li>
+<li>
+<p>Что означает ключевое слово synchronized? Где и для чего может использоваться?</p>
+</li>
+<li>
+<p>Что является монитором у статического синхронизированного класса?</p>
+</li>
+<li>
+<p>Что является монитором у нестатического синхронизированного класса?</p>
+</li>
+</ol>
 </div>
 </div>
 </div>

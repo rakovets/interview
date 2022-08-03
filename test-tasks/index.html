@@ -1,0 +1,2810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="author" content="Community and Dmitry Rakovets">
+<title>Interview - Tests Tasks</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>Interview - Tests Tasks</h1>
+<div class="details">
+<span id="author" class="author">Community and Dmitry Rakovets</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_навигация">Навигация</a></li>
+<li><a href="#_тестовое_задание_1">Тестовое задание 1</a></li>
+<li><a href="#_тестовое_задание_2">Тестовое задание 2</a></li>
+<li><a href="#_тестовое_задание_3">Тестовое задание 3</a></li>
+<li><a href="#_тестовое_задание_4">Тестовое задание 4</a></li>
+<li><a href="#_тестовое_задание_5">Тестовое задание 5</a></li>
+<li><a href="#_тестовое_задание_6">Тестовое задание 6</a></li>
+<li><a href="#_тестовое_задание_7">Тестовое задание 7</a></li>
+<li><a href="#_тестовое_задание_8">Тестовое задание 8</a></li>
+<li><a href="#_тестовое_задание_9">Тестовое задание 9</a></li>
+<li><a href="#_тестовое_задание_10">Тестовое задание 10</a></li>
+<li><a href="#_тестовое_задание_11">Тестовое задание 11</a></li>
+<li><a href="#_тестовое_задание_12">Тестовое задание 12</a></li>
+<li><a href="#_тестовое_задание_13">Тестовое задание 13</a></li>
+<li><a href="#_тестовое_задание_14">Тестовое задание 14</a></li>
+<li><a href="#_тестовое_задание_15">Тестовое задание 15</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Задания, в большинстве своем, представляют собой примеры, которые предлагают различные компании в качестве практического тестового задания для того, что бы отобрать специалистов на работу, стажировку или обучение.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+Задания представлены беспорядочно, т.е. они следуют не в порядке повышения уровня сложности, а рандомно.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+Задания требуют различную степень подготовки и должно выбираться с учетов текущих знаний и умений.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_навигация">Навигация</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/">На главную</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_1">Тестовое задание 1</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Дается проект сгенерирован на <a href="https://start.spring.io/" class="bare">https://start.spring.io/</a> с заданной конфигурацией.</p>
+</div>
+<div class="paragraph">
+<p><strong>Требуется</strong> создать БД со следующими таблицами:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>пользователи (id, email, пароль, дата создания);</p>
+</li>
+<li>
+<p>клиенты (id, имя, дата создания);</p>
+</li>
+<li>
+<p>заказы (id, id клиента, стоимость, дата создания);</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Написать API, которое под <code>/data/</code> выдает данные из таблицы заказов и клиентов (в формате JSON), а под <code>/update/</code> обновляет данные в таблицах (например обновление имени клиента или смена <code>id</code> клиента, указанного в заказе).  Данные операции должны допускаться только авторизованным пользователям. Пользователь считается авторизированным, если он делает HTTP запрос:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>с Bearer токеном (указан на сервере)</p>
+</li>
+<li>
+<p>с JWT токеном (назначается клиенту сервером на основе логина+пароля)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Способы авторизации зависят от пути: возможна как и Bearer авторизация, так JWT авторизация для запросов под <code>/update/</code>, <code>/data/</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ограничения</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Для авторизации использовать модуль <strong>spring security</strong>.</p>
+</li>
+<li>
+<p>Использовать либо <strong>JDBC</strong>, либо <strong>JPA</strong> для запросов (оба содержатся в зависимостях проекта)</p>
+</li>
+<li>
+<p>Выход из системы (logout) необходим</p>
+</li>
+<li>
+<p>Версия 8 Джавы</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Допускается</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Менять архитектуру проекта любым способом</p>
+</li>
+<li>
+<p>Добавлять зависимости в проект</p>
+</li>
+<li>
+<p>Создавать дополнительные поля в таблицы БД</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Приветствуется</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Логирование через logback</p>
+</li>
+<li>
+<p>Аргументированный подход по созданию архитектуры проекта</p>
+</li>
+<li>
+<p>Дополнительные запросы и функционал</p>
+</li>
+<li>
+<p>Графический интерфейс (VUE.JS, JFX)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_2">Тестовое задание 2</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Программа, работающая с БД SQLite, которая организовывает работу с оборудованием на скважинах со <strong>следующими функциями</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Создание N кол-ва оборудования на скважине.</p>
+</li>
+<li>
+<p>При выборе этого пункта пользователь указывает кол-во оборудования и имя скважины.</p>
+</li>
+<li>
+<p>Программа создает указанное кол-во оборудования на скважине с указанным именем.</p>
+</li>
+<li>
+<p>При создании оборудования каждому присваивается свой id и свое уникальное имя (генерируется программой с использованием латинских букв и цифр).</p>
+</li>
+<li>
+<p>Скважина также создается программой с указанным именем, если ее еще нет в таблице.</p>
+</li>
+<li>
+<p>Вывод общей информации об оборудовании на скважинах.</p>
+</li>
+<li>
+<p>При выборе этого пункта пользователь указывает имена скважин, разделяя их пробелами или запятыми.</p>
+</li>
+<li>
+<p>Программа подсчитывает кол-во оборудования на каждой скважине и выдает на экран таблицу вида "имя скважины - кол-во оборудования".</p>
+</li>
+<li>
+<p>Экспорт всех данных в xml файл.</p>
+</li>
+<li>
+<p>При выборе этого пункта пользователь указывает имя файла.</p>
+</li>
+<li>
+<p>Программа выбирает все скважины из базы и записывает данные по ним и оборудованию в xml формате в виде (одна и та же скважина или оборудование не могут повторяться несколько раз):</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;dbinfo&gt;</span>
+    <span class="nt">&lt;well</span> <span class="na">name=</span><span class="s">"АААА"</span>  <span class="na">id=</span><span class="s">"123"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;equipment</span> <span class="na">name=</span><span class="s">"EQ0033"</span> <span class="na">id=</span><span class="s">"12"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;equipment</span> <span class="na">name=</span><span class="s">"EQ0034"</span> <span class="na">id=</span><span class="s">"13"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/well&gt;</span>
+    <span class="nt">&lt;well</span> <span class="na">name=</span><span class="s">"BBBB"</span>  <span class="na">id=</span><span class="s">"124"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;equipment</span> <span class="na">name=</span><span class="s">"EQ0038"</span> <span class="na">id=</span><span class="s">"11"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;equipment</span> <span class="na">name=</span><span class="s">"EQ0039"</span> <span class="na">id=</span><span class="s">"14"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/well&gt;</span>
+<span class="nt">&lt;/dbinfo&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Дополнительная информация</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Проект оформлен для сборки при помощи maven.</p>
+</li>
+<li>
+<p>Перечисленные пункты реализованы в виде параметров командной строки.</p>
+</li>
+<li>
+<p>Для доступа к БД использовался sqllite-jdbc.</p>
+</li>
+<li>
+<p>Файл базы данных test.db располагается в каталоге запуска программы.</p>
+</li>
+<li>
+<p>Если файла еще нет, программа сама создаст БД и все необходимые таблицы в ней.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Таблицы для БД</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Well</code> - скважина.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>id</code>: уникальный идентификатор записи (первичный ключ), генерируется средствами БД.</p>
+</li>
+<li>
+<p><code>name</code> Varchar(32) - имя скважины, уникальное, не может повторяться и быть пустым.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Equipment – оборудование на скважине.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>id</code>: уникальный идентификатор записи (первичный ключ), генерируется средствами БД.</p>
+</li>
+<li>
+<p><code>name</code> Varchar(32) - имя оборудования, уникальное, не может повторяться и быть пустым.</p>
+</li>
+<li>
+<p><code>Well_id</code>: ссылка на Well.id - id скважины, на которой установлено оборудование.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_3">Тестовое задание 3</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>CryptoCurrency watcher</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Функциональность</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Просмотр списка доступных криптовалют (REST-метод)</p>
+</li>
+<li>
+<p>Просмотр актуальной цены для указанной криптовалюты (REST-метод - код валюты передается пользователем)</p>
+</li>
+<li>
+<p>Запасать в лог сообщение об изменении цены более чем на 1%. Для это пользователь регистрирует себя с помощью REST-метода notify и передает свое имя (username) и код криптовалюты (symbol). В момент регистрации сохраняется текущая цена указанной криптовалюты с привязкой к пользователю. Как только актуальная цена для указанной валюты поменялась более чем на 1%., в лог сервера выводится сообщение уровня WARN в котором указан: код валюты, имя пользователя и процент изменения цены с момента регистрации.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Требования</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Вы можете использовать Java или Kotlin (любой версии)</p>
+</li>
+<li>
+<p>Используйте Spring или Spring Boot (можно использовать <a href="https://start.spring.io/" class="bare">https://start.spring.io/</a> для ускорения)</p>
+</li>
+<li>
+<p>Актуальные цены храните в реляционной базе - можно использовать любую (H2, Mysql, Postgres,…)</p>
+</li>
+<li>
+<p>Список доступных криптовалют предопределен и является частью конфигурации сервера</p>
+</li>
+<li>
+<p>Список валют:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="json"><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"90"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"80"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"ETH"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"48543"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"SOL"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Раз в минуту актуальные цены для доступных криптовалют запрашиваются c внешнего источника CoinLore и сохраняются в базу данных.</p>
+</li>
+<li>
+<p>Что бы получить актуальные цену по коду криптовалюты используйте open API Crypto API | CoinLore Method Ticker (Specific Coin): <a href="https://api.coinlore.net/api/ticker/?id=90" class="bare">https://api.coinlore.net/api/ticker/?id=90</a> (BTC)</p>
+</li>
+<li>
+<p>Когда пользователь запрашивает актуальную цену для указанной криптовалюты - данные должны быть получены из базы данных</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_4">Тестовое задание 4</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Для решения этого задания требуется от 12 до 48 рабочих часов. Это не значит, что вы решите ее за 12-48 часов. Можно потратить столько часов, сколько вы считаете нужным.</p>
+</div>
+<div class="paragraph">
+<p>Мы предлагаем вам потратить хотя бы несколько часов на чтение задачи и моделирование решения. Мы протестировали эту задачу на наших инженерах: несколько младших разработчиков в среднем тратили 10 часов на чтение и размышления и примерно 2 часа на программирование.</p>
+</div>
+<div class="paragraph">
+<p><strong>Прикладная теория музыки</strong></p>
+</div>
+<div class="paragraph">
+<p>В теории музыки <strong>интервал</strong> — это расстояние между двумя <strong>нотами</strong>. Это расстояние указывается с помощью <em>буквы</em> и <em>числа</em>. Например, допустимые названия интервалов - <code>M3</code>, <code>P5</code> или <code>m7</code>. <em>Буква</em> и <em>цифра</em> в названии интервала означают определенные вещи.</p>
+</div>
+<div class="paragraph">
+<p>Как и в математике, если мы говорим, что расстояние на сантиметровой линейке между <code>3</code> и <code>5</code> равно <code>2</code> сантиметрам, в музыке мы говорим, что расстояние между <code>C</code> и <code>E</code> (или <code>do</code> и <code>mi</code>) равно <code>M3</code>.</p>
+</div>
+<div class="paragraph">
+<p>Для этой задачи мы используем следующие имена <strong>нот</strong>:
+<code>C</code> <code>D</code> <code>E</code> <code>F</code> <code>G</code> <code>A</code> <code>B</code></p>
+</div>
+<div class="paragraph">
+<p>Весь список <strong>интервалов</strong>, которые мы используем в этой задаче:
+<code>m2</code>, <code>M2</code>, <code>m3</code>, <code>M3</code>, <code>P4</code>, <code>P5</code>, <code>m6</code>, <code>M6</code>, <code>m7</code>, <code>M7</code>, <code>P8</code></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Нотный стан (Нотоносец) в музыкальной нотации — набор параллельных горизонтальных линий (нотных линеек), на которых (и между которыми)записываются ноты.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><strong>Номер интервала</strong> — это количество <strong>названий букв</strong> или <strong>позиций нотного стана</strong> (строк и пробелов), которые он содержит, <strong>включая позиции обеих нот</strong>, образующих <strong>интервал</strong>. Например, интервал <code>C</code> – <code>G</code> является пятым (обозначается <code>P5</code>), потому что ноты от <code>C</code> до <code>G</code> над ним содержат пять буквенных имен (<code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>, <code>G</code>) и занимают пять последовательных <em>позиций нотного стана</em>, включая <em>позиции</em> of <code>C</code> и <code>G</code>. <em>Интервал</em> от <code>A</code> до <code>A</code> содержит <code>8</code> <em>нот</em> (<code>A</code> <code>B</code> <code>C</code> <code>D</code> <code>E</code> <code>F</code> <code>G</code> <code>A</code>) и называется <code>P8</code>. Мы будем называть это число <strong>диатонической степенью</strong> (обратите внимание: термин «степень», который мы здесь используем, может не соответствовать фактическому термину в музыке).</p>
+</div>
+<div class="paragraph">
+<p>Единица расстояния между нотами называется <strong>полутоном</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Названия букв могут быть изменены случайно. <strong>Диез</strong> <code><mark></code> поднимает ноту на полтона, а <strong>бемоль</strong> <code>b</code>** опускает его на полтона. К ноте можно добавить не более <code></mark></code> и двух <code>b</code>.</p>
+</div>
+<div class="paragraph">
+<p>В следующей таблице показаны 12 нот <strong>хроматической гаммы</strong>, построенной на <code>C</code>. Расстояние между каждой <strong>нотой</strong> в таблице составляет <strong>полутон</strong>. Обратите внимание, что одну и ту же <strong>ноту</strong> можно описать разными буквами. Например, если мы поднимем <code>C</code> на полутон, мы получим <code>C#</code>. А если понизить <code>D</code> на полутон, мы получим <code>Db</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>C</code> <code>C#</code>/<code>Db</code> <code>D</code> <code>D#</code>/<code>Eb</code> <code>E</code> <code>F</code> <code>F#</code>/<code>Gb</code> <code>G</code> <code>G#</code>/<code>Ab</code> <code>A</code> <code>A#</code>/<code>Bb</code> <code>B</code></p>
+</div>
+<div class="paragraph">
+<p>Например, расстояние в <code>4</code> <em>полутона</em> между <code>C</code> и <code>E</code>, расстояние в <code>5</code> <em>полутонов</em> между <code>D</code> и <code>G</code> и расстояние в <code>1</code> <em>полутон</em> между <code>Bb</code> и <code>B</code>.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Знаки альтерации</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>sharp</strong>/<strong>диез</strong> <code>#</code></p>
+</li>
+<li>
+<p><strong>flat</strong>/<strong>бемоль</strong> <code>b</code></p>
+</li>
+<li>
+<p><strong>natural</strong>/<strong>бекар</strong> <code>♮</code></p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Если мы добавим какие-либо <strong>знаки альтерации</strong> к нотам, образующим <strong>интервал</strong>, по определению <strong>ноты</strong> не меняют своей <strong>степени</strong>. Как следствие, любой <strong>интервал</strong> имеет тот же номер <strong>интервала</strong>, что и соответствующий естественный интервал (означает интервал, образованный теми же нотами, без <strong>знаки альтерации</strong>). Например, интервалы <code>C</code> – <code>G#</code> (охватывающие <code>8</code> <em>полутонов</em>) и <code>C#</code> – <code>G</code> (охватывающие <code>6</code> полутонов) являются <code>P5</code>, как соответствующий естественный интервал <code>C</code> – <code>G</code> (<code>7</code> <em>полутонов</em>).</p>
+</div>
+<div class="paragraph">
+<p>Обратите внимание, что <strong>числа интервалов</strong> представляют собой количество содержащихся <strong>степеней</strong> или <strong>имен нот</strong>, включая их, но не разницу между конечными точками. Другими словами, вы считаете <em>первую ноту за 1, а не за 0</em>. По этой логике интервал <code>C</code> – <code>D</code> является вторым (<code>M2</code>), но <code>D</code> находится только на одну степень выше <code>C</code>. Аналогично, <code>C</code> – <code>E</code> является третьим (<code>M3</code>), но <code>E</code> всего на две степени выше <code>C</code>, и так далее.</p>
+</div>
+<div class="paragraph">
+<p>Мы будем <em>использовать только интервалы до октавы</em> (<code>P8</code>, <code>12</code> <em>полутонов</em>).</p>
+</div>
+<div class="paragraph">
+<p>Чтобы построить <em>интервал</em> из данной <em>ноты</em>, вам сначала нужно найти <strong>диатонический степень</strong> ноты ниже или выше данной ноты.</p>
+</div>
+<div class="paragraph">
+<p>Затем вам нужно отсчитать количество <em>полутонов</em> от <em>начальной ноты</em>. В последовательности <code>C</code> <code>D</code> <code>E</code> <code>F</code> <code>G</code> <code>A</code> <code>B</code> есть один полутон между <code>E</code> и <code>F</code> и <code>B</code> и <code>C</code>. Между другими нотами есть два полутона.</p>
+</div>
+<div class="paragraph">
+<p>Здесь один дефис означает один полутон:</p>
+</div>
+<div class="paragraph">
+<p><code>C&#8212;&#8203;D&#8212;&#8203;E-F&#8212;&#8203;G&#8212;&#8203;A&#8212;&#8203;B-C</code></p>
+</div>
+<div class="sect2">
+<h3 id="_как_подсчитать_количество_полутонов">Как подсчитать количество полутонов?</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Давайте посчитаем количество полутонов между <code>C</code> и <code>G</code>: от <code>C</code> до <code>D</code> - <code>2</code> полутона, от <code>D</code> до <code>E</code> - <code>2</code> полутона, от <code>E</code> до <code>F</code> - <code>1</code> полутон, от <code>F</code> до <code>G</code> - <code>2</code> полутона. <code>2 + 2 + 1 + 2 = 7</code> полутонов.</p>
+</li>
+<li>
+<p>Давайте найдем количество полутонов между <code>A</code> и <code>C</code>: от <code>A</code> до <code>B</code> - <code>2</code> полутона, от <code>B</code> до <code>C</code> - <code>1</code> полутон. <code>2 + 1 = 3</code> полутона.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_как_подсчитать_количество_интервалов">Как подсчитать количество интервалов?</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Давайте найдем наш первый интервал - <code>P5</code> (<strong>perfect fifth</strong>) от <code>Ab</code>. <code>P5</code> означает: найти расстояние в <code>5</code> степеней и <code>7</code> полутонов.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Сначала найдите <code>5</code>-ю степень от <code>A</code>, игнорируя <code>b</code>: (<code>A</code> <code>B</code> <code>C</code> <code>D</code> <code>E</code>) - <code>E</code> - это нота <code>5</code>-й степени от <code>A</code>.</p>
+</li>
+<li>
+<p>Теперь посчитайте полутоны: от <code>Ab</code> до <code>B</code> - <code>3</code> полутона (от <code>Ab</code> до <code>A</code> - <code>1</code> полутон, от <code>A</code> до <code>B</code> - <code>2</code> полутона), от <code>B</code> до <code>C</code> - <code>1</code> полутон, от <code>C</code> до <code>D</code> - <code>2</code> полутона, от <code>D</code> до <code>E</code> - <code>2</code> полутона. <code>3 + 1 + 2 + 2 = 8</code> полутонов. Это слишком много, нам нужно всего <code>7</code> полутонов, но нам нужно оставаться на <code>E</code>. Для этого понизьте <code>E</code> на один полутон, используя <strong>знак альтерации</strong> <code>b</code>.</p>
+</li>
+<li>
+<p>На расстоянии <code>P5</code> от <code>Ab</code> находится нота <code>Eb</code>.</p>
+</li>
+<li>
+<p>Примечание: вы не можете написать <code>D#</code> в качестве ответа, потому что даже если <code>D#</code> составляет <code>7</code> полутонов от <code>Ab</code>, он имеет другую степень (он находится всего на <code>4</code> степени от <code>A</code> до <code>D</code>).</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_пример">Пример</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Чтобы показать вам, как работать со <strong>знаками альтерации</strong>, давайте найдем <code>P5</code> (<code>5</code>-я ступень, <code>7</code> полутонов) из <code>A#</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Как и в предыдущем примере, найдите <code>5</code>-ю ступень из <code>A</code>, игнорируя <code><mark></code>: (<code>A</code> <code>B</code> <code>C</code> <code>D</code> <code>E</code>) - <code>E</code> - пятая нота из <code>A</code> (и из <code>A</mark></code>).</p>
+</li>
+<li>
+<p>Теперь посчитаем полутоны: от <code>A#</code> до <code>B</code>- <code>1</code> полутон, от <code>B</code> до <code>C</code> - <code>1</code> полутон, от <code>C</code> до <code>D</code> - <code>2`полутона, от `D</code> до <code>E</code> - <code>2</code> полутона. <code>1 + 1 + 2 + 2 = 6</code> полутонов. Нам нужно добавить всего один полутон, добавив <code><mark></code>: <code>E</mark></code></p>
+</li>
+<li>
+<p>На расстоянии <code>P5</code> от <code>A#</code> находится нота <code>E#</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_пример_2">Пример</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Давайте найдем <code>m2</code> (<code>2</code>-я степень, <code>1</code> полутон) от <code>Fb</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Найти вторую ступень легко: (<code>F</code> <code>G</code>) - <code>G</code> - вторая нота от <code>F</code>.</p>
+</li>
+<li>
+<p>Теперь посчитаем полутоны: от <code>Fb</code> до <code>G</code> - <code>3</code> полутона. Это слишком много, нам нужен только один. Итак, мы должны понизить <code>G</code> на <code>2</code> полутона. Для этого добавьте к ноте <code>G</code> два <code>b</code>: <code>Gbb</code>.</p>
+</li>
+<li>
+<p>На расстоянии <code>m2</code> от <code>Fb</code> находится нота <code>Gbb</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Названия интервалов, качество и количество</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">полутон</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">степень</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>m2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Minor Second</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>M2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Major Second</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>m3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Minor Third</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>M3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Major Third</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>P4</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Perfect Fourth</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>P5</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Perfect Fifth</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>m6</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Minor Sixth</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>M6</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Major Sixth</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>m7</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Minor Seventh</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>M7</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Major Seventh</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>P8</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Perfect Octave</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Ваша задача реализовать две функции, которые будут работать с интервалами: одна будет строить интервал, а вторая определять интервал.</p>
+</div>
+<div class="sect3">
+<h4 id="_требования">Требования:</h4>
+<div class="sect4">
+<h5 id="_intervalconstruction">intervalConstruction()</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Функция <code>intervalConstruction()</code> должна принимать массив строк в качестве входных данных и возвращать строку.</p>
+</li>
+<li>
+<p>Массив состоит из трех или двух элементов.</p>
+</li>
+<li>
+<p>Первый элемент в массиве — это имя интервала, второй — начальная нота, а третий указывает, идет ли интервал по возрастанию или по убыванию.</p>
+</li>
+<li>
+<p>Если в массиве нет третьего элемента, по умолчанию порядок построения возрастает.</p>
+</li>
+<li>
+<p>Функция должна вернуть строку, содержащую название заметки.</p>
+</li>
+<li>
+<p>В строке возврата разрешены только следующие имена заметок:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>Cbb Cb C C# C<mark> Dbb Db D D# D</mark> Ebb Eb E E# E<mark> Fbb Fb F F# F</mark> Gbb Gb G G# G<mark> Abb Ab A A# A</mark> Bbb Bb B B# B##</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Если во входном массиве больше или меньше элементов, должно быть выдано исключение: <code>Illegal number of elements in input array</code></p>
+</li>
+<li>
+<p>Соглашение: <code>['a', 'b']</code> здесь означает массив строк.</p>
+</li>
+</ul>
+</div>
+<div class="sect5">
+<h6 id="_примеры_ввода_и_значение">Примеры ввода и значение:</h6>
+<div class="paragraph">
+<p>Обратите внимание: данные, которые получит ваша функция, будут выглядеть как массив строк, как определено на вашем языке. Никакого дополнительного разбора не требуется! Форма <code>['', '']</code> - это просто соглашение!</p>
+</div>
+<div class="paragraph">
+<p>Допускаются следующие примечания:</p>
+</div>
+<div class="paragraph">
+<p><code>Cb C C# Db D D# Eb E E# Fb F F# Gb G G# Ab A A# Bb B B#</code></p>
+</div>
+<div class="paragraph">
+<p>Допускаются следующие интервалы ввода:</p>
+</div>
+<div class="paragraph">
+<p><code>m2 M2 m3 M3 P4 P5 m6 M6 m7 M7 P8</code></p>
+</div>
+<div class="paragraph">
+<p><code>['M3','A','asc']</code> - построить возрастающий интервал M3, начиная с A
+<code>['m7, 'Fb', 'dsc']</code> - построить убывающий интервал m7, начиная с Fb
+<code>['P5', 'C']</code> - построить восходящий интервал P5, начиная с C
+<code>['P4', 'E#]</code> - построить восходящий интервал P4, начиная с E #</p>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_intervalidentification">intervalIdentification()</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Функция <code>intervalIdentification()</code> должна принимать в качестве входных данных массив строк и возвращать строку.</p>
+</li>
+<li>
+<p>Массив состоит из трех или двух элементов.</p>
+</li>
+<li>
+<p>Первый элемент - это первая нота в интервале, второй элемент - это последняя нота в интервале, третий указывает, идет ли интервал по возрастанию или по убыванию.</p>
+</li>
+<li>
+<p>Если в массиве нет третьего элемента, по умолчанию интервал считается возрастающим.</p>
+</li>
+<li>
+<p>Функция должна вернуть строку - название интервала.</p>
+</li>
+<li>
+<p>В строке возврата разрешены только следующие интервалы:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>m2 M2 m3 M3 P4 P5 m6 M6 m7 M7 P8</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Если интервал не подходит под описание, должно быть выдано исключение: <code>Cannot identify the interval</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Соглашение: <code>['a', 'b']</code> здесь означает массив строк.</p>
+</div>
+<div class="sect5">
+<h6 id="_примеры_ввода_и_значение_2">Примеры ввода и значение:</h6>
+<div class="paragraph">
+<p>Обратите внимание: данные, которые получит ваша функция, будут выглядеть как массив строк, как определено на вашем языке. Никакого дополнительного разбора не требуется! Форма <code>['', '']</code> - это просто соглашение!</p>
+</div>
+<div class="paragraph">
+<p>Допускаются следующие примечания:</p>
+</div>
+<div class="paragraph">
+<p><code>Cbb Cb C C# C<mark> Dbb Db D D# D</mark> Ebb Eb E E# E<mark> Fbb Fb F F# F</mark> Gbb Gb G G# G<mark> Abb Ab A A# A</mark> Bbb Bb B B# B##</code></p>
+</div>
+<div class="paragraph">
+<p><code>['C', 'D']</code> - найти возрастающий интервал между <code>C</code> и <code>D</code>
+<code>['C#', 'Fb']</code> - найти возрастающий интервал между <code>C#</code> и <code>Fb</code>
+<code>['A', 'G#', 'asc']</code> - найти возрастающий интервал между <code>A</code> и <code>G#</code></p>
+</div>
+<div class="paragraph">
+<p>Вы можете найти больше примеров здесь. Мы протестируем ваше решение на этом и подобных примерах.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_5">Тестовое задание 5</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Создать консольное приложение, удовлетворяющее следующим требованиям:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Использовать возможности ООП: классы, наследование, полиморфизм, инкапсуляция.</p>
+</li>
+<li>
+<p>Каждый класс должен иметь исчерпывающее смысл название и информативный состав.</p>
+</li>
+<li>
+<p>При кодировании должны быть использованы соглашения об оформлении кода java code convention.</p>
+</li>
+<li>
+<p>Классы должны быть грамотно разложены по пакетам.</p>
+</li>
+<li>
+<p>Для демонстрации работы приложения использовать unit тесты.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Проект: Цветочница.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Определить иерархию цветов.</p>
+</li>
+<li>
+<p>Создать несколько объектов-цветов.</p>
+</li>
+<li>
+<p>Собрать букет (используя аксессуары) с определением его стоимости.</p>
+</li>
+<li>
+<p>Провести сортировку цветов в букете на основе уровня свежести.</p>
+</li>
+<li>
+<p>Найти цветок в букете, соответствующий заданному диапазону длин стеблей.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_6">Тестовое задание 6</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Создать простое веб-приложение, функционал которого включает следующее:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Начальная страница</p>
+</li>
+<li>
+<p>Регистрация</p>
+</li>
+<li>
+<p>Авторизация</p>
+</li>
+<li>
+<p>Главная страница</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Сценарий</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Пользователь попадает на начальную страницу, на которой есть два поля для ввода текста (E-mail и Пароль) и две кнопки (Войти и Регистрация).</p>
+</li>
+<li>
+<p>Введя e-mail и пароль, и нажав на кнопку "Войти" отправляется запрос на сервер, где происходит проверка на наличие аккаунта пользователя в системе.</p>
+</li>
+<li>
+<p>Если данные корректны, происходит переход на Главную страницу, на которой указаны e-mail и статус аккаунта (Подтвержден/Не подтвержден) и есть кнопка "Выход".</p>
+</li>
+<li>
+<p>Введя e-mail и пароль, и нажав на кнопку "Регистрация" отправляется запрос на регистрацию. Если аккаунта пользователя нет в системе, то создается новый аккаунт, на указанную почту отправляется письмо, в тексте которого будет ссылка для подтверждения, а пользователь попадает на Главную страницу.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Условия</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Использовать фреймворк Play <a href="https://www.playframework.com/" class="bare">https://www.playframework.com/</a></p>
+</li>
+<li>
+<p>Не использовать готовые решения</p>
+</li>
+<li>
+<p>Обработать ошибки</p>
+</li>
+<li>
+<p>Если возникают вопросы, не бояться спрашивать у других разработчиков</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_7">Тестовое задание 7</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>База резюме</strong></p>
+</div>
+<div class="paragraph">
+<p>Имеются следующие тестовые данные в виде резюме:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ФИО: Петров Петр Петрович
+Дата рождения: 12.12.1986
+Контакты: +375(29)123-45-67, http://github.com/petya, petrovich@gmail.com
+Пол: мужчина
+Технологии: Git, Spring Boot, HTML
+
+ФИО: Иванов Иван Иванович
+Дата рождения: 4.4.1997
+Контакты: +375(29)87-65-43, http://github.com/vanya, skype:ivanko
+Пол: мужчина
+Технологии: Git, JavaEE, Java Core
+
+ФИО: Морская Мария Васильевна
+Дата рождения: 07.11.1999
+Контакты: +375(29)999-99-99, https://www.linkedin.com/in/mariya/
+Пол: женщина
+Технологии: Maven, REST, Spring</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_первая_часть">Первая часть.</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Необходимо спроектировать базу данных и заполнить её тестовыми данными указанными выше.</p>
+</li>
+<li>
+<p>Тип базы данных - <strong>Oracle</strong> или <strong>PostgreSQL</strong>.</p>
+</li>
+<li>
+<p>Результатом этой части задания должен быть текстовый файл с SQL-инструкциями для создания и заполнения базы данных (<code>CREATE TABLE &#8230;&#8203;</code>, <code>INSERT &#8230;&#8203;</code> вот это всё).</p>
+</li>
+<li>
+<p>Выполняя это задание важно помнить про нормализацию баз данных.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_вторая_часть">Вторая часть.</h3>
+<div class="paragraph">
+<p>Необходимо создать <strong>Maven</strong>-проект (<strong>.jar</strong>), в которой описать <strong>JPA</strong>-сущности (<code>@Entity</code>) для таблиц, созданных в первом задании. А также набор классов, который помогал бы строить простые SQL-запросы. Фактически, механизм должен давать нам возможность получать данные из БД без знания <strong>SQL</strong>. Что-то вроде собственной реализации <strong>Criteria API</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Механизм должен предоставлять возможность указать, что мы хотим получить (например объекты класса «Резюме») а так же критерии отбора (например «имя» равно «Петр» и «фамилия» равна «Петров»).</p>
+</div>
+<div class="paragraph">
+<p>Минимальные требования к реализации:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ваш класс должен уметь отдельно возвращать строку запроса и отдельно значения параметров запроса.</p>
+</li>
+<li>
+<p>Для построения параметров запроса должен использоваться паттерн «Строитель».</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="n">exp</span><span class="o">.</span><span class="na">equal</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Петр"</span><span class="o">).</span><span class="na">and</span><span class="o">().</span><span class="na">equal</span><span class="o">(</span><span class="s">"surname"</span><span class="o">,</span> <span class="s">"Петров"</span><span class="o">).</span><span class="na">and</span><span class="o">().</span><span class="na">equal</span><span class="o">(</span><span class="s">"patronymic"</span><span class="o">,</span> <span class="s">"Петрович"</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>генерироваться должен SQL-запрос, но нужно предусмотреть возможность, чтобы когда-нибудь в будущем кто-то другой смог бы добавить реализацию, которая будет генерировать JPQL или HQL и при этом не пришлось бы переписывать ваши классы.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Также в составе проекта должно быть два теста:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Составление (при помощи механизма описанного выше) и выполнение запроса, который бы выбрал все резюме, в которых фамилия равна «Морская», имя = «Мария», отчество = «Васильевна» и как верный результат - получение третьего резюме из БД</p>
+</li>
+<li>
+<p>Составление (при помощи механизма описанного выше) и выполнение запроса, который бы выбрал все резюме, в которых фамилия заканчивается на «ов» или пол – женский и получение всех трёх резюме из бд.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Глобальная задача – сделать механизм как можно более удобным для использования. С одной стороны, в условиях ограниченного времени вам важно реализовать только тот функционал, который будет проверен тестами. С другой стороны вам нужно построить механизм так, чтобы его было удобно расширить новым функционалом (например в будущем добавить in, between, больше и меньше и так далее).</p>
+</div>
+<div class="paragraph">
+<p>Исходя из предыдущего абзаца важно отметить, что оцениваться будет не объем функционала, а его качество и удобство использования.</p>
+</div>
+<div class="paragraph">
+<p>Важно постараться сделать механизм максимально независимым. Например, сделать так, чтобы если имя таблицы поменяется, нам не пришлось бы вносить изменения в тест. Только в Entity.</p>
+</div>
+<div class="paragraph">
+<p>Так же важно постараться сделать механизм гибким. Статические методы и классы-утилиты сильно снижают гибкость (например, мы не можем их переопределять при наследовании), а связи объектов только при помощи интерфейсов, наоборот, повышают и гибкость и независимость.</p>
+</div>
+<div class="paragraph">
+<p>Все эти моменты (за исключением минимальных требований) не являются обязательными, но могут помочь вам получить преимущество.</p>
+</div>
+<div class="paragraph">
+<p>Результатом выполнения этой части задания должен быть архив с исходными кодами проекта (каталог <code>src</code> и <code>pom.xml</code>).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_8">Тестовое задание 8</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Создайте мини веб приложение <strong>Monitor Sensors</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Приложение состоит из трех форм.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../assets/img/process/interview/tasks/form-1.png" alt="form 1">
+</div>
+<div class="title">Форма логина</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../assets/img/process/interview/tasks/form-2.png" alt="form 2">
+</div>
+<div class="title">Форма Таблица датчиков</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../assets/img/process/interview/tasks/form-3.png" alt="form 3">
+</div>
+<div class="title">Форма добавление/редактирование датчиков</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Приложение должно состоять из серверной и клиентской части.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Для разработки серверной части используйте: Java, Spring MVC, Spring Security</p>
+</div>
+<div class="paragraph">
+<p>Для клиентской: Angular 2+</p>
+</div>
+<div class="paragraph">
+<p>В системе все данные хранятся в БД (можно выбрать любую реляционную БД).</p>
+</div>
+<div class="paragraph">
+<p>В качестве ORM предпочтительно использовать – Hibernate</p>
+</div>
+<div class="paragraph">
+<p>Web Server – Apache Tomcat</p>
+</div>
+<div class="sect2">
+<h3 id="_описание">Описание</h3>
+<div class="paragraph">
+<p>В системе 2 предустановленных пользователя:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>admin c ролью Administrator</p>
+</li>
+<li>
+<p>user c ролью Viewer</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Для аутентификации и авторизации используются Spring Security.</p>
+</li>
+<li>
+<p>Пользователю с ролью Administrator разрешен доступ ко всем формам и разрешены все действиям в приложении.</p>
+</li>
+<li>
+<p>Пользователю с ролью Viewer разрешен только доступ к формам Логин, Таблица датчиков. На форме Таблица датчиков разрешены действия, связанные только с просмотром данных, без права добавления, удаления либо изменения записей.</p>
+</li>
+<li>
+<p>Для не авторизированных пользователей доступна только форма Логин</p>
+</li>
+<li>
+<p>После ввода логина и пароля, авторизированного пользователя система перенаправляет на форму Таблица датчиков.</p>
+</li>
+<li>
+<p>Если пользователь не прошел авторизацию, то перенаправления не происходит, а пользователю выдается сообщение об ошибке авторизации.</p>
+</li>
+<li>
+<p>Данные для таблицы берутся посредством запросов с серверной части (данные хранятся в БД).</p>
+</li>
+<li>
+<p>Пользователю с ролью Viewer и Administrator разрешено просматривать данные таблицы, использовать пейджинг (количество записей на странице 4), использовать поиск по данным.</p>
+</li>
+<li>
+<p>Поиск по данным представляет из себя поле ввода текста и кнопку поиска. Поиск происходит по частичному совпадению введенного текста в любом поле записи (включая поля, не показанные в таблице – description).</p>
+</li>
+<li>
+<p>После окончания поиска в таблице остаются только подходящие записи.</p>
+</li>
+<li>
+<p>При наведении на имя (поле Name) датчика показывается hint с полным описанием датчика (поле description).</p>
+</li>
+<li>
+<p>Пользователю с ролью Administrator разрешены дополнительно действия -</p>
+<div class="ulist">
+<ul>
+<li>
+<p>добавление нового датчика (переход на форму 3)</p>
+</li>
+<li>
+<p>редактирование выделенного датчика (переход на форму 3)</p>
+</li>
+<li>
+<p>удаление выделенного датчика.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>По кнопке logout – пользователь выходит из системы и его перенаправляет на форму логин</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_форма_3_добавлениередактирование_датчиков">Форма 3. Добавление/редактирование датчиков</h3>
+<div class="paragraph">
+<p>Звездочкой отмечены обязательные поля:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong> – текстовое поле. Обязательное. Валидация – не пустое поле и количество символов не превышает 30.</p>
+</li>
+<li>
+<p><strong>Model</strong> – текстовое поле. Обязательное. Валидация – не пустое поле и количество символов не превышает 15.</p>
+</li>
+<li>
+<p><strong>Range from</strong>, <strong>to</strong> – числовое поле. Диапазон значений датчика, в котором предусмотрена его работа. Валидация – при вводе двух значений, from должно быть меньше to. Целые числа.</p>
+</li>
+<li>
+<p><strong>Type</strong> – список выбора. Предустановленные данные, берутся из БД. Значения - <code>Pressure</code>, <code>Voltage</code>, <code>Temperature</code>, <code>Humidity</code>.</p>
+</li>
+<li>
+<p><strong>Unit</strong> – список выбора. Предустановленные данные, берутся из БД. Значения - <code>bar</code>, <code>voltage</code>, <code>°С</code>, <code>%</code>.</p>
+</li>
+<li>
+<p><strong>Location</strong> – местоположение сенсора. Текстовое поле. Валидация не больше 40 символов.</p>
+</li>
+<li>
+<p><strong>Description</strong> – описание датчика. Валидация не больше 200 символов.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>Save</code> – сохраняет или изменяет сенсор.
+<code>Cancel</code> отменяет ввод и закрывает форму перенаправляя на форму Таблица датчиков.</p>
+</div>
+<div class="paragraph">
+<p>После выполнения задания нужно предоставить:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Readme файл с описанием шагов, которые нужно сделать для запуска системы.</p>
+</li>
+<li>
+<p>SQL скрипты для создания начальной структуры БД. Скрипты для инициализации данных</p>
+</li>
+<li>
+<p>Исходные коды, выложенные на Git.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_9">Тестовое задание 9</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Documents management system</strong></p>
+</div>
+<div class="paragraph">
+<p>Необходимо реализовать пример системы для работы с документами (<strong>document
+management system</strong>)</p>
+</div>
+<div class="sect2">
+<h3 id="_страницы">Страницы</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Список документов. Необходимо наличие фильтрации по критериям, сортировки,
+постраничного просмотра (Pagination).
+Критерии: дата создания, с кем заключен контракт, кто заключал контракт, срок исполнения контракта
+Пагинация средствами серверной части, а не только фронта.</p>
+</li>
+<li>
+<p>Детальный просмотр документа (отдельный скрин).</p>
+</li>
+<li>
+<p>Для пользователя добавление/редактирование документа (отдельный скрин).
+Необходимо наличие валидации вводимых данных - кнопка сабмита дизейблится, а поля ввода подсвечиваются красным итд.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_технологии">Технологии</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Angular последней версии (Single Page Application) или HTML/JS/CSS</p>
+</li>
+<li>
+<p>Серверная часть - Java 8, Spring MVC, Swagger, Spring Data, H2 (MySQL), Gradle, Tomcat.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Визуальную часть делать можно простой, без наворотов (можно сделать на базе bootstrap).</p>
+</div>
+<div class="paragraph">
+<p>Архитектура - 3 уровневая с разделением по слоям - Controller, Service, Repository. Общие вещи не дублировать, а делать через наследование от базовых классов (по возможности использовать generics).</p>
+</div>
+<div class="paragraph">
+<p>Объект "Документ" из себя представляет описание документа - можно добавить произвольных атрибутов - дата создания, статус, автор документа, файл документа (файл любого формата) и тд.</p>
+</div>
+<div class="paragraph">
+<p>Можно добавить по своему усмотрению:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Авторизация и 2 вида пользователей: администратор и простой пользователь.</p>
+</li>
+<li>
+<p>Админ видит все доки и всех пользователей</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>В проект добавить файл readme с краткой инструкцией по запуску приложения. Структуру БД создавать с помощью скриптов.</p>
+</div>
+<div class="paragraph">
+<p>Проект должен запускаться из командной строки. Независимо от операционной системы компьютера (Linux, Windows)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_10">Тестовое задание 10</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Payment cards</strong></p>
+</div>
+<div class="sect2">
+<h3 id="_технологии_2">Технологии</h3>
+<div class="paragraph">
+<p>Java 11, Spring Boot, Spring Data, MySQL, Swagger UI</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_условие">Условие</h3>
+<div class="paragraph">
+<p>Дано:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Клиент</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>ФИО</p>
+</li>
+<li>
+<p>Номер телефона</p>
+</li>
+<li>
+<p>Email</p>
+</li>
+<li>
+<p>Статус</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Платежная карта</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Номер</p>
+</li>
+<li>
+<p>Валюта</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>BYN</p>
+</li>
+<li>
+<p>EUR</p>
+</li>
+<li>
+<p>USD</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Тип</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Classic</p>
+</li>
+<li>
+<p>Gold</p>
+</li>
+<li>
+<p>Platinum</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Необходимо реализовать REST сервис, который имеет:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Метод заведения клиента в системе.</p>
+</li>
+<li>
+<p>Метод оформления карты и привязки к определенному клиенту (на основании выбранного типа карты, клиенту присваивается соответствующий статус: <code>Classic</code> – <code>0</code>, <code>Gold</code> – <code>1</code>, <code>Platinum</code> – <code>2</code>).</p>
+</li>
+<li>
+<p>Метод, который возвращает постранично список номеров телефонов в зависимости от указанных параметров (количество записей, номер страницы, тип карты, валюта).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_требования_2">Требования</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Результат выполнения задания размещается на сервисе GitHub, ссылка на репозиторий отправляется рекрутеру для проверки задания.</p>
+</li>
+<li>
+<p>Выполнять задание необходимо самостоятельно, без уточнения дополнительных деталей (как понимаем, так и делаем).</p>
+</li>
+<li>
+<p>Нельзя использовать связи Hibernate (one to one, one to many, many to many).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_будет_плюсом">Будет плюсом</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Организовать безопасный доступ к методам с помощью Spring Security (JWT, Basic Auth).</p>
+</li>
+<li>
+<p>Покрытие методов тестами.</p>
+</li>
+<li>
+<p>Для всех методов сделать описание для Swagger c помощью аннотаций.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_11">Тестовое задание 11</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Personnel Management System</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="_technologies_to_use">Technologies to use</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Java 8 or 11</p>
+</li>
+<li>
+<p>Spring Boot</p>
+</li>
+<li>
+<p>Spring Data JPA</p>
+</li>
+<li>
+<p>PostgreSQL or MongoDB</p>
+</li>
+<li>
+<p>Maven</p>
+</li>
+<li>
+<p>Swagger and Swagger UI</p>
+</li>
+<li>
+<p>Git</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_requirements">Requirements</h3>
+<div class="paragraph">
+<p>Application must have REST API to manage departments and employees.
+Departments and employees data must be stored in a database. All endpoints must be
+visible in Swagger UI. Source code of application must be versioned using Git.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_department_has">Department has</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Description</p>
+</li>
+<li>
+<p>Phone number</p>
+</li>
+<li>
+<p>Date of formation</p>
+</li>
+<li>
+<p>One or many employees</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_employee_has">Employee has</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Full name</p>
+</li>
+<li>
+<p>Date of Birth</p>
+</li>
+<li>
+<p>Phone number</p>
+</li>
+<li>
+<p>Email address</p>
+</li>
+<li>
+<p>Position</p>
+</li>
+<li>
+<p>Date of employment</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_endpoints_to_implement">Endpoints to implement</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Get all departments with their users</p>
+</li>
+<li>
+<p>Get one department</p>
+</li>
+<li>
+<p>Create department</p>
+</li>
+<li>
+<p>Delete department</p>
+</li>
+<li>
+<p>Get one employee</p>
+</li>
+<li>
+<p>Create employee</p>
+</li>
+<li>
+<p>Delete employee</p>
+</li>
+<li>
+<p>Add employee to department</p>
+</li>
+<li>
+<p>Remove employee from department</p>
+</li>
+<li>
+<p>Get all employees which do not belong to any department</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_12">Тестовое задание 12</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create your personal solution</p>
+</li>
+<li>
+<p>Focus on breadth rather than depth when cover expected output (Expected artifacts) points.</p>
+</li>
+<li>
+<p>Do you best to figure out industry best practices and utilize them properly.</p>
+</li>
+<li>
+<p>You have a time limit - 7 days.</p>
+</li>
+<li>
+<p>Tech challenge is your primary focus.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_problem_statement">Problem statement</h3>
+<div class="paragraph">
+<p>Implements a web crawler that traverses website following predefined link depth (8 by default) and max visited pages limit (10000 by default). The web crawler starts from a predefined URL (seed) and follows links found to dive deeper. The main purpose of this crawler to detect the presence of some terms on the page and collect statistics, e.g.</p>
+</div>
+<div class="paragraph">
+<p><strong>Seed</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>https://en.wikipedia.org/wiki/Elon_Musk</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Terms</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Tesla, Musk, Gigafactory, Elon Mask</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Output</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>https://en.wikipedia.org/wiki/Elon_Musk 208 641 9 0
+acbd.com/page2.html 8 4 0 5 17
+qwerty.com/page1.html 3 2 0 2 7
+anotherseti.com/page3.html 0 1 0 1 2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Clarification</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>https://en.wikipedia.org/wiki/Elon_Musk 208 641 9 0 858
+    Number are
+        Tesla – 208 hits
+        Musk – 641 hits
+        Gigafactory – 9 hits
+        Elon Mask – 0 hits
+        Total – 858 hits</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All stat data should be serialized into CSV file (no predefined sort).</p>
+</li>
+<li>
+<p>Top 10 pages by total hits must be printed to separate CSV file and console (sorted by total hits).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Expected artifacts:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Source code provided through GitHub project:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Focus on Java 11 LTS</p>
+</li>
+<li>
+<p>Take into account project supportability</p>
+</li>
+<li>
+<p>Focus on documentation</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Env setup can be easily repeated:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Add configuration and startup script</p>
+</li>
+<li>
+<p>One button setup &amp; configuration</p>
+</li>
+<li>
+<p>Prepare sample data if necessary</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Code follows industry best practices</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Matches predefined code style – you can setup any</p>
+</li>
+<li>
+<p>Code coverage &gt;40%</p>
+</li>
+<li>
+<p>contains tests of several levels – unit, integration, ect.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Provide a google drive link to your Demo session (up to 10m)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>record a video proof that the app works</p>
+</li>
+<li>
+<p>cover both the happy path and failure/edge-case scenario</p>
+</li>
+<li>
+<p>Take a code tour and clarify selected solutions</p>
+</li>
+<li>
+<p>Prepare it in English</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_13">Тестовое задание 13</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Реализовать REST API согласно Open API Specification:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nl">"openapi"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"3.0.1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"info"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"reposService"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0.1-SNAPSHOT"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"servers"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"/reposService"</span><span class="w">
+  </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"paths"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"/api/v1/repository/{id}/children"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"get"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"operationId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"getChildren"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"parameters"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"in"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"required"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"schema"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"format"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"int32"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"responses"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"default"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"default response"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"content"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"application/json"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"schema"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"items"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"$ref"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"#/components/schemas/ReposItem"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"/api/v1/repository/{id}"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"get"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"operationId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"getItem"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"parameters"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"in"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"required"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"schema"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"format"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"int32"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"responses"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"default"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"default response"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"content"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"application/json"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"schema"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"$ref"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"#/components/schemas/ReposItem"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"/api/v1/repository/root"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"get"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"operationId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"responses"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"default"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"default response"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"content"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"application/json"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"schema"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"$ref"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"#/components/schemas/ReposItem"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"components"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"schemas"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ReposItem"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"object"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"properties"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"format"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"int32"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"content"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"folder"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"parent"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"format"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"int32"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Сервис возвращает некий репозитарий, хранящий древовидную структуру из элементов.
+Каждый элемент – набор полей</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Integer</span> <span class="n">id</span><span class="o">;</span> <span class="c1">// идентификатор элемента</span>
+<span class="nc">String</span> <span class="n">name</span><span class="o">;</span> <span class="c1">// наименование элемента</span>
+<span class="nc">String</span> <span class="n">content</span><span class="o">;</span> <span class="c1">// содержимое</span>
+<span class="kt">boolean</span> <span class="n">folder</span><span class="o">;</span> <span class="c1">// признак – является ли элемент папкой (может содержать другие элементы)</span>
+<span class="nc">Integer</span> <span class="n">parent</span><span class="o">;</span> <span class="c1">// ссылка на родительский элемент</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Приложение должно иметь следующую структуру:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../assets/img/process/interview/tasks/layout-1.png" alt="layout 1">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Дерево репозитария</p>
+</li>
+<li>
+<p>Документ</p>
+</li>
+<li>
+<p>Закладки</p>
+<div class="ulist">
+<ul>
+<li>
+<p>После запуска приложение должно отобразить дерево в зоне 1.</p>
+</li>
+<li>
+<p>При двойном клике на элементе с признаком folder==false должна появиться новая закладка, и в зоне 2 отобразится содержимое поля content и кнопку, при нажатии на которую открывается диалог с содержимым поля content. Функционал, отображающий область 2 и нажатие кнопки, должен быть реализован в виде отдельного бина.</p>
+</li>
+<li>
+<p>При переходе по закладкам должны отображаться соответствующие данные</p>
+</li>
+<li>
+<p>Интерфейс должен быть реализован на JSF с использованием библиотеки primrfaces.</p>
+</li>
+<li>
+<p>Проект должен собираться с помощью maven.</p>
+</li>
+<li>
+<p>Поле content представляет собой xml, содержащий объект o1 с полями f1 и f2 или объект o2 с полями f3 и f4. Для каждого вида объекта должна быть своя форма с соответствующими полями</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_14">Тестовое задание 14</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Разработать <strong>систему управления пользователями</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Система должна представлять собой WEB-приложение, которое предоставляет интерфейс
+управления пользователями.</p>
+</div>
+<div class="paragraph">
+<p>Система должна поддерживать следующую ролевую модель</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Роль</th>
+<th class="tableblock halign-left valign-top">Доступные действия</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><strong>USER</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Авторизация (Login)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Просматривать список пользователей (List)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Просматривать детали любого пользователя (View)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Выход (Logout)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock"><strong>ADMIN</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Авторизация (Login)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Просматривать список пользователей (List)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Просматривать детали любого пользователя (View)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Создание нового пользователя (New/Edit)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Редактирование существующего пользователя (New/Edit)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lock/Unlock пользователя (Lock/Unlock)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Выход (Logout)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Основная сущность в системе – <code>UserAccount</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Length</th>
+<th class="tableblock halign-left valign-top">Validation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Username</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Имя пользователя для авторизации.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3-16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Только латинские символы; Должна быть уникальным</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Пароль пользователя</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3-16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Только латинские символы и цифры. Минимум один символ; Минимум одна цифра;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>First Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Имя.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1-16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Только латинские символы</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Last Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Фамилия</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1-16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Только латинские символы</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Role</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Роль пользователя. USER or ADMIN. На UI должно быть dropdown.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Состояние пользователя. ACTIVE or INACTIVE. На UI должно быть dropdown.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Created At</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата заведения пользователя. Проставляется автоматически при записи в БД.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Пароли в БД хранить в хешированным виде с применением алгоритма bcrypt.</p>
+</div>
+<div class="paragraph">
+<p>В системе должны быть следующие страницы:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Страница</th>
+<th class="tableblock halign-left valign-top">URL</th>
+<th class="tableblock halign-left valign-top">Описание</th>
+<th class="tableblock halign-left valign-top">Доступные действия (с учетом роли)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Login</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/login</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Авторизация в системе</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Вход в систему; Если состояние пользователя INACTIVE, то вход невозможен; Если логин/пароль не верен, то вход невозможен;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/user</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Список пользователей</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Опционально: 1. Фильтрация списка по Username; 2. Фильтрация списка по Role; 3. Пагинация</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>View</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/user/{id}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Просмотр деталей пользователя</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lock/Unlock: должно приводить к смене состояния ACTIVE/INACTIVE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/user/new</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Создание нового пользователя</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">При наличии валидационных ошибок должно показываться соответствующее сообщение на UI.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Edit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/user/{id}/edit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Редактирование пользователя</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">При наличии валидационных ошибок должно показываться соответствующее сообщение на UI.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Предпочтительный стэк технологий:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Java 8+</p>
+</li>
+<li>
+<p>Spring (Spring Boot, Spring MVC, Spring Data, Spring Security)</p>
+</li>
+<li>
+<p>PostgreSQL</p>
+</li>
+<li>
+<p>Html Template Engine - любой (Thymeleaf, Freemarker, etc.)</p>
+</li>
+<li>
+<p>Gradle</p>
+</li>
+<li>
+<p>Опционально: сборка docker-образов</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Можно использовать сторонние библиотеки</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_тестовое_задание_15">Тестовое задание 15</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_описание_2">Описание</h3>
+<div class="paragraph">
+<p>Существует некоторый бизнес-процесс – пополнение счета консультанта с помощью транзакций с
+банковской карты в рублях.</p>
+</div>
+<div class="paragraph">
+<p>Требуется реализовать сервисы 2 микросервиса.</p>
+</div>
+<div class="sect3">
+<h4 id="_микросервис_payment">Микросервис <code>Payment</code></h4>
+<div class="paragraph">
+<p>Должен иметь endpoint на получение <code>{host}/pay</code>. <code>POST</code> запроса с телом json в формате:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">аккаунта</span><span class="w"> </span><span class="err">консультанта</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.2</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Сумма</span><span class="w"> </span><span class="err">пополнения</span><span class="w"> </span><span class="err">в</span><span class="w"> </span><span class="err">рублях</span><span class="w">
+</span><span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Endpoint сервиса должен получать, обрабатывать этот json и отправлять в некоторую очередь
+<code>Queue</code> таких транзакций.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_микросервис_backend">Микросервис <code>Backend</code></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Должен читать очередь <code>Queue</code></p>
+</li>
+<li>
+<p>Сохранять транзакции из очереди <code>Queue</code> в базу данных Postgres <code>payments</code></p>
+</li>
+<li>
+<p>Каждые 5 минут записывать в файл <code>transaction.csv</code> в локальной папке транзакции в
+формате</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="csv">id;account_id;amount;datetime_transaction
+1;1;100.2;2022-07-28 07:00:00</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_задание">Задание</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Спроектировать БД Postgres <code>payments</code></p>
+</li>
+<li>
+<p>Создать сервис <code>Payment</code> реализовать эндпоинт для приёма запросов</p>
+</li>
+<li>
+<p>Реализовать очередь обмена сообщениями между сервисами</p>
+</li>
+<li>
+<p>Наполнить БД Postgres <code>payments</code> транзакциями из запросов</p>
+</li>
+<li>
+<p>Наполнить файл <code>transaction.csv</code> транзакциями из запросов</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_технологии_3">Технологии</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Java 11+ / Kotlin 1.3+</p>
+</li>
+<li>
+<p>Spring Boot 2+</p>
+</li>
+<li>
+<p>Postgres 9.6+</p>
+</li>
+<li>
+<p>Любой брокер очередей</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-08-03 11:47:25 UTC
+</div>
+</div>
+</body>
+</html>

@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="Community and Dmitry Rakovets">
-<title>Interview</title>
+<title>Тестовое задание 1</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,114 +436,99 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>Interview</h1>
-<div class="details">
-<span id="author" class="author">Community and Dmitry Rakovets</span><br>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_тестовые_задания">1. Тестовые задания</a></li>
-<li><a href="#_практические_задачи">2. Практические задачи</a></li>
-<li><a href="#_вопросы">3. Вопросы</a></li>
-<li><a href="#_вопросы_с_ответами">4. Вопросы с ответами</a></li>
-</ul>
-</div>
+<h1>Тестовое задание 1</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-Этапы интервью очень сильно разнятся от компании к компании. Иногда техническое интервью может проходить дважды, у самой компании и у клиента этой компании.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Дается проект сгенерирован на <a href="https://start.spring.io/" class="bare">https://start.spring.io/</a> с заданной конфигурацией.</p>
 </div>
 <div class="paragraph">
-<p>Возможные <strong>этапы интервью</strong>:</p>
+<p><strong>Требуется</strong> создать БД со следующими таблицами:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Предварительный отбор с помощью тестового задания</strong></p>
+<p>пользователи (id, email, пароль, дата создания);</p>
 </li>
 <li>
-<p><strong>Предварительный отбор с помощью HR-специалиста</strong></p>
+<p>клиенты (id, имя, дата создания);</p>
 </li>
 <li>
-<p><strong>Интервью с техническим специалистом</strong>. Каждый специалист выбирает свой подход к такому интервью. Наиболее частые подходы</p>
+<p>заказы (id, id клиента, стоимость, дата создания);</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Написать API, которое под <code>/data/</code> выдает данные из таблицы заказов и клиентов (в формате JSON), а под <code>/update/</code> обновляет данные в таблицах (например обновление имени клиента или смена <code>id</code> клиента, указанного в заказе).  Данные операции должны допускаться только авторизованным пользователям. Пользователь считается авторизированным, если он делает HTTP запрос:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Вопрос-ответ</strong></p>
+<p>с Bearer токеном (указан на сервере)</p>
 </li>
 <li>
-<p><strong>Решение алгоритмических задач</strong></p>
-</li>
-<li>
-<p><strong>Разговор о вашем опыте</strong> (обычно с уточняющими вопросами)</p>
-</li>
-<li>
-<p><strong>Проверка на умение думать</strong>: ставится задача, которую требуется решить, кандидат пытается ее решить, детально описывая что он делает (в процессе  обычно можно задавать уточняющие вопросы)</p>
+<p>с JWT токеном (назначается клиенту сервером на основе логина+пароля)</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Способы авторизации зависят от пути: возможна как и Bearer авторизация, так JWT авторизация для запросов под <code>/update/</code>, <code>/data/</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ограничения</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Для авторизации использовать модуль <strong>spring security</strong>.</p>
 </li>
 <li>
-<p><strong>FIT-интервью</strong> в команду.</p>
+<p>Использовать либо <strong>JDBC</strong>, либо <strong>JPA</strong> для запросов (оба содержатся в зависимостях проекта)</p>
+</li>
+<li>
+<p>Выход из системы (logout) необходим</p>
+</li>
+<li>
+<p>Версия 8 Джавы</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_тестовые_задания">1. Тестовые задания</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p><strong>Задания</strong>, в большинстве своем, представляют собой примеры, которые предлагают различные компании в качестве <strong>практического тестового задания</strong> для того, что бы отобрать специалистов на работу, стажировку или обучение</p>
+<p><strong>Допускается</strong>:</p>
 </div>
-<div class="paragraph">
-<p><a href="./test-tasks">Тестовые задания</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_практические_задачи">2. Практические задачи</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Задачи</strong>, которые предлагают различные компании в качестве <strong>практических задач</strong> в процессе проведения технического интервью (т.е. вы их решаете и при этом шарите свой экран).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Менять архитектуру проекта любым способом</p>
+</li>
+<li>
+<p>Добавлять зависимости в проект</p>
+</li>
+<li>
+<p>Создавать дополнительные поля в таблицы БД</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p><a href="tasks">Практические задачи</a></p>
+<p><strong>Приветствуется</strong>:</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы">3. Вопросы</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Вопросы</strong>, которые задают специалисты на техническом интервью.</p>
-</div>
-<div class="paragraph">
-<p><a href="./questions/">Вопросы</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы_с_ответами">4. Вопросы с ответами</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="./questions-answers/">Вопросы</a></p>
-</div>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Логирование через logback</p>
+</li>
+<li>
+<p>Аргументированный подход по созданию архитектуры проекта</p>
+</li>
+<li>
+<p>Дополнительные запросы и функционал</p>
+</li>
+<li>
+<p>Графический интерфейс (VUE.JS, JFX)</p>
+</li>
+</ul>
 </div>
 </div>
 <div id="footer">

@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="Community and Dmitry Rakovets">
-<title>Interview</title>
+<title>Тестовое задание 14</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,114 +436,214 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>Interview</h1>
-<div class="details">
-<span id="author" class="author">Community and Dmitry Rakovets</span><br>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_тестовые_задания">1. Тестовые задания</a></li>
-<li><a href="#_практические_задачи">2. Практические задачи</a></li>
-<li><a href="#_вопросы">3. Вопросы</a></li>
-<li><a href="#_вопросы_с_ответами">4. Вопросы с ответами</a></li>
-</ul>
-</div>
+<h1>Тестовое задание 14</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="admonitionblock warning">
-<table>
+<div class="paragraph">
+<p>Разработать <strong>систему управления пользователями</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Система должна представлять собой WEB-приложение, которое предоставляет интерфейс
+управления пользователями.</p>
+</div>
+<div class="paragraph">
+<p>Система должна поддерживать следующую ролевую модель</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-Этапы интервью очень сильно разнятся от компании к компании. Иногда техническое интервью может проходить дважды, у самой компании и у клиента этой компании.
-</td>
+<th class="tableblock halign-left valign-top">Роль</th>
+<th class="tableblock halign-left valign-top">Доступные действия</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><strong>USER</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Авторизация (Login)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Просматривать список пользователей (List)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Просматривать детали любого пользователя (View)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Выход (Logout)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock"><strong>ADMIN</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Авторизация (Login)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Просматривать список пользователей (List)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Просматривать детали любого пользователя (View)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Создание нового пользователя (New/Edit)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Редактирование существующего пользователя (New/Edit)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lock/Unlock пользователя (Lock/Unlock)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Выход (Logout)</p></td>
+</tr>
+</tbody>
 </table>
+<div class="paragraph">
+<p>Основная сущность в системе – <code>UserAccount</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Length</th>
+<th class="tableblock halign-left valign-top">Validation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Username</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Имя пользователя для авторизации.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3-16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Только латинские символы; Должна быть уникальным</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Пароль пользователя</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3-16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Только латинские символы и цифры. Минимум один символ; Минимум одна цифра;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>First Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Имя.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1-16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Только латинские символы</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Last Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Фамилия</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1-16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Только латинские символы</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Role</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Роль пользователя. USER or ADMIN. На UI должно быть dropdown.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Состояние пользователя. ACTIVE or INACTIVE. На UI должно быть dropdown.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Created At</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Дата заведения пользователя. Проставляется автоматически при записи в БД.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Пароли в БД хранить в хешированным виде с применением алгоритма bcrypt.</p>
 </div>
 <div class="paragraph">
-<p>Возможные <strong>этапы интервью</strong>:</p>
+<p>В системе должны быть следующие страницы:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Страница</th>
+<th class="tableblock halign-left valign-top">URL</th>
+<th class="tableblock halign-left valign-top">Описание</th>
+<th class="tableblock halign-left valign-top">Доступные действия (с учетом роли)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Login</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/login</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Авторизация в системе</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Вход в систему; Если состояние пользователя INACTIVE, то вход невозможен; Если логин/пароль не верен, то вход невозможен;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/user</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Список пользователей</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Опционально: 1. Фильтрация списка по Username; 2. Фильтрация списка по Role; 3. Пагинация</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>View</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/user/{id}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Просмотр деталей пользователя</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lock/Unlock: должно приводить к смене состояния ACTIVE/INACTIVE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/user/new</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Создание нового пользователя</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">При наличии валидационных ошибок должно показываться соответствующее сообщение на UI.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Edit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/user/{id}/edit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Редактирование пользователя</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">При наличии валидационных ошибок должно показываться соответствующее сообщение на UI.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Предпочтительный стэк технологий:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Предварительный отбор с помощью тестового задания</strong></p>
+<p>Java 8+</p>
 </li>
 <li>
-<p><strong>Предварительный отбор с помощью HR-специалиста</strong></p>
+<p>Spring (Spring Boot, Spring MVC, Spring Data, Spring Security)</p>
 </li>
 <li>
-<p><strong>Интервью с техническим специалистом</strong>. Каждый специалист выбирает свой подход к такому интервью. Наиболее частые подходы</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Вопрос-ответ</strong></p>
+<p>PostgreSQL</p>
 </li>
 <li>
-<p><strong>Решение алгоритмических задач</strong></p>
+<p>Html Template Engine - любой (Thymeleaf, Freemarker, etc.)</p>
 </li>
 <li>
-<p><strong>Разговор о вашем опыте</strong> (обычно с уточняющими вопросами)</p>
+<p>Gradle</p>
 </li>
 <li>
-<p><strong>Проверка на умение думать</strong>: ставится задача, которую требуется решить, кандидат пытается ее решить, детально описывая что он делает (в процессе  обычно можно задавать уточняющие вопросы)</p>
+<p>Опционально: сборка docker-образов</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p><strong>FIT-интервью</strong> в команду.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_тестовые_задания">1. Тестовые задания</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p><strong>Задания</strong>, в большинстве своем, представляют собой примеры, которые предлагают различные компании в качестве <strong>практического тестового задания</strong> для того, что бы отобрать специалистов на работу, стажировку или обучение</p>
-</div>
-<div class="paragraph">
-<p><a href="./test-tasks">Тестовые задания</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_практические_задачи">2. Практические задачи</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Задачи</strong>, которые предлагают различные компании в качестве <strong>практических задач</strong> в процессе проведения технического интервью (т.е. вы их решаете и при этом шарите свой экран).</p>
-</div>
-<div class="paragraph">
-<p><a href="tasks">Практические задачи</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы">3. Вопросы</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Вопросы</strong>, которые задают специалисты на техническом интервью.</p>
-</div>
-<div class="paragraph">
-<p><a href="./questions/">Вопросы</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы_с_ответами">4. Вопросы с ответами</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="./questions-answers/">Вопросы</a></p>
-</div>
-</div>
+<p>Можно использовать сторонние библиотеки</p>
 </div>
 </div>
 <div id="footer">

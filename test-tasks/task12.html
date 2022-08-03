@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="Community and Dmitry Rakovets">
-<title>Interview</title>
+<title>Тестовое задание 12</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,112 +436,164 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>Interview</h1>
-<div class="details">
-<span id="author" class="author">Community and Dmitry Rakovets</span><br>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_тестовые_задания">1. Тестовые задания</a></li>
-<li><a href="#_практические_задачи">2. Практические задачи</a></li>
-<li><a href="#_вопросы">3. Вопросы</a></li>
-<li><a href="#_вопросы_с_ответами">4. Вопросы с ответами</a></li>
-</ul>
-</div>
+<h1>Тестовое задание 12</h1>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-Этапы интервью очень сильно разнятся от компании к компании. Иногда техническое интервью может проходить дважды, у самой компании и у клиента этой компании.
-</td>
-</tr>
-</table>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create your personal solution</p>
+</li>
+<li>
+<p>Focus on breadth rather than depth when cover expected output (Expected artifacts) points.</p>
+</li>
+<li>
+<p>Do you best to figure out industry best practices and utilize them properly.</p>
+</li>
+<li>
+<p>You have a time limit - 7 days.</p>
+</li>
+<li>
+<p>Tech challenge is your primary focus.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_problem_statement">Problem statement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Implements a web crawler that traverses website following predefined link depth (8 by default) and max visited pages limit (10000 by default). The web crawler starts from a predefined URL (seed) and follows links found to dive deeper. The main purpose of this crawler to detect the presence of some terms on the page and collect statistics, e.g.</p>
 </div>
 <div class="paragraph">
-<p>Возможные <strong>этапы интервью</strong>:</p>
+<p><strong>Seed</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>https://en.wikipedia.org/wiki/Elon_Musk</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Terms</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Tesla, Musk, Gigafactory, Elon Mask</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Output</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>https://en.wikipedia.org/wiki/Elon_Musk 208 641 9 0
+acbd.com/page2.html 8 4 0 5 17
+qwerty.com/page1.html 3 2 0 2 7
+anotherseti.com/page3.html 0 1 0 1 2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Clarification</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>https://en.wikipedia.org/wiki/Elon_Musk 208 641 9 0 858
+    Number are
+        Tesla – 208 hits
+        Musk – 641 hits
+        Gigafactory – 9 hits
+        Elon Mask – 0 hits
+        Total – 858 hits</pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Предварительный отбор с помощью тестового задания</strong></p>
+<p>All stat data should be serialized into CSV file (no predefined sort).</p>
 </li>
 <li>
-<p><strong>Предварительный отбор с помощью HR-специалиста</strong></p>
+<p>Top 10 pages by total hits must be printed to separate CSV file and console (sorted by total hits).</p>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Expected artifacts:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><strong>Интервью с техническим специалистом</strong>. Каждый специалист выбирает свой подход к такому интервью. Наиболее частые подходы</p>
+<p>Source code provided through GitHub project:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Вопрос-ответ</strong></p>
+<p>Focus on Java 11 LTS</p>
 </li>
 <li>
-<p><strong>Решение алгоритмических задач</strong></p>
+<p>Take into account project supportability</p>
 </li>
 <li>
-<p><strong>Разговор о вашем опыте</strong> (обычно с уточняющими вопросами)</p>
-</li>
-<li>
-<p><strong>Проверка на умение думать</strong>: ставится задача, которую требуется решить, кандидат пытается ее решить, детально описывая что он делает (в процессе  обычно можно задавать уточняющие вопросы)</p>
+<p>Focus on documentation</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>FIT-интервью</strong> в команду.</p>
+<p>Env setup can be easily repeated:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Add configuration and startup script</p>
+</li>
+<li>
+<p>One button setup &amp; configuration</p>
+</li>
+<li>
+<p>Prepare sample data if necessary</p>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>Code follows industry best practices</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Matches predefined code style – you can setup any</p>
+</li>
+<li>
+<p>Code coverage &gt;40%</p>
+</li>
+<li>
+<p>contains tests of several levels – unit, integration, ect.</p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p>Provide a google drive link to your Demo session (up to 10m)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>record a video proof that the app works</p>
+</li>
+<li>
+<p>cover both the happy path and failure/edge-case scenario</p>
+</li>
+<li>
+<p>Take a code tour and clarify selected solutions</p>
+</li>
+<li>
+<p>Prepare it in English</p>
+</li>
+</ul>
 </div>
-<div class="sect1">
-<h2 id="_тестовые_задания">1. Тестовые задания</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Задания</strong>, в большинстве своем, представляют собой примеры, которые предлагают различные компании в качестве <strong>практического тестового задания</strong> для того, что бы отобрать специалистов на работу, стажировку или обучение</p>
-</div>
-<div class="paragraph">
-<p><a href="./test-tasks">Тестовые задания</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_практические_задачи">2. Практические задачи</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Задачи</strong>, которые предлагают различные компании в качестве <strong>практических задач</strong> в процессе проведения технического интервью (т.е. вы их решаете и при этом шарите свой экран).</p>
-</div>
-<div class="paragraph">
-<p><a href="tasks">Практические задачи</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы">3. Вопросы</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Вопросы</strong>, которые задают специалисты на техническом интервью.</p>
-</div>
-<div class="paragraph">
-<p><a href="./questions/">Вопросы</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы_с_ответами">4. Вопросы с ответами</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="./questions-answers/">Вопросы</a></p>
+</li>
+</ol>
 </div>
 </div>
 </div>

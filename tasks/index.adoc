@@ -1,0 +1,283 @@
+= Interview - Tasks
+:docinfo: shared
+:docinfodir: ../
+Community and Dmitry Rakovets
+:source-highlighter: rouge
+:toc: left
+:toclevels:
+:figure-caption!:
+
+NOTE: Задачи, которые предлагают различные компании в качестве практических задач в процессе проведения технического интервью (т.е. вы их решаете и при этом шарите свой экран).
+
+== Навигация
+
+* link:/[На главную]
+
+== Max value in Tree
+
+=== Описание
+
+* Создать собственное дерево
+* Найти в этом дереве наибольший элемент
+
+=== Решение
+
+[source,java]
+----
+class Node {
+    public Node left;
+    public Node right;
+    public int val;
+
+    public Node(int val) {
+        this(val, null, null);
+    }
+
+    public Node(int val, Node left, Node right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+----
+
+[source,java]
+----
+class Main {
+    public static void main(String[] args) {
+        Node tree = new Node(
+                5,
+                new Node(
+                        7,
+                        new Node(4),
+                        new Node(3)
+                ),
+                new Node(
+                        10,
+                        new Node(2),
+                        new Node(13)
+                )
+        );
+        System.out.println(max(tree));
+    }
+
+    public static int max(Node tree) {
+        int max = tree.val;
+        if (tree.left != null) {
+            int leftMax = max(tree.left);
+            if (leftMax > max) {
+                max = leftMax;
+            }
+        }
+        if (tree.right != null) {
+            int rightMax = max(tree.right);
+            if (rightMax > max) {
+                max = rightMax;
+            }
+        }
+        return max;
+    }
+}
+----
+
+== Conway's Game of Life
+
+=== Описание
+
+* Дан двумерный массив, элементами которого являются `0` и `1`
+* Изменить элементы массива согласно правилам *Conway's Game of Life*
+
+NOTE: Описание самой игра можно найти здесь: link:https://ru.wikipedia.org/wiki/%D0%98%D0%B3%D1%80%D0%B0_%C2%AB%D0%96%D0%B8%D0%B7%D0%BD%D1%8C%C2%BB[Conway's Game of Life]
+
+=== Решение
+
+.solution
+[source,java]
+----
+public class ConwayGame {
+    public static void main(String[] args) {
+        int[][] game = {
+                {
+                        0, 0, 0, 0, 0
+                },
+                {
+                        0, 0, 1, 0, 0
+                },
+                {
+                        0, 0, 0, 1, 0
+                },
+                {
+                        0, 1, 1, 1, 0
+                },
+                {
+                        0, 0, 0, 0, 0
+                }
+        };
+
+        int[][] update = update(game);
+        print(update);
+    }
+
+    private static void print(int[][] update) {
+        for (int[] internal : update) {
+            for (int cell : internal) {
+                System.out.print(cell);
+            }
+            System.out.println();
+        }
+    }
+
+
+    public static int[][] update(int[][] input) {
+        int n = input.length;
+        int m = input[0].length;
+
+        int[][] result = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                result[i][j] = input[i][j];
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (checkRevert(i, j, input)) {
+                    result[i][j] = (input[i][j] == 1) ? 0 : 1;
+                }
+            }
+        }
+        return result;
+    }
+
+    private static boolean checkRevert(int i, int j, int[][] input) {
+        int counter = 0;
+        if ((i >= 1 && j >= 1)
+                && input[i - 1][j - 1] == 1) {
+            counter++;
+        }
+        if ((j >= 1)
+                && input[i][j - 1] == 1
+        ) {
+            counter++;
+        }
+        if ((i <= input.length - 2 && j >= 1)
+                && input[i + 1][j - 1] == 1
+        ) {
+            counter++;
+        }
+        if (i <= input.length - 2
+                && input[i + 1][j] == 1
+        ) {
+            counter++;
+        }
+        if ((i <= input.length - 2 && j <= input[0].length - 2)
+                && input[i + 1][j + 1] == 1
+        ) {
+            counter++;
+        }
+        if (j <= input[0].length - 2 && input[i][j + 1] == 1
+        ) {
+            counter++;
+        }
+        if (i >= 1 && j <= input[0].length - 2
+                && input[i - 1][j + 1] == 1
+        ) {
+            counter++;
+        }
+        if (i >= 1 && input[i - 1][j] == 1
+        ) {
+            counter++;
+        }
+
+        return input[i][j] == 1 && (counter < 2 || counter > 3)
+                || (counter == 3 && input[i][j] == 0);
+    }
+}
+----
+
+== Массив с дубликатами
+
+=== Описание
+
+Дан массив чисел с возможными дубликатами `[2, 1, 1, 2, 3, 5]`. Нужно вывести только уникальные (здесь могут быть разные формулировки - только уникальные, количество уникальных и т.д.).
+
+=== Решение
+
+[source, java]
+----
+public class Program {
+    public static void main(String[] args) {
+        int[] a = {2, 1, 1, 2, 3, 5};
+
+        // Посчитать сколько раз каждое значение встречается в массиве
+        Map<Integer, Integer> counter = new HashMap<>();
+        for (int x : a) {
+            int newValue = counter.getOrDefault(x, 0) + 1;
+            counter.put(x, newValue);
+        }
+
+        // Вывести числа
+        counter.entrySet().stream()
+            .filter(entry -> entry.getValue() == 1)
+            .forEach(System.out::println);
+    }
+}
+----
+
+== Swap значений в переменных (без дополнительной переменной)
+
+=== Описание
+
+Даны две переменные a и b. Без ввода дополнительной переменной поменять их значения местами
+
+=== Решение
+
+[source, java]
+----
+public class Program {
+    public static void main(String[] args) {
+        int a = 1;
+        int b = 6;
+
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        System.out.println(a);
+        System.out.println(b);
+    }
+}
+----
+
+== Полиндром по индексу
+
+=== Описание
+
+Дана строка и индекс буквы в этой строке.  Метод должен возвращать `true`/`false`. Цель метода проверить, можно ли разделить данную строку по индексу так, чтобы текст до индекса и после индекса были зеркальными. Например `racecar` и индекс `3` должны вернуть `true`, так как индекс `3` делит текс на  `rac` и `car`.
+
+=== Решение
+
+[source, java]
+----
+public class Program {
+    private static boolean isMirrorText(String text, int index) {
+        if ((text.length() - 1) / 2 == index) {
+            return text.equals(reverse(text));
+        }
+        return false;
+    }
+
+    // way 1 for reverse
+    private static String reverse(String text) {
+        char[] array = text.toCharArray();
+        return IntStream.rangeClosed(1, array.length)
+                .mapToObj(i -> array[array.length - i])
+                .map(String::valueOf)
+                .collect(Collectors.joining());
+    }
+
+    // way 2 for reverse
+    private static String reverse2(String text) {
+      return new StringBuilder(text).reverse().toString();
+    }
+}
+----

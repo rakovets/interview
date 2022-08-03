@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="Community and Dmitry Rakovets">
-<title>Interview</title>
+<title>Тестовое задание 2</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,114 +436,122 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>Interview</h1>
-<div class="details">
-<span id="author" class="author">Community and Dmitry Rakovets</span><br>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_тестовые_задания">1. Тестовые задания</a></li>
-<li><a href="#_практические_задачи">2. Практические задачи</a></li>
-<li><a href="#_вопросы">3. Вопросы</a></li>
-<li><a href="#_вопросы_с_ответами">4. Вопросы с ответами</a></li>
-</ul>
-</div>
+<h1>Тестовое задание 2</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-Этапы интервью очень сильно разнятся от компании к компании. Иногда техническое интервью может проходить дважды, у самой компании и у клиента этой компании.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Программа, работающая с БД SQLite, которая организовывает работу с оборудованием на скважинах со <strong>следующими функциями</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Создание N кол-ва оборудования на скважине.</p>
+</li>
+<li>
+<p>При выборе этого пункта пользователь указывает кол-во оборудования и имя скважины.</p>
+</li>
+<li>
+<p>Программа создает указанное кол-во оборудования на скважине с указанным именем.</p>
+</li>
+<li>
+<p>При создании оборудования каждому присваивается свой id и свое уникальное имя (генерируется программой с использованием латинских букв и цифр).</p>
+</li>
+<li>
+<p>Скважина также создается программой с указанным именем, если ее еще нет в таблице.</p>
+</li>
+<li>
+<p>Вывод общей информации об оборудовании на скважинах.</p>
+</li>
+<li>
+<p>При выборе этого пункта пользователь указывает имена скважин, разделяя их пробелами или запятыми.</p>
+</li>
+<li>
+<p>Программа подсчитывает кол-во оборудования на каждой скважине и выдает на экран таблицу вида "имя скважины - кол-во оборудования".</p>
+</li>
+<li>
+<p>Экспорт всех данных в xml файл.</p>
+</li>
+<li>
+<p>При выборе этого пункта пользователь указывает имя файла.</p>
+</li>
+<li>
+<p>Программа выбирает все скважины из базы и записывает данные по ним и оборудованию в xml формате в виде (одна и та же скважина или оборудование не могут повторяться несколько раз):</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;dbinfo&gt;
+    &lt;well name="АААА"  id="123"&gt;
+        &lt;equipment name="EQ0033" id="12"/&gt;
+        &lt;equipment name="EQ0034" id="13"/&gt;
+    &lt;/well&gt;
+    &lt;well name="BBBB"  id="124"&gt;
+        &lt;equipment name="EQ0038" id="11"/&gt;
+        &lt;equipment name="EQ0039" id="14"/&gt;
+    &lt;/well&gt;
+&lt;/dbinfo&gt;</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Возможные <strong>этапы интервью</strong>:</p>
+<p><strong>Дополнительная информация</strong>:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Предварительный отбор с помощью тестового задания</strong></p>
+<p>Проект оформлен для сборки при помощи maven.</p>
 </li>
 <li>
-<p><strong>Предварительный отбор с помощью HR-специалиста</strong></p>
+<p>Перечисленные пункты реализованы в виде параметров командной строки.</p>
 </li>
 <li>
-<p><strong>Интервью с техническим специалистом</strong>. Каждый специалист выбирает свой подход к такому интервью. Наиболее частые подходы</p>
+<p>Для доступа к БД использовался sqllite-jdbc.</p>
+</li>
+<li>
+<p>Файл базы данных test.db располагается в каталоге запуска программы.</p>
+</li>
+<li>
+<p>Если файла еще нет, программа сама создаст БД и все необходимые таблицы в ней.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Таблицы для БД</strong>:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Вопрос-ответ</strong></p>
+<p><code>Well</code> - скважина.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>id</code>: уникальный идентификатор записи (первичный ключ), генерируется средствами БД.</p>
 </li>
 <li>
-<p><strong>Решение алгоритмических задач</strong></p>
-</li>
-<li>
-<p><strong>Разговор о вашем опыте</strong> (обычно с уточняющими вопросами)</p>
-</li>
-<li>
-<p><strong>Проверка на умение думать</strong>: ставится задача, которую требуется решить, кандидат пытается ее решить, детально описывая что он делает (в процессе  обычно можно задавать уточняющие вопросы)</p>
+<p><code>name</code> Varchar(32) - имя скважины, уникальное, не может повторяться и быть пустым.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>FIT-интервью</strong> в команду.</p>
+<p>Equipment – оборудование на скважине.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>id</code>: уникальный идентификатор записи (первичный ключ), генерируется средствами БД.</p>
+</li>
+<li>
+<p><code>name</code> Varchar(32) - имя оборудования, уникальное, не может повторяться и быть пустым.</p>
+</li>
+<li>
+<p><code>Well_id</code>: ссылка на Well.id - id скважины, на которой установлено оборудование.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_тестовые_задания">1. Тестовые задания</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Задания</strong>, в большинстве своем, представляют собой примеры, которые предлагают различные компании в качестве <strong>практического тестового задания</strong> для того, что бы отобрать специалистов на работу, стажировку или обучение</p>
-</div>
-<div class="paragraph">
-<p><a href="./test-tasks">Тестовые задания</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_практические_задачи">2. Практические задачи</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Задачи</strong>, которые предлагают различные компании в качестве <strong>практических задач</strong> в процессе проведения технического интервью (т.е. вы их решаете и при этом шарите свой экран).</p>
-</div>
-<div class="paragraph">
-<p><a href="tasks">Практические задачи</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы">3. Вопросы</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Вопросы</strong>, которые задают специалисты на техническом интервью.</p>
-</div>
-<div class="paragraph">
-<p><a href="./questions/">Вопросы</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы_с_ответами">4. Вопросы с ответами</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="./questions-answers/">Вопросы</a></p>
-</div>
-</div>
+</li>
+</ul>
 </div>
 </div>
 <div id="footer">

@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="Community and Dmitry Rakovets">
-<title>Interview</title>
+<title>Тестовое задание 7</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,112 +436,130 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>Interview</h1>
-<div class="details">
-<span id="author" class="author">Community and Dmitry Rakovets</span><br>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_тестовые_задания">1. Тестовые задания</a></li>
-<li><a href="#_практические_задачи">2. Практические задачи</a></li>
-<li><a href="#_вопросы">3. Вопросы</a></li>
-<li><a href="#_вопросы_с_ответами">4. Вопросы с ответами</a></li>
-</ul>
-</div>
+<h1>Тестовое задание 7</h1>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-Этапы интервью очень сильно разнятся от компании к компании. Иногда техническое интервью может проходить дважды, у самой компании и у клиента этой компании.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p><strong>База резюме</strong></p>
 </div>
 <div class="paragraph">
-<p>Возможные <strong>этапы интервью</strong>:</p>
+<p>Имеются следующие тестовые данные в виде резюме:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ФИО: Петров Петр Петрович
+Дата рождения: 12.12.1986
+Контакты: +375(29)123-45-67, http://github.com/petya, petrovich@gmail.com
+Пол: мужчина
+Технологии: Git, Spring Boot, HTML
+
+ФИО: Иванов Иван Иванович
+Дата рождения: 4.4.1997
+Контакты: +375(29)87-65-43, http://github.com/vanya, skype:ivanko
+Пол: мужчина
+Технологии: Git, JavaEE, Java Core
+
+ФИО: Морская Мария Васильевна
+Дата рождения: 07.11.1999
+Контакты: +375(29)999-99-99, https://www.linkedin.com/in/mariya/
+Пол: женщина
+Технологии: Maven, REST, Spring</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_первая_часть">Первая часть.</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Необходимо спроектировать базу данных и заполнить её тестовыми данными указанными выше.</p>
+</li>
+<li>
+<p>Тип базы данных - <strong>Oracle</strong> или <strong>PostgreSQL</strong>.</p>
+</li>
+<li>
+<p>Результатом этой части задания должен быть текстовый файл с SQL-инструкциями для создания и заполнения базы данных (<code>CREATE TABLE &#8230;&#8203;</code>, <code>INSERT &#8230;&#8203;</code> вот это всё).</p>
+</li>
+<li>
+<p>Выполняя это задание важно помнить про нормализацию баз данных.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_вторая_часть">Вторая часть.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Необходимо создать <strong>Maven</strong>-проект (<strong>.jar</strong>), в которой описать <strong>JPA</strong>-сущности (<code>@Entity</code>) для таблиц, созданных в первом задании. А также набор классов, который помогал бы строить простые SQL-запросы. Фактически, механизм должен давать нам возможность получать данные из БД без знания <strong>SQL</strong>. Что-то вроде собственной реализации <strong>Criteria API</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Механизм должен предоставлять возможность указать, что мы хотим получить (например объекты класса «Резюме») а так же критерии отбора (например «имя» равно «Петр» и «фамилия» равна «Петров»).</p>
+</div>
+<div class="paragraph">
+<p>Минимальные требования к реализации:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Предварительный отбор с помощью тестового задания</strong></p>
+<p>Ваш класс должен уметь отдельно возвращать строку запроса и отдельно значения параметров запроса.</p>
 </li>
 <li>
-<p><strong>Предварительный отбор с помощью HR-специалиста</strong></p>
+<p>Для построения параметров запроса должен использоваться паттерн «Строитель».</p>
 </li>
-<li>
-<p><strong>Интервью с техническим специалистом</strong>. Каждый специалист выбирает свой подход к такому интервью. Наиболее частые подходы</p>
+</ul>
+</div>
+<div class="paragraph">
+<p>Например:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">exp.equal("name", "Петр").and().equal("surname", "Петров").and().equal("patronymic", "Петрович");</code></pre>
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Вопрос-ответ</strong></p>
-</li>
-<li>
-<p><strong>Решение алгоритмических задач</strong></p>
-</li>
-<li>
-<p><strong>Разговор о вашем опыте</strong> (обычно с уточняющими вопросами)</p>
-</li>
-<li>
-<p><strong>Проверка на умение думать</strong>: ставится задача, которую требуется решить, кандидат пытается ее решить, детально описывая что он делает (в процессе  обычно можно задавать уточняющие вопросы)</p>
+<p>генерироваться должен SQL-запрос, но нужно предусмотреть возможность, чтобы когда-нибудь в будущем кто-то другой смог бы добавить реализацию, которая будет генерировать JPQL или HQL и при этом не пришлось бы переписывать ваши классы.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Также в составе проекта должно быть два теста:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Составление (при помощи механизма описанного выше) и выполнение запроса, который бы выбрал все резюме, в которых фамилия равна «Морская», имя = «Мария», отчество = «Васильевна» и как верный результат - получение третьего резюме из БД</p>
 </li>
 <li>
-<p><strong>FIT-интервью</strong> в команду.</p>
+<p>Составление (при помощи механизма описанного выше) и выполнение запроса, который бы выбрал все резюме, в которых фамилия заканчивается на «ов» или пол – женский и получение всех трёх резюме из бд.</p>
 </li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_тестовые_задания">1. Тестовые задания</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Задания</strong>, в большинстве своем, представляют собой примеры, которые предлагают различные компании в качестве <strong>практического тестового задания</strong> для того, что бы отобрать специалистов на работу, стажировку или обучение</p>
+</ol>
 </div>
 <div class="paragraph">
-<p><a href="./test-tasks">Тестовые задания</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_практические_задачи">2. Практические задачи</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Задачи</strong>, которые предлагают различные компании в качестве <strong>практических задач</strong> в процессе проведения технического интервью (т.е. вы их решаете и при этом шарите свой экран).</p>
+<p>Глобальная задача – сделать механизм как можно более удобным для использования. С одной стороны, в условиях ограниченного времени вам важно реализовать только тот функционал, который будет проверен тестами. С другой стороны вам нужно построить механизм так, чтобы его было удобно расширить новым функционалом (например в будущем добавить in, between, больше и меньше и так далее).</p>
 </div>
 <div class="paragraph">
-<p><a href="tasks">Практические задачи</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы">3. Вопросы</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Вопросы</strong>, которые задают специалисты на техническом интервью.</p>
+<p>Исходя из предыдущего абзаца важно отметить, что оцениваться будет не объем функционала, а его качество и удобство использования.</p>
 </div>
 <div class="paragraph">
-<p><a href="./questions/">Вопросы</a></p>
+<p>Важно постараться сделать механизм максимально независимым. Например, сделать так, чтобы если имя таблицы поменяется, нам не пришлось бы вносить изменения в тест. Только в Entity.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_вопросы_с_ответами">4. Вопросы с ответами</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p><a href="./questions-answers/">Вопросы</a></p>
+<p>Так же важно постараться сделать механизм гибким. Статические методы и классы-утилиты сильно снижают гибкость (например, мы не можем их переопределять при наследовании), а связи объектов только при помощи интерфейсов, наоборот, повышают и гибкость и независимость.</p>
+</div>
+<div class="paragraph">
+<p>Все эти моменты (за исключением минимальных требований) не являются обязательными, но могут помочь вам получить преимущество.</p>
+</div>
+<div class="paragraph">
+<p>Результатом выполнения этой части задания должен быть архив с исходными кодами проекта (каталог <code>src</code> и <code>pom.xml</code>).</p>
 </div>
 </div>
 </div>
