@@ -21,3 +21,9 @@ Community and Dmitry Rakovets
 
 :leveloffset: -1
 
+== Используемые ресурсы
+
+- https://github.com/enhorse/java-interview
+- https://jsehelper.blogspot.com/p/welcome.html
+- https://javastudy.ru/reference/interview/
+

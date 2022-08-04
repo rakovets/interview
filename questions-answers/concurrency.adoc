@@ -1,6 +1,6 @@
 = Многопоточность
 :docinfo: shared
-:docinfodir: ../../
+:docinfodir: ../
 Community and Dmitry Rakovets
 :source-highlighter: rouge
 :sectnums: 1
@@ -8,7 +8,7 @@ Community and Dmitry Rakovets
 :toclevels: 1
 :figure-caption!:
 
-link:../[Вопросы для собеседования]
+link:./[Вопросы для собеседования]
 
 == Расскажите о модели памяти Java?
 
@@ -1173,4 +1173,4 @@ class QueueReentrantLock<T> {
 * https://habrahabr.ru/post/129494/[Хабрахабр - Правильный Singleton в Java]
 * http://www.duct-tape-architect.ru/?p=294#3__171_187___Java_HotSpot_JVM6[duct-tape-architect.ru]
 
-link:../[Вопросы для собеседования]
+link:./[Вопросы для собеседования]
