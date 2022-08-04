@@ -1,5 +1,6 @@
 = Interview
-:docinfo:
+:docinfo: shared
+:docinfodir: /
 Community and Dmitry Rakovets
 :sectnums:
 :toc: left
