@@ -15,7 +15,7 @@ Community and Dmitry Rakovets
 
 :leveloffset: +1
 
-== link:./concurrency.adoc[Многопоточность]
+== link:./concurrency[Многопоточность]
 
 //include::draft.adoc[]
 
