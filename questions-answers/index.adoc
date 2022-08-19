@@ -1,29 +1,13 @@
 = Interview - Questions
-:docinfo: shared
-:docinfodir: ../
-Community and Dmitry Rakovets
-:source-highlighter: rouge
-:sectnums: 1
-:toc: left
-:toclevels: 1
-:figure-caption!:
+include::../_attributes-lvl-1.adoc[]
+include::../_toc.adoc[]
 
-
-== Навигация
-
-* link:/[На главную]
-
-:leveloffset: +1
-
-== link:./concurrency[Многопоточность]
-
-//include::draft.adoc[]
-
-:leveloffset: -1
-
-== Используемые ресурсы
+Используемые ресурсы
 
 - https://github.com/enhorse/java-interview
 - https://jsehelper.blogspot.com/p/welcome.html
 - https://javastudy.ru/reference/interview/
 
+:leveloffset: +1
+
+:leveloffset: -1
