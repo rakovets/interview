@@ -659,6 +659,73 @@ pre.rouge {
     gtag('js', new Date());
     gtag('config', 'G-K65X7WESXG');
 </script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
@@ -669,23 +736,22 @@ pre.rouge {
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_навигация">Навигация</a></li>
-<li><a href="#_тестовое_задание_1">Тестовое задание 1</a></li>
-<li><a href="#_тестовое_задание_2">Тестовое задание 2</a></li>
-<li><a href="#_тестовое_задание_3">Тестовое задание 3</a></li>
-<li><a href="#_тестовое_задание_4">Тестовое задание 4</a></li>
-<li><a href="#_тестовое_задание_5">Тестовое задание 5</a></li>
-<li><a href="#_тестовое_задание_6">Тестовое задание 6</a></li>
-<li><a href="#_тестовое_задание_7">Тестовое задание 7</a></li>
-<li><a href="#_тестовое_задание_8">Тестовое задание 8</a></li>
-<li><a href="#_тестовое_задание_9">Тестовое задание 9</a></li>
-<li><a href="#_тестовое_задание_10">Тестовое задание 10</a></li>
-<li><a href="#_тестовое_задание_11">Тестовое задание 11</a></li>
-<li><a href="#_тестовое_задание_12">Тестовое задание 12</a></li>
-<li><a href="#_тестовое_задание_13">Тестовое задание 13</a></li>
-<li><a href="#_тестовое_задание_14">Тестовое задание 14</a></li>
-<li><a href="#_тестовое_задание_15">Тестовое задание 15</a></li>
-<li><a href="#_тестовое_задание_16">Тестовое задание 16</a></li>
+<li><a href="#_тестовое_задание_1">1. Тестовое задание 1</a></li>
+<li><a href="#_тестовое_задание_2">2. Тестовое задание 2</a></li>
+<li><a href="#_тестовое_задание_3">3. Тестовое задание 3</a></li>
+<li><a href="#_тестовое_задание_4">4. Тестовое задание 4</a></li>
+<li><a href="#_тестовое_задание_5">5. Тестовое задание 5</a></li>
+<li><a href="#_тестовое_задание_6">6. Тестовое задание 6</a></li>
+<li><a href="#_тестовое_задание_7">7. Тестовое задание 7</a></li>
+<li><a href="#_тестовое_задание_8">8. Тестовое задание 8</a></li>
+<li><a href="#_тестовое_задание_9">9. Тестовое задание 9</a></li>
+<li><a href="#_тестовое_задание_10">10. Тестовое задание 10</a></li>
+<li><a href="#_тестовое_задание_11">11. Тестовое задание 11</a></li>
+<li><a href="#_тестовое_задание_12">12. Тестовое задание 12</a></li>
+<li><a href="#_тестовое_задание_13">13. Тестовое задание 13</a></li>
+<li><a href="#_тестовое_задание_14">14. Тестовое задание 14</a></li>
+<li><a href="#_тестовое_задание_15">15. Тестовое задание 15</a></li>
+<li><a href="#_тестовое_задание_16">16. Тестовое задание 16</a></li>
 </ul>
 </div>
 </div>
@@ -731,19 +797,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_навигация">Навигация</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="/">На главную</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_тестовое_задание_1">Тестовое задание 1</h2>
+<h2 id="_тестовое_задание_1">1. Тестовое задание 1</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Дается проект сгенерирован на <a href="https://start.spring.io/" class="bare">https://start.spring.io/</a> с заданной конфигурацией.</p>
@@ -837,7 +891,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_2">Тестовое задание 2</h2>
+<h2 id="_тестовое_задание_2">2. Тестовое задание 2</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Программа, работающая с БД SQLite, которая организовывает работу с оборудованием на скважинах со <strong>следующими функциями</strong>:</p>
@@ -954,7 +1008,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_3">Тестовое задание 3</h2>
+<h2 id="_тестовое_задание_3">3. Тестовое задание 3</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>CryptoCurrency watcher</strong></p>
@@ -1031,7 +1085,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_4">Тестовое задание 4</h2>
+<h2 id="_тестовое_задание_4">4. Тестовое задание 4</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Для решения этого задания требуется от 12 до 48 рабочих часов. Это не значит, что вы решите ее за 12-48 часов. Можно потратить столько часов, сколько вы считаете нужным.</p>
@@ -1123,7 +1177,7 @@ pre.rouge {
 <p><code>C&#8212;&#8203;D&#8212;&#8203;E-F&#8212;&#8203;G&#8212;&#8203;A&#8212;&#8203;B-C</code></p>
 </div>
 <div class="sect2">
-<h3 id="_как_подсчитать_количество_полутонов">Как подсчитать количество полутонов?</h3>
+<h3 id="_как_подсчитать_количество_полутонов">4.1. Как подсчитать количество полутонов?</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1136,7 +1190,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_как_подсчитать_количество_интервалов">Как подсчитать количество интервалов?</h3>
+<h3 id="_как_подсчитать_количество_интервалов">4.2. Как подсчитать количество интервалов?</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1162,7 +1216,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_пример">Пример</h3>
+<h3 id="_пример">4.3. Пример</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1185,7 +1239,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_пример_2">Пример</h3>
+<h3 id="_пример_2">4.4. Пример</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1295,7 +1349,7 @@ pre.rouge {
 <p>Ваша задача реализовать две функции, которые будут работать с интервалами: одна будет строить интервал, а вторая определять интервал.</p>
 </div>
 <div class="sect3">
-<h4 id="_требования">Требования:</h4>
+<h4 id="_требования">4.4.1. Требования:</h4>
 <div class="sect4">
 <h5 id="_intervalconstruction">intervalConstruction()</h5>
 <div class="ulist">
@@ -1421,7 +1475,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_5">Тестовое задание 5</h2>
+<h2 id="_тестовое_задание_5">5. Тестовое задание 5</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Создать консольное приложение, удовлетворяющее следующим требованиям:</p>
@@ -1470,7 +1524,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_6">Тестовое задание 6</h2>
+<h2 id="_тестовое_задание_6">6. Тестовое задание 6</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Создать простое веб-приложение, функционал которого включает следующее:</p>
@@ -1532,7 +1586,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_7">Тестовое задание 7</h2>
+<h2 id="_тестовое_задание_7">7. Тестовое задание 7</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>База резюме</strong></p>
@@ -1562,7 +1616,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_первая_часть">Первая часть.</h3>
+<h3 id="_первая_часть">7.1. Первая часть.</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1581,7 +1635,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_вторая_часть">Вторая часть.</h3>
+<h3 id="_вторая_часть">7.2. Вторая часть.</h3>
 <div class="paragraph">
 <p>Необходимо создать <strong>Maven</strong>-проект (<strong>.jar</strong>), в которой описать <strong>JPA</strong>-сущности (<code>@Entity</code>) для таблиц, созданных в первом задании. А также набор классов, который помогал бы строить простые SQL-запросы. Фактически, механизм должен давать нам возможность получать данные из БД без знания <strong>SQL</strong>. Что-то вроде собственной реализации <strong>Criteria API</strong>.</p>
 </div>
@@ -1651,7 +1705,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_8">Тестовое задание 8</h2>
+<h2 id="_тестовое_задание_8">8. Тестовое задание 8</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Создайте мини веб приложение <strong>Monitor Sensors</strong>.</p>
@@ -1704,7 +1758,7 @@ pre.rouge {
 <p>Web Server – Apache Tomcat</p>
 </div>
 <div class="sect2">
-<h3 id="_описание">Описание</h3>
+<h3 id="_описание">8.1. Описание</h3>
 <div class="paragraph">
 <p>В системе 2 предустановленных пользователя:</p>
 </div>
@@ -1776,7 +1830,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_форма_3_добавлениередактирование_датчиков">Форма 3. Добавление/редактирование датчиков</h3>
+<h3 id="_форма_3_добавлениередактирование_датчиков">8.2. Форма 3. Добавление/редактирование датчиков</h3>
 <div class="paragraph">
 <p>Звездочкой отмечены обязательные поля:</p>
 </div>
@@ -1829,7 +1883,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_9">Тестовое задание 9</h2>
+<h2 id="_тестовое_задание_9">9. Тестовое задание 9</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Documents management system</strong></p>
@@ -1839,7 +1893,7 @@ pre.rouge {
 management system</strong>)</p>
 </div>
 <div class="sect2">
-<h3 id="_страницы">Страницы</h3>
+<h3 id="_страницы">9.1. Страницы</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1859,7 +1913,7 @@ management system</strong>)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_технологии">Технологии</h3>
+<h3 id="_технологии">9.2. Технологии</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1902,19 +1956,19 @@ management system</strong>)</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_10">Тестовое задание 10</h2>
+<h2 id="_тестовое_задание_10">10. Тестовое задание 10</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Payment cards</strong></p>
 </div>
 <div class="sect2">
-<h3 id="_технологии_2">Технологии</h3>
+<h3 id="_технологии_2">10.1. Технологии</h3>
 <div class="paragraph">
 <p>Java 11, Spring Boot, Spring Data, MySQL, Swagger UI</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_условие">Условие</h3>
+<h3 id="_условие">10.2. Условие</h3>
 <div class="paragraph">
 <p>Дано:</p>
 </div>
@@ -2001,7 +2055,7 @@ management system</strong>)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_требования_2">Требования</h3>
+<h3 id="_требования_2">10.3. Требования</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2017,7 +2071,7 @@ management system</strong>)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_будет_плюсом">Будет плюсом</h3>
+<h3 id="_будет_плюсом">10.4. Будет плюсом</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2035,13 +2089,13 @@ management system</strong>)</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_11">Тестовое задание 11</h2>
+<h2 id="_тестовое_задание_11">11. Тестовое задание 11</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Personnel Management System</strong>.</p>
 </div>
 <div class="sect2">
-<h3 id="_technologies_to_use">Technologies to use</h3>
+<h3 id="_technologies_to_use">11.1. Technologies to use</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2069,7 +2123,7 @@ management system</strong>)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_requirements">Requirements</h3>
+<h3 id="_requirements">11.2. Requirements</h3>
 <div class="paragraph">
 <p>Application must have REST API to manage departments and employees.
 Departments and employees data must be stored in a database. All endpoints must be
@@ -2077,7 +2131,7 @@ visible in Swagger UI. Source code of application must be versioned using Git.</
 </div>
 </div>
 <div class="sect2">
-<h3 id="_department_has">Department has</h3>
+<h3 id="_department_has">11.3. Department has</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2099,7 +2153,7 @@ visible in Swagger UI. Source code of application must be versioned using Git.</
 </div>
 </div>
 <div class="sect2">
-<h3 id="_employee_has">Employee has</h3>
+<h3 id="_employee_has">11.4. Employee has</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2124,7 +2178,7 @@ visible in Swagger UI. Source code of application must be versioned using Git.</
 </div>
 </div>
 <div class="sect2">
-<h3 id="_endpoints_to_implement">Endpoints to implement</h3>
+<h3 id="_endpoints_to_implement">11.5. Endpoints to implement</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2163,7 +2217,7 @@ visible in Swagger UI. Source code of application must be versioned using Git.</
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_12">Тестовое задание 12</h2>
+<h2 id="_тестовое_задание_12">12. Тестовое задание 12</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -2185,7 +2239,7 @@ visible in Swagger UI. Source code of application must be versioned using Git.</
 </ol>
 </div>
 <div class="sect2">
-<h3 id="_problem_statement">Problem statement</h3>
+<h3 id="_problem_statement">12.1. Problem statement</h3>
 <div class="paragraph">
 <p>Implements a web crawler that traverses website following predefined link depth (8 by default) and max visited pages limit (10000 by default). The web crawler starts from a predefined URL (seed) and follows links found to dive deeper. The main purpose of this crawler to detect the presence of some terms on the page and collect statistics, e.g.</p>
 </div>
@@ -2318,7 +2372,7 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_13">Тестовое задание 13</h2>
+<h2 id="_тестовое_задание_13">13. Тестовое задание 13</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Реализовать REST API согласно Open API Specification:</p>
@@ -2496,7 +2550,7 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_14">Тестовое задание 14</h2>
+<h2 id="_тестовое_задание_14">14. Тестовое задание 14</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Разработать <strong>систему управления пользователями</strong>.</p>
@@ -2705,10 +2759,10 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_15">Тестовое задание 15</h2>
+<h2 id="_тестовое_задание_15">15. Тестовое задание 15</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_описание_2">Описание</h3>
+<h3 id="_описание_2">15.1. Описание</h3>
 <div class="paragraph">
 <p>Существует некоторый бизнес-процесс – пополнение счета консультанта с помощью транзакций с
 банковской карты в рублях.</p>
@@ -2717,7 +2771,7 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 <p>Требуется реализовать сервисы 2 микросервиса.</p>
 </div>
 <div class="sect3">
-<h4 id="_микросервис_payment">Микросервис <code>Payment</code></h4>
+<h4 id="_микросервис_payment">15.1.1. Микросервис <code>Payment</code></h4>
 <div class="paragraph">
 <p>Должен иметь endpoint на получение <code>{host}/pay</code>. <code>POST</code> запроса с телом json в формате:</p>
 </div>
@@ -2735,7 +2789,7 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_микросервис_backend">Микросервис <code>Backend</code></h4>
+<h4 id="_микросервис_backend">15.1.2. Микросервис <code>Backend</code></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2759,7 +2813,7 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_задание">Задание</h3>
+<h3 id="_задание">15.2. Задание</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2781,7 +2835,7 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_технологии_3">Технологии</h3>
+<h3 id="_технологии_3">15.3. Технологии</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2802,10 +2856,10 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_тестовое_задание_16">Тестовое задание 16</h2>
+<h2 id="_тестовое_задание_16">16. Тестовое задание 16</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_предметная_область">Предметная область</h3>
+<h3 id="_предметная_область">16.1. Предметная область</h3>
 <div class="paragraph">
 <p>В модели предметной области имеются <strong>сущности</strong> (в скобках указаны обязательные атрибуты):</p>
 </div>
@@ -2837,7 +2891,7 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_постановка_задачи_backend">Постановка задачи (backend)</h3>
+<h3 id="_постановка_задачи_backend">16.2. Постановка задачи (backend)</h3>
 <div class="paragraph">
 <p>Необходимо реализовать серверную часть приложения по учету товаров на складе.</p>
 </div>
@@ -2870,7 +2924,7 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 <p>Формат выводимых отчетов на выбор: JSON, CSV, HTML (а можно и все три :) ).</p>
 </div>
 <div class="sect3">
-<h4 id="_функциональные_требования">Функциональные требования</h4>
+<h4 id="_функциональные_требования">16.2.1. Функциональные требования</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2884,7 +2938,7 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_нефункциональные_требования">Нефункциональные требования</h3>
+<h3 id="_нефункциональные_требования">16.3. Нефункциональные требования</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2908,7 +2962,7 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_дополнительные_возможности">Дополнительные возможности</h4>
+<h4 id="_дополнительные_возможности">16.3.1. Дополнительные возможности</h4>
 <div class="paragraph">
 <p>К реализованному API можно составить небольшую документацию — список возможных команд с передаваемыми в них параметрами и возможными ответами на запрос. Файл с документацией может быть в формате Markdown, либо с использованием инструментов для документирования АПИ( API Blueprint, Swagger и подобные).</p>
 </div>
@@ -2918,7 +2972,7 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_постановка_задачи_frontend_опционально">Постановка задачи (frontend) — опционально</h3>
+<h3 id="_постановка_задачи_frontend_опционально">16.4. Постановка задачи (frontend) — опционально</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2941,7 +2995,7 @@ anotherseti.com/page3.html 0 1 0 1 2</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-15 12:04:45 UTC
+Last updated 2022-08-19 03:28:08 UTC
 </div>
 </div>
 </body>

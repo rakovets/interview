@@ -659,6 +659,73 @@ pre.rouge {
     gtag('js', new Date());
     gtag('config', 'G-K65X7WESXG');
 </script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
@@ -669,12 +736,12 @@ pre.rouge {
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_навигация">Навигация</a></li>
-<li><a href="#_max_value_in_tree">Max value in Tree</a></li>
-<li><a href="#_conways_game_of_life">Conway&#8217;s Game of Life</a></li>
-<li><a href="#_массив_с_дубликатами">Массив с дубликатами</a></li>
-<li><a href="#_swap_значений_в_переменных_без_дополнительной_переменной">Swap значений в переменных (без дополнительной переменной)</a></li>
-<li><a href="#_полиндром_по_индексу">Полиндром по индексу</a></li>
+<li><a href="#_max_value_in_tree">1. Max value in Tree</a></li>
+<li><a href="#_conways_game_of_life">2. Conway&#8217;s Game of Life</a></li>
+<li><a href="#_массив_с_дубликатами">3. Массив с дубликатами</a></li>
+<li><a href="#_swap_значений_в_переменных_без_дополнительной_переменной">4. Swap значений в переменных (без дополнительной переменной)</a></li>
+<li><a href="#_полиндром_по_индексу">5. Полиндром по индексу</a></li>
+<li><a href="#_обход_магазина">6. Обход магазина</a></li>
 </ul>
 </div>
 </div>
@@ -696,22 +763,10 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_навигация">Навигация</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="/">На главную</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_max_value_in_tree">Max value in Tree</h2>
+<h2 id="_max_value_in_tree">1. Max value in Tree</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_описание">Описание</h3>
+<h3 id="_описание">1.1. Описание</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -724,7 +779,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_решение">Решение</h3>
+<h3 id="_решение">1.2. Решение</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">Node</span> <span class="o">{</span>
@@ -787,10 +842,10 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_conways_game_of_life">Conway&#8217;s Game of Life</h2>
+<h2 id="_conways_game_of_life">2. Conway&#8217;s Game of Life</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_описание_2">Описание</h3>
+<h3 id="_описание_2">2.1. Описание</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -815,7 +870,7 @@ pre.rouge {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_решение_2">Решение</h3>
+<h3 id="_решение_2">2.2. Решение</h3>
 <div class="listingblock">
 <div class="title">solution</div>
 <div class="content">
@@ -923,16 +978,16 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_массив_с_дубликатами">Массив с дубликатами</h2>
+<h2 id="_массив_с_дубликатами">3. Массив с дубликатами</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_описание_3">Описание</h3>
+<h3 id="_описание_3">3.1. Описание</h3>
 <div class="paragraph">
 <p>Дан массив чисел с возможными дубликатами <code>[2, 1, 1, 2, 3, 5]</code>. Нужно вывести только уникальные (здесь могут быть разные формулировки - только уникальные, количество уникальных и т.д.).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_решение_3">Решение</h3>
+<h3 id="_решение_3">3.2. Решение</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Program</span> <span class="o">{</span>
@@ -958,16 +1013,16 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_swap_значений_в_переменных_без_дополнительной_переменной">Swap значений в переменных (без дополнительной переменной)</h2>
+<h2 id="_swap_значений_в_переменных_без_дополнительной_переменной">4. Swap значений в переменных (без дополнительной переменной)</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_описание_4">Описание</h3>
+<h3 id="_описание_4">4.1. Описание</h3>
 <div class="paragraph">
 <p>Даны две переменные a и b. Без ввода дополнительной переменной поменять их значения местами</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_решение_4">Решение</h3>
+<h3 id="_решение_4">4.2. Решение</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Program</span> <span class="o">{</span>
@@ -989,16 +1044,16 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_полиндром_по_индексу">Полиндром по индексу</h2>
+<h2 id="_полиндром_по_индексу">5. Полиндром по индексу</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_описание_5">Описание</h3>
+<h3 id="_описание_5">5.1. Описание</h3>
 <div class="paragraph">
 <p>Дана строка и индекс буквы в этой строке.  Метод должен возвращать <code>true</code>/<code>false</code>. Цель метода проверить, можно ли разделить данную строку по индексу так, чтобы текст до индекса и после индекса были зеркальными. Например <code>racecar</code> и индекс <code>3</code> должны вернуть <code>true</code>, так как индекс <code>3</code> делит текс на  <code>rac</code> и <code>car</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_решение_5">Решение</h3>
+<h3 id="_решение_5">5.2. Решение</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Program</span> <span class="o">{</span>
@@ -1025,12 +1080,14 @@ pre.rouge {
 <span class="o">}</span></code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>==</p>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_обход_магазина">6. Обход магазина</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_описание_6">Описание</h3>
+<h3 id="_описание_6">6.1. Описание</h3>
 <div class="paragraph">
 <p>После работы ваш коллега, стажер Павел, решил зайти в магазин. Как и вы, Павел — разработчик, поэтому каждое свое действие он выполняет по алгоритму в строгой последовательности.</p>
 </div>
@@ -1057,18 +1114,17 @@ pre.rouge {
 <p>Пожалуйста, помогите Павлу быстрее попасть домой и посчитайте, сколько передвижений, т.е. операций второго типа, ему нужно будет сделать.</p>
 </div>
 <div class="sect3">
-<h4 id="_формат_входных_данных">Формат входных данных</h4>
+<h4 id="_формат_входных_данных">6.1.1. Формат входных данных</h4>
 <div class="paragraph">
 <p>В первой строке содержится строка <code>ss</code> (<code>1 ≤ ∣s∣ ≤ 10^5</code>)(<code>1 ≤ ∣s∣ ≤ 10^5</code>), состоящая из строчных букв латинского алфавита — план супермаркета.</p>
 </div>
 <div class="paragraph">
-<p>Во второй строке содержится число <code>qq</code> (1 \leq |s| \leq 10<sup>5)(1≤∣s∣≤10</sup>5) — количество рассматриваемых Павлом подотрезков.</p>
+<p>Во второй строке содержится число <code>qq</code> (1 ≤ |s| ≤ 10^5)(1 ≤ ∣s∣ ≤ 10^5) — количество рассматриваемых Павлом подотрезков.</p>
 </div>
 <div class="paragraph">
 <p>В следующих <code>qq</code> строках содержатся границы подотрезка — два целых числа <code>l_il</code> i <code>r_ir</code>
 i
- (1 \leq i \leq q, 1 \leq l_i \leq r_i \leq |s|)(1≤i≤q,1≤l
-i  ≤r i  ≤∣s∣).</p>
+(1 ≤ i ≤ q, 1 ≤ l_i ≤ r_i ≤ |s|)(1 ≤ i ≤ q ,1 ≤ l, i  ≤ r, i  ≤ ∣s∣).</p>
 </div>
 <div class="listingblock">
 <div class="title">Пример входных данных</div>
@@ -1082,7 +1138,7 @@ i  ≤r i  ≤∣s∣).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_формат_выходных_данных">Формат выходных данных</h4>
+<h4 id="_формат_выходных_данных">6.1.2. Формат выходных данных</h4>
 <div class="paragraph">
 <p>Выведите <code>qq</code> строк, содержащих одно целое число — количество операций второго типа, которые необходимо выполнить для этого подотрезка.</p>
 </div>
@@ -1113,7 +1169,7 @@ i  ≤r i  ≤∣s∣).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-15 12:04:45 UTC
+Last updated 2022-08-19 03:28:08 UTC
 </div>
 </div>
 </body>

@@ -1,22 +1,13 @@
 = Interview - Tests Tasks
-:docinfo: shared
-:docinfodir: ../
-:imagesdir: ../assets/img/test-tasks
-Community and Dmitry Rakovets
-:source-highlighter: rouge
-:toc: left
-:toclevels: 1
-:figure-caption!:
+include::../_attributes-lvl-1.adoc[]
+include::../_toc.adoc[]
+:imagesdir: {imagesdir}/test-tasks
 
 NOTE: Задания, в большинстве своем, представляют собой примеры, которые предлагают различные компании в качестве практического тестового задания для того, что бы отобрать специалистов на работу, стажировку или обучение.
 
 WARNING: Задания представлены беспорядочно, т.е. они следуют не в порядке повышения уровня сложности, а рандомно.
 
 WARNING: Задания требуют различную степень подготовки и должно выбираться с учетов текущих знаний и умений.
-
-== Навигация
-
-* link:/[На главную]
 
 :leveloffset: +1
 
