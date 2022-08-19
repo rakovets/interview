@@ -1,0 +1,6 @@
+:basedir: ../
+:docinfo: shared
+:docinfodir: {basedir}
+:imagesdir: {basedir}/assets/img/
+:source-highlighter: rouge
+:figure-caption!:

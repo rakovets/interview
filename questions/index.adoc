@@ -1,16 +1,6 @@
 = Interview - Questions
-:docinfo: shared
-:docinfodir: ../
-Community and Dmitry Rakovets
-:source-highlighter: rouge
-:toc: left
-:toclevels: 1
-:figure-caption!:
-
-
-== Навигация
-
-* link:/[На главную]
+include::../_attributes-lvl-1.adoc[]
+include::../_toc.adoc[]
 
 :leveloffset: +1
 

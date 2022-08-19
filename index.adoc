@@ -1,11 +1,11 @@
 = Interview
 :docinfo: shared
 :docinfodir: /
+:figure-caption!:
 Community and Dmitry Rakovets
 :sectnums:
 :toc: left
 :toclevels: 1
-:figure-caption!:
 
 == О ресурсе
 

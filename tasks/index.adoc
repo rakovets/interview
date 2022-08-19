@@ -1,17 +1,8 @@
 = Interview - Tasks
-:docinfo: shared
-:docinfodir: ../
-Community and Dmitry Rakovets
-:source-highlighter: rouge
-:toc: left
-:toclevels:
-:figure-caption!:
+include::../_attributes-lvl-1.adoc[]
+include::../_toc.adoc[]
 
 NOTE: Задачи, которые предлагают различные компании в качестве практических задач в процессе проведения технического интервью (т.е. вы их решаете и при этом шарите свой экран).
-
-== Навигация
-
-* link:/[На главную]
 
 == Max value in Tree
 
