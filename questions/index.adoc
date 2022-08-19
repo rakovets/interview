@@ -1,6 +1,10 @@
 = Interview - Questions
 include::../_attributes-lvl-1.adoc[]
-include::../_toc.adoc[]
+Community and Dmitry Rakovets
+:toc: left
+:toclevels: 2
+
+:toc!:
 
 :leveloffset: +1
 
@@ -17,6 +21,8 @@ include::patterns.adoc[]
 include::spring.adoc[]
 
 include::sql.adoc[]
+
+include::other.adoc[]
 
 :leveloffset: -1
 
