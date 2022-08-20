@@ -1,6 +1,3 @@
-:doctype: book
-
-xref:README.adoc[Вопросы для собеседования]
 
 = UML
 
@@ -135,7 +132,7 @@ ____
 
 <<uml,к оглавлению>>
 
-= Источники
+== Источники
 
 * https://ru.wikipedia.org/wiki/UML[Википедия]
 * http://www.informicus.ru/[Информикус]

@@ -1,6 +1,3 @@
-:doctype: book
-
-xref:README.adoc[Вопросы для собеседования]
 
 = SQL
 
@@ -611,7 +608,7 @@ GROUP BY download_count;
 
 <<sql,к оглавлению>>
 
-= Источники
+== Источники
 
 * https://ru.wikipedia.org/wiki/SQL[Википедия]
 * http://www.quizful.net/interview/sql[Quizful]

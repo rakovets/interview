@@ -1,6 +1,3 @@
-:doctype: book
-
-xref:README.adoc[Вопросы для собеседования]
 
 = Журналирование
 
@@ -117,7 +114,7 @@ ____
 
 <<Журналирование,к оглавлению>>
 
-= Источники
+== Источники
 
 * http://www.quizful.net/[Quizful]
 * http://skipy.ru/useful/logging.html#log4j_concepts_logger[Skipy]

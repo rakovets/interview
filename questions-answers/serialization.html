@@ -436,20 +436,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="book">
+<body class="article">
 <div id="header">
+<h1>Сериализация</h1>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
-</div>
-</div>
-<h1 id="_сериализация" class="sect0">Сериализация</h1>
-<div class="openblock partintro">
-<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -521,7 +514,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Обратные изменения (из нестатических полей в статические и из нетранзитных в транзитные) или удаление полей требуют определенной дополнительной обработки в зависимости от того, какая степень обратной совместимости необходима.</p>
 </div>
 <div class="paragraph">
-<p><a href="#_сериализация">к оглавлению</a></p>
+<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -554,7 +547,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Для выполнения десериализации под объект выделяется память, после чего его поля заполняются значениями из потока. Конструктор объекта при этом не вызывается. Однако при десериализации будет вызван конструктор без параметров родительского несериализуемого класса, а его отсутствие повлечёт ошибку десериализации.</p>
 </div>
 <div class="paragraph">
-<p><a href="#_сериализация">к оглавлению</a></p>
+<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -588,7 +581,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="#_сериализация">к оглавлению</a></p>
+<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -599,7 +592,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Для управления сериализацией при определении полей можно использовать ключевое слово <code>transient</code>, таким образом исключив поля из общего процесса сериализации.</p>
 </div>
 <div class="paragraph">
-<p><a href="#_сериализация">к оглавлению</a></p>
+<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -613,7 +606,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Обычно в таких полях хранится промежуточное состояние объекта, которое, к примеру, проще вычислить. Другой пример такого поля - ссылка на экземпляр объекта, который не требует сериализации или не может быть сериализован.</p>
 </div>
 <div class="paragraph">
-<p><a href="#_сериализация">к оглавлению</a></p>
+<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -627,7 +620,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Поля с модификатором <code>final</code> сериализуются как и обычные. За одним исключением&#8201;&#8212;&#8201;их невозможно десериализовать при использовании <code>Externalizable</code>, поскольку <code>final</code> поля должны быть инициализированы в конструкторе, а после этого в <code>readExternal()</code> изменить значение этого поля будет невозможно. Соответственно, если необходимо сериализовать объект с <code>final</code> полем необходимо использовать только стандартную сериализацию.</p>
 </div>
 <div class="paragraph">
-<p><a href="#_сериализация">к оглавлению</a></p>
+<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -652,7 +645,7 @@ private void readObject(ObjectInputStream in) throws IOException {
 <p>Любая попытка записать или прочитать этот объект теперь приведет к возникновению исключительной ситуации.</p>
 </div>
 <div class="paragraph">
-<p><a href="#_сериализация">к оглавлению</a></p>
+<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -669,7 +662,7 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 </div>
 </div>
 <div class="paragraph">
-<p><a href="#_сериализация">к оглавлению</a></p>
+<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -691,7 +684,7 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 </div>
 </div>
 <div class="paragraph">
-<p><a href="#_сериализация">к оглавлению</a></p>
+<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -702,7 +695,7 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 <p><code>serialVersionUID</code> нужно изменять при внесении в класс несовместимых изменений, например при удалении какого-либо его атрибута.</p>
 </div>
 <div class="paragraph">
-<p><a href="#_сериализация">к оглавлению</a></p>
+<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -723,7 +716,7 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="#_сериализация">к оглавлению</a></p>
+<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -761,13 +754,13 @@ public class Person implements java.io.Serializable,
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="#_сериализация">к оглавлению</a></p>
+<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
-<h1 id="_источники" class="sect0">Источники</h1>
-<div class="openblock partintro">
-<div class="content">
+<div class="sect1">
+<h2 id="_источники">Источники</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -795,7 +788,7 @@ public class Person implements java.io.Serializable,
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-19 05:24:56 UTC
+Last updated 2022-08-20 03:29:06 UTC
 </div>
 </div>
 </body>

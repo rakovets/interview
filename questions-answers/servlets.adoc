@@ -1,6 +1,3 @@
-:doctype: book
-
-xref:README.adoc[Вопросы для собеседования]
 
 = Servlets, JSP, JSTL
 
@@ -1473,7 +1470,7 @@ Jsp-страница, по умолчанию, всегда создает се�
 
 <<servlets-jsp-jstl,к оглавлению>>
 
-= Источники
+== Источники
 
 * http://javastudy.ru/interview/jee-servlet-api-questions/[javastudy.ru]
 * http://www.java2ee.ru/servlets/[java2ee.ru]

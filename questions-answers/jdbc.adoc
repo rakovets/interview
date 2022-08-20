@@ -1,6 +1,3 @@
-:doctype: book
-
-xref:README.adoc[Вопросы для собеседования]
 
 = JDBC
 
@@ -344,7 +341,7 @@ ____
 
 <<jdbc,к оглавлению>>
 
-= Источники
+== Источники
 
 * https://ru.wikipedia.org/wiki/Java_Database_Connectivity[Википедия - JDBC]
 * http://www.ibm.com/developerworks/ru/library/dm-1209storedprocedures/[IBM developerWorks®]

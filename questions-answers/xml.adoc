@@ -1,6 +1,3 @@
-:doctype: book
-
-xref:README.adoc[Вопросы для собеседования]
 
 = XML
 
@@ -241,7 +238,7 @@ XSLT создавался для применения в _XSL (eXtensible Styles
 
 <<xml,к оглавлению>>
 
-= Источники
+== Источники
 
 * https://ru.wikipedia.org/wiki/XML[Википедия]
 * http://citforum.ru/internet/xnamsps/index.shtml#ns-decl[CIT Forum]

@@ -1,6 +1,3 @@
-:doctype: book
-
-xref:README.adoc[Вопросы для собеседования]
 
 = Основы HTML
 
@@ -257,7 +254,7 @@ ____
 
 <<Основы-html,к оглавлению>>
 
-= Источники
+== Источники
 
 * http://htmlbook.ru/html/[htmlbook]
 * https://habrahabr.ru/post/143452/[Хабрахабр]

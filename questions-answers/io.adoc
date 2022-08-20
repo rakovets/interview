@@ -1,6 +1,3 @@
-:doctype: book
-
-xref:README.adoc[Вопросы для собеседования]
 
 = Потоки ввода/вывода в Java
 
@@ -324,7 +321,7 @@ public boolean accept(final File file) {
 
 <<Потоки-вводавывода-в-java,к оглавлению>>
 
-= Источники
+== Источники
 
 * http://www.quizful.net/post/java-nio-tutorial[Quizful]
 * https://habrahabr.ru/post/235585/[Хабрахабр]

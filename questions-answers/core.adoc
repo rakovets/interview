@@ -1,7 +1,4 @@
-:doctype: book
 :pp: {plus}{plus}
-
-xref:README.adoc[Вопросы для собеседования]
 
 = Java Core
 
@@ -1692,7 +1689,7 @@ void method() {
 
 <<java-core,к оглавлению>>
 
-= Источники
+== Источники
 
 * http://www.quizful.net/interview/java/[Quizful]
 * http://javastudy.ru/interview/java-oop2/[JavaStudy.ru]

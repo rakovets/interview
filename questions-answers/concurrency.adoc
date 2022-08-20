@@ -1,6 +1,3 @@
-:doctype: book
-
-xref:README.adoc[Вопросы для собеседования]
 
 = Многопоточность
 
@@ -1219,7 +1216,7 @@ class QueueReentrantLock<T> {
 
 <<Многопоточность,к оглавлению>>
 
-= Источники
+== Источники
 
 * https://habrahabr.ru/post/164487/[Хабрахабр - Многопоточность в Java]
 * https://www.ibm.com/developerworks/ru/library/l-java_universe_multithreading_tasks/[IBM DeveloperWorks - Выполнение задач в многопоточном режиме]
