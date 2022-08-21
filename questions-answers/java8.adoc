@@ -1,5 +1,6 @@
-
 = Java 8
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Какие нововведения, появились в Java 8 и JDK 8?
 
@@ -867,4 +868,4 @@ new String(Base64.getDecoder().decode("aW5wdXQ=="), "utf-8"); //input
 * http://metanit.com/java/tutorial/9.1.php[METANIT.COM]
 * http://javadevblog.com/interfejsy-v-java-8-staticheskie-metody-metody-po-umolchaniyu-funktsional-ny-e-interfejsy.html[javadevblog.com]
 
-xref:README.adoc[Вопросы для собеседования]
+

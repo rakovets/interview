@@ -1,5 +1,6 @@
-
 = Servlets, JSP, JSTL
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _«сервлет»_?
 
@@ -1201,4 +1202,4 @@ Jsp-страница, по умолчанию, всегда создает се�
 * http://www.codenet.ru/webmast/java/jsp.php[Codenet]
 * https://articles.javatalks.ru/articles/24[JavaTalks Articles]
 
-xref:README.adoc[Вопросы для собеседования]
+

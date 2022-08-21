@@ -435,14 +435,380 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>Многопоточность</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_расскажите_о_модели_памяти_java">1. Расскажите о модели памяти Java?</a></li>
+<li><a href="#_что_такое_потокобезопасность">2. Что такое «потокобезопасность»?</a></li>
+<li><a href="#_в_чём_разница_между_конкуренцией_и_параллелизмом">3. В чём разница между <em>«конкуренцией»</em> и <em>«параллелизмом»</em>?</a></li>
+<li><a href="#_что_такое_кооперативная_многозадачность_какой_тип_многозадачности_использует_java_чем_обусловлен_этот_выбор">4. Что такое <em>«кооперативная многозадачность»</em>? Какой тип многозадачности использует Java? Чем обусловлен этот выбор?</a></li>
+<li><a href="#_что_такое_ordering_as_if_serial_semantics_sequential_consistency_visibility_atomicity_happens_before_mutual_exclusion_safe_publication">5. Что такое <em>ordering</em>, <em>as-if-serial semantics</em>, <em>sequential consistency</em>, <em>visibility</em>, <em>atomicity</em>, <em>happens-before</em>, <em>mutual exclusion</em>, <em>safe publication</em>?</a></li>
+<li><a href="#_чем_отличается_процесс_от_потока">6. Чем отличается процесс от потока?</a></li>
+<li><a href="#_что_такое_зелёные_потоки_и_есть_ли_они_в_java">7. Что такое <em>«зелёные потоки»</em> и есть ли они в Java?</a></li>
+<li><a href="#_каким_образом_можно_создать_поток">8. Каким образом можно создать поток?</a></li>
+<li><a href="#_чем_различаются_thread_и_runnable">9. Чем различаются <code>Thread</code> и <code>Runnable</code>?</a></li>
+<li><a href="#_в_чём_заключается_разница_между_методами_start_и_run">10. В чём заключается разница между методами <code>start()</code> и <code>run()</code>?</a></li>
+<li><a href="#_как_принудительно_запустить_поток">11. Как принудительно запустить поток?</a></li>
+<li><a href="#_что_такое_монитор_в_java">12. Что такое <em>«монитор»</em> в Java?</a></li>
+<li><a href="#_дайте_определение_понятию_синхронизация">13. Дайте определение понятию «синхронизация».</a></li>
+<li><a href="#_какие_существуют_способы_синхронизации_в_java">14. Какие существуют способы синхронизации в Java?</a></li>
+<li><a href="#_в_каких_состояниях_может_находиться_поток">15. В каких состояниях может находиться поток?</a></li>
+<li><a href="#_можно_ли_создавать_новые_экземпляры_класса_пока_выполняется_static_synchronized_метод">16. Можно ли создавать новые экземпляры класса, пока выполняется <code>static synchronized</code> метод?</a></li>
+<li><a href="#_зачем_может_быть_нужен_private_мьютекс">17. Зачем может быть нужен <code>private</code> мьютекс?</a></li>
+<li><a href="#_как_работают_методы_wait_и_notifynotifyall">18. Как работают методы <code>wait()</code> и <code>notify()</code>/<code>notifyAll()</code>?</a></li>
+<li><a href="#_в_чем_разница_между_notify_и_notifyall">19. В чем разница между <code>notify()</code> и <code>notifyAll()</code>?</a></li>
+<li><a href="#_почему_методы_wait_и_notify_вызываются_только_в_синхронизированном_блоке">20. Почему методы <code>wait()</code> и <code>notify()</code> вызываются только в синхронизированном блоке?</a></li>
+<li><a href="#_чем_отличается_работа_метода_wait_с_параметром_и_без_параметра">21. Чем отличается работа метода <code>wait()</code> с параметром и без параметра?</a></li>
+<li><a href="#_чем_отличаются_методы_thread_sleep_и_thread_yield">22. Чем отличаются методы <code>Thread.sleep()</code> и <code>Thread.yield()</code>?</a></li>
+<li><a href="#_как_работает_метод_thread_join">23. Как работает метод <code>Thread.join()</code>?</a></li>
+<li><a href="#_что_такое_deadlock">24. Что такое <em>deadlock</em>?</a></li>
+<li><a href="#_что_такое_livelock">25. Что такое <em>livelock</em>?</a></li>
+<li><a href="#_как_проверить_удерживает_ли_поток_монитор_определённого_ресурса">26. Как проверить, удерживает ли поток монитор определённого ресурса?</a></li>
+<li><a href="#_на_каком_объекте_происходит_синхронизация_при_вызове_static_synchronized_метода">27. На каком объекте происходит синхронизация при вызове <code>static synchronized</code> метода?</a></li>
+<li><a href="#_для_чего_используется_ключевое_слово_volatile_synchronized_transient_native">28. Для чего используется ключевое слово <code>volatile</code>, <code>synchronized</code>, <code>transient</code>, <code>native</code>?</a></li>
+<li><a href="#_в_чём_различия_между_volatile_и_atomic_переменными">29. В чём различия между <code>volatile</code> и <em>Atomic</em> переменными?</a></li>
+<li><a href="#_в_чём_заключаются_различия_между_java_util_concurrent_atomic_compareandswap_и_java_util_concurrent_atomic_weakcompareandswap">30. В чём заключаются различия между <code>java.util.concurrent.Atomic*.compareAndSwap()</code> и <code>java.util.concurrent.Atomic*.weakCompareAndSwap()</code>.</a></li>
+<li><a href="#_что_значит_приоритет_потока">31. Что значит <em>«приоритет потока»</em>?</a></li>
+<li><a href="#_что_такое_потоки_демоны">32. Что такое <em>«потоки-демоны»</em>?</a></li>
+<li><a href="#_можно_ли_сделать_основной_поток_программы_демоном">33. Можно ли сделать основной поток программы демоном?</a></li>
+<li><a href="#_что_значит_усыпить_поток">34. Что значит <em>«усыпить»</em> поток?</a></li>
+<li><a href="#_чем_отличаются_два_интерфейса_runnable_и_callable">35. Чем отличаются два интерфейса <code>Runnable</code> и <code>Callable</code>?</a></li>
+<li><a href="#_что_такое_futuretask">36. Что такое <code>FutureTask</code>?</a></li>
+<li><a href="#_в_чем_заключаются_различия_между_cyclicbarrier_и_countdownlatch">37. В чем заключаются различия между <code>CyclicBarrier</code> и <code>CountDownLatch</code>?</a></li>
+<li><a href="#_что_такое_race_condition">38. Что такое <em>race condition</em>?</a></li>
+<li><a href="#_существует_ли_способ_решения_проблемы_race_condition">39. Существует ли способ решения проблемы <em>race condition</em>?</a></li>
+<li><a href="#_как_остановить_поток">40. Как остановить поток?</a></li>
+<li><a href="#_почему_не_рекомендуется_использовать_метод_thread_stop">41. Почему не рекомендуется использовать метод <code>Thread.stop()</code>?</a></li>
+<li><a href="#_что_происходит_когда_в_потоке_выбрасывается_исключение">42. Что происходит, когда в потоке выбрасывается исключение?</a></li>
+<li><a href="#_в_чем_разница_между_interrupted_и_isinterrupted">43. В чем разница между <code>interrupted()</code> и <code>isInterrupted()</code>?</a></li>
+<li><a href="#_что_такое_пул_потоков">44. Что такое <em>«пул потоков»</em>?</a></li>
+<li><a href="#_какого_размера_должен_быть_пул_потоков">45. Какого размера должен быть пул потоков?</a></li>
+<li><a href="#_что_будет_если_очередь_пула_потоков_уже_заполнена_но_подаётся_новая_задача">46. Что будет, если очередь пула потоков уже заполнена, но подаётся новая задача?</a></li>
+<li><a href="#_в_чём_заключается_различие_между_методами_submit_и_execute_у_пула_потоков">47. В чём заключается различие между методами <code>submit()</code> и <code>execute()</code> у пула потоков?</a></li>
+<li><a href="#_в_чем_заключаются_различия_между_cтеком_stack_и_кучей_heap_с_точки_зрения_многопоточности">48. В чем заключаются различия между cтеком (stack) и кучей (heap) с точки зрения многопоточности?</a></li>
+<li><a href="#_как_поделиться_данными_между_двумя_потоками">49. Как поделиться данными между двумя потоками?</a></li>
+<li><a href="#_какой_параметр_запуска_jvm_используется_для_контроля_размера_стека_потока">50. Какой параметр запуска JVM используется для контроля размера стека потока?</a></li>
+<li><a href="#_как_получить_дамп_потока">51. Как получить дамп потока?</a></li>
+<li><a href="#_что_такое_threadlocal_переменная">52. Что такое <em>ThreadLocal-переменная</em>?</a></li>
+<li><a href="#_назовите_различия_между_synchronized_и_reentrantlock">53. Назовите различия между <code>synchronized</code> и <code>ReentrantLock</code>?</a></li>
+<li><a href="#_что_такое_readwritelock">54. Что такое <code>ReadWriteLock</code>?</a></li>
+<li><a href="#_что_такое_блокирующий_метод">55. Что такое <em>«блокирующий метод»</em>?</a></li>
+<li><a href="#_что_такое_фреймворк_forkjoin">56. Что такое <em>«фреймворк Fork/Join»</em>?</a></li>
+<li><a href="#_что_такое_semaphore">57. Что такое <code>Semaphore</code>?</a></li>
+<li><a href="#_что_такое_double_checked_locking_singleton">58. Что такое <em>double checked locking Singleton</em>?</a></li>
+<li><a href="#_как_создать_потокобезопасный_singleton">59. Как создать потокобезопасный Singleton?</a></li>
+<li><a href="#_чем_полезны_неизменяемые_объекты">60. Чем полезны неизменяемые объекты?</a></li>
+<li><a href="#_что_такое_busy_spin">61. Что такое <em>busy spin</em>?</a></li>
+<li><a href="#_перечислите_принципы_которым_вы_следуете_в_многопоточном_программировании">62. Перечислите принципы, которым вы следуете в многопоточном программировании?</a></li>
+<li><a href="#_какое_из_следующих_утверждений_о_потоках_неверно">63. Какое из следующих утверждений о потоках неверно?</a></li>
+<li><a href="#_даны_3_потока_т1_т2_и_т3_как_реализовать_выполнение_в_последовательности_т1_т2_т3">64. Даны 3 потока Т1, Т2 и Т3? Как реализовать выполнение в последовательности Т1, Т2, Т3?</a></li>
+<li><a href="#_напишите_минимальный_неблокирующий_стек_всего_два_методаpush_и_pop">65. Напишите минимальный неблокирующий стек (всего два метода&#8201;&#8212;&#8201;<code>push()</code> и <code>pop()</code>).</a></li>
+<li><a href="#_напишите_минимальный_неблокирующий_стек_всего_два_методаpush_и_pop_с_использованием_semaphore">66. Напишите минимальный неблокирующий стек (всего два метода&#8201;&#8212;&#8201;<code>push()</code> и <code>pop()</code>) с использованием <code>Semaphore</code>.</a></li>
+<li><a href="#_напишите_минимальный_неблокирующий_arraylist_всего_четыре_методаadd_get_remove_size">67. Напишите минимальный неблокирующий ArrayList (всего четыре метода&#8201;&#8212;&#8201;<code>add()</code>, <code>get()</code>, <code>remove()</code>, <code>size()</code>).</a></li>
+<li><a href="#_напишите_потокобезопасную_реализацию_класса_с_неблокирующим_методом_biginteger_next_который_возвращает_элементы_последовательности_1_2_4_8_16">68. Напишите потокобезопасную реализацию класса с неблокирующим методом <code>BigInteger next()</code>, который возвращает элементы последовательности: <code>[1, 2, 4, 8, 16, ...]</code>.</a></li>
+<li><a href="#_напишите_простейший_многопоточный_ограниченный_буфер_с_использованием_synchronized">69. Напишите простейший многопоточный ограниченный буфер с использованием <code>synchronized</code>.</a></li>
+<li><a href="#_напишите_простейший_многопоточный_ограниченный_буфер_с_использованием_reentrantlock">70. Напишите простейший многопоточный ограниченный буфер с использованием <code>ReentrantLock</code>.</a></li>
+<li><a href="#_источники">71. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_расскажите_о_модели_памяти_java">Расскажите о модели памяти Java?</h2>
+<h2 id="_расскажите_о_модели_памяти_java">1. Расскажите о модели памяти Java?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Модель памяти Java (Java Memory Model, JMM)</strong> описывает поведение потоков в среде исполнения Java. Это часть семантики языка Java, набор правил, описывающий выполнение многопоточных программ и правил, по которым потоки могут взаимодействовать друг с другом посредством основной памяти.</p>
@@ -523,7 +889,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_потокобезопасность">Что такое «потокобезопасность»?</h2>
+<h2 id="_что_такое_потокобезопасность">2. Что такое «потокобезопасность»?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Потокобезопасность&#8201;&#8212;&#8201;свойство объекта или кода, которое гарантирует, что при исполнении или использовании несколькими потоками, код будет вести себя, как предполагается. Например потокобезопасный счётчик не пропустит ни один счёт, даже если один и тот же экземпляр этого счётчика будет использоваться несколькими потоками.</p>
@@ -531,7 +897,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чём_разница_между_конкуренцией_и_параллелизмом">В чём разница между <em>«конкуренцией»</em> и <em>«параллелизмом»</em>?</h2>
+<h2 id="_в_чём_разница_между_конкуренцией_и_параллелизмом">3. В чём разница между <em>«конкуренцией»</em> и <em>«параллелизмом»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Конкуренция&#8201;&#8212;&#8201;это способ одновременного решения множества задач.</p>
@@ -568,7 +934,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_кооперативная_многозадачность_какой_тип_многозадачности_использует_java_чем_обусловлен_этот_выбор">Что такое <em>«кооперативная многозадачность»</em>? Какой тип многозадачности использует Java? Чем обусловлен этот выбор?</h2>
+<h2 id="_что_такое_кооперативная_многозадачность_какой_тип_многозадачности_использует_java_чем_обусловлен_этот_выбор">4. Что такое <em>«кооперативная многозадачность»</em>? Какой тип многозадачности использует Java? Чем обусловлен этот выбор?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Кооперативная многозадачность</strong> - это способ деления процессорного времени между потоками, при котором каждый поток обязан отдавать управление следующему добровольно.</p>
@@ -591,7 +957,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_ordering_as_if_serial_semantics_sequential_consistency_visibility_atomicity_happens_before_mutual_exclusion_safe_publication">Что такое <em>ordering</em>, <em>as-if-serial semantics</em>, <em>sequential consistency</em>, <em>visibility</em>, <em>atomicity</em>, <em>happens-before</em>, <em>mutual exclusion</em>, <em>safe publication</em>?</h2>
+<h2 id="_что_такое_ordering_as_if_serial_semantics_sequential_consistency_visibility_atomicity_happens_before_mutual_exclusion_safe_publication">5. Что такое <em>ordering</em>, <em>as-if-serial semantics</em>, <em>sequential consistency</em>, <em>visibility</em>, <em>atomicity</em>, <em>happens-before</em>, <em>mutual exclusion</em>, <em>safe publication</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>ordering</strong> механизм, который определяет, когда один поток может увидеть <em>out-of-order</em> (неверный) порядок исполнения инструкций другого потока. CPU для повышения производительности может переупорядочивать процессорные инструкции и выполнять их в произвольном порядке  до тех пор пока для потока внутри не будет видно никаких отличий. Гарантия, предоставляемая этим механизмом, называется <strong>as-if-serial semantics</strong>.</p>
@@ -636,7 +1002,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_отличается_процесс_от_потока">Чем отличается процесс от потока?</h2>
+<h2 id="_чем_отличается_процесс_от_потока">6. Чем отличается процесс от потока?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Процесс</strong>&#8201;&#8212;&#8201;экземпляр программы во время выполнения, независимый объект, которому выделены системные ресурсы (например, процессорное время и память). Каждый процесс выполняется в отдельном адресном пространстве: один процесс не может получить доступ к переменным и структурам данных другого. Если процесс хочет получить доступ к чужим ресурсам, необходимо использовать межпроцессное взаимодействие. Это могут быть конвейеры, файлы, каналы связи между компьютерами и многое другое.</p>
@@ -652,7 +1018,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_зелёные_потоки_и_есть_ли_они_в_java">Что такое <em>«зелёные потоки»</em> и есть ли они в Java?</h2>
+<h2 id="_что_такое_зелёные_потоки_и_есть_ли_они_в_java">7. Что такое <em>«зелёные потоки»</em> и есть ли они в Java?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Зелёные (легковесные) потоки</strong>(green threads) - потоки эмулируемые виртуальной машиной или средой исполнения. Создание зелёного потока не подразумевает под собой создание реального потока ОС.</p>
@@ -672,7 +1038,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_каким_образом_можно_создать_поток">Каким образом можно создать поток?</h2>
+<h2 id="_каким_образом_можно_создать_поток">8. Каким образом можно создать поток?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -690,7 +1056,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_различаются_thread_и_runnable">Чем различаются <code>Thread</code> и <code>Runnable</code>?</h2>
+<h2 id="_чем_различаются_thread_и_runnable">9. Чем различаются <code>Thread</code> и <code>Runnable</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>Thread</code> - это класс, некоторая надстройка над физическим потоком.</p>
@@ -704,7 +1070,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чём_заключается_разница_между_методами_start_и_run">В чём заключается разница между методами <code>start()</code> и <code>run()</code>?</h2>
+<h2 id="_в_чём_заключается_разница_между_методами_start_и_run">10. В чём заключается разница между методами <code>start()</code> и <code>run()</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Несмотря на то, что <code>start()</code> вызывает метод <code>run()</code> внутри себя, это не то же самое, что просто вызов <code>run()</code>. Если <code>run()</code> вызывается как обычный метод, то он вызывается в том же потоке и никакой новый поток не запускается, как это происходит, в случае, когда вы вызываете метод <code>start()</code>.</p>
@@ -712,7 +1078,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_принудительно_запустить_поток">Как принудительно запустить поток?</h2>
+<h2 id="_как_принудительно_запустить_поток">11. Как принудительно запустить поток?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Никак. В Java не существует абсолютно никакого способа принудительного запуска потока. Это контролируется JVM и Java не предоставляет никакого API для управления этим процессом.</p>
@@ -720,7 +1086,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_монитор_в_java">Что такое <em>«монитор»</em> в Java?</h2>
+<h2 id="_что_такое_монитор_в_java">12. Что такое <em>«монитор»</em> в Java?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Монитор</strong>, мьютекс (mutex)&#8201;&#8212;&#8201;это средство обеспечения контроля за доступом к ресурсу. У монитора может быть максимум один владелец в каждый текущий момент времени. Следовательно, если кто-то использует ресурс и захватил монитор для обеспечения единоличного доступа, то другой, желающий использовать тот же ресурс, должен подождать освобождения монитора, захватить его и только потом начать использовать ресурс.</p>
@@ -734,7 +1100,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_дайте_определение_понятию_синхронизация">Дайте определение понятию «синхронизация».</h2>
+<h2 id="_дайте_определение_понятию_синхронизация">13. Дайте определение понятию «синхронизация».</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Синхронизация - это процесс, который позволяет выполнять потоки параллельно.</p>
@@ -745,7 +1111,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_существуют_способы_синхронизации_в_java">Какие существуют способы синхронизации в Java?</h2>
+<h2 id="_какие_существуют_способы_синхронизации_в_java">14. Какие существуют способы синхронизации в Java?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -763,7 +1129,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_каких_состояниях_может_находиться_поток">В каких состояниях может находиться поток?</h2>
+<h2 id="_в_каких_состояниях_может_находиться_поток">15. В каких состояниях может находиться поток?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Потоки могут находиться в одном из следующих состояний:</p>
@@ -803,7 +1169,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_можно_ли_создавать_новые_экземпляры_класса_пока_выполняется_static_synchronized_метод">Можно ли создавать новые экземпляры класса, пока выполняется <code>static synchronized</code> метод?</h2>
+<h2 id="_можно_ли_создавать_новые_экземпляры_класса_пока_выполняется_static_synchronized_метод">16. Можно ли создавать новые экземпляры класса, пока выполняется <code>static synchronized</code> метод?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Да, можно создавать новые экземпляры класса, так как статические поля не принадлежат к экземплярам класса.</p>
@@ -811,7 +1177,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_зачем_может_быть_нужен_private_мьютекс">Зачем может быть нужен <code>private</code> мьютекс?</h2>
+<h2 id="_зачем_может_быть_нужен_private_мьютекс">17. Зачем может быть нужен <code>private</code> мьютекс?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Объект для синхронизации делается <code>private</code>, чтобы сторонний код не мог на него синхронизироваться и случайно получить взаимную блокировку.</p>
@@ -819,7 +1185,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_работают_методы_wait_и_notifynotifyall">Как работают методы <code>wait()</code> и <code>notify()</code>/<code>notifyAll()</code>?</h2>
+<h2 id="_как_работают_методы_wait_и_notifynotifyall">18. Как работают методы <code>wait()</code> и <code>notify()</code>/<code>notifyAll()</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Эти методы определены у класса <code>Object</code> и предназначены для взаимодействия потоков между собой при межпоточной синхронизации.</p>
@@ -846,7 +1212,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_разница_между_notify_и_notifyall">В чем разница между <code>notify()</code> и <code>notifyAll()</code>?</h2>
+<h2 id="_в_чем_разница_между_notify_и_notifyall">19. В чем разница между <code>notify()</code> и <code>notifyAll()</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Дело в том, что «висеть» на методе <code>wait()</code> одного монитора могут сразу несколько потоков. При вызове <code>notify()</code> только один из них выходит из <code>wait()</code> и пытается захватить монитор, а затем продолжает работу со следующего после <code>wait()</code> оператора. Какой из них выйдет - заранее неизвестно. А при вызове <code>notifyAll()</code>, все висящие на <code>wait()</code> потоки выходят из <code>wait()</code>, и все они пытаются захватить монитор. Понятно, что в любой момент времени монитор может быть захвачен только одним потоком, а остальные ждут своей очереди. Порядок очереди определяется планировщиком потоков Java.</p>
@@ -854,7 +1220,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_почему_методы_wait_и_notify_вызываются_только_в_синхронизированном_блоке">Почему методы <code>wait()</code> и <code>notify()</code> вызываются только в синхронизированном блоке?</h2>
+<h2 id="_почему_методы_wait_и_notify_вызываются_только_в_синхронизированном_блоке">20. Почему методы <code>wait()</code> и <code>notify()</code> вызываются только в синхронизированном блоке?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Монитор надо захватывать в явном виде (через <code>synchronized</code>-блок), потому что методы <code>wait()</code> и <code>notify()</code> не синхронизированы.</p>
@@ -862,7 +1228,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_отличается_работа_метода_wait_с_параметром_и_без_параметра">Чем отличается работа метода <code>wait()</code> с параметром и без параметра?</h2>
+<h2 id="_чем_отличается_работа_метода_wait_с_параметром_и_без_параметра">21. Чем отличается работа метода <code>wait()</code> с параметром и без параметра?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>wait()</code></p>
@@ -880,7 +1246,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_отличаются_методы_thread_sleep_и_thread_yield">Чем отличаются методы <code>Thread.sleep()</code> и <code>Thread.yield()</code>?</h2>
+<h2 id="_чем_отличаются_методы_thread_sleep_и_thread_yield">22. Чем отличаются методы <code>Thread.sleep()</code> и <code>Thread.yield()</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Метод <code>yield()</code> служит причиной того, что поток переходит из состояния работающий (running) в состояние работоспособный (runnable), давая возможность другим потокам активизироваться. Но следующий выбранный для запуска поток может и не быть другим.</p>
@@ -891,22 +1257,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_работает_метод_thread_join">Как работает метод <code>Thread.join()</code>?</h2>
+<h2 id="_как_работает_метод_thread_join">23. Как работает метод <code>Thread.join()</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Когда поток вызывает <code>join()</code> для другого потока, текущий работающий поток будет ждать, пока другой поток, к которому он присоединяется, не будет завершён:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">void join()
-void join(long millis)
-void join(long millis, int nanos)</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kt">void</span> <span class="nf">join</span><span class="o">()</span>
+<span class="kt">void</span> <span class="nf">join</span><span class="o">(</span><span class="kt">long</span> <span class="n">millis</span><span class="o">)</span>
+<span class="kt">void</span> <span class="nf">join</span><span class="o">(</span><span class="kt">long</span> <span class="n">millis</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nanos</span><span class="o">)</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_deadlock">Что такое <em>deadlock</em>?</h2>
+<h2 id="_что_такое_deadlock">24. Что такое <em>deadlock</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Взаимная блокировка (deadlock)</strong> - явление, при котором все потоки находятся в режиме ожидания. Происходит, когда достигаются состояния:</p>
@@ -933,7 +1299,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_livelock">Что такое <em>livelock</em>?</h2>
+<h2 id="_что_такое_livelock">25. Что такое <em>livelock</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>livelock</em>&#8201;&#8212;&#8201;тип взаимной блокировки, при котором несколько потоков выполняют бесполезную работу, попадая в зацикленность при попытке получения каких-либо ресурсов. При этом их состояния постоянно изменяются в зависимости друг от друга. Фактической ошибки не возникает, но КПД системы падает до 0. Часто возникает в результате попыток предотвращения deadlock.</p>
@@ -948,7 +1314,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_проверить_удерживает_ли_поток_монитор_определённого_ресурса">Как проверить, удерживает ли поток монитор определённого ресурса?</h2>
+<h2 id="_как_проверить_удерживает_ли_поток_монитор_определённого_ресурса">26. Как проверить, удерживает ли поток монитор определённого ресурса?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Метод <code>Thread.holdsLock(lock)</code> возвращает <code>true</code>, когда текущий поток удерживает монитор у определённого объекта.</p>
@@ -956,19 +1322,19 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_на_каком_объекте_происходит_синхронизация_при_вызове_static_synchronized_метода">На каком объекте происходит синхронизация при вызове <code>static synchronized</code> метода?</h2>
+<h2 id="_на_каком_объекте_происходит_синхронизация_при_вызове_static_synchronized_метода">27. На каком объекте происходит синхронизация при вызове <code>static synchronized</code> метода?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>У синхронизированного статического метода нет доступа к <code>this</code>, но есть доступ к объекту класса <code>Class</code>, он присутствует в единственном экземпляре и именно он выступает в качестве монитора для синхронизации статических методов. Таким образом, следующая конструкция:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class SomeClass {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SomeClass</span> <span class="o">{</span>
 
-    public static synchronized void someMethod() {
-        //code
-    }
-}</code></pre>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">someMethod</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//code</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -976,20 +1342,20 @@ void join(long millis, int nanos)</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class SomeClass {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SomeClass</span> <span class="o">{</span>
 
-    public static void someMethod(){
-        synchronized(SomeClass.class){
-            //code
-        }
-    }
-}</code></pre>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">someMethod</span><span class="o">(){</span>
+        <span class="kd">synchronized</span><span class="o">(</span><span class="nc">SomeClass</span><span class="o">.</span><span class="na">class</span><span class="o">){</span>
+            <span class="c1">//code</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_используется_ключевое_слово_volatile_synchronized_transient_native">Для чего используется ключевое слово <code>volatile</code>, <code>synchronized</code>, <code>transient</code>, <code>native</code>?</h2>
+<h2 id="_для_чего_используется_ключевое_слово_volatile_synchronized_transient_native">28. Для чего используется ключевое слово <code>volatile</code>, <code>synchronized</code>, <code>transient</code>, <code>native</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong><code>volatile</code></strong> - этот модификатор вынуждает потоки отключить оптимизацию доступа и использовать единственный экземпляр переменной. Если переменная примитивного типа&#8201;&#8212;&#8201;этого будет достаточно для обеспечения потокобезопасности. Если же переменная является ссылкой на объект&#8201;&#8212;&#8201;синхронизировано будет исключительно значение этой ссылки. Все же данные, содержащиеся в объекте, синхронизированы не будут!</p>
@@ -1003,7 +1369,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чём_различия_между_volatile_и_atomic_переменными">В чём различия между <code>volatile</code> и <em>Atomic</em> переменными?</h2>
+<h2 id="_в_чём_различия_между_volatile_и_atomic_переменными">29. В чём различия между <code>volatile</code> и <em>Atomic</em> переменными?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>volatile</code> принуждает использовать единственный экземпляр переменной, но не гарантирует атомарность. Например, операция <code>count++</code> не станет атомарной просто потому, что <code>count</code> объявлена <code>volatile</code>. C другой стороны <code>class AtomicInteger</code> предоставляет атомарный метод для выполнения таких комплексных операций атомарно, например <code>getAndIncrement()</code>&#8201;&#8212;&#8201;атомарная замена оператора инкремента, его можно использовать, чтобы атомарно увеличить текущее значение на один. Похожим образом сконструированы атомарные версии и для других типов данных.</p>
@@ -1011,7 +1377,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чём_заключаются_различия_между_java_util_concurrent_atomic_compareandswap_и_java_util_concurrent_atomic_weakcompareandswap">В чём заключаются различия между <code>java.util.concurrent.Atomic*.compareAndSwap()</code> и <code>java.util.concurrent.Atomic*.weakCompareAndSwap()</code>.</h2>
+<h2 id="_в_чём_заключаются_различия_между_java_util_concurrent_atomic_compareandswap_и_java_util_concurrent_atomic_weakcompareandswap">30. В чём заключаются различия между <code>java.util.concurrent.Atomic*.compareAndSwap()</code> и <code>java.util.concurrent.Atomic*.weakCompareAndSwap()</code>.</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1029,7 +1395,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_значит_приоритет_потока">Что значит <em>«приоритет потока»</em>?</h2>
+<h2 id="_что_значит_приоритет_потока">31. Что значит <em>«приоритет потока»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Приоритеты потоков используются планировщиком потоков для принятия решений о том, когда какому из потоков будет разрешено работать. Теоретически высокоприоритетные потоки получают больше времени процессора, чем низкоприоритетные. Практически объем времени процессора, который получает поток, часто зависит от нескольких факторов помимо его приоритета.</p>
@@ -1043,7 +1409,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_потоки_демоны">Что такое <em>«потоки-демоны»</em>?</h2>
+<h2 id="_что_такое_потоки_демоны">32. Что такое <em>«потоки-демоны»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Потоки-демоны работают в фоновом режиме вместе с программой, но не являются неотъемлемой частью программы. Если какой-либо процесс может выполняться на фоне работы основных потоков выполнения и его деятельность заключается в обслуживании основных потоков приложения, то такой процесс может быть запущен как поток-демон с помощью метода <code>setDaemon(boolean value)</code>, вызванного у потока до его запуска. Метод <code>boolean isDaemon()</code> позволяет определить, является ли указанный поток демоном или нет. Базовое свойство потоков-демонов заключается в возможности основного потока приложения завершить выполнение потока-демона (в отличие от обычных потоков) с окончанием кода метода <code>main()</code>, не обращая внимания на то, что поток-демон еще работает.</p>
@@ -1051,7 +1417,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_можно_ли_сделать_основной_поток_программы_демоном">Можно ли сделать основной поток программы демоном?</h2>
+<h2 id="_можно_ли_сделать_основной_поток_программы_демоном">33. Можно ли сделать основной поток программы демоном?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Нет. Потоки-демоны позволяют описывать фоновые процессы, которые нужны только для обслуживания основных потоков выполнения и не могут существовать без них.</p>
@@ -1059,7 +1425,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_значит_усыпить_поток">Что значит <em>«усыпить»</em> поток?</h2>
+<h2 id="_что_значит_усыпить_поток">34. Что значит <em>«усыпить»</em> поток?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Это значит приостановить его на определенный промежуток времени, вызвав в ходе его выполнения статический метод <code>Thread.sleep()</code> передав в качестве параметра необходимое количество времени в  миллисекундах. До истечения этого времени поток может быть выведен из состояния ожидания вызовом <code>interrupt()</code> с выбрасыванием <code>InterruptedException</code>.</p>
@@ -1067,7 +1433,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_отличаются_два_интерфейса_runnable_и_callable">Чем отличаются два интерфейса <code>Runnable</code> и <code>Callable</code>?</h2>
+<h2 id="_чем_отличаются_два_интерфейса_runnable_и_callable">35. Чем отличаются два интерфейса <code>Runnable</code> и <code>Callable</code>?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1088,7 +1454,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_futuretask">Что такое <code>FutureTask</code>?</h2>
+<h2 id="_что_такое_futuretask">36. Что такое <code>FutureTask</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>FutureTask</code> представляет собой отменяемое асинхронное вычисление в параллельном Java приложении. Этот класс предоставляет базовую реализацию <code>Future</code>, с методами для запуска и остановки вычисления, методами для запроса состояния вычисления и извлечения результатов. Результат может быть получен только когда вычисление завершено, метод получения будет заблокирован, если вычисление ещё не завершено. Объекты <code>FutureTask</code> могут быть использованы для обёртки объектов <code>Callable</code> и <code>Runnable</code>. Так как <code>FutureTask</code> реализует <code>Runnable</code>, его можно передать в <code>Executor</code> на выполнение.</p>
@@ -1096,7 +1462,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_заключаются_различия_между_cyclicbarrier_и_countdownlatch">В чем заключаются различия между <code>CyclicBarrier</code> и <code>CountDownLatch</code>?</h2>
+<h2 id="_в_чем_заключаются_различия_между_cyclicbarrier_и_countdownlatch">37. В чем заключаются различия между <code>CyclicBarrier</code> и <code>CountDownLatch</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>CountDownLatch</code> (замок с обратным отсчетом) предоставляет возможность любому количеству потоков в блоке кода ожидать до тех пор, пока не завершится определенное количество операций, выполняющихся в других потоках, перед тем как они будут «отпущены», чтобы продолжить свою деятельность. В конструктор <code>CountDownLatch(int count)</code> обязательно передается количество операций, которое должно быть выполнено, чтобы замок «отпустил» заблокированные потоки.</p>
@@ -1124,7 +1490,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_race_condition">Что такое <em>race condition</em>?</h2>
+<h2 id="_что_такое_race_condition">38. Что такое <em>race condition</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Состояние гонки</strong> (race condition) - ошибка проектирования многопоточной системы или приложения, при которой эта работа напрямую зависит от того, в каком порядке выполняются потоки. Состояние гонки возникает, когда поток, который должен исполнится в начале, проиграл гонку и первым исполняется другой поток: поведение кода изменяется, из-за чего возникают недетерменированные ошибки.</p>
@@ -1132,7 +1498,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_существует_ли_способ_решения_проблемы_race_condition">Существует ли способ решения проблемы <em>race condition</em>?</h2>
+<h2 id="_существует_ли_способ_решения_проблемы_race_condition">39. Существует ли способ решения проблемы <em>race condition</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Распространённые способы решения:</p>
@@ -1156,7 +1522,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_остановить_поток">Как остановить поток?</h2>
+<h2 id="_как_остановить_поток">40. Как остановить поток?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>На данный момент в Java принят уведомительный порядок остановки потока (хотя JDK 1.0 и имеет несколько управляющих выполнением потока методов, например <code>stop()</code>, <code>suspend()</code> и <code>resume()</code> - в следующих версиях JDK все они были помечены как <code>deprecated</code> из-за потенциальных угроз взаимной блокировки).</p>
@@ -1192,7 +1558,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_почему_не_рекомендуется_использовать_метод_thread_stop">Почему не рекомендуется использовать метод <code>Thread.stop()</code>?</h2>
+<h2 id="_почему_не_рекомендуется_использовать_метод_thread_stop">41. Почему не рекомендуется использовать метод <code>Thread.stop()</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>При принудительной остановке (приостановке) потока, <code>stop()</code> прерывает поток в недетерменированном месте выполнения, в результате становится совершенно непонятно, что делать с принадлежащими ему ресурсами. Поток может открыть сетевое соединение - что в таком случае делать с данными, которые еще не вычитаны? Где гарантия, что после дальнейшего запуска потока (в случае приостановки) он сможет их дочитать? Если поток блокировал разделяемый ресурс, то как снять эту блокировку и не переведёт ли принудительное снятие к нарушению консистентности системы? То же самое можно расширить и на случай соединения с базой данных: если поток остановят посередине транзакции, то кто ее будет закрывать? Кто и как будет разблокировать ресурсы?</p>
@@ -1200,7 +1566,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_происходит_когда_в_потоке_выбрасывается_исключение">Что происходит, когда в потоке выбрасывается исключение?</h2>
+<h2 id="_что_происходит_когда_в_потоке_выбрасывается_исключение">42. Что происходит, когда в потоке выбрасывается исключение?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1215,7 +1581,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_разница_между_interrupted_и_isinterrupted">В чем разница между <code>interrupted()</code> и <code>isInterrupted()</code>?</h2>
+<h2 id="_в_чем_разница_между_interrupted_и_isinterrupted">43. В чем разница между <code>interrupted()</code> и <code>isInterrupted()</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Механизм прерывания работы потока в Java реализован с использованием внутреннего флага, известного как статус прерывания. Прерывание потока вызовом <code>Thread.interrupt()</code> устанавливает этот флаг. Методы <code>Thread.interrupted()</code> и <code>isInterrupted()</code> позволяют проверить, является ли поток прерванным.</p>
@@ -1229,7 +1595,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_пул_потоков">Что такое <em>«пул потоков»</em>?</h2>
+<h2 id="_что_такое_пул_потоков">44. Что такое <em>«пул потоков»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Создание потока является затратной по времени и ресурсам операцией. Количество потоков, которое может быть запущено в рамках одного процесса также ограниченно. Чтобы избежать этих проблем и в целом управлять множеством потоков более эффективно в Java был реализован механизм пула потоков (thread pool), который создаётся во время запуска приложения и в дальнейшем потоки для обработки запросов берутся и переиспользуются уже из него. Таким образом, появляется возможность не терять потоки, сбалансировать приложение по количеству потоков и частоте их создания.</p>
@@ -1299,7 +1665,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какого_размера_должен_быть_пул_потоков">Какого размера должен быть пул потоков?</h2>
+<h2 id="_какого_размера_должен_быть_пул_потоков">45. Какого размера должен быть пул потоков?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Настраивая размер пула потоков, важно избежать двух ошибок: слишком мало потоков (очередь на выполнение будет расти, потребляя много памяти) или слишком много потоков (замедление работы всей систему из-за частых переключений контекста).</p>
@@ -1314,7 +1680,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_будет_если_очередь_пула_потоков_уже_заполнена_но_подаётся_новая_задача">Что будет, если очередь пула потоков уже заполнена, но подаётся новая задача?</h2>
+<h2 id="_что_будет_если_очередь_пула_потоков_уже_заполнена_но_подаётся_новая_задача">46. Что будет, если очередь пула потоков уже заполнена, но подаётся новая задача?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Если очередь пула потоков заполнилась, то поданная задача будет «отклонена». Например - метод <code>submit()</code> у <code>ThreadPoolExecutor</code> выкидывает <code>RejectedExecutionException</code>, после которого вызывается <code>RejectedExecutionHandler</code>.</p>
@@ -1322,7 +1688,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чём_заключается_различие_между_методами_submit_и_execute_у_пула_потоков">В чём заключается различие между методами <code>submit()</code> и <code>execute()</code> у пула потоков?</h2>
+<h2 id="_в_чём_заключается_различие_между_методами_submit_и_execute_у_пула_потоков">47. В чём заключается различие между методами <code>submit()</code> и <code>execute()</code> у пула потоков?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Оба метода являются способами подачи задачи в пул потоков, но между ними есть небольшая разница.</p>
@@ -1336,7 +1702,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_заключаются_различия_между_cтеком_stack_и_кучей_heap_с_точки_зрения_многопоточности">В чем заключаются различия между cтеком (stack) и кучей (heap) с точки зрения многопоточности?</h2>
+<h2 id="_в_чем_заключаются_различия_между_cтеком_stack_и_кучей_heap_с_точки_зрения_многопоточности">48. В чем заключаются различия между cтеком (stack) и кучей (heap) с точки зрения многопоточности?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Cтек</strong>&#8201;&#8212;&#8201;участок памяти, тесно связанный с потоками. У каждого потока есть свой стек, которые хранит локальные переменные, параметры методов и стек вызовов. Переменная, хранящаяся в стеке одного потока, не видна для другого.</p>
@@ -1347,7 +1713,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_поделиться_данными_между_двумя_потоками">Как поделиться данными между двумя потоками?</h2>
+<h2 id="_как_поделиться_данными_между_двумя_потоками">49. Как поделиться данными между двумя потоками?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Данными между потоками возможно делиться, используя общий объект или параллельные структуры данных, например <code>BlockingQueue</code>.</p>
@@ -1355,7 +1721,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какой_параметр_запуска_jvm_используется_для_контроля_размера_стека_потока">Какой параметр запуска JVM используется для контроля размера стека потока?</h2>
+<h2 id="_какой_параметр_запуска_jvm_используется_для_контроля_размера_стека_потока">50. Какой параметр запуска JVM используется для контроля размера стека потока?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>-Xss</code></p>
@@ -1363,7 +1729,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_получить_дамп_потока">Как получить дамп потока?</h2>
+<h2 id="_как_получить_дамп_потока">51. Как получить дамп потока?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Среды исполнения Java на основе HotSpot генерируют только дамп в формате HPROF. В распоряжении разработчика имеется несколько интерактивных методов генерации дампов и один метод генерации дампов на основе событий.</p>
@@ -1401,7 +1767,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_threadlocal_переменная">Что такое <em>ThreadLocal-переменная</em>?</h2>
+<h2 id="_что_такое_threadlocal_переменная">52. Что такое <em>ThreadLocal-переменная</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>ThreadLocal</code> - класс, позволяющий имея одну переменную, иметь различное её значение для каждого из потоков.</p>
@@ -1421,7 +1787,7 @@ void join(long millis, int nanos)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_назовите_различия_между_synchronized_и_reentrantlock">Назовите различия между <code>synchronized</code> и <code>ReentrantLock</code>?</h2>
+<h2 id="_назовите_различия_между_synchronized_и_reentrantlock">53. Назовите различия между <code>synchronized</code> и <code>ReentrantLock</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>В Java 5 появился интерфейс <code>Lock</code> предоставляющий возможности более эффективного и тонкого контроля блокировки ресурсов. <code>ReentrantLock</code>&#8201;&#8212;&#8201;распространённая реализация <code>Lock</code>, которая предоставляет <code>Lock</code> с таким же базовым поведением и семантикой, как у <code>synchronized</code>, но расширенными возможностями, такими как опрос о блокировании (lock polling), ожидание блокирования заданной длительности и прерываемое ожидание блокировки. Кроме того, он предлагает гораздо более высокую эффективность функционирования в условиях жесткой <em>состязательности</em>.</p>
@@ -1431,15 +1797,15 @@ void join(long millis, int nanos)</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Lock lock = new ReentrantLock();
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Lock</span> <span class="n">lock</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ReentrantLock</span><span class="o">();</span>
 
-lock.lock();
-try {
-  // update object state
-}
-finally {
-  lock.unlock();
-}</code></pre>
+<span class="n">lock</span><span class="o">.</span><span class="na">lock</span><span class="o">();</span>
+<span class="k">try</span> <span class="o">{</span>
+  <span class="c1">// update object state</span>
+<span class="o">}</span>
+<span class="k">finally</span> <span class="o">{</span>
+  <span class="n">lock</span><span class="o">.</span><span class="na">unlock</span><span class="o">();</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -1458,7 +1824,7 @@ finally {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_readwritelock">Что такое <code>ReadWriteLock</code>?</h2>
+<h2 id="_что_такое_readwritelock">54. Что такое <code>ReadWriteLock</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>ReadWriteLock</code>&#8201;&#8212;&#8201;это интерфейс расширяющий базовый интерфейс <code>Lock</code>. Используется для улучшения производительности в многопоточном процессе и оперирует парой связанных блокировок (одна - для операций чтения, другая - для записи). Блокировка чтения может удерживаться одновременно несколькими читающими потоками, до тех пор, пока не появится записывающий. Блокировка записи является эксклюзивеной.</p>
@@ -1468,29 +1834,29 @@ finally {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">ReadWriteLock rwLock = new ReentrantReadWriteLock();
-Lock rLock = rwLock.readLock();
-Lock wLock = rwLock.writeLock();
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">ReadWriteLock</span> <span class="n">rwLock</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ReentrantReadWriteLock</span><span class="o">();</span>
+<span class="nc">Lock</span> <span class="n">rLock</span> <span class="o">=</span> <span class="n">rwLock</span><span class="o">.</span><span class="na">readLock</span><span class="o">();</span>
+<span class="nc">Lock</span> <span class="n">wLock</span> <span class="o">=</span> <span class="n">rwLock</span><span class="o">.</span><span class="na">writeLock</span><span class="o">();</span>
 
-wLock.lock();
-try {
-    // exclusive write
-} finally {
-    wLock.unlock();
-}
+<span class="n">wLock</span><span class="o">.</span><span class="na">lock</span><span class="o">();</span>
+<span class="k">try</span> <span class="o">{</span>
+    <span class="c1">// exclusive write</span>
+<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+    <span class="n">wLock</span><span class="o">.</span><span class="na">unlock</span><span class="o">();</span>
+<span class="o">}</span>
 
-rLock.lock();
-try {
-    // shared reading
-} finally {
-    rLock.unlock();
-}</code></pre>
+<span class="n">rLock</span><span class="o">.</span><span class="na">lock</span><span class="o">();</span>
+<span class="k">try</span> <span class="o">{</span>
+    <span class="c1">// shared reading</span>
+<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+    <span class="n">rLock</span><span class="o">.</span><span class="na">unlock</span><span class="o">();</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_блокирующий_метод">Что такое <em>«блокирующий метод»</em>?</h2>
+<h2 id="_что_такое_блокирующий_метод">55. Что такое <em>«блокирующий метод»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Блокирующий метод</strong>&#8201;&#8212;&#8201;метод, который блокируется, до тех пор, пока задание не выполнится, например метод <code>accept()</code> у <code>ServerSocket</code> блокируется в ожидании подключения клиента. Здесь блокирование означает, что контроль не вернётся к вызывающему методу до тех пор, пока не выполнится задание. Так же существуют асинхронные или неблокирующиеся методы, которые могут завершится до выполнения задачи.</p>
@@ -1498,7 +1864,7 @@ try {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_фреймворк_forkjoin">Что такое <em>«фреймворк Fork/Join»</em>?</h2>
+<h2 id="_что_такое_фреймворк_forkjoin">56. Что такое <em>«фреймворк Fork/Join»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Фреймворк Fork/Join, представленный в JDK 7, - это набор классов и интерфейсов позволяющих использовать преимущества многопроцессорной архитектуры современных компьютеров. Он разработан для выполнения задач, которые можно рекурсивно разбить на маленькие подзадачи, которые можно решать параллельно.</p>
@@ -1529,7 +1895,7 @@ try {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_semaphore">Что такое <code>Semaphore</code>?</h2>
+<h2 id="_что_такое_semaphore">57. Что такое <code>Semaphore</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Semaphore&#8201;&#8212;&#8201;это новый тип синхронизатора: семафор со счётчиком, реализующий шаблон синхронизации Семафор. Доступ управляется с помощью счётчика: изначальное значение счётчика задаётся в конструкторе при создании синхронизатора, когда поток заходит в заданный блок кода, то значение счётчика уменьшается на единицу, когда поток его покидает, то увеличивается. Если значение счётчика равно нулю, то текущий поток блокируется, пока кто-нибудь не выйдет из защищаемого блока. Semaphore используется для защиты дорогих ресурсов, которые доступны в ограниченном количестве, например подключение к базе данных в пуле.</p>
@@ -1537,30 +1903,30 @@ try {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_double_checked_locking_singleton">Что такое <em>double checked locking Singleton</em>?</h2>
+<h2 id="_что_такое_double_checked_locking_singleton">58. Что такое <em>double checked locking Singleton</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>double checked locking Singleton</strong> - это один из способов создания потокобезопасного класса реализующего шаблон Одиночка. Данный метод пытается оптимизировать производительность, блокируясь только случае, когда экземпляр одиночки создаётся впервые.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class DoubleCheckedLockingSingleton {
-    private static volatile DoubleCheckedLockingSingleton instance;
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">DoubleCheckedLockingSingleton</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="nc">DoubleCheckedLockingSingleton</span> <span class="n">instance</span><span class="o">;</span>
 
-    static DoubleCheckedLockingSingleton getInstance() {
-        DoubleCheckedLockingSingleton current = instance;
-        if (current == null) {
-            synchronized (DoubleCheckedLockingSingleton.class) {
-                current = instance;
+    <span class="kd">static</span> <span class="nc">DoubleCheckedLockingSingleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">DoubleCheckedLockingSingleton</span> <span class="n">current</span> <span class="o">=</span> <span class="n">instance</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">current</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">synchronized</span> <span class="o">(</span><span class="nc">DoubleCheckedLockingSingleton</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="n">instance</span><span class="o">;</span>
 
-                if (current == null) {
-                    instance = current = new DoubleCheckedLockingSingleton();
-                }
-            }
-        }
-        return current;
-    }
-}</code></pre>
+                <span class="k">if</span> <span class="o">(</span><span class="n">current</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">instance</span> <span class="o">=</span> <span class="n">current</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DoubleCheckedLockingSingleton</span><span class="o">();</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">current</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1569,7 +1935,7 @@ try {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_создать_потокобезопасный_singleton">Как создать потокобезопасный Singleton?</h2>
+<h2 id="_как_создать_потокобезопасный_singleton">59. Как создать потокобезопасный Singleton?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1580,9 +1946,9 @@ try {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class Singleton {
-	public static final Singleton INSTANCE = new Singleton();
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">Singleton</span> <span class="no">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Singleton</span><span class="o">();</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -1594,9 +1960,9 @@ try {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public enum Singleton {
-	INSTANCE;
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">enum</span> <span class="nc">Singleton</span> <span class="o">{</span>
+	<span class="no">INSTANCE</span><span class="o">;</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -1608,16 +1974,16 @@ try {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class Singleton {
-	private static Singleton instance;
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="nc">Singleton</span> <span class="n">instance</span><span class="o">;</span>
 
-	public static synchronized Singleton getInstance() {
-		if (instance == null) {
-			instance = new Singleton();
-		}
-		return instance;
-	}
-}</code></pre>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kd">synchronized</span> <span class="nc">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Singleton</span><span class="o">();</span>
+		<span class="o">}</span>
+		<span class="k">return</span> <span class="n">instance</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -1629,22 +1995,22 @@ try {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class Singleton {
-        private static volatile Singleton instance;
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="nc">Singleton</span> <span class="n">instance</span><span class="o">;</span>
 
-        public static Singleton getInstance() {
-		Singleton localInstance = instance;
-		if (localInstance == null) {
-			synchronized (Singleton.class) {
-				localInstance = instance;
-				if (localInstance == null) {
-					instance = localInstance = new Singleton();
-				}
-			}
-		}
-		return localInstance;
-	}
-}</code></pre>
+        <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">Singleton</span> <span class="n">localInstance</span> <span class="o">=</span> <span class="n">instance</span><span class="o">;</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">localInstance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+			<span class="kd">synchronized</span> <span class="o">(</span><span class="nc">Singleton</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+				<span class="n">localInstance</span> <span class="o">=</span> <span class="n">instance</span><span class="o">;</span>
+				<span class="k">if</span> <span class="o">(</span><span class="n">localInstance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+					<span class="n">instance</span> <span class="o">=</span> <span class="n">localInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Singleton</span><span class="o">();</span>
+				<span class="o">}</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+		<span class="k">return</span> <span class="n">localInstance</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -1656,22 +2022,22 @@ try {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class Singleton {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>
 
-	public static class SingletonHolder {
-		public static final Singleton HOLDER_INSTANCE = new Singleton();
-	}
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">SingletonHolder</span> <span class="o">{</span>
+		<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">Singleton</span> <span class="no">HOLDER_INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Singleton</span><span class="o">();</span>
+	<span class="o">}</span>
 
-	public static Singleton getInstance() {
-		return SingletonHolder.HOLDER_INSTANCE;
-	}
-}</code></pre>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="nc">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="nc">SingletonHolder</span><span class="o">.</span><span class="na">HOLDER_INSTANCE</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_полезны_неизменяемые_объекты">Чем полезны неизменяемые объекты?</h2>
+<h2 id="_чем_полезны_неизменяемые_объекты">60. Чем полезны неизменяемые объекты?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Неизменяемость (immutability) помогает облегчить написание многопоточного кода. Неизменяемый объект может быть использован без какой-либо синхронизации. К сожалению, в Java нет аннотации <code>@Immutable</code>, которая делает объект неизменяемым, для этого разработчикам нужно самим создавать класс с необходимыми характеристиками. Для этого необходимо следовать некоторым общим принципам: инициализация всех полей только в конструкторе, отсутствие методов <code>setX()</code> вносящих изменения в поля класса, отсутствие утечек ссылки, организация отдельного хранилища копий изменяемых объектов и т.д.</p>
@@ -1679,7 +2045,7 @@ try {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_busy_spin">Что такое <em>busy spin</em>?</h2>
+<h2 id="_что_такое_busy_spin">61. Что такое <em>busy spin</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>busy spin</strong>&#8201;&#8212;&#8201;это техника, которую программисты используют, чтобы заставить поток ожидать при определённом условии. В отличие от традиционных методов <code>wait()</code>, <code>sleep()</code> или <code>yield()</code>, которые подразумевают уступку процессорного времени, этот метод вместо уступки выполняет пустой цикл. Это необходимо, для того, чтобы сохранить кэш процессора, т.к. в многоядерных системах, существует вероятность, что приостановленный поток продолжит своё выполнение уже на другом ядре, а это повлечет за собой перестройку состояния процессорного кэша, которая является достаточно затратной процедурой.</p>
@@ -1687,7 +2053,7 @@ try {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_перечислите_принципы_которым_вы_следуете_в_многопоточном_программировании">Перечислите принципы, которым вы следуете в многопоточном программировании?</h2>
+<h2 id="_перечислите_принципы_которым_вы_следуете_в_многопоточном_программировании">62. Перечислите принципы, которым вы следуете в многопоточном программировании?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>При написании многопоточных программ следует придерживаться определённых правил, которые помогают обеспечить достойную производительность приложения в сочетании с удобной отладкой и простотой дальнейшей поддержки кода.</p>
@@ -1717,7 +2083,7 @@ try {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какое_из_следующих_утверждений_о_потоках_неверно">Какое из следующих утверждений о потоках неверно?</h2>
+<h2 id="_какое_из_следующих_утверждений_о_потоках_неверно">63. Какое из следующих утверждений о потоках неверно?</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -1744,7 +2110,7 @@ try {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_даны_3_потока_т1_т2_и_т3_как_реализовать_выполнение_в_последовательности_т1_т2_т3">Даны 3 потока Т1, Т2 и Т3? Как реализовать выполнение в последовательности Т1, Т2, Т3?</h2>
+<h2 id="_даны_3_потока_т1_т2_и_т3_как_реализовать_выполнение_в_последовательности_т1_т2_т3">64. Даны 3 потока Т1, Т2 и Т3? Как реализовать выполнение в последовательности Т1, Т2, Т3?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Такой последовательности выполнения можно достичь многими способами, например просто воспользоваться методом <code>join()</code>, чтобы запустить поток в момент, когда другой уже закончит своё выполнение. Для реализации заданной последовательности, нужно запустить последний поток первым, и затем вызывать метод <code>join()</code> в обратном порядке, то есть Т3 вызывает <code>Т2.join</code>, а Т2 вызывает <code>Т1.join</code>, таким образом Т1 закончит выполнение первым, а Т3 последним.</p>
@@ -1752,342 +2118,342 @@ try {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_напишите_минимальный_неблокирующий_стек_всего_два_методаpush_и_pop">Напишите минимальный неблокирующий стек (всего два метода&#8201;&#8212;&#8201;<code>push()</code> и <code>pop()</code>).</h2>
+<h2 id="_напишите_минимальный_неблокирующий_стек_всего_два_методаpush_и_pop">65. Напишите минимальный неблокирующий стек (всего два метода&#8201;&#8212;&#8201;<code>push()</code> и <code>pop()</code>).</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class NonBlockingStack&lt;T&gt; {
-    private final AtomicReference&lt;Element&gt; head = new AtomicReference&lt;&gt;(null);
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">NonBlockingStack</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">AtomicReference</span><span class="o">&lt;</span><span class="nc">Element</span><span class="o">&gt;</span> <span class="n">head</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AtomicReference</span><span class="o">&lt;&gt;(</span><span class="kc">null</span><span class="o">);</span>
 
-    NonBlockingStack&lt;T&gt; push(final T value) {
-        final Element current = new Element();
-        current.value = value;
-        Element recent;
-        do {
-            recent = head.get();
-            current.previous = recent;
-        } while (!head.compareAndSet(recent, current));
-        return this;
-    }
+    <span class="nc">NonBlockingStack</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nf">push</span><span class="o">(</span><span class="kd">final</span> <span class="no">T</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="nc">Element</span> <span class="n">current</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Element</span><span class="o">();</span>
+        <span class="n">current</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+        <span class="nc">Element</span> <span class="n">recent</span><span class="o">;</span>
+        <span class="k">do</span> <span class="o">{</span>
+            <span class="n">recent</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+            <span class="n">current</span><span class="o">.</span><span class="na">previous</span> <span class="o">=</span> <span class="n">recent</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">while</span> <span class="o">(!</span><span class="n">head</span><span class="o">.</span><span class="na">compareAndSet</span><span class="o">(</span><span class="n">recent</span><span class="o">,</span> <span class="n">current</span><span class="o">));</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    T pop() {
-        Element result;
-        Element previous;
-        do {
-            result = head.get();
-            if (result == null) {
-                return null;
-            }
-            previous = result.previous;
-        } while (!head.compareAndSet(result, previous));
-        return result.value;
-    }
+    <span class="no">T</span> <span class="nf">pop</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">Element</span> <span class="n">result</span><span class="o">;</span>
+        <span class="nc">Element</span> <span class="n">previous</span><span class="o">;</span>
+        <span class="k">do</span> <span class="o">{</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">result</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="n">previous</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">previous</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">while</span> <span class="o">(!</span><span class="n">head</span><span class="o">.</span><span class="na">compareAndSet</span><span class="o">(</span><span class="n">result</span><span class="o">,</span> <span class="n">previous</span><span class="o">));</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    private class Element {
-        private T value;
-        private Element previous;
-    }
-}</code></pre>
+    <span class="kd">private</span> <span class="kd">class</span> <span class="nc">Element</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="no">T</span> <span class="n">value</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="nc">Element</span> <span class="n">previous</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_напишите_минимальный_неблокирующий_стек_всего_два_методаpush_и_pop_с_использованием_semaphore">Напишите минимальный неблокирующий стек (всего два метода&#8201;&#8212;&#8201;<code>push()</code> и <code>pop()</code>) с использованием <code>Semaphore</code>.</h2>
+<h2 id="_напишите_минимальный_неблокирующий_стек_всего_два_методаpush_и_pop_с_использованием_semaphore">66. Напишите минимальный неблокирующий стек (всего два метода&#8201;&#8212;&#8201;<code>push()</code> и <code>pop()</code>) с использованием <code>Semaphore</code>.</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class SemaphoreStack&lt;T&gt; {
-    private final Semaphore semaphore = new Semaphore(1);
-    private Node&lt;T&gt; head = null;
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">SemaphoreStack</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Semaphore</span> <span class="n">semaphore</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Semaphore</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+    <span class="kd">private</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">head</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 
-    SemaphoreStack&lt;T&gt; push(T value) {
-        semaphore.acquireUninterruptibly();
-        try {
-            head = new Node&lt;&gt;(value, head);
-        } finally {
-            semaphore.release();
-        }
+    <span class="nc">SemaphoreStack</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nf">push</span><span class="o">(</span><span class="no">T</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">semaphore</span><span class="o">.</span><span class="na">acquireUninterruptibly</span><span class="o">();</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Node</span><span class="o">&lt;&gt;(</span><span class="n">value</span><span class="o">,</span> <span class="n">head</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="n">semaphore</span><span class="o">.</span><span class="na">release</span><span class="o">();</span>
+        <span class="o">}</span>
 
-        return this;
-    }
+        <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    T pop() {
-        semaphore.acquireUninterruptibly();
-        try {
-            Node&lt;T&gt; current = head;
-            if (current != null) {
-                head = head.next;
-                return current.value;
-            }
-            return null;
-        } finally {
-            semaphore.release();
-        }
-    }
+    <span class="no">T</span> <span class="nf">pop</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">semaphore</span><span class="o">.</span><span class="na">acquireUninterruptibly</span><span class="o">();</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">current</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">current</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+                <span class="k">return</span> <span class="n">current</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="n">semaphore</span><span class="o">.</span><span class="na">release</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
 
-    private static class Node&lt;E&gt; {
-        private final E value;
-        private final Node&lt;E&gt; next;
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="kd">final</span> <span class="no">E</span> <span class="n">value</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="n">next</span><span class="o">;</span>
 
-        private Node(E value, Node&lt;E&gt; next) {
-            this.value = value;
-            this.next = next;
-        }
-    }
-}</code></pre>
+        <span class="kd">private</span> <span class="nf">Node</span><span class="o">(</span><span class="no">E</span> <span class="n">value</span><span class="o">,</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="n">next</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">next</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_напишите_минимальный_неблокирующий_arraylist_всего_четыре_методаadd_get_remove_size">Напишите минимальный неблокирующий ArrayList (всего четыре метода&#8201;&#8212;&#8201;<code>add()</code>, <code>get()</code>, <code>remove()</code>, <code>size()</code>).</h2>
+<h2 id="_напишите_минимальный_неблокирующий_arraylist_всего_четыре_методаadd_get_remove_size">67. Напишите минимальный неблокирующий ArrayList (всего четыре метода&#8201;&#8212;&#8201;<code>add()</code>, <code>get()</code>, <code>remove()</code>, <code>size()</code>).</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class NonBlockingArrayList&lt;T&gt; {
-    private volatile Object[] content = new Object[0];
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">NonBlockingArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">volatile</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">content</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
 
-    NonBlockingArrayList&lt;T&gt; add(T item) {
-        return add(content.length, item);
-    }
+    <span class="nc">NonBlockingArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nf">add</span><span class="o">(</span><span class="no">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nf">add</span><span class="o">(</span><span class="n">content</span><span class="o">.</span><span class="na">length</span><span class="o">,</span> <span class="n">item</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    NonBlockingArrayList&lt;T&gt; add(int index, T item) {
-        if (index &lt; 0) {
-            throw new IllegalArgumentException();
-        }
-        boolean needsModification = index &gt; content.length - 1;
-        if (!needsModification) {
-            if (item == null) {
-                needsModification = content[index] != null;
-            } else {
-                needsModification = item.equals(content[index]);
-            }
-        }
-        if (needsModification) {
-            final Object[] renewed = Arrays.copyOf(content, Math.max(content.length, index + 1));
-            renewed[index] = item;
-            content = renewed;
-        }
-        return this;
-    }
+    <span class="nc">NonBlockingArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nf">add</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">,</span> <span class="no">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="kt">boolean</span> <span class="n">needsModification</span> <span class="o">=</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="n">content</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">needsModification</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">item</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">needsModification</span> <span class="o">=</span> <span class="n">content</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">needsModification</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">content</span><span class="o">[</span><span class="n">index</span><span class="o">]);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">needsModification</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">final</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">renewed</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="n">content</span><span class="o">,</span> <span class="nc">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">content</span><span class="o">.</span><span class="na">length</span><span class="o">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">));</span>
+            <span class="n">renewed</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">=</span> <span class="n">item</span><span class="o">;</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">renewed</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    NonBlockingArrayList&lt;T&gt; remove(int index) {
-        if (index &lt; 0 || index &gt;= content.length) {
-            throw new IllegalArgumentException();
-        }
-        int size = content.length - 1;
-        final Object[] renewed = new Object[size];
-        System.arraycopy(content, 0, renewed, 0, index);
-        if (index + 1 &lt; size) {
-            System.arraycopy(content, index + 1, renewed, index, size - index);
-        }
-        content = renewed;
-        return this;
-    }
+    <span class="nc">NonBlockingArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nf">remove</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">content</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="kd">final</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">renewed</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="o">[</span><span class="n">size</span><span class="o">];</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">arraycopy</span><span class="o">(</span><span class="n">content</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">renewed</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">index</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">arraycopy</span><span class="o">(</span><span class="n">content</span><span class="o">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">renewed</span><span class="o">,</span> <span class="n">index</span><span class="o">,</span> <span class="n">size</span> <span class="o">-</span> <span class="n">index</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">renewed</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    T get(int index) {
-        return (T) content[index];
-    }
+    <span class="no">T</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(</span><span class="no">T</span><span class="o">)</span> <span class="n">content</span><span class="o">[</span><span class="n">index</span><span class="o">];</span>
+    <span class="o">}</span>
 
-    int size() {
-        return content.length;
-    }
-}</code></pre>
+    <span class="kt">int</span> <span class="nf">size</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">content</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_напишите_потокобезопасную_реализацию_класса_с_неблокирующим_методом_biginteger_next_который_возвращает_элементы_последовательности_1_2_4_8_16">Напишите потокобезопасную реализацию класса с неблокирующим методом <code>BigInteger next()</code>, который возвращает элементы последовательности: <code>[1, 2, 4, 8, 16, ...]</code>.</h2>
+<h2 id="_напишите_потокобезопасную_реализацию_класса_с_неблокирующим_методом_biginteger_next_который_возвращает_элементы_последовательности_1_2_4_8_16">68. Напишите потокобезопасную реализацию класса с неблокирующим методом <code>BigInteger next()</code>, который возвращает элементы последовательности: <code>[1, 2, 4, 8, 16, ...]</code>.</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class PowerOfTwo {
-    private AtomicReference&lt;BigInteger&gt; current = new AtomicReference&lt;&gt;(null);
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">PowerOfTwo</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">AtomicReference</span><span class="o">&lt;</span><span class="nc">BigInteger</span><span class="o">&gt;</span> <span class="n">current</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AtomicReference</span><span class="o">&lt;&gt;(</span><span class="kc">null</span><span class="o">);</span>
 
-    BigInteger next() {
-        BigInteger recent, next;
-        do {
-            recent = current.get();
-            next = (recent == null) ? BigInteger.valueOf(1) : recent.shiftLeft(1);
-        } while (!current.compareAndSet(recent, next));
-        return next;
-    }
-}</code></pre>
+    <span class="nc">BigInteger</span> <span class="nf">next</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">BigInteger</span> <span class="n">recent</span><span class="o">,</span> <span class="n">next</span><span class="o">;</span>
+        <span class="k">do</span> <span class="o">{</span>
+            <span class="n">recent</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+            <span class="n">next</span> <span class="o">=</span> <span class="o">(</span><span class="n">recent</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="nc">BigInteger</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="o">:</span> <span class="n">recent</span><span class="o">.</span><span class="na">shiftLeft</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">while</span> <span class="o">(!</span><span class="n">current</span><span class="o">.</span><span class="na">compareAndSet</span><span class="o">(</span><span class="n">recent</span><span class="o">,</span> <span class="n">next</span><span class="o">));</span>
+        <span class="k">return</span> <span class="n">next</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_напишите_простейший_многопоточный_ограниченный_буфер_с_использованием_synchronized">Напишите простейший многопоточный ограниченный буфер с использованием <code>synchronized</code>.</h2>
+<h2 id="_напишите_простейший_многопоточный_ограниченный_буфер_с_использованием_synchronized">69. Напишите простейший многопоточный ограниченный буфер с использованием <code>synchronized</code>.</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class QueueSynchronized&lt;T&gt; {
-    private volatile int size = 0;
-    private final Object[] content;
-    private final int capacity;
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">QueueSynchronized</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">volatile</span> <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">content</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">capacity</span><span class="o">;</span>
 
-    private int out;
-    private int in;
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">out</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">in</span><span class="o">;</span>
 
-    private final Object isEmpty = new Object();
-    private final Object isFull = new Object();
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Object</span> <span class="n">isEmpty</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="o">();</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Object</span> <span class="n">isFull</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="o">();</span>
 
-    QueueSynchronized(final int capacity) {
-        this.capacity = capacity;
-        content = new Object[this.capacity];
-        out = 0;
-        in = 0;
-        size = 0;
-    }
+    <span class="nc">QueueSynchronized</span><span class="o">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">capacity</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">capacity</span> <span class="o">=</span> <span class="n">capacity</span><span class="o">;</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="o">[</span><span class="k">this</span><span class="o">.</span><span class="na">capacity</span><span class="o">];</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="n">in</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    private int cycleInc(int index) {
-        return (++index == capacity)
-                ? 0
-                : index;
-    }
+    <span class="kd">private</span> <span class="kt">int</span> <span class="nf">cycleInc</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(++</span><span class="n">index</span> <span class="o">==</span> <span class="n">capacity</span><span class="o">)</span>
+                <span class="o">?</span> <span class="mi">0</span>
+                <span class="o">:</span> <span class="n">index</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    @SuppressWarnings("unchecked")
-    T get() throws InterruptedException {
-        if (size == 0) {
-            synchronized (isEmpty) {
-                while (size &lt; 1) {
-                    isEmpty.wait();
-                }
-            }
-        }
-        try {
-            synchronized (this) {
-                final Object value = content[out];
-                content[out] = null;
-                if (size &gt; 1) {
-                    out = cycleInc(out);
-                }
-                size--;
-                return (T) value;
-            }
-        } finally {
-            synchronized (isFull) {
-                isFull.notify();
-            }
-        }
-    }
+    <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">"unchecked"</span><span class="o">)</span>
+    <span class="no">T</span> <span class="nf">get</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">InterruptedException</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">synchronized</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">while</span> <span class="o">(</span><span class="n">size</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">isEmpty</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="kd">synchronized</span> <span class="o">(</span><span class="k">this</span><span class="o">)</span> <span class="o">{</span>
+                <span class="kd">final</span> <span class="nc">Object</span> <span class="n">value</span> <span class="o">=</span> <span class="n">content</span><span class="o">[</span><span class="n">out</span><span class="o">];</span>
+                <span class="n">content</span><span class="o">[</span><span class="n">out</span><span class="o">]</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">out</span> <span class="o">=</span> <span class="n">cycleInc</span><span class="o">(</span><span class="n">out</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="n">size</span><span class="o">--;</span>
+                <span class="k">return</span> <span class="o">(</span><span class="no">T</span><span class="o">)</span> <span class="n">value</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="kd">synchronized</span> <span class="o">(</span><span class="n">isFull</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">isFull</span><span class="o">.</span><span class="na">notify</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
 
-    QueueSynchronized&lt;T&gt; put(T value) throws InterruptedException {
-        if (size == capacity) {
-            synchronized (isFull) {
-                while (size == capacity) {
-                    isFull.wait();
-                }
-            }
-        }
-        synchronized (this) {
-            if (size == 0) {
-                content[in] = value;
-            } else {
-                in = cycleInc(in);
-                content[in] = value;
-            }
-            size++;
-        }
-        synchronized (isEmpty) {
-            isEmpty.notify();
-        }
-        return this;
-    }
-}</code></pre>
+    <span class="nc">QueueSynchronized</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nf">put</span><span class="o">(</span><span class="no">T</span> <span class="n">value</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">InterruptedException</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">size</span> <span class="o">==</span> <span class="n">capacity</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">synchronized</span> <span class="o">(</span><span class="n">isFull</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">while</span> <span class="o">(</span><span class="n">size</span> <span class="o">==</span> <span class="n">capacity</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">isFull</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="kd">synchronized</span> <span class="o">(</span><span class="k">this</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">content</span><span class="o">[</span><span class="n">in</span><span class="o">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">in</span> <span class="o">=</span> <span class="n">cycleInc</span><span class="o">(</span><span class="n">in</span><span class="o">);</span>
+                <span class="n">content</span><span class="o">[</span><span class="n">in</span><span class="o">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="n">size</span><span class="o">++;</span>
+        <span class="o">}</span>
+        <span class="kd">synchronized</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">isEmpty</span><span class="o">.</span><span class="na">notify</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_напишите_простейший_многопоточный_ограниченный_буфер_с_использованием_reentrantlock">Напишите простейший многопоточный ограниченный буфер с использованием <code>ReentrantLock</code>.</h2>
+<h2 id="_напишите_простейший_многопоточный_ограниченный_буфер_с_использованием_reentrantlock">70. Напишите простейший многопоточный ограниченный буфер с использованием <code>ReentrantLock</code>.</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class QueueReentrantLock&lt;T&gt; {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">QueueReentrantLock</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
 
-    private volatile int size = 0;
-    private final Object[] content;
-    private final int capacity;
+    <span class="kd">private</span> <span class="kd">volatile</span> <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">content</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">capacity</span><span class="o">;</span>
 
-    private int out;
-    private int in;
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">out</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">in</span><span class="o">;</span>
 
-    private final ReentrantLock lock = new ReentrantLock();
-    private final Condition isEmpty = lock.newCondition();
-    private final Condition isFull = lock.newCondition();
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">ReentrantLock</span> <span class="n">lock</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ReentrantLock</span><span class="o">();</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Condition</span> <span class="n">isEmpty</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">newCondition</span><span class="o">();</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Condition</span> <span class="n">isFull</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">newCondition</span><span class="o">();</span>
 
-    QueueReentrantLock(int capacity) {
-        try {
-            lock.lock();
-            this.capacity = capacity;
-            content = new Object[capacity];
-            out = 0;
-            in = 0;
-        } finally {
-            lock.unlock();
-        }
-    }
+    <span class="nc">QueueReentrantLock</span><span class="o">(</span><span class="kt">int</span> <span class="n">capacity</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">lock</span><span class="o">.</span><span class="na">lock</span><span class="o">();</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">capacity</span> <span class="o">=</span> <span class="n">capacity</span><span class="o">;</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="o">[</span><span class="n">capacity</span><span class="o">];</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="n">in</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="n">lock</span><span class="o">.</span><span class="na">unlock</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
 
-    private int cycleInc(int index) {
-        return (++index == capacity)
-                ? 0
-                : index;
-    }
+    <span class="kd">private</span> <span class="kt">int</span> <span class="nf">cycleInc</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(++</span><span class="n">index</span> <span class="o">==</span> <span class="n">capacity</span><span class="o">)</span>
+                <span class="o">?</span> <span class="mi">0</span>
+                <span class="o">:</span> <span class="n">index</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    @SuppressWarnings("unchecked")
-    T get() throws InterruptedException {
-        try {
-            lock.lockInterruptibly();
-            if (size == 0) {
-                while (size &lt; 1) {
-                    isEmpty.await();
-                }
-            }
-            final Object value = content[out];
-            content[out] = null;
-            if (size &gt; 1) {
-                out = cycleInc(out);
-            }
-            size--;
-            isFull.signal();
-            return (T) value;
-        } finally {
-            lock.unlock();
-        }
-    }
+    <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">"unchecked"</span><span class="o">)</span>
+    <span class="no">T</span> <span class="nf">get</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">InterruptedException</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">lock</span><span class="o">.</span><span class="na">lockInterruptibly</span><span class="o">();</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">while</span> <span class="o">(</span><span class="n">size</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">isEmpty</span><span class="o">.</span><span class="na">await</span><span class="o">();</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="kd">final</span> <span class="nc">Object</span> <span class="n">value</span> <span class="o">=</span> <span class="n">content</span><span class="o">[</span><span class="n">out</span><span class="o">];</span>
+            <span class="n">content</span><span class="o">[</span><span class="n">out</span><span class="o">]</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">out</span> <span class="o">=</span> <span class="n">cycleInc</span><span class="o">(</span><span class="n">out</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">size</span><span class="o">--;</span>
+            <span class="n">isFull</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+            <span class="k">return</span> <span class="o">(</span><span class="no">T</span><span class="o">)</span> <span class="n">value</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="n">lock</span><span class="o">.</span><span class="na">unlock</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
 
-    QueueReentrantLock&lt;T&gt; put(T value) throws InterruptedException {
-        try {
-            lock.lockInterruptibly();
-            if (size == capacity) {
-                while (size == capacity) {
-                    isFull.await();
-                }
-            }
-            if (size == 0) {
-                content[in] = value;
-            } else {
-                in = cycleInc(in);
-                content[in] = value;
-            }
-            size++;
-            isEmpty.signal();
-        } finally {
-            lock.unlock();
-        }
-        return this;
-    }
-}</code></pre>
+    <span class="nc">QueueReentrantLock</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nf">put</span><span class="o">(</span><span class="no">T</span> <span class="n">value</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">InterruptedException</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">lock</span><span class="o">.</span><span class="na">lockInterruptibly</span><span class="o">();</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">size</span> <span class="o">==</span> <span class="n">capacity</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">while</span> <span class="o">(</span><span class="n">size</span> <span class="o">==</span> <span class="n">capacity</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">isFull</span><span class="o">.</span><span class="na">await</span><span class="o">();</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">content</span><span class="o">[</span><span class="n">in</span><span class="o">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">in</span> <span class="o">=</span> <span class="n">cycleInc</span><span class="o">(</span><span class="n">in</span><span class="o">);</span>
+                <span class="n">content</span><span class="o">[</span><span class="n">in</span><span class="o">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="n">size</span><span class="o">++;</span>
+            <span class="n">isEmpty</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="n">lock</span><span class="o">.</span><span class="na">unlock</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">71. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -2123,15 +2489,12 @@ try {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

@@ -435,14 +435,322 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>Сериализация</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_что_такое_сериализация">1. Что такое <em>«сериализация»</em>?</a></li>
+<li><a href="#_опишите_процесс_сериализациидесериализации_с_использованием_serializable">2. Опишите процесс сериализации/десериализации с использованием <code>Serializable</code>.</a></li>
+<li><a href="#_как_изменить_стандартное_поведение_сериализациидесериализации">3. Как изменить стандартное поведение сериализации/десериализации?</a></li>
+<li><a href="#_как_исключить_поля_из_сериализации">4. Как исключить поля из сериализации?</a></li>
+<li><a href="#_что_обозначает_ключевое_слово_transient">5. Что обозначает ключевое слово <code>transient</code>?</a></li>
+<li><a href="#_какое_влияние_оказывают_на_сериализуемость_модификаторы_полей_static_и_final">6. Какое влияние оказывают на сериализуемость модификаторы полей <code>static</code> и <code>final</code></a></li>
+<li><a href="#_как_не_допустить_сериализацию">7. Как не допустить сериализацию?</a></li>
+<li><a href="#_как_создать_собственный_протокол_сериализации">8. Как создать собственный протокол сериализации?</a></li>
+<li><a href="#_какая_роль_поля_serialversionuid_в_сериализации">9. Какая роль поля <code>serialVersionUID</code> в сериализации?</a></li>
+<li><a href="#_когда_стоит_изменять_значение_поля_serialversionuid">10. Когда стоит изменять значение поля <code>serialVersionUID</code>?</a></li>
+<li><a href="#_в_чем_проблема_сериализации_singleton">11. В чем проблема сериализации Singleton?</a></li>
+<li><a href="#_какие_существуют_способы_контроля_за_значениями_десериализованного_объекта">12. Какие существуют способы контроля за значениями десериализованного объекта</a></li>
+<li><a href="#_источники">13. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_что_такое_сериализация">Что такое <em>«сериализация»</em>?</h2>
+<h2 id="_что_такое_сериализация">1. Что такое <em>«сериализация»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Сериализация (Serialization)</strong> - процесс преобразования структуры данных в линейную последовательность байтов для дальнейшей передачи или сохранения. Сериализованные объекты можно затем восстановить (десериализовать).</p>
@@ -472,7 +780,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_опишите_процесс_сериализациидесериализации_с_использованием_serializable">Опишите процесс сериализации/десериализации с использованием <code>Serializable</code>.</h2>
+<h2 id="_опишите_процесс_сериализациидесериализации_с_использованием_serializable">2. Опишите процесс сериализации/десериализации с использованием <code>Serializable</code>.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>При использовании Serializable применяется алгоритм сериализации, который с помощью рефлексии (Reflection API) выполняет:</p>
@@ -502,7 +810,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_изменить_стандартное_поведение_сериализациидесериализации">Как изменить стандартное поведение сериализации/десериализации?</h2>
+<h2 id="_как_изменить_стандартное_поведение_сериализациидесериализации">3. Как изменить стандартное поведение сериализации/десериализации?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -533,7 +841,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_исключить_поля_из_сериализации">Как исключить поля из сериализации?</h2>
+<h2 id="_как_исключить_поля_из_сериализации">4. Как исключить поля из сериализации?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Для управления сериализацией при определении полей можно использовать ключевое слово <code>transient</code>, таким образом исключив поля из общего процесса сериализации.</p>
@@ -541,7 +849,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_обозначает_ключевое_слово_transient">Что обозначает ключевое слово <code>transient</code>?</h2>
+<h2 id="_что_обозначает_ключевое_слово_transient">5. Что обозначает ключевое слово <code>transient</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Поля класса, помеченные модификатором <code>transient</code>, не сериализуются.</p>
@@ -552,7 +860,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какое_влияние_оказывают_на_сериализуемость_модификаторы_полей_static_и_final">Какое влияние оказывают на сериализуемость модификаторы полей <code>static</code> и <code>final</code></h2>
+<h2 id="_какое_влияние_оказывают_на_сериализуемость_модификаторы_полей_static_и_final">6. Какое влияние оказывают на сериализуемость модификаторы полей <code>static</code> и <code>final</code></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>При стандартной сериализации поля, имеющие модификатор static, не сериализуются. Соответственно, после десериализации это поле значения не меняет. При использовании реализации <code>Externalizable</code> сериализовать и десериализовать статическое поле можно, но не рекомендуется этого делать, т.к. это может сопровождаться трудноуловимыми ошибками.</p>
@@ -563,20 +871,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_не_допустить_сериализацию">Как не допустить сериализацию?</h2>
+<h2 id="_как_не_допустить_сериализацию">7. Как не допустить сериализацию?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Чтобы не допустить автоматическую сериализацию можно переопределить <code>private</code> методы для создания исключительной ситуации <code>NotSerializableException</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">private void writeObject(ObjectOutputStream out) throws IOException {
-    throw new NotSerializableException();
-}
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">writeObject</span><span class="o">(</span><span class="nc">ObjectOutputStream</span> <span class="n">out</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nf">NotSerializableException</span><span class="o">();</span>
+<span class="o">}</span>
 
-private void readObject(ObjectInputStream in) throws IOException {
-    throw new NotSerializableException();
-}</code></pre>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">readObject</span><span class="o">(</span><span class="nc">ObjectInputStream</span> <span class="n">in</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nf">NotSerializableException</span><span class="o">();</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -585,21 +893,21 @@ private void readObject(ObjectInputStream in) throws IOException {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_создать_собственный_протокол_сериализации">Как создать собственный протокол сериализации?</h2>
+<h2 id="_как_создать_собственный_протокол_сериализации">8. Как создать собственный протокол сериализации?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Для создания собственного протокола сериализации достаточно реализовать интерфейс <code>Externalizable</code>, который содержит два метода:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public void writeExternal(ObjectOutput out) throws IOException;
-public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException;</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">writeExternal</span><span class="o">(</span><span class="nc">ObjectOutput</span> <span class="n">out</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">readExternal</span><span class="o">(</span><span class="nc">ObjectInput</span> <span class="n">in</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span><span class="o">,</span> <span class="nc">ClassNotFoundException</span><span class="o">;</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какая_роль_поля_serialversionuid_в_сериализации">Какая роль поля <code>serialVersionUID</code> в сериализации?</h2>
+<h2 id="_какая_роль_поля_serialversionuid_в_сериализации">9. Какая роль поля <code>serialVersionUID</code> в сериализации?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>serialVersionUID</code> используется для указания версии сериализованных данных.</p>
@@ -612,13 +920,13 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">private static final long serialVersionUID = 20161013L;</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">20161013L</span><span class="o">;</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_когда_стоит_изменять_значение_поля_serialversionuid">Когда стоит изменять значение поля <code>serialVersionUID</code>?</h2>
+<h2 id="_когда_стоит_изменять_значение_поля_serialversionuid">10. Когда стоит изменять значение поля <code>serialVersionUID</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>serialVersionUID</code> нужно изменять при внесении в класс несовместимых изменений, например при удалении какого-либо его атрибута.</p>
@@ -626,7 +934,7 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_проблема_сериализации_singleton">В чем проблема сериализации Singleton?</h2>
+<h2 id="_в_чем_проблема_сериализации_singleton">11. В чем проблема сериализации Singleton?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Проблема в том что после десериализации мы получим другой объект. Таким образом, сериализация дает возможность создать Singleton еще раз, что недопустимо. Существует два способа избежать этого:</p>
@@ -644,23 +952,23 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_существуют_способы_контроля_за_значениями_десериализованного_объекта">Какие существуют способы контроля за значениями десериализованного объекта</h2>
+<h2 id="_какие_существуют_способы_контроля_за_значениями_десериализованного_объекта">12. Какие существуют способы контроля за значениями десериализованного объекта</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Если есть необходимость выполнения контроля за значениями десериализованного объекта, то можно использовать интерфейс <code>ObjectInputValidation</code> с переопределением метода <code>validateObject()</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">// Если вызвать метод validateObject() после десериализации объекта, то будет вызвано исключение InvalidObjectException при значении возраста за пределами 39...60.
-public class Person implements java.io.Serializable,
-                               java.io.ObjectInputValidation {
-    ...
-    @Override
-    public void validateObject() throws InvalidObjectException {
-        if ((age &lt; 39) || (age &gt; 60))
-            throw new InvalidObjectException("Invalid age");
-    }
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="c1">// Если вызвать метод validateObject() после десериализации объекта, то будет вызвано исключение InvalidObjectException при значении возраста за пределами 39...60.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="kd">implements</span> <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">Serializable</span><span class="o">,</span>
+                               <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">ObjectInputValidation</span> <span class="o">{</span>
+    <span class="o">...</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">validateObject</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">InvalidObjectException</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">((</span><span class="n">age</span> <span class="o">&lt;</span> <span class="mi">39</span><span class="o">)</span> <span class="o">||</span> <span class="o">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="o">))</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">InvalidObjectException</span><span class="o">(</span><span class="s">"Invalid age"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -679,7 +987,7 @@ public class Person implements java.io.Serializable,
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">13. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -700,15 +1008,12 @@ public class Person implements java.io.Serializable,
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

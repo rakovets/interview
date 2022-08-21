@@ -435,14 +435,324 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>Основы CSS</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_что_такое_css">1. Что такое <em>«CSS»</em>?</a></li>
+<li><a href="#_как_в_css_обозначаются_комментарии">2. Как в CSS обозначаются комментарии?</a></li>
+<li><a href="#_что_такое_селектор">3. Что такое <em>«селектор»</em>?</a></li>
+<li><a href="#_перечислите_основные_виды_селекторов">4. Перечислите основные виды селекторов.</a></li>
+<li><a href="#_что_такое_псевдокласс">5. Что такое псевдокласс?</a></li>
+<li><a href="#_какие_существуют_селекторы_аттрибутов">6. Какие существуют селекторы аттрибутов?</a></li>
+<li><a href="#_в_чем_разница_между_my_и_my">7. В чем разница между <code>#my</code> и <code>.my</code>?</a></li>
+<li><a href="#_в_чем_разница_между_margin_и_padding">8. В чем разница между <code>margin</code> и <code>padding</code>?</a></li>
+<li><a href="#_в_чем_заключается_разница_между_значениями_0_и_auto_в_свойстве_margin">9. В чем заключается разница между значениями <code>0</code> и <code>auto</code> в свойстве <code>margin</code>?</a></li>
+<li><a href="#_какое_свойство_задает_цвет_фона">10. Какое свойство задает цвет фона?</a></li>
+<li><a href="#_как_убрать_подчеркивание_для_всех_ссылок_на_странице">11. Как убрать подчеркивание для всех ссылок на странице?</a></li>
+<li><a href="#_для_чего_используется_свойство_clear">12. Для чего используется свойство <code>clear</code>?</a></li>
+<li><a href="#_как_сделать_жирным_текст_во_всех_элементах_p">13. Как сделать жирным текст во всех элементах <code>&lt;p&gt;</code>?</a></li>
+<li><a href="#_как_задать_красный_цвет_для_всех_элементов_имеющих_класс_red">14. Как задать красный цвет для всех элементов, имеющих класс <code>red</code>?</a></li>
+<li><a href="#_источники">15. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_что_такое_css">Что такое <em>«CSS»</em>?</h2>
+<h2 id="_что_такое_css">1. Что такое <em>«CSS»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>CSS, Cascading Style Sheets (каскадные таблицы стилей)</strong> - формальный язык описания внешнего вида документа, написанного с использованием языка разметки, который применяется к элементам web-страницы для управления их видом и положением.</p>
@@ -453,7 +763,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_в_css_обозначаются_комментарии">Как в CSS обозначаются комментарии?</h2>
+<h2 id="_как_в_css_обозначаются_комментарии">2. Как в CSS обозначаются комментарии?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Чтобы пометить, что текст является комментарием, применяют конструкцию <code>/* ... */</code></p>
@@ -461,24 +771,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_селектор">Что такое <em>«селектор»</em>?</h2>
+<h2 id="_что_такое_селектор">3. Что такое <em>«селектор»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Селектор</strong>&#8201;&#8212;&#8201;это правило, на основании которого осуществляется выбор элементов в HTML документе для того, чтобы применить к ним определённые стили.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-css" data-lang="css">p {
-text-align: center;
-font-size: 20px;
-}
-/* p – это селектор, text-align и font-size – это свойства, а center и 20px – значения. */</code></pre>
+<pre class="rouge highlight"><code data-lang="css"><span class="nt">p</span> <span class="p">{</span>
+<span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="nl">font-size</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c">/* p – это селектор, text-align и font-size – это свойства, а center и 20px – значения. */</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_перечислите_основные_виды_селекторов">Перечислите основные виды селекторов.</h2>
+<h2 id="_перечислите_основные_виды_селекторов">4. Перечислите основные виды селекторов.</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -505,7 +815,7 @@ font-size: 20px;
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_псевдокласс">Что такое псевдокласс?</h2>
+<h2 id="_что_такое_псевдокласс">5. Что такое псевдокласс?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Псевдокласс определяет динамическое состояние элементов, которое изменяется из-за действий пользователя, или же соответствует текущему положению в дереве документа. В отличие от настоящего класса, в явном виде псеводкласс в HTML не указывается, а в CSS указывается через <code>:</code> непосредственно после селектора.</p>
@@ -537,26 +847,26 @@ font-size: 20px;
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-css" data-lang="css">a.snowman:link {
-    color: blue;
-}
-a.snowman:visited {
-    color: purple;
-}
-a.snowman:active {
-    color: red;
-}
-a.snowman:hover {
-    text-decoration: none;
-    color: blue;
-    background-color: yellow;
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="css"><span class="nt">a</span><span class="nc">.snowman</span><span class="nd">:link</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">a</span><span class="nc">.snowman</span><span class="nd">:visited</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">purple</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">a</span><span class="nc">.snowman</span><span class="nd">:active</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">a</span><span class="nc">.snowman</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_существуют_селекторы_аттрибутов">Какие существуют селекторы аттрибутов?</h2>
+<h2 id="_какие_существуют_селекторы_аттрибутов">6. Какие существуют селекторы аттрибутов?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -586,7 +896,7 @@ a.snowman:hover {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_разница_между_my_и_my">В чем разница между <code>#my</code> и <code>.my</code>?</h2>
+<h2 id="_в_чем_разница_между_my_и_my">7. В чем разница между <code>#my</code> и <code>.my</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>#my</code>&#8201;&#8212;&#8201;селектор идентификатора, а <code>.my</code>&#8201;&#8212;&#8201;селектор класса.</p>
@@ -594,7 +904,7 @@ a.snowman:hover {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_разница_между_margin_и_padding">В чем разница между <code>margin</code> и <code>padding</code>?</h2>
+<h2 id="_в_чем_разница_между_margin_и_padding">8. В чем разница между <code>margin</code> и <code>padding</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>margin</code>&#8201;&#8212;&#8201;внешний отступ, а <code>padding</code>&#8201;&#8212;&#8201;внутренний отступ.</p>
@@ -602,7 +912,7 @@ a.snowman:hover {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_заключается_разница_между_значениями_0_и_auto_в_свойстве_margin">В чем заключается разница между значениями <code>0</code> и <code>auto</code> в свойстве <code>margin</code>?</h2>
+<h2 id="_в_чем_заключается_разница_между_значениями_0_и_auto_в_свойстве_margin">9. В чем заключается разница между значениями <code>0</code> и <code>auto</code> в свойстве <code>margin</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>В вертикальных полях&#8201;&#8212;&#8201;<code>auto</code> всегда означает <code>0</code>. В горизонтальных полях&#8201;&#8212;&#8201;<code>auto</code> означает <code>0</code> только тогда, когда свойство <code>width</code> также <code>auto</code>.</p>
@@ -610,7 +920,7 @@ a.snowman:hover {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какое_свойство_задает_цвет_фона">Какое свойство задает цвет фона?</h2>
+<h2 id="_какое_свойство_задает_цвет_фона">10. Какое свойство задает цвет фона?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Цвет фона задает свойство <code>background-color</code>.</p>
@@ -618,19 +928,19 @@ a.snowman:hover {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_убрать_подчеркивание_для_всех_ссылок_на_странице">Как убрать подчеркивание для всех ссылок на странице?</h2>
+<h2 id="_как_убрать_подчеркивание_для_всех_ссылок_на_странице">11. Как убрать подчеркивание для всех ссылок на странице?</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-css" data-lang="css">a {
-    text-decoration: none;
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="css"><span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_используется_свойство_clear">Для чего используется свойство <code>clear</code>?</h2>
+<h2 id="_для_чего_используется_свойство_clear">12. Для чего используется свойство <code>clear</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>clear</code> устанавливает, с какой стороны элемента запрещено его обтекание другими элементами.</p>
@@ -638,31 +948,31 @@ a.snowman:hover {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_сделать_жирным_текст_во_всех_элементах_p">Как сделать жирным текст во всех элементах <code>&lt;p&gt;</code>?</h2>
+<h2 id="_как_сделать_жирным_текст_во_всех_элементах_p">13. Как сделать жирным текст во всех элементах <code>&lt;p&gt;</code>?</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-css" data-lang="css">p {
-    font-weight: bold;
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="css"><span class="nt">p</span> <span class="p">{</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_задать_красный_цвет_для_всех_элементов_имеющих_класс_red">Как задать красный цвет для всех элементов, имеющих класс <code>red</code>?</h2>
+<h2 id="_как_задать_красный_цвет_для_всех_элементов_имеющих_класс_red">14. Как задать красный цвет для всех элементов, имеющих класс <code>red</code>?</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-css" data-lang="css">.red {
-    color: red;
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="css"><span class="nc">.red</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">15. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -677,15 +987,12 @@ a.snowman:hover {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

@@ -1,5 +1,6 @@
-
 = UML
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _UML_?
 
@@ -124,4 +125,4 @@ ____
 * https://ru.wikipedia.org/wiki/UML[Википедия]
 * http://www.informicus.ru/[Информикус]
 
-xref:README.adoc[Вопросы для собеседования]
+

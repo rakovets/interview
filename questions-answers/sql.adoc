@@ -1,5 +1,6 @@
-
 = SQL
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _«SQL»_?
 
@@ -507,4 +508,4 @@ GROUP BY download_count;
 * https://ru.wikipedia.org/wiki/SQL[Википедия]
 * http://www.quizful.net/interview/sql[Quizful]
 
-xref:README.adoc[Вопросы для собеседования]
+

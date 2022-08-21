@@ -435,14 +435,418 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>Java Core</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_чем_различаются_jre_jvm_и_jdk">1. Чем различаются JRE, JVM и JDK?</a></li>
+<li><a href="#_какие_существуют_модификаторы_доступа">2. Какие существуют модификаторы доступа?</a></li>
+<li><a href="#_о_чем_говорит_ключевое_слово_final">3. О чем говорит ключевое слово <code>final</code>?</a></li>
+<li><a href="#_какими_значениями_инициализируются_переменные_по_умолчанию">4. Какими значениями инициализируются переменные по умолчанию?</a></li>
+<li><a href="#_что_вы_знаете_о_функции_main">5. Что вы знаете о функции <code>main()</code>?</a></li>
+<li><a href="#_какие_логические_операции_и_операторы_вы_знаете">6. Какие логические операции и операторы вы знаете?</a></li>
+<li><a href="#_что_такое_тернарный_оператор_выбора">7. Что такое тернарный оператор выбора?</a></li>
+<li><a href="#_какие_побитовые_операции_вы_знаете">8. Какие побитовые операции вы знаете?</a></li>
+<li><a href="#_где_и_для_чего_используется_модификатор_abstract">9. Где и для чего используется модификатор <code>abstract</code>?</a></li>
+<li><a href="#_дайте_определение_понятию_интерфейс_какие_модификаторы_по_умолчанию_имеют_поля_и_методы_интерфейсов">10. Дайте определение понятию <em>«интерфейс»</em>. Какие модификаторы по умолчанию имеют поля и методы интерфейсов?</a></li>
+<li><a href="#_чем_абстрактный_класс_отличается_от_интерфейса_в_каких_случаях_следует_использовать_абстрактный_класс_а_в_каких_интерфейс">11. Чем абстрактный класс отличается от интерфейса? В каких случаях следует использовать абстрактный класс, а в каких интерфейс?</a></li>
+<li><a href="#_почему_в_некоторых_интерфейсах_вообще_не_определяют_методов">12. Почему в некоторых интерфейсах вообще не определяют методов?</a></li>
+<li><a href="#_почему_нельзя_объявить_метод_интерфейса_с_модификатором_final">13. Почему нельзя объявить метод интерфейса с модификатором <code>final</code>?</a></li>
+<li><a href="#_что_имеет_более_высокий_уровень_абстракции_класс_абстрактный_класс_или_интерфейс">14. Что имеет более высокий уровень абстракции - <em>класс</em>, <em>абстрактный класс</em> или <em>интерфейс</em>?</a></li>
+<li><a href="#_может_ли_объект_получить_доступ_к_члену_класса_объявленному_как_private_если_да_то_каким_образом">15. Может ли объект получить доступ к члену класса, объявленному как <code>private</code>? Если да, то каким образом?</a></li>
+<li><a href="#_каков_порядок_вызова_конструкторов_и_блоков_инициализации_с_учётом_иерархии_классов">16. Каков порядок вызова конструкторов и блоков инициализации с учётом иерархии классов?</a></li>
+<li><a href="#_зачем_нужны_и_какие_бывают_блоки_инициализации">17. Зачем нужны и какие бывают блоки инициализации?</a></li>
+<li><a href="#_к_каким_конструкциям_java_применим_модификатор_static">18. К каким конструкциям Java применим модификатор <code>static</code>?</a></li>
+<li><a href="#_для_чего_в_java_используются_статические_блоки_инициализации">19. Для чего в Java используются статические блоки инициализации?</a></li>
+<li><a href="#_что_произойдёт_если_в_блоке_инициализации_возникнет_исключительная_ситуация">20. Что произойдёт, если в блоке инициализации возникнет исключительная ситуация?</a></li>
+<li><a href="#_какое_исключение_выбрасывается_при_возникновении_ошибки_в_блоке_инициализации_класса">21. Какое исключение выбрасывается при возникновении ошибки в блоке инициализации класса?</a></li>
+<li><a href="#_может_ли_статический_метод_быть_переопределён_или_перегружен">22. Может ли статический метод быть переопределён или перегружен?</a></li>
+<li><a href="#_могут_ли_нестатические_методы_перегрузить_статические">23. Могут ли нестатические методы перегрузить статические?</a></li>
+<li><a href="#_можно_ли_сузить_уровень_доступатип_возвращаемого_значения_при_переопределении_метода">24. Можно ли сузить уровень доступа/тип возвращаемого значения при переопределении метода?</a></li>
+<li><a href="#_возможно_ли_при_переопределении_метода_изменить_модификатор_доступа_возвращаемый_тип_тип_аргумента_или_их_количество_имена_аргументов_или_их_порядок_убирать_добавлять_изменять_порядок_следования_элементов_секции_throws">25. Возможно ли при переопределении метода изменить: модификатор доступа, возвращаемый тип, тип аргумента или их количество, имена аргументов или их порядок; убирать, добавлять, изменять порядок следования элементов секции <code>throws</code>?</a></li>
+<li><a href="#_как_получить_доступ_к_переопределенным_методам_родительского_класса">26. Как получить доступ к переопределенным методам родительского класса?</a></li>
+<li><a href="#_можно_ли_объявить_метод_абстрактным_и_статическим_одновременно">27. Можно ли объявить метод абстрактным и статическим одновременно?</a></li>
+<li><a href="#_в_чем_разница_между_членом_экземпляра_класса_и_статическим_членом_класса">28. В чем разница между членом экземпляра класса и статическим членом класса?</a></li>
+<li><a href="#_где_разрешена_инициализация_статическихнестатических_полей">29. Где разрешена инициализация статических/нестатических полей?</a></li>
+<li><a href="#_какие_типы_классов_бывают_в_java">30. Какие типы классов бывают в java?</a></li>
+<li><a href="#_расскажите_про_вложенные_классы_в_каких_случаях_они_применяются">31. Расскажите про вложенные классы. В каких случаях они применяются?</a></li>
+<li><a href="#_что_такое_статический_класс">32. Что такое <em>«статический класс»</em>?</a></li>
+<li><a href="#_какие_существуют_особенности_использования_вложенных_классов_статических_и_внутренних_в_чем_заключается_разница_между_ними">33. Какие существуют особенности использования вложенных классов: статических и внутренних? В чем заключается разница между ними?</a></li>
+<li><a href="#_что_такое_локальный_класс_каковы_его_особенности">34. Что такое <em>«локальный класс»</em>? Каковы его особенности?</a></li>
+<li><a href="#_что_такое_анонимные_классы_где_они_применяются">35. Что такое <em>«анонимные классы»</em>? Где они применяются?</a></li>
+<li><a href="#_каким_образом_из_вложенного_класса_получить_доступ_к_полю_внешнего_класса">36. Каким образом из вложенного класса получить доступ к полю внешнего класса?</a></li>
+<li><a href="#_для_чего_используется_оператор_assert">37. Для чего используется оператор <code>assert</code>?</a></li>
+<li><a href="#_что_такое_heap_и_stack_память_в_java_какая_разница_между_ними">38. Что такое <em>Heap</em> и <em>Stack</em> память в Java? Какая разница между ними?</a></li>
+<li><a href="#_верно_ли_утверждение_что_примитивные_типы_данных_всегда_хранятся_в_стеке_а_экземпляры_ссылочных_типов_данных_в_куче">39. Верно ли утверждение, что примитивные типы данных всегда хранятся в стеке, а экземпляры ссылочных типов данных в куче?</a></li>
+<li><a href="#_каким_образом_передаются_переменные_в_методы_по_значению_или_по_ссылке">40. Каким образом передаются переменные в методы, по значению или по ссылке?</a></li>
+<li><a href="#_для_чего_нужен_сборщик_мусора">41. Для чего нужен сборщик мусора?</a></li>
+<li><a href="#_как_работает_сборщик_мусора">42. Как работает сборщик мусора?</a></li>
+<li><a href="#_какие_разновидности_сборщиков_мусора_реализованы_в_виртуальной_машине_hotspot">43. Какие разновидности сборщиков мусора реализованы в виртуальной машине HotSpot?</a></li>
+<li><a href="#_опишите_алгоритм_работы_какого_нибудь_сборщика_мусора_реализованного_в_виртуальной_машине_hotspot">44. Опишите алгоритм работы какого-нибудь сборщика мусора, реализованного в виртуальной машине HotSpot.</a></li>
+<li><a href="#_что_такое_пул_строк">45. Что такое «пул строк»?</a></li>
+<li><a href="#_что_такое_finalize_зачем_он_нужен">46. Что такое <code>finalize()</code>? Зачем он нужен?</a></li>
+<li><a href="#_что_произойдет_со_сборщиком_мусора_если_выполнение_метода_finalize_требует_ощутимо_много_времени_или_в_процессе_выполнения_будет_выброшено_исключение">47. Что произойдет со сборщиком мусора, если выполнение метода <code>finalize()</code> требует ощутимо много времени, или в процессе выполнения будет выброшено исключение?</a></li>
+<li><a href="#_чем_отличаются_final_finally_и_finalize">48. Чем отличаются <code>final</code>, <code>finally</code> и <code>finalize()</code>?</a></li>
+<li><a href="#_расскажите_про_приведение_типов_что_такое_понижение_и_повышение_типа">49. Расскажите про приведение типов. Что такое понижение и повышение типа?</a></li>
+<li><a href="#_когда_в_приложении_может_быть_выброшено_исключение_classcastexception">50. Когда в приложении может быть выброшено исключение <code>ClassCastException</code>?</a></li>
+<li><a href="#_что_такое_литералы">51. Что такое литералы?</a></li>
+<li><a href="#_что_такое_autoboxing_автоупаковка_в_java_и_каковы_правила_упаковки_примитивных_типов_в_классы_обертки">52. Что такое <em>autoboxing («автоупаковка»)</em> в Java и каковы правила упаковки примитивных типов в классы-обертки?</a></li>
+<li><a href="#_какие_есть_особенности_класса_string">53. Какие есть особенности класса <code>String</code>?</a></li>
+<li><a href="#_почему_string_неизменяемый_и_финализированный_класс">54. Почему <code>String</code> неизменяемый и финализированный класс?</a></li>
+<li><a href="#_почему_char_предпочтительнее_string_для_хранения_пароля">55. Почему <code>char[]</code> предпочтительнее <code>String</code> для хранения пароля?</a></li>
+<li><a href="#_почему_строка_является_популярным_ключом_в_hashmap_в_java">56. Почему строка является популярным ключом в <code>HashMap</code> в Java?</a></li>
+<li><a href="#_что_делает_метод_intern_в_классе_string">57. Что делает метод <code>intern()</code> в классе <code>String</code>?.</a></li>
+<li><a href="#_можно_ли_использовать_строки_в_конструкции_switch">58. Можно ли использовать строки в конструкции <code>switch</code>?</a></li>
+<li><a href="#_какая_основная_разница_между_string_stringbuffer_stringbuilder">59. Какая основная разница между <code>String</code>, <code>StringBuffer</code>, <code>StringBuilder</code>?</a></li>
+<li><a href="#_что_такое_класс_object_какие_в_нем_есть_методы">60. Что такое класс <code>Object</code>? Какие в нем есть методы?</a></li>
+<li><a href="#_дайте_определение_понятию_конструктор">61. Дайте определение понятию «конструктор».</a></li>
+<li><a href="#_что_такое_конструктор_по_умолчанию">62. Что такое <em>«конструктор по умолчанию»</em>?</a></li>
+<li><a href="#_чем_отличаются_конструктор_по_умолчанию_конструктор_копирования_и_конструктор_с_параметрами">63. Чем отличаются конструктор по-умолчанию, конструктор копирования и конструктор с параметрами?</a></li>
+<li><a href="#_где_и_как_вы_можете_использовать_приватный_конструктор">64. Где и как вы можете использовать приватный конструктор?</a></li>
+<li><a href="#_расскажите_про_классы_загрузчики_и_про_динамическую_загрузку_классов">65. Расскажите про классы-загрузчики и про динамическую загрузку классов.</a></li>
+<li><a href="#_что_такое_reflection">66. Что такое <em>Reflection</em>?</a></li>
+<li><a href="#_зачем_нужен_equals_чем_он_отличается_от_операции">67. Зачем нужен <code>equals()</code>. Чем он отличается от операции <code>==</code>?</a></li>
+<li><a href="#_если_вы_хотите_переопределить_equals_какие_условия_должны_выполняться">68. Если вы хотите переопределить <code>equals()</code>, какие условия должны выполняться?</a></li>
+<li><a href="#_какими_свойствами_обладает_порождаемое_equals_отношение_эквивалентности">69. Какими свойствами обладает порождаемое <code>equals()</code> отношение эквивалентности?</a></li>
+<li><a href="#_правила_переопределения_метода_object_equals">70. Правила переопределения метода <code>Object.equals()</code>.</a></li>
+<li><a href="#_какая_связь_между_hashcode_и_equals">71. Какая связь между <code>hashCode()</code> и <code>equals()</code>?</a></li>
+<li><a href="#_если_equals_переопределен_есть_ли_какие_либо_другие_методы_которые_следует_переопределить">72. Если <code>equals()</code> переопределен, есть ли какие-либо другие методы, которые следует переопределить?</a></li>
+<li><a href="#_что_будет_если_переопределить_equals_не_переопределяя_hashcode_какие_могут_возникнуть_проблемы">73. Что будет, если переопределить <code>equals()</code> не переопределяя <code>hashCode()</code>? Какие могут возникнуть проблемы?</a></li>
+<li><a href="#_каким_образом_реализованы_методы_hashcode_и_equals_в_классе_object">74. Каким образом реализованы методы <code>hashCode()</code> и <code>equals()</code> в классе <code>Object</code>?</a></li>
+<li><a href="#_для_чего_нужен_метод_hashcode">75. Для чего нужен метод <code>hashCode()</code>?</a></li>
+<li><a href="#_каковы_правила_переопределения_метода_object_hashcode">76. Каковы правила переопределения метода <code>Object.hashCode()</code>?</a></li>
+<li><a href="#_есть_ли_какие_либо_рекомендации_о_том_какие_поля_следует_использовать_при_подсчете_hashcode">77. Есть ли какие-либо рекомендации о том, какие поля следует использовать при подсчете <code>hashCode()</code>?</a></li>
+<li><a href="#_могут_ли_у_разных_объектов_быть_одинаковые_hashcode">78. Могут ли у разных объектов быть одинаковые <code>hashCode()</code>?</a></li>
+<li><a href="#_если_у_класса_pointint_x_y_реализовать_метод_equalsobject_that_return_this_x_that_x_this_y_that_y_но_сделать_хэш_код_в_виде_int_hashcode_return_x_то_будут_ли_корректно_такие_точки_помещаться_и_извлекаться_из_hashset">79. Если у класса <code>Point{int x, y;}</code> реализовать метод <code>equals(Object that) {(return this.x == that.x &amp;&amp; this.y == that.y)}</code>, но сделать хэш код в виде <code>int hashCode() {return x;}</code>, то будут ли корректно такие точки помещаться и извлекаться из <code>HashSet</code>?</a></li>
+<li><a href="#_могут_ли_у_разных_объектов_ref0_ref1_быть_ref0_equalsref1_true">80. Могут ли у разных объектов <code>(ref0 != ref1)</code> быть <code>ref0.equals(ref1) == true</code>?</a></li>
+<li><a href="#_могут_ли_у_разных_ссылок_на_один_объект_ref0_ref1_быть_ref0_equalsref1_false">81. Могут ли у разных ссылок на один объект <code>(ref0 == ref1)</code> быть <code>ref0.equals(ref1) == false</code>?</a></li>
+<li><a href="#_можно_ли_так_реализовать_метод_equalsobject_that_return_this_hashcode_that_hashcode">82. Можно ли так реализовать метод <code>equals(Object that) {return this.hashCode() == that.hashCode()}</code>?</a></li>
+<li><a href="#_в_equals_требуется_проверять_что_аргумент_equalsobject_that_такого_же_типа_что_и_сам_объект_в_чем_разница_между_this_getclass_that_getclass_и_that_instanceof_myclass">83. В <code>equals()</code> требуется проверять, что аргумент <code>equals(Object that)</code> такого же типа что и сам объект. В чем разница между <code>this.getClass() == that.getClass()</code> и <code>that instanceof MyClass</code>?</a></li>
+<li><a href="#_можно_ли_реализовать_метод_equals_класса_myclass_вот_так_class_myclass_public_boolean_equalsmyclass_that_return_this_that">84. Можно ли реализовать метод <code>equals()</code> класса <code>MyClass</code> вот так: <code>class MyClass {public boolean equals(MyClass that) {return this == that;}}</code>?</a></li>
+<li><a href="#_есть_класс_pointint_x_y_почему_хэш_код_в_виде_31_x_y_предпочтительнее_чем_x_y">85. Есть класс <code>Point{int x, y;}</code>. Почему хэш код в виде <code>31 * x + y</code> предпочтительнее чем <code>x + y</code>?</a></li>
+<li><a href="#_расскажите_про_клонирование_объектов">86. Расскажите про клонирование объектов.</a></li>
+<li><a href="#_в_чем_отличие_между_поверхностным_и_глубоким_клонированием">87. В чем отличие между <em>поверхностным</em> и <em>глубоким</em> клонированием?</a></li>
+<li><a href="#_какой_способ_клонирования_предпочтительней">88. Какой способ клонирования предпочтительней?</a></li>
+<li><a href="#_почему_метод_clone_объявлен_в_классе_object_а_не_в_интерфейсе_cloneable">89. Почему метод <code>clone()</code> объявлен в классе <code>Object</code>, а не в интерфейсе <code>Cloneable</code>?</a></li>
+<li><a href="#_опишите_иерархию_исключений">90. Опишите иерархию исключений.</a></li>
+<li><a href="#_какие_виды_исключений_в_java_вы_знаете_чем_они_отличаются">91. Какие виды исключений в Java вы знаете, чем они отличаются?</a></li>
+<li><a href="#_что_такое_checked_и_unchecked_exception">92. Что такое <em>checked</em> и <em>unchecked exception</em>?</a></li>
+<li><a href="#_какой_оператор_позволяет_принудительно_выбросить_исключение">93. Какой оператор позволяет принудительно выбросить исключение?</a></li>
+<li><a href="#_о_чем_говорит_ключевое_слово_throws">94. О чем говорит ключевое слово <code>throws</code>?</a></li>
+<li><a href="#_как_написать_собственное_пользовательское_исключение">95. Как написать собственное («пользовательское») исключение?</a></li>
+<li><a href="#_какие_существуют_unchecked_exception">96. Какие существуют <em>unchecked exception</em>?</a></li>
+<li><a href="#_что_представляет_из_себя_ошибки_класса_error">97. Что представляет из себя ошибки класса <code>Error</code>?</a></li>
+<li><a href="#_что_вы_знаете_о_outofmemoryerror">98. Что вы знаете о <code>OutOfMemoryError</code>?</a></li>
+<li><a href="#_опишите_работу_блока_try_catch_finally">99. Опишите работу блока <em>try-catch-finally</em>.</a></li>
+<li><a href="#_что_такое_механизм_try_with_resources">100. Что такое механизм <em>try-with-resources</em>?</a></li>
+<li><a href="#_возможно_ли_использование_блока_try_finally_без_catch">101. Возможно ли использование блока <em>try-finally</em> (без <code>catch</code>)?</a></li>
+<li><a href="#_может_ли_один_блок_catch_отлавливать_сразу_несколько_исключений">102. Может ли один блок <code>catch</code> отлавливать сразу несколько исключений?</a></li>
+<li><a href="#_всегда_ли_исполняется_блок_finally">103. Всегда ли исполняется блок <code>finally</code>?</a></li>
+<li><a href="#_существуют_ли_ситуации_когда_блок_finally_не_будет_выполнен">104. Существуют ли ситуации, когда блок <code>finally</code> не будет выполнен?</a></li>
+<li><a href="#_может_ли_метод_main_выбросить_исключение_во_вне_и_если_да_то_где_будет_происходить_обработка_данного_исключения">105. Может ли метод <em>main()</em> выбросить исключение во вне и если да, то где будет происходить обработка данного исключения?</a></li>
+<li><a href="#_предположим_есть_метод_который_может_выбросить_ioexception_и_filenotfoundexception_в_какой_последовательности_должны_идти_блоки_catch_сколько_блоков_catch_будет_выполнено">106. Предположим, есть метод, который может выбросить <code>IOException</code> и <code>FileNotFoundException</code> в какой последовательности должны идти блоки <code>catch</code>? Сколько блоков <code>catch</code> будет выполнено?</a></li>
+<li><a href="#_что_такое_generics">107. Что такое <em>generics</em>?</a></li>
+<li><a href="#_что_такое_интернационализация_локализация">108. Что такое <em>«интернационализация»</em>, <em>«локализация»</em>?</a></li>
+<li><a href="#_источники">109. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_чем_различаются_jre_jvm_и_jdk">Чем различаются JRE, JVM и JDK?</h2>
+<h2 id="_чем_различаются_jre_jvm_и_jdk">1. Чем различаются JRE, JVM и JDK?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>JVM</strong>, Java Virtual Machine (Виртуальная машина Java)&#8201;&#8212;&#8201;основная часть среды времени исполнения Java (JRE). Виртуальная машина Java исполняет байт-код Java, предварительно созданный из исходного текста Java-программы компилятором Java. JVM может также использоваться для выполнения программ, написанных на других языках программирования.</p>
@@ -459,7 +863,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_существуют_модификаторы_доступа">Какие существуют модификаторы доступа?</h2>
+<h2 id="_какие_существуют_модификаторы_доступа">2. Какие существуют модификаторы доступа?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>private</strong> (приватный): члены класса доступны только внутри класса. Для обозначения используется служебное слово <code>private</code>.</p>
@@ -483,7 +887,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_о_чем_говорит_ключевое_слово_final">О чем говорит ключевое слово <code>final</code>?</h2>
+<h2 id="_о_чем_говорит_ключевое_слово_final">3. О чем говорит ключевое слово <code>final</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Модификатор <code>final</code> может применяться к переменным, параметрам методов, полям и методам класса или самим классам.</p>
@@ -510,7 +914,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какими_значениями_инициализируются_переменные_по_умолчанию">Какими значениями инициализируются переменные по умолчанию?</h2>
+<h2 id="_какими_значениями_инициализируются_переменные_по_умолчанию">4. Какими значениями инициализируются переменные по умолчанию?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -531,20 +935,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_вы_знаете_о_функции_main">Что вы знаете о функции <code>main()</code>?</h2>
+<h2 id="_что_вы_знаете_о_функции_main">5. Что вы знаете о функции <code>main()</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Метод <code>main()</code>&#8201;&#8212;&#8201;точка входа в программу. В приложении может быть несколько таких методов. Если метод отсутствует, то компиляция возможна, но при запуске будет получена ошибка <em>`Error: Main method not found`</em>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public static void main(String[] args) {}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_логические_операции_и_операторы_вы_знаете">Какие логические операции и операторы вы знаете?</h2>
+<h2 id="_какие_логические_операции_и_операторы_вы_знаете">6. Какие логические операции и операторы вы знаете?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -589,7 +993,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_тернарный_оператор_выбора">Что такое тернарный оператор выбора?</h2>
+<h2 id="_что_такое_тернарный_оператор_выбора">7. Что такое тернарный оператор выбора?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Тернарный условный оператор <code>?:</code> - оператор, которым можно заменить некоторые конструкции операторов <code>if-then-else</code>.</p>
@@ -610,7 +1014,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_побитовые_операции_вы_знаете">Какие побитовые операции вы знаете?</h2>
+<h2 id="_какие_побитовые_операции_вы_знаете">8. Какие побитовые операции вы знаете?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -658,7 +1062,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_где_и_для_чего_используется_модификатор_abstract">Где и для чего используется модификатор <code>abstract</code>?</h2>
+<h2 id="_где_и_для_чего_используется_модификатор_abstract">9. Где и для чего используется модификатор <code>abstract</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Класс, помеченный модификатором <code>abstract</code>, называется абстрактным классом. Такие классы могут выступать только предками для других классов. Создавать экземпляры самого абстрактного класса не разрешается. При этом наследниками абстрактного класса могут быть как другие абстрактные классы, так и классы, допускающие создание объектов.</p>
@@ -672,7 +1076,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_дайте_определение_понятию_интерфейс_какие_модификаторы_по_умолчанию_имеют_поля_и_методы_интерфейсов">Дайте определение понятию <em>«интерфейс»</em>. Какие модификаторы по умолчанию имеют поля и методы интерфейсов?</h2>
+<h2 id="_дайте_определение_понятию_интерфейс_какие_модификаторы_по_умолчанию_имеют_поля_и_методы_интерфейсов">10. Дайте определение понятию <em>«интерфейс»</em>. Какие модификаторы по умолчанию имеют поля и методы интерфейсов?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Ключевое слово <code>interface</code> используется для создания полностью абстрактных классов. Основное предназначение интерфейса - определять каким образом мы можем использовать класс, который его реализует. Создатель интерфейса определяет имена методов, списки аргументов и типы возвращаемых значений, но не реализует их поведение. Все методы неявно объявляются как <code>public</code>.</p>
@@ -686,7 +1090,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_абстрактный_класс_отличается_от_интерфейса_в_каких_случаях_следует_использовать_абстрактный_класс_а_в_каких_интерфейс">Чем абстрактный класс отличается от интерфейса? В каких случаях следует использовать абстрактный класс, а в каких интерфейс?</h2>
+<h2 id="_чем_абстрактный_класс_отличается_от_интерфейса_в_каких_случаях_следует_использовать_абстрактный_класс_а_в_каких_интерфейс">11. Чем абстрактный класс отличается от интерфейса? В каких случаях следует использовать абстрактный класс, а в каких интерфейс?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -713,7 +1117,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_почему_в_некоторых_интерфейсах_вообще_не_определяют_методов">Почему в некоторых интерфейсах вообще не определяют методов?</h2>
+<h2 id="_почему_в_некоторых_интерфейсах_вообще_не_определяют_методов">12. Почему в некоторых интерфейсах вообще не определяют методов?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Это так называемые <em>маркерные интерфейсы</em>. Они просто указывают что класс относится к определенному типу. Примером может послужить интерфейс <code>Clonable</code>, который указывает на то, что класс поддерживает механизм клонирования.</p>
@@ -721,7 +1125,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_почему_нельзя_объявить_метод_интерфейса_с_модификатором_final">Почему нельзя объявить метод интерфейса с модификатором <code>final</code>?</h2>
+<h2 id="_почему_нельзя_объявить_метод_интерфейса_с_модификатором_final">13. Почему нельзя объявить метод интерфейса с модификатором <code>final</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>В случае интерфейсов указание модификатора <code>final</code> бессмысленно, т.к. все методы интерфейсов неявно объявляются как абстрактные, т.е. их невозможно выполнить, не реализовав где-то еще, а этого нельзя будет сделать, если у метода идентификатор <code>final</code>.</p>
@@ -729,7 +1133,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_имеет_более_высокий_уровень_абстракции_класс_абстрактный_класс_или_интерфейс">Что имеет более высокий уровень абстракции - <em>класс</em>, <em>абстрактный класс</em> или <em>интерфейс</em>?</h2>
+<h2 id="_что_имеет_более_высокий_уровень_абстракции_класс_абстрактный_класс_или_интерфейс">14. Что имеет более высокий уровень абстракции - <em>класс</em>, <em>абстрактный класс</em> или <em>интерфейс</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Интерфейс.</p>
@@ -737,7 +1141,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_может_ли_объект_получить_доступ_к_члену_класса_объявленному_как_private_если_да_то_каким_образом">Может ли объект получить доступ к члену класса, объявленному как <code>private</code>? Если да, то каким образом?</h2>
+<h2 id="_может_ли_объект_получить_доступ_к_члену_класса_объявленному_как_private_если_да_то_каким_образом">15. Может ли объект получить доступ к члену класса, объявленному как <code>private</code>? Если да, то каким образом?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -757,21 +1161,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Victim {
-    private int field = 42;
-}
-//...
-Victim victim = new Victim();
-Field field = Victim.class.getDeclaredField("field");
-field.setAccessible(true);
-int fieldValue = (int) field.get(victim);
-//...</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">Victim</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">field</span> <span class="o">=</span> <span class="mi">42</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="c1">//...</span>
+<span class="nc">Victim</span> <span class="n">victim</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Victim</span><span class="o">();</span>
+<span class="nc">Field</span> <span class="n">field</span> <span class="o">=</span> <span class="nc">Victim</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getDeclaredField</span><span class="o">(</span><span class="s">"field"</span><span class="o">);</span>
+<span class="n">field</span><span class="o">.</span><span class="na">setAccessible</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">fieldValue</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">field</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">victim</span><span class="o">);</span>
+<span class="c1">//...</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_каков_порядок_вызова_конструкторов_и_блоков_инициализации_с_учётом_иерархии_классов">Каков порядок вызова конструкторов и блоков инициализации с учётом иерархии классов?</h2>
+<h2 id="_каков_порядок_вызова_конструкторов_и_блоков_инициализации_с_учётом_иерархии_классов">16. Каков порядок вызова конструкторов и блоков инициализации с учётом иерархии классов?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Сначала вызываются все статические блоки в очередности от первого статического блока корневого предка и выше по цепочке иерархии до статических блоков самого класса.</p>
@@ -800,35 +1204,35 @@ int fieldValue = (int) field.get(victim);
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class MainClass {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainClass</span> <span class="o">{</span>
 
-    public static void main(String args[]) {
-        System.out.println(TestClass.v);
-        new TestClass().a();
-    }
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">TestClass</span><span class="o">.</span><span class="na">v</span><span class="o">);</span>
+        <span class="k">new</span> <span class="nf">TestClass</span><span class="o">().</span><span class="na">a</span><span class="o">();</span>
+    <span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class TestClass {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestClass</span> <span class="o">{</span>
 
-    public static String v = "Some val";
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="n">v</span> <span class="o">=</span> <span class="s">"Some val"</span><span class="o">;</span>
 
-    {
-        System.out.println("!!! Non-static initializer");
-    }
+    <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! Non-static initializer"</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    static {
-        System.out.println("!!! Static initializer");
-    }
+    <span class="kd">static</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! Static initializer"</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    public void a() {
-        System.out.println("!!! a() called");
-    }
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! a() called"</span><span class="o">);</span>
+    <span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -847,34 +1251,34 @@ Some val
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class MainClass {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainClass</span> <span class="o">{</span>
 
-    public static void main(String args[]) {
-        new TestClass().a();
-    }
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+        <span class="k">new</span> <span class="nf">TestClass</span><span class="o">().</span><span class="na">a</span><span class="o">();</span>
+    <span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class TestClass {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestClass</span> <span class="o">{</span>
 
-    public static String v = "Some val";
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="n">v</span> <span class="o">=</span> <span class="s">"Some val"</span><span class="o">;</span>
 
-    {
-        System.out.println("!!! Non-static initializer");
-    }
+    <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! Non-static initializer"</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    static {
-        System.out.println("!!! Static initializer");
-    }
+    <span class="kd">static</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! Static initializer"</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    public void a() {
-        System.out.println("!!! a() called");
-    }
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! a() called"</span><span class="o">);</span>
+    <span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -890,7 +1294,7 @@ Some val
 </div>
 </div>
 <div class="sect1">
-<h2 id="_зачем_нужны_и_какие_бывают_блоки_инициализации">Зачем нужны и какие бывают блоки инициализации?</h2>
+<h2 id="_зачем_нужны_и_какие_бывают_блоки_инициализации">17. Зачем нужны и какие бывают блоки инициализации?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Блоки инициализации представляют собой код, заключенный в фигурные скобки и размещаемый внутри класса вне объявления методов или конструкторов.</p>
@@ -917,7 +1321,7 @@ Some val
 </div>
 </div>
 <div class="sect1">
-<h2 id="_к_каким_конструкциям_java_применим_модификатор_static">К каким конструкциям Java применим модификатор <code>static</code>?</h2>
+<h2 id="_к_каким_конструкциям_java_применим_модификатор_static">18. К каким конструкциям Java применим модификатор <code>static</code>?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -941,7 +1345,7 @@ Some val
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_в_java_используются_статические_блоки_инициализации">Для чего в Java используются статические блоки инициализации?</h2>
+<h2 id="_для_чего_в_java_используются_статические_блоки_инициализации">19. Для чего в Java используются статические блоки инициализации?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Статические блоки инициализация используются для выполнения кода, который должен выполняться один раз при инициализации класса загрузчиком классов, в момент, предшествующий созданию объектов этого класса при помощи конструктора. Такой блок (в отличие от нестатических, принадлежащих конкретном объекту класса) принадлежит только самому классу (объекту метакласса <code>Class</code>).</p>
@@ -949,7 +1353,7 @@ Some val
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_произойдёт_если_в_блоке_инициализации_возникнет_исключительная_ситуация">Что произойдёт, если в блоке инициализации возникнет исключительная ситуация?</h2>
+<h2 id="_что_произойдёт_если_в_блоке_инициализации_возникнет_исключительная_ситуация">20. Что произойдёт, если в блоке инициализации возникнет исключительная ситуация?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Для нестатических блоков инициализации, если выбрасывание исключения прописано явным образом требуется, чтобы объявления этих исключений были перечислены в <code>throws</code> всех конструкторов класса. Иначе будет ошибка компиляции. Для статического блока выбрасывание исключения в явном виде, приводит к ошибке компиляции.</p>
@@ -960,7 +1364,7 @@ Some val
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какое_исключение_выбрасывается_при_возникновении_ошибки_в_блоке_инициализации_класса">Какое исключение выбрасывается при возникновении ошибки в блоке инициализации класса?</h2>
+<h2 id="_какое_исключение_выбрасывается_при_возникновении_ошибки_в_блоке_инициализации_класса">21. Какое исключение выбрасывается при возникновении ошибки в блоке инициализации класса?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Если возникшее исключение - наследник <code>RuntimeException</code>:</p>
@@ -981,7 +1385,7 @@ Some val
 </div>
 </div>
 <div class="sect1">
-<h2 id="_может_ли_статический_метод_быть_переопределён_или_перегружен">Может ли статический метод быть переопределён или перегружен?</h2>
+<h2 id="_может_ли_статический_метод_быть_переопределён_или_перегружен">22. Может ли статический метод быть переопределён или перегружен?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Перегружен - да. Всё работает точно так же, как и с обычными методами - 2 статических метода могут иметь одинаковое имя, если количество их параметров или типов различается.</p>
@@ -995,7 +1399,7 @@ Some val
 </div>
 </div>
 <div class="sect1">
-<h2 id="_могут_ли_нестатические_методы_перегрузить_статические">Могут ли нестатические методы перегрузить статические?</h2>
+<h2 id="_могут_ли_нестатические_методы_перегрузить_статические">23. Могут ли нестатические методы перегрузить статические?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Да. В итоге получится два разных метода. Статический будет принадлежать классу и будет доступен через его имя, а нестатический будет принадлежать конкретному объекту и доступен через вызов метода этого объекта.</p>
@@ -1003,7 +1407,7 @@ Some val
 </div>
 </div>
 <div class="sect1">
-<h2 id="_можно_ли_сузить_уровень_доступатип_возвращаемого_значения_при_переопределении_метода">Можно ли сузить уровень доступа/тип возвращаемого значения при переопределении метода?</h2>
+<h2 id="_можно_ли_сузить_уровень_доступатип_возвращаемого_значения_при_переопределении_метода">24. Можно ли сузить уровень доступа/тип возвращаемого значения при переопределении метода?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1023,35 +1427,35 @@ Some val
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class Animal {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
 
-    public Animal eat() {
-        System.out.println("animal eat");
-        return null;
-    }
+    <span class="kd">public</span> <span class="nc">Animal</span> <span class="nf">eat</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"animal eat"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    public Long calc() {
-        return null;
-    }
+    <span class="kd">public</span> <span class="nc">Long</span> <span class="nf">calc</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
 
-}
-public class Dog extends Animal {
+<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
 
-    public Dog eat() {
-        return new Dog();
-    }
-/*attempting to use incompatible return type
+    <span class="kd">public</span> <span class="nc">Dog</span> <span class="nf">eat</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Dog</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="cm">/*attempting to use incompatible return type
     public Integer calc() {
         return null;
     }
-*/
-}</code></pre>
+*/</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_возможно_ли_при_переопределении_метода_изменить_модификатор_доступа_возвращаемый_тип_тип_аргумента_или_их_количество_имена_аргументов_или_их_порядок_убирать_добавлять_изменять_порядок_следования_элементов_секции_throws">Возможно ли при переопределении метода изменить: модификатор доступа, возвращаемый тип, тип аргумента или их количество, имена аргументов или их порядок; убирать, добавлять, изменять порядок следования элементов секции <code>throws</code>?</h2>
+<h2 id="_возможно_ли_при_переопределении_метода_изменить_модификатор_доступа_возвращаемый_тип_тип_аргумента_или_их_количество_имена_аргументов_или_их_порядок_убирать_добавлять_изменять_порядок_следования_элементов_секции_throws">25. Возможно ли при переопределении метода изменить: модификатор доступа, возвращаемый тип, тип аргумента или их количество, имена аргументов или их порядок; убирать, добавлять, изменять порядок следования элементов секции <code>throws</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>При переопределении метода сужать модификатор доступа не разрешается, т.к. это приведёт к нарушению принципа подстановки Барбары Лисков. Расширение уровня доступа возможно.</p>
@@ -1075,20 +1479,20 @@ public class Dog extends Animal {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_получить_доступ_к_переопределенным_методам_родительского_класса">Как получить доступ к переопределенным методам родительского класса?</h2>
+<h2 id="_как_получить_доступ_к_переопределенным_методам_родительского_класса">26. Как получить доступ к переопределенным методам родительского класса?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>С помощью ключевого слова <code>super</code> мы можем обратиться к любому члену родительского класса - методу или полю, если они не определены с модификатором <code>private</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">super.method();</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">super</span><span class="o">.</span><span class="na">method</span><span class="o">();</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_можно_ли_объявить_метод_абстрактным_и_статическим_одновременно">Можно ли объявить метод абстрактным и статическим одновременно?</h2>
+<h2 id="_можно_ли_объявить_метод_абстрактным_и_статическим_одновременно">27. Можно ли объявить метод абстрактным и статическим одновременно?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Нет. В таком случае компилятор выдаст ошибку: <em>"Illegal combination of modifiers: &#8216;abstract&#8217; and &#8216;static&#8217;"</em>. Модификатор <code>abstract</code> говорит, что метод будет реализован в другом классе, а <code>static</code> наоборот указывает, что этот метод будет доступен по имени класса.</p>
@@ -1096,7 +1500,7 @@ public class Dog extends Animal {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_разница_между_членом_экземпляра_класса_и_статическим_членом_класса">В чем разница между членом экземпляра класса и статическим членом класса?</h2>
+<h2 id="_в_чем_разница_между_членом_экземпляра_класса_и_статическим_членом_класса">28. В чем разница между членом экземпляра класса и статическим членом класса?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Модификатор <code>static</code> говорит о том, что данный метод или поле принадлежат самому классу и доступ к ним возможен даже без создания экземпляра класса. Поля, помеченные <code>static</code> инициализируются при инициализации класса. На методы, объявленные как <code>static</code>, накладывается ряд ограничений:</p>
@@ -1122,38 +1526,38 @@ public class Dog extends Animal {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class MainClass {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainClass</span> <span class="o">{</span>
 
-	public static void main(String args[]) {
-		System.out.println(TestClass.v);
-		new TestClass().a();
-		System.out.println(TestClass.v);
-	}
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">TestClass</span><span class="o">.</span><span class="na">v</span><span class="o">);</span>
+		<span class="k">new</span> <span class="nf">TestClass</span><span class="o">().</span><span class="na">a</span><span class="o">();</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">TestClass</span><span class="o">.</span><span class="na">v</span><span class="o">);</span>
+	<span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class TestClass {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestClass</span> <span class="o">{</span>
 
-	public static String v = "Initial val";
+	<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="n">v</span> <span class="o">=</span> <span class="s">"Initial val"</span><span class="o">;</span>
 
-	{
-		System.out.println("!!! Non-static initializer");
-		v = "Val from non-static";
-	}
+	<span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! Non-static initializer"</span><span class="o">);</span>
+		<span class="n">v</span> <span class="o">=</span> <span class="s">"Val from non-static"</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	static {
-		System.out.println("!!! Static initializer");
-		v = "Some val";
-	}
+	<span class="kd">static</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! Static initializer"</span><span class="o">);</span>
+		<span class="n">v</span> <span class="o">=</span> <span class="s">"Some val"</span><span class="o">;</span>
+	<span class="o">}</span>
 
-	public void a() {
-		System.out.println("!!! a() called");
-	}
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! a() called"</span><span class="o">);</span>
+	<span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1171,7 +1575,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_где_разрешена_инициализация_статическихнестатических_полей">Где разрешена инициализация статических/нестатических полей?</h2>
+<h2 id="_где_разрешена_инициализация_статическихнестатических_полей">29. Где разрешена инициализация статических/нестатических полей?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1186,7 +1590,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_типы_классов_бывают_в_java">Какие типы классов бывают в java?</h2>
+<h2 id="_какие_типы_классов_бывают_в_java">30. Какие типы классов бывают в java?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1233,7 +1637,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_расскажите_про_вложенные_классы_в_каких_случаях_они_применяются">Расскажите про вложенные классы. В каких случаях они применяются?</h2>
+<h2 id="_расскажите_про_вложенные_классы_в_каких_случаях_они_применяются">31. Расскажите про вложенные классы. В каких случаях они применяются?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Класс называется вложенным (<em>Nested class</em>), если он определен внутри другого класса. Вложенный класс должен создаваться только для того, чтобы обслуживать обрамляющий его класс. Если вложенный класс оказывается полезен в каком-либо ином контексте, он должен стать классом верхнего уровня. Вложенные классы имеют доступ ко всем (в том числе приватным) полям и методам внешнего класса, но не наоборот. Из-за этого разрешения использование вложенных классов приводит к некоторому нарушению инкапсуляции.</p>
@@ -1266,7 +1670,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_статический_класс">Что такое <em>«статический класс»</em>?</h2>
+<h2 id="_что_такое_статический_класс">32. Что такое <em>«статический класс»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Это вложенный класс, объявленный с использованием ключевого слова <code>static</code>. К классам верхнего уровня модификатор <code>static</code> неприменим.</p>
@@ -1274,7 +1678,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_существуют_особенности_использования_вложенных_классов_статических_и_внутренних_в_чем_заключается_разница_между_ними">Какие существуют особенности использования вложенных классов: статических и внутренних? В чем заключается разница между ними?</h2>
+<h2 id="_какие_существуют_особенности_использования_вложенных_классов_статических_и_внутренних_в_чем_заключается_разница_между_ними">33. Какие существуют особенности использования вложенных классов: статических и внутренних? В чем заключается разница между ними?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1298,7 +1702,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_локальный_класс_каковы_его_особенности">Что такое <em>«локальный класс»</em>? Каковы его особенности?</h2>
+<h2 id="_что_такое_локальный_класс_каковы_его_особенности">34. Что такое <em>«локальный класс»</em>? Каковы его особенности?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Local inner class</strong> (Локальный класс) - это вложенный класс, который может быть декларирован в любом блоке, в котором разрешается декларировать переменные. Как и простые внутренние классы (<em>Member inner class</em>) локальные классы имеют имена и могут использоваться многократно. Как и анонимные классы, они имеют окружающий их экземпляр только тогда, когда применяются в нестатическом контексте.</p>
@@ -1328,7 +1732,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_анонимные_классы_где_они_применяются">Что такое <em>«анонимные классы»</em>? Где они применяются?</h2>
+<h2 id="_что_такое_анонимные_классы_где_они_применяются">35. Что такое <em>«анонимные классы»</em>? Где они применяются?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Это вложенный локальный класс без имени, который разрешено декларировать в любом месте обрамляющего класса, разрешающем размещение выражений. Создание экземпляра анонимного класса происходит одновременно с его объявлением. В зависимости от местоположения анонимный класс ведет себя как статический либо как нестатический вложенный класс - в нестатическом контексте появляется окружающий его экземпляр.</p>
@@ -1371,7 +1775,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_каким_образом_из_вложенного_класса_получить_доступ_к_полю_внешнего_класса">Каким образом из вложенного класса получить доступ к полю внешнего класса?</h2>
+<h2 id="_каким_образом_из_вложенного_класса_получить_доступ_к_полю_внешнего_класса">36. Каким образом из вложенного класса получить доступ к полю внешнего класса?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Статический вложенный класс имеет прямой доступ только к статическим полям обрамляющего класса.</p>
@@ -1382,7 +1786,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_используется_оператор_assert">Для чего используется оператор <code>assert</code>?</h2>
+<h2 id="_для_чего_используется_оператор_assert">37. Для чего используется оператор <code>assert</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Assert</strong> (Утверждение)&#8201;&#8212;&#8201;это специальная конструкция, позволяющая проверять предположения о значениях произвольных данных в произвольном месте программы. Утверждение может автоматически сигнализировать об обнаружении некорректных данных, что обычно приводит к аварийному завершению программы с указанием места обнаружения некорректных данных.</p>
@@ -1408,7 +1812,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_heap_и_stack_память_в_java_какая_разница_между_ними">Что такое <em>Heap</em> и <em>Stack</em> память в Java? Какая разница между ними?</h2>
+<h2 id="_что_такое_heap_и_stack_память_в_java_какая_разница_между_ними">38. Что такое <em>Heap</em> и <em>Stack</em> память в Java? Какая разница между ними?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Heap (куча)</strong> используется Java Runtime для выделения памяти под объекты и классы. Создание нового объекта также происходит в куче. Это же является областью работы сборщика мусора. Любой объект, созданный в куче, имеет глобальный доступ и на него могут ссылаться из любой части приложения.</p>
@@ -1451,7 +1855,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_верно_ли_утверждение_что_примитивные_типы_данных_всегда_хранятся_в_стеке_а_экземпляры_ссылочных_типов_данных_в_куче">Верно ли утверждение, что примитивные типы данных всегда хранятся в стеке, а экземпляры ссылочных типов данных в куче?</h2>
+<h2 id="_верно_ли_утверждение_что_примитивные_типы_данных_всегда_хранятся_в_стеке_а_экземпляры_ссылочных_типов_данных_в_куче">39. Верно ли утверждение, что примитивные типы данных всегда хранятся в стеке, а экземпляры ссылочных типов данных в куче?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Не совсем. Примитивное поле экземпляра класса хранится не в стеке, а в куче. Любой объект (всё, что явно или неявно создаётся при помощи оператора <code>new</code>) хранится в куче.</p>
@@ -1459,7 +1863,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_каким_образом_передаются_переменные_в_методы_по_значению_или_по_ссылке">Каким образом передаются переменные в методы, по значению или по ссылке?</h2>
+<h2 id="_каким_образом_передаются_переменные_в_методы_по_значению_или_по_ссылке">40. Каким образом передаются переменные в методы, по значению или по ссылке?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>В Java параметры всегда передаются только по значению, что определяется как «скопировать значение и передать копию». С примитивами это будет копия содержимого. Со ссылками - тоже копия содержимого, т.е. копия ссылки. При этом внутренние члены ссылочных типов через такую копию изменить возможно, а вот саму ссылку, указывающую на экземпляр - нет.</p>
@@ -1467,7 +1871,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_нужен_сборщик_мусора">Для чего нужен сборщик мусора?</h2>
+<h2 id="_для_чего_нужен_сборщик_мусора">41. Для чего нужен сборщик мусора?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Сборщик мусора (Garbage Collector) должен делать всего две вещи:</p>
@@ -1642,7 +2046,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_работает_сборщик_мусора">Как работает сборщик мусора?</h2>
+<h2 id="_как_работает_сборщик_мусора">42. Как работает сборщик мусора?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Механизм сборки мусора - это процесс освобождения места в куче, для возможности добавления новых объектов.</p>
@@ -1662,7 +2066,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_разновидности_сборщиков_мусора_реализованы_в_виртуальной_машине_hotspot">Какие разновидности сборщиков мусора реализованы в виртуальной машине HotSpot?</h2>
+<h2 id="_какие_разновидности_сборщиков_мусора_реализованы_в_виртуальной_машине_hotspot">43. Какие разновидности сборщиков мусора реализованы в виртуальной машине HotSpot?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Java HotSpot VM предоставляет разработчикам на выбор четыре различных сборщика мусора:</p>
@@ -1686,7 +2090,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_опишите_алгоритм_работы_какого_нибудь_сборщика_мусора_реализованного_в_виртуальной_машине_hotspot">Опишите алгоритм работы какого-нибудь сборщика мусора, реализованного в виртуальной машине HotSpot.</h2>
+<h2 id="_опишите_алгоритм_работы_какого_нибудь_сборщика_мусора_реализованного_в_виртуальной_машине_hotspot">44. Опишите алгоритм работы какого-нибудь сборщика мусора, реализованного в виртуальной машине HotSpot.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Serial Garbage Collector (Последовательный сборщик мусора)</strong> был одним из первых сборщиков мусора в HotSpot VM. Во время работы этого сборщика приложения приостанавливается и продолжает работать только после прекращения сборки мусора.</p>
@@ -1734,7 +2138,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_пул_строк">Что такое «пул строк»?</h2>
+<h2 id="_что_такое_пул_строк">45. Что такое «пул строк»?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Пул строк</strong>&#8201;&#8212;&#8201;это набор строк, хранящийся в <em>Heap</em>.</p>
@@ -1761,7 +2165,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_finalize_зачем_он_нужен">Что такое <code>finalize()</code>? Зачем он нужен?</h2>
+<h2 id="_что_такое_finalize_зачем_он_нужен">46. Что такое <code>finalize()</code>? Зачем он нужен?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Через вызов метода <code>finalize()</code> (который наследуется от Java.lang.Object) JVM реализуется функциональность аналогичная функциональности деструкторов в С&#43;&#43;, используемых для очистки памяти перед возвращением управления операционной системе. Данный метод вызывается при уничтожении объекта сборщиком мусора (<em>garbage collector</em>) и переопределяя <code>finalize()</code> можно запрограммировать действия необходимые для корректного удаления экземпляра класса - например, закрытие сетевых соединений, соединений с базой данных, снятие блокировок на файлы и т.д.</p>
@@ -1777,33 +2181,33 @@ Val from non-static</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class MainClass {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainClass</span> <span class="o">{</span>
 
-	public static void main(String args[]) {
-		TestClass a = new TestClass();
-		a.a();
-		a = null;
-		a = new TestClass();
-		a.a();
-		System.out.println("!!! done");
-	}
-}</code></pre>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+		<span class="nc">TestClass</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TestClass</span><span class="o">();</span>
+		<span class="n">a</span><span class="o">.</span><span class="na">a</span><span class="o">();</span>
+		<span class="n">a</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TestClass</span><span class="o">();</span>
+		<span class="n">a</span><span class="o">.</span><span class="na">a</span><span class="o">();</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! done"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class TestClass {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestClass</span> <span class="o">{</span>
 
-	public void a() {
-		System.out.println("!!! a() called");
-	}
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">a</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! a() called"</span><span class="o">);</span>
+	<span class="o">}</span>
 
-	@Override
-	protected void finalize() throws Throwable {
-		System.out.println("!!! finalize() called");
-		super.finalize();
-	}
-}</code></pre>
+	<span class="nd">@Override</span>
+	<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">finalize</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! finalize() called"</span><span class="o">);</span>
+		<span class="kd">super</span><span class="o">.</span><span class="na">finalize</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1821,19 +2225,19 @@ Val from non-static</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class MainClass {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainClass</span> <span class="o">{</span>
 
-	public static void main(String args[]) {
-		TestClass a = new TestClass();
-		a.a();
-		a = null;
-		System.gc(); // Принудительно зовём сборщик мусора
-		a = new TestClass();
-		a.a();
-		System.out.println("!!! done");
-	}
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+		<span class="nc">TestClass</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TestClass</span><span class="o">();</span>
+		<span class="n">a</span><span class="o">.</span><span class="na">a</span><span class="o">();</span>
+		<span class="n">a</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">gc</span><span class="o">();</span> <span class="c1">// Принудительно зовём сборщик мусора</span>
+		<span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TestClass</span><span class="o">();</span>
+		<span class="n">a</span><span class="o">.</span><span class="na">a</span><span class="o">();</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! done"</span><span class="o">);</span>
+	<span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1862,7 +2266,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_произойдет_со_сборщиком_мусора_если_выполнение_метода_finalize_требует_ощутимо_много_времени_или_в_процессе_выполнения_будет_выброшено_исключение">Что произойдет со сборщиком мусора, если выполнение метода <code>finalize()</code> требует ощутимо много времени, или в процессе выполнения будет выброшено исключение?</h2>
+<h2 id="_что_произойдет_со_сборщиком_мусора_если_выполнение_метода_finalize_требует_ощутимо_много_времени_или_в_процессе_выполнения_будет_выброшено_исключение">47. Что произойдет со сборщиком мусора, если выполнение метода <code>finalize()</code> требует ощутимо много времени, или в процессе выполнения будет выброшено исключение?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Непосредственно вызов <code>finalize()</code> происходит в отдельном потоке <em>Finalizer</em> (<code>java.lang.ref.Finalizer.FinalizerThread</code>), который создаётся при запуске виртуальной машины (в статической секции при загрузке класса <code>Finalizer</code>). Методы <code>finalize()</code> вызываются последовательно в том порядке, в котором были добавлены в список сборщиком мусора. Соответственно, если какой-то <code>finalize()</code> зависнет, он подвесит поток <em>Finalizer</em>, но не сборщик мусора. Это в частности означает, что объекты, не имеющие метода <code>finalize()</code>, будут исправно удаляться, а вот имеющие будут добавляться в очередь, пока поток <em>Finalizer</em> не освободится, не завершится приложение или не кончится память.</p>
@@ -1873,7 +2277,7 @@ Val from non-static</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_отличаются_final_finally_и_finalize">Чем отличаются <code>final</code>, <code>finally</code> и <code>finalize()</code>?</h2>
+<h2 id="_чем_отличаются_final_finally_и_finalize">48. Чем отличаются <code>final</code>, <code>finally</code> и <code>finalize()</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Модификатор <code>final</code>:</p>
@@ -1908,43 +2312,43 @@ Val from non-static</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class MainClass {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainClass</span> <span class="o">{</span>
 
-	public static void main(String args[]) {
-		TestClass a = new TestClass();
-		System.out.println("result of a.a() is " + a.a());
-		a = null;
-		System.gc(); // Принудительно зовём сборщик мусора
-		a = new TestClass();
-		System.out.println("result of a.a() is " + a.a());
-		System.out.println("!!! done");
-	}
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+		<span class="nc">TestClass</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TestClass</span><span class="o">();</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"result of a.a() is "</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="na">a</span><span class="o">());</span>
+		<span class="n">a</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">gc</span><span class="o">();</span> <span class="c1">// Принудительно зовём сборщик мусора</span>
+		<span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TestClass</span><span class="o">();</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"result of a.a() is "</span> <span class="o">+</span> <span class="n">a</span><span class="o">.</span><span class="na">a</span><span class="o">());</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! done"</span><span class="o">);</span>
+	<span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class TestClass {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestClass</span> <span class="o">{</span>
 
-	public int a() {
-		try {
-			System.out.println("!!! a() called");
-			throw new Exception("");
-		} catch (Exception e) {
-			System.out.println("!!! Exception in a()");
-			return 2;
-		} finally {
-			System.out.println("!!! finally in a() ");
-		}
-	}
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">a</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">try</span> <span class="o">{</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! a() called"</span><span class="o">);</span>
+			<span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! Exception in a()"</span><span class="o">);</span>
+			<span class="k">return</span> <span class="mi">2</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! finally in a() "</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
 
-	@Override
-	protected void finalize() throws Throwable {
-		System.out.println("!!! finalize() called");
-		super.finalize();
-	}
-}</code></pre>
+	<span class="nd">@Override</span>
+	<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">finalize</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"!!! finalize() called"</span><span class="o">);</span>
+		<span class="kd">super</span><span class="o">.</span><span class="na">finalize</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1967,7 +2371,7 @@ result of a.a() is 2
 </div>
 </div>
 <div class="sect1">
-<h2 id="_расскажите_про_приведение_типов_что_такое_понижение_и_повышение_типа">Расскажите про приведение типов. Что такое понижение и повышение типа?</h2>
+<h2 id="_расскажите_про_приведение_типов_что_такое_понижение_и_повышение_типа">49. Расскажите про приведение типов. Что такое понижение и повышение типа?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Java является строго типизированным языком программирования, а это означает, то что каждое выражение и каждая переменная имеет строго определенный тип уже на момент компиляции. Однако определен механизм <em>приведения типов (casting)</em> - способ преобразования значения переменной одного типа в значение другого типа.</p>
@@ -2008,16 +2412,16 @@ result of a.a() is 2
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Parent parent = new Child();
-if (parent instanceof Child) {
-    Child child = (Child) parent;
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Parent</span> <span class="n">parent</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Child</span><span class="o">();</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">parent</span> <span class="k">instanceof</span> <span class="nc">Child</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Child</span> <span class="n">child</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Child</span><span class="o">)</span> <span class="n">parent</span><span class="o">;</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_когда_в_приложении_может_быть_выброшено_исключение_classcastexception">Когда в приложении может быть выброшено исключение <code>ClassCastException</code>?</h2>
+<h2 id="_когда_в_приложении_может_быть_выброшено_исключение_classcastexception">50. Когда в приложении может быть выброшено исключение <code>ClassCastException</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>ClassCastException</code> (потомок <code>RuntimeException</code>) - исключение, которое будет выброшено при ошибке приведения типа.</p>
@@ -2025,19 +2429,19 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_литералы">Что такое литералы?</h2>
+<h2 id="_что_такое_литералы">51. Что такое литералы?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Литералы</strong>&#8201;&#8212;&#8201;это явно заданные значения в коде программы&#8201;&#8212;&#8201;константы определенного типа, которые находятся в коде в момент запуска.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class Test {
-   int a = 0b1101010110;
-   public static void main(String[] args) {
-       System.out.println("Hello world!");
-   }
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+   <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mb">0b1101010110</span><span class="o">;</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+       <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello world!"</span><span class="o">);</span>
+   <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2052,7 +2456,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_autoboxing_автоупаковка_в_java_и_каковы_правила_упаковки_примитивных_типов_в_классы_обертки">Что такое <em>autoboxing («автоупаковка»)</em> в Java и каковы правила упаковки примитивных типов в классы-обертки?</h2>
+<h2 id="_что_такое_autoboxing_автоупаковка_в_java_и_каковы_правила_упаковки_примитивных_типов_в_классы_обертки">52. Что такое <em>autoboxing («автоупаковка»)</em> в Java и каковы правила упаковки примитивных типов в классы-обертки?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Автоупаковка</strong> - это механизм неявной инициализации объектов классов-оберток (<code>Byte</code>, <code>Short</code>, <code>Integer</code>, <code>Long</code>, <code>Float</code>, <code>Double</code>, <code>Character</code>, <code>Boolean</code>) значениями соответствующих им исходных примитивных типов (<code>byte</code>, <code>short</code>, <code>int</code>&#8230;&#8203;), без явного использования конструктора класса.</p>
@@ -2083,7 +2487,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_есть_особенности_класса_string">Какие есть особенности класса <code>String</code>?</h2>
+<h2 id="_какие_есть_особенности_класса_string">53. Какие есть особенности класса <code>String</code>?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -2107,7 +2511,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_почему_string_неизменяемый_и_финализированный_класс">Почему <code>String</code> неизменяемый и финализированный класс?</h2>
+<h2 id="_почему_string_неизменяемый_и_финализированный_класс">54. Почему <code>String</code> неизменяемый и финализированный класс?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Есть несколько преимуществ в неизменности строк:</p>
@@ -2134,7 +2538,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_почему_char_предпочтительнее_string_для_хранения_пароля">Почему <code>char[]</code> предпочтительнее <code>String</code> для хранения пароля?</h2>
+<h2 id="_почему_char_предпочтительнее_string_для_хранения_пароля">55. Почему <code>char[]</code> предпочтительнее <code>String</code> для хранения пароля?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>С момента создания строка остаётся в пуле, до тех пор, пока не будет удалена сборщиком мусора. Поэтому, даже после окончания использования пароля, он некоторое время продолжает оставаться доступным в памяти и способа избежать этого не существует. Это представляет определённый риск для безопасности, поскольку кто-либо, имеющий доступ к памяти сможет найти пароль в виде текста.
@@ -2143,7 +2547,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_почему_строка_является_популярным_ключом_в_hashmap_в_java">Почему строка является популярным ключом в <code>HashMap</code> в Java?</h2>
+<h2 id="_почему_строка_является_популярным_ключом_в_hashmap_в_java">56. Почему строка является популярным ключом в <code>HashMap</code> в Java?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Поскольку строки неизменяемы, их хэш код вычисляется и кэшируется в момент создания, не требуя повторного пересчета при дальнейшем использовании. Поэтому в качестве ключа <code>HashMap</code> они будут обрабатываться быстрее.</p>
@@ -2151,7 +2555,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_делает_метод_intern_в_классе_string">Что делает метод <code>intern()</code> в классе <code>String</code>?.</h2>
+<h2 id="_что_делает_метод_intern_в_классе_string">57. Что делает метод <code>intern()</code> в классе <code>String</code>?.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Метод <code>intern()</code> используется для сохранения строки в пуле строк или получения ссылки, если такая строка уже находится в пуле.</p>
@@ -2159,7 +2563,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_можно_ли_использовать_строки_в_конструкции_switch">Можно ли использовать строки в конструкции <code>switch</code>?</h2>
+<h2 id="_можно_ли_использовать_строки_в_конструкции_switch">58. Можно ли использовать строки в конструкции <code>switch</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Да, начиная с Java 7 в операторе <code>switch</code> можно использовать строки, ранние версии Java не поддерживают этого. При этом:</p>
@@ -2180,7 +2584,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какая_основная_разница_между_string_stringbuffer_stringbuilder">Какая основная разница между <code>String</code>, <code>StringBuffer</code>, <code>StringBuilder</code>?</h2>
+<h2 id="_какая_основная_разница_между_string_stringbuffer_stringbuilder">59. Какая основная разница между <code>String</code>, <code>StringBuffer</code>, <code>StringBuilder</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Класс <code>String</code> является неизменяемым (<em>immutable</em>) - модифицировать объект такого класса нельзя, можно лишь заменить его созданием нового экземпляра.</p>
@@ -2194,7 +2598,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_класс_object_какие_в_нем_есть_методы">Что такое класс <code>Object</code>? Какие в нем есть методы?</h2>
+<h2 id="_что_такое_класс_object_какие_в_нем_есть_методы">60. Что такое класс <code>Object</code>? Какие в нем есть методы?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>Object</code> это базовый класс для всех остальных объектов в Java. Любой класс наследуется от <code>Object</code> и, соответственно, наследуют его методы:</p>
@@ -2235,7 +2639,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_дайте_определение_понятию_конструктор">Дайте определение понятию «конструктор».</h2>
+<h2 id="_дайте_определение_понятию_конструктор">61. Дайте определение понятию «конструктор».</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Конструктор</strong>&#8201;&#8212;&#8201;это специальный метод, у которого отсутствует возвращаемый тип и который имеет то же имя, что и класс, в котором он используется. Конструктор вызывается при создании нового объекта класса и определяет действия необходимые для его инициализации.</p>
@@ -2243,14 +2647,14 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_конструктор_по_умолчанию">Что такое <em>«конструктор по умолчанию»</em>?</h2>
+<h2 id="_что_такое_конструктор_по_умолчанию">62. Что такое <em>«конструктор по умолчанию»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Если у какого-либо класса не определить конструктор, то компилятор сгенерирует конструктор без аргументов - так называемый <strong>«конструктор по умолчанию»</strong>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class ClassName() {}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nf">ClassName</span><span class="o">()</span> <span class="o">{}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2259,7 +2663,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_отличаются_конструктор_по_умолчанию_конструктор_копирования_и_конструктор_с_параметрами">Чем отличаются конструктор по-умолчанию, конструктор копирования и конструктор с параметрами?</h2>
+<h2 id="_чем_отличаются_конструктор_по_умолчанию_конструктор_копирования_и_конструктор_с_параметрами">63. Чем отличаются конструктор по-умолчанию, конструктор копирования и конструктор с параметрами?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>У конструктора по умолчанию отсутствуют какие-либо аргументы. Конструктор копирования принимает в качестве аргумента уже существующий объект класса для последующего создания его клона. Конструктор с параметрами имеет в своей сигнатуре аргументы (обычно необходимые для инициализации полей класса).</p>
@@ -2267,7 +2671,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_где_и_как_вы_можете_использовать_приватный_конструктор">Где и как вы можете использовать приватный конструктор?</h2>
+<h2 id="_где_и_как_вы_можете_использовать_приватный_конструктор">64. Где и как вы можете использовать приватный конструктор?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Приватный (помеченный ключевым словом <code>private</code>, скрытый) конструктор может использоваться публичным статическим методом генерации объектов данного класса. Также доступ к нему разрешён вложенным классам и может использоваться для их нужд.</p>
@@ -2275,7 +2679,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_расскажите_про_классы_загрузчики_и_про_динамическую_загрузку_классов">Расскажите про классы-загрузчики и про динамическую загрузку классов.</h2>
+<h2 id="_расскажите_про_классы_загрузчики_и_про_динамическую_загрузку_классов">65. Расскажите про классы-загрузчики и про динамическую загрузку классов.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Основа работы с классами в Java&#8201;&#8212;&#8201;классы-загрузчики, обычные Java-объекты, предоставляющие интерфейс для поиска и создания объекта класса по его имени во время работы приложения.</p>
@@ -2363,7 +2767,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_reflection">Что такое <em>Reflection</em>?</h2>
+<h2 id="_что_такое_reflection">66. Что такое <em>Reflection</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Рефлексия (Reflection)</strong> - это механизм получения данных о программе во время её выполнения (runtime). В Java <em>Reflection</em> осуществляется с помощью <em>Java Reflection API</em>, состоящего из классов пакетов <code>java.lang</code> и <code>java.lang.reflect</code>.</p>
@@ -2399,7 +2803,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_зачем_нужен_equals_чем_он_отличается_от_операции">Зачем нужен <code>equals()</code>. Чем он отличается от операции <code>==</code>?</h2>
+<h2 id="_зачем_нужен_equals_чем_он_отличается_от_операции">67. Зачем нужен <code>equals()</code>. Чем он отличается от операции <code>==</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Метод <code>equals()</code> - определяет отношение эквивалентности объектов.</p>
@@ -2410,13 +2814,13 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_если_вы_хотите_переопределить_equals_какие_условия_должны_выполняться">Если вы хотите переопределить <code>equals()</code>, какие условия должны выполняться?</h2>
+<h2 id="_если_вы_хотите_переопределить_equals_какие_условия_должны_выполняться">68. Если вы хотите переопределить <code>equals()</code>, какие условия должны выполняться?</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какими_свойствами_обладает_порождаемое_equals_отношение_эквивалентности">Какими свойствами обладает порождаемое <code>equals()</code> отношение эквивалентности?</h2>
+<h2 id="_какими_свойствами_обладает_порождаемое_equals_отношение_эквивалентности">69. Какими свойствами обладает порождаемое <code>equals()</code> отношение эквивалентности?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -2440,7 +2844,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_правила_переопределения_метода_object_equals">Правила переопределения метода <code>Object.equals()</code>.</h2>
+<h2 id="_правила_переопределения_метода_object_equals">70. Правила переопределения метода <code>Object.equals()</code>.</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -2464,13 +2868,13 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какая_связь_между_hashcode_и_equals">Какая связь между <code>hashCode()</code> и <code>equals()</code>?</h2>
+<h2 id="_какая_связь_между_hashcode_и_equals">71. Какая связь между <code>hashCode()</code> и <code>equals()</code>?</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_если_equals_переопределен_есть_ли_какие_либо_другие_методы_которые_следует_переопределить">Если <code>equals()</code> переопределен, есть ли какие-либо другие методы, которые следует переопределить?</h2>
+<h2 id="_если_equals_переопределен_есть_ли_какие_либо_другие_методы_которые_следует_переопределить">72. Если <code>equals()</code> переопределен, есть ли какие-либо другие методы, которые следует переопределить?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Равные объекты должны возвращать одинаковые хэш коды. При переопределении <code>equals()</code> нужно обязательно переопределять и метод <code>hashCode()</code>.</p>
@@ -2478,7 +2882,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_будет_если_переопределить_equals_не_переопределяя_hashcode_какие_могут_возникнуть_проблемы">Что будет, если переопределить <code>equals()</code> не переопределяя <code>hashCode()</code>? Какие могут возникнуть проблемы?</h2>
+<h2 id="_что_будет_если_переопределить_equals_не_переопределяя_hashcode_какие_могут_возникнуть_проблемы">73. Что будет, если переопределить <code>equals()</code> не переопределяя <code>hashCode()</code>? Какие могут возникнуть проблемы?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Классы и методы, которые используют правила этого контракта могут работать некорректно. Так для <code>HashMap</code> это может привести к тому, что пара «ключ-значение», которая была в неё помещена при использовании нового экземпляра ключа не будет в ней найдена.</p>
@@ -2486,16 +2890,16 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_каким_образом_реализованы_методы_hashcode_и_equals_в_классе_object">Каким образом реализованы методы <code>hashCode()</code> и <code>equals()</code> в классе <code>Object</code>?</h2>
+<h2 id="_каким_образом_реализованы_методы_hashcode_и_equals_в_классе_object">74. Каким образом реализованы методы <code>hashCode()</code> и <code>equals()</code> в классе <code>Object</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Реализация метода <code>Object.equals()</code> сводится к проверке на равенство двух ссылок:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public boolean equals(Object obj) {
-  return (this == obj);
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="nc">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">obj</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2503,13 +2907,13 @@ if (parent instanceof Child) {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public native int hashCode();</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">native</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">();</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_нужен_метод_hashcode">Для чего нужен метод <code>hashCode()</code>?</h2>
+<h2 id="_для_чего_нужен_метод_hashcode">75. Для чего нужен метод <code>hashCode()</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Метод <code>hashCode()</code> необходим для вычисления хэш кода переданного в качестве входного параметра объекта. В Java это целое число, в более широком смысле - битовая строка фиксированной длины, полученная из массива произвольной длины. Этот метод реализован таким образом, что для одного и того же входного объекта, хэш код всегда будет одинаковым. Следует понимать, что в Java множество возможных хэш кодов ограничено типом <code>int</code>, а множество объектов ничем не ограничено. Из-за этого, вполне возможна ситуация, что хэш коды разных объектов могут совпасть:</p>
@@ -2527,13 +2931,13 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_каковы_правила_переопределения_метода_object_hashcode">Каковы правила переопределения метода <code>Object.hashCode()</code>?</h2>
+<h2 id="_каковы_правила_переопределения_метода_object_hashcode">76. Каковы правила переопределения метода <code>Object.hashCode()</code>?</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_есть_ли_какие_либо_рекомендации_о_том_какие_поля_следует_использовать_при_подсчете_hashcode">Есть ли какие-либо рекомендации о том, какие поля следует использовать при подсчете <code>hashCode()</code>?</h2>
+<h2 id="_есть_ли_какие_либо_рекомендации_о_том_какие_поля_следует_использовать_при_подсчете_hashcode">77. Есть ли какие-либо рекомендации о том, какие поля следует использовать при подсчете <code>hashCode()</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Общий совет: выбирать поля, которые с большой долью вероятности будут различаться. Для этого необходимо использовать уникальные, лучше всего примитивные поля, например, такие как <code>id</code>, <code>uuid</code>. При этом нужно следовать правилу, если поля задействованы при вычислении <code>hashCode()</code>, то они должны быть задействованы и при выполнении <code>equals()</code>.</p>
@@ -2541,7 +2945,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_могут_ли_у_разных_объектов_быть_одинаковые_hashcode">Могут ли у разных объектов быть одинаковые <code>hashCode()</code>?</h2>
+<h2 id="_могут_ли_у_разных_объектов_быть_одинаковые_hashcode">78. Могут ли у разных объектов быть одинаковые <code>hashCode()</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Да, могут. Метод <code>hashCode()</code> не гарантирует уникальность возвращаемого значения. Ситуация, когда у разных объектов одинаковые хэш коды называется <em>коллизией</em>. Вероятность возникновения коллизии зависит от используемого алгоритма генерации хэш кода.</p>
@@ -2549,7 +2953,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_если_у_класса_pointint_x_y_реализовать_метод_equalsobject_that_return_this_x_that_x_this_y_that_y_но_сделать_хэш_код_в_виде_int_hashcode_return_x_то_будут_ли_корректно_такие_точки_помещаться_и_извлекаться_из_hashset">Если у класса <code>Point{int x, y;}</code> реализовать метод <code>equals(Object that) {(return this.x == that.x &amp;&amp; this.y == that.y)}</code>, но сделать хэш код в виде <code>int hashCode() {return x;}</code>, то будут ли корректно такие точки помещаться и извлекаться из <code>HashSet</code>?</h2>
+<h2 id="_если_у_класса_pointint_x_y_реализовать_метод_equalsobject_that_return_this_x_that_x_this_y_that_y_но_сделать_хэш_код_в_виде_int_hashcode_return_x_то_будут_ли_корректно_такие_точки_помещаться_и_извлекаться_из_hashset">79. Если у класса <code>Point{int x, y;}</code> реализовать метод <code>equals(Object that) {(return this.x == that.x &amp;&amp; this.y == that.y)}</code>, но сделать хэш код в виде <code>int hashCode() {return x;}</code>, то будут ли корректно такие точки помещаться и извлекаться из <code>HashSet</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>HashSet</code> использует <code>HashMap</code> для хранения элементов. При добавлении элемента в <code>HashMap</code> вычисляется хэш код, по которому определяется позиция в массиве, куда будет вставлен новый элемент. У всех экземпляров класса <code>Point</code> хэш код будет одинаковым для всех объектов с одинаковым <code>x</code>, что приведёт к вырождению хэш таблицы в список.</p>
@@ -2560,7 +2964,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_могут_ли_у_разных_объектов_ref0_ref1_быть_ref0_equalsref1_true">Могут ли у разных объектов <code>(ref0 != ref1)</code> быть <code>ref0.equals(ref1) == true</code>?</h2>
+<h2 id="_могут_ли_у_разных_объектов_ref0_ref1_быть_ref0_equalsref1_true">80. Могут ли у разных объектов <code>(ref0 != ref1)</code> быть <code>ref0.equals(ref1) == true</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Да, могут. Для этого в классе этих объектов должен быть переопределен метод <code>equals()</code>.</p>
@@ -2571,7 +2975,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_могут_ли_у_разных_ссылок_на_один_объект_ref0_ref1_быть_ref0_equalsref1_false">Могут ли у разных ссылок на один объект <code>(ref0 == ref1)</code> быть <code>ref0.equals(ref1) == false</code>?</h2>
+<h2 id="_могут_ли_у_разных_ссылок_на_один_объект_ref0_ref1_быть_ref0_equalsref1_false">81. Могут ли у разных ссылок на один объект <code>(ref0 == ref1)</code> быть <code>ref0.equals(ref1) == false</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>В общем случае - могут, если метод <code>equals()</code> реализован некорректно и не выполняет свойство рефлексивности: для любых ненулевых ссылок <code>x</code> метод <code>x.equals(x)</code> должен возвращать <code>true</code>.</p>
@@ -2579,7 +2983,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_можно_ли_так_реализовать_метод_equalsobject_that_return_this_hashcode_that_hashcode">Можно ли так реализовать метод <code>equals(Object that) {return this.hashCode() == that.hashCode()}</code>?</h2>
+<h2 id="_можно_ли_так_реализовать_метод_equalsobject_that_return_this_hashcode_that_hashcode">82. Можно ли так реализовать метод <code>equals(Object that) {return this.hashCode() == that.hashCode()}</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Строго говоря нельзя, поскольку метод <code>hashCode()</code> не гарантирует уникальность значения для каждого объекта. Однако для сравнения экземпляров класса <code>Object</code> такой код допустим, т.к. метод <code>hashCode()</code> в классе <code>Object</code> возвращает уникальные значения для разных объектов (его вычисление основано на использовании адреса объекта в памяти).</p>
@@ -2587,7 +2991,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_equals_требуется_проверять_что_аргумент_equalsobject_that_такого_же_типа_что_и_сам_объект_в_чем_разница_между_this_getclass_that_getclass_и_that_instanceof_myclass">В <code>equals()</code> требуется проверять, что аргумент <code>equals(Object that)</code> такого же типа что и сам объект. В чем разница между <code>this.getClass() == that.getClass()</code> и <code>that instanceof MyClass</code>?</h2>
+<h2 id="_в_equals_требуется_проверять_что_аргумент_equalsobject_that_такого_же_типа_что_и_сам_объект_в_чем_разница_между_this_getclass_that_getclass_и_that_instanceof_myclass">83. В <code>equals()</code> требуется проверять, что аргумент <code>equals(Object that)</code> такого же типа что и сам объект. В чем разница между <code>this.getClass() == that.getClass()</code> и <code>that instanceof MyClass</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Оператор <code>instanceof</code> сравнивает объект и указанный тип. Его можно использовать для проверки является ли данный объект экземпляром некоторого класса, либо экземпляром его дочернего класса, либо экземпляром класса, который реализует указанный интерфейс.</p>
@@ -2598,7 +3002,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_можно_ли_реализовать_метод_equals_класса_myclass_вот_так_class_myclass_public_boolean_equalsmyclass_that_return_this_that">Можно ли реализовать метод <code>equals()</code> класса <code>MyClass</code> вот так: <code>class MyClass {public boolean equals(MyClass that) {return this == that;}}</code>?</h2>
+<h2 id="_можно_ли_реализовать_метод_equals_класса_myclass_вот_так_class_myclass_public_boolean_equalsmyclass_that_return_this_that">84. Можно ли реализовать метод <code>equals()</code> класса <code>MyClass</code> вот так: <code>class MyClass {public boolean equals(MyClass that) {return this == that;}}</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Реализовать можно, но данный метод не переопределяет метод <code>equals()</code> класса <code>Object</code>, а перегружает его.</p>
@@ -2606,7 +3010,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_есть_класс_pointint_x_y_почему_хэш_код_в_виде_31_x_y_предпочтительнее_чем_x_y">Есть класс <code>Point{int x, y;}</code>. Почему хэш код в виде <code>31 * x + y</code> предпочтительнее чем <code>x + y</code>?</h2>
+<h2 id="_есть_класс_pointint_x_y_почему_хэш_код_в_виде_31_x_y_предпочтительнее_чем_x_y">85. Есть класс <code>Point{int x, y;}</code>. Почему хэш код в виде <code>31 * x + y</code> предпочтительнее чем <code>x + y</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Множитель создает зависимость значения хэш кода от очередности обработки полей, что в итоге порождает лучшую хэш функцию.</p>
@@ -2614,7 +3018,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_расскажите_про_клонирование_объектов">Расскажите про клонирование объектов.</h2>
+<h2 id="_расскажите_про_клонирование_объектов">86. Расскажите про клонирование объектов.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Использование оператора присваивания не создает нового объекта, а лишь копирует ссылку на объект. Таким образом, две ссылки указывают на одну и ту же область памяти, на один и тот же объект. Для создания нового объекта с таким же состоянием используется клонирование объекта.</p>
@@ -2650,7 +3054,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_отличие_между_поверхностным_и_глубоким_клонированием">В чем отличие между <em>поверхностным</em> и <em>глубоким</em> клонированием?</h2>
+<h2 id="_в_чем_отличие_между_поверхностным_и_глубоким_клонированием">87. В чем отличие между <em>поверхностным</em> и <em>глубоким</em> клонированием?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Поверхностное копирование</strong> копирует настолько малую часть информации об объекте, насколько это возможно. По умолчанию, клонирование в Java является поверхностным, т.е. класс <code>Object</code> не знает о структуре класса, которого он копирует. Клонирование такого типа осуществляется JVM по следующим правилам:</p>
@@ -2684,7 +3088,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какой_способ_клонирования_предпочтительней">Какой способ клонирования предпочтительней?</h2>
+<h2 id="_какой_способ_клонирования_предпочтительней">88. Какой способ клонирования предпочтительней?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Наиболее безопасным и, следовательно, предпочтительным способом клонирования является использование специализированного конструктора копирования:</p>
@@ -2705,7 +3109,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_почему_метод_clone_объявлен_в_классе_object_а_не_в_интерфейсе_cloneable">Почему метод <code>clone()</code> объявлен в классе <code>Object</code>, а не в интерфейсе <code>Cloneable</code>?</h2>
+<h2 id="_почему_метод_clone_объявлен_в_классе_object_а_не_в_интерфейсе_cloneable">89. Почему метод <code>clone()</code> объявлен в классе <code>Object</code>, а не в интерфейсе <code>Cloneable</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Метод <code>clone()</code> объявлен в классе <code>Object</code> с указанием модификатора <code>native</code>, чтобы обеспечить доступ к стандартному механизму поверхностного копирования объектов. Одновременно он объявлен и как <code>protected</code>, чтобы нельзя было вызвать этот метод у не переопределивших его объектов. Непосредственно интерфейс <code>Cloneable</code> является маркерным (не содержит объявлений методов) и нужен только для обозначения самого факта, что данный объект готов к тому, чтобы быть клонированным. Вызов переопределённого метода <code>clone()</code> у не <code>Cloneable</code> объекта вызовет выбрасывание <code>CloneNotSupportedException</code>.</p>
@@ -2713,7 +3117,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_опишите_иерархию_исключений">Опишите иерархию исключений.</h2>
+<h2 id="_опишите_иерархию_исключений">90. Опишите иерархию исключений.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Исключения делятся на несколько классов, но все они имеют общего предка&#8201;&#8212;&#8201;класс <code>Throwable</code>, потомками которого являются классы <code>Exception</code> и <code>Error</code>.</p>
@@ -2727,13 +3131,13 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_виды_исключений_в_java_вы_знаете_чем_они_отличаются">Какие виды исключений в Java вы знаете, чем они отличаются?</h2>
+<h2 id="_какие_виды_исключений_в_java_вы_знаете_чем_они_отличаются">91. Какие виды исключений в Java вы знаете, чем они отличаются?</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_checked_и_unchecked_exception">Что такое <em>checked</em> и <em>unchecked exception</em>?</h2>
+<h2 id="_что_такое_checked_и_unchecked_exception">92. Что такое <em>checked</em> и <em>unchecked exception</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>В Java все исключения делятся на два типа:</p>
@@ -2751,20 +3155,20 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какой_оператор_позволяет_принудительно_выбросить_исключение">Какой оператор позволяет принудительно выбросить исключение?</h2>
+<h2 id="_какой_оператор_позволяет_принудительно_выбросить_исключение">93. Какой оператор позволяет принудительно выбросить исключение?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Это оператор <code>throw</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">throw new Exception();</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="k">throw</span> <span class="k">new</span> <span class="nc">Exception</span><span class="o">();</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_о_чем_говорит_ключевое_слово_throws">О чем говорит ключевое слово <code>throws</code>?</h2>
+<h2 id="_о_чем_говорит_ключевое_слово_throws">94. О чем говорит ключевое слово <code>throws</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Модификатор <code>throws</code> прописывается в заголовке метода и указывает на то, что метод потенциально может выбросить исключение с указанным типом.</p>
@@ -2772,32 +3176,32 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_написать_собственное_пользовательское_исключение">Как написать собственное («пользовательское») исключение?</h2>
+<h2 id="_как_написать_собственное_пользовательское_исключение">95. Как написать собственное («пользовательское») исключение?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Необходимо унаследоваться от базового класса требуемого типа исключений (например, от <code>Exception</code> или <code>RuntimeException</code>).</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">class CustomException extends Exception {
-    public CustomException() {
-        super();
-    }
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">CustomException</span> <span class="kd">extends</span> <span class="nc">Exception</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">CustomException</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">();</span>
+    <span class="o">}</span>
 
-    public CustomException(final String string) {
-        super(string + " is invalid");
-    }
+    <span class="kd">public</span> <span class="nf">CustomException</span><span class="o">(</span><span class="kd">final</span> <span class="nc">String</span> <span class="n">string</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">string</span> <span class="o">+</span> <span class="s">" is invalid"</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    public CustomException(final Throwable cause) {
-        super(cause);
-    }
-}</code></pre>
+    <span class="kd">public</span> <span class="nf">CustomException</span><span class="o">(</span><span class="kd">final</span> <span class="nc">Throwable</span> <span class="n">cause</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">cause</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_существуют_unchecked_exception">Какие существуют <em>unchecked exception</em>?</h2>
+<h2 id="_какие_существуют_unchecked_exception">96. Какие существуют <em>unchecked exception</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Наиболее часто встречающиеся: <code>ArithmeticException</code>, <code>ClassCastException</code>, <code>ConcurrentModificationException</code>, <code>IllegalArgumentException</code>, <code>IllegalStateException</code>, <code>IndexOutOfBoundsException</code>, <code>NoSuchElementException</code>, <code>NullPointerException</code>, <code>UnsupportedOperationException</code>.</p>
@@ -2805,7 +3209,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_представляет_из_себя_ошибки_класса_error">Что представляет из себя ошибки класса <code>Error</code>?</h2>
+<h2 id="_что_представляет_из_себя_ошибки_класса_error">97. Что представляет из себя ошибки класса <code>Error</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Ошибки класса <code>Error</code> представляют собой наиболее серьёзные проблемы уровня JVM. Например, исключения такого рода возникают, если закончилась память доступная виртуальной машине. Обрабатывать такие ошибки не запрещается, но делать этого не рекомендуется.</p>
@@ -2813,7 +3217,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_вы_знаете_о_outofmemoryerror">Что вы знаете о <code>OutOfMemoryError</code>?</h2>
+<h2 id="_что_вы_знаете_о_outofmemoryerror">98. Что вы знаете о <code>OutOfMemoryError</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>OutOfMemoryError</code> выбрасывается, когда виртуальная машина Java не может создать (разместить) объект из-за нехватки памяти, а сборщик мусора не может высвободить достаточное её количество.</p>
@@ -2840,7 +3244,7 @@ if (parent instanceof Child) {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_опишите_работу_блока_try_catch_finally">Опишите работу блока <em>try-catch-finally</em>.</h2>
+<h2 id="_опишите_работу_блока_try_catch_finally">99. Опишите работу блока <em>try-catch-finally</em>.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>try</code>&#8201;&#8212;&#8201;данное ключевое слово используется для отметки начала блока кода, который потенциально может привести к ошибке.
@@ -2852,21 +3256,21 @@ if (parent instanceof Child) {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">try {
-    //код, который потенциально может привести к исключительной ситуации
-}
-catch(SomeException e ) { //в скобках указывается класс конкретной ожидаемой ошибки
-    //код обработки исключительной ситуации
-}
-finally {
-    //необязательный блок, код которого выполняется в любом случае
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="k">try</span> <span class="o">{</span>
+    <span class="c1">//код, который потенциально может привести к исключительной ситуации</span>
+<span class="o">}</span>
+<span class="k">catch</span><span class="o">(</span><span class="nc">SomeException</span> <span class="n">e</span> <span class="o">)</span> <span class="o">{</span> <span class="c1">//в скобках указывается класс конкретной ожидаемой ошибки</span>
+    <span class="c1">//код обработки исключительной ситуации</span>
+<span class="o">}</span>
+<span class="k">finally</span> <span class="o">{</span>
+    <span class="c1">//необязательный блок, код которого выполняется в любом случае</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_механизм_try_with_resources">Что такое механизм <em>try-with-resources</em>?</h2>
+<h2 id="_что_такое_механизм_try_with_resources">100. Что такое механизм <em>try-with-resources</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Данная конструкция, которая появилась в Java 7, позволяет использовать блок <em>try-catch</em> не заботясь о закрытии ресурсов, используемых в данном сегменте кода.
@@ -2877,13 +3281,13 @@ finally {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">try(/*объявление ресурсов*/) {
-    //...
-} catch(Exception ex) {
-    //...
-} finally {
-    //...
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="k">try</span><span class="o">(</span><span class="cm">/*объявление ресурсов*/</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//...</span>
+<span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="nc">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//...</span>
+<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+    <span class="c1">//...</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2892,7 +3296,7 @@ finally {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_возможно_ли_использование_блока_try_finally_без_catch">Возможно ли использование блока <em>try-finally</em> (без <code>catch</code>)?</h2>
+<h2 id="_возможно_ли_использование_блока_try_finally_без_catch">101. Возможно ли использование блока <em>try-finally</em> (без <code>catch</code>)?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Такая запись допустима, но смысла в такой записи не так много, всё же лучше иметь блок <code>catch</code>, в котором будет обрабатываться необходимое исключение.</p>
@@ -2900,24 +3304,24 @@ finally {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_может_ли_один_блок_catch_отлавливать_сразу_несколько_исключений">Может ли один блок <code>catch</code> отлавливать сразу несколько исключений?</h2>
+<h2 id="_может_ли_один_блок_catch_отлавливать_сразу_несколько_исключений">102. Может ли один блок <code>catch</code> отлавливать сразу несколько исключений?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>В Java 7 стала доступна новая языковая конструкция, с помощью которой можно перехватывать несколько исключений одним блоком <code>catch</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">try {
-    //...
-} catch(IOException | SQLException ex) {
-    //...
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="k">try</span> <span class="o">{</span>
+    <span class="c1">//...</span>
+<span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="nc">IOException</span> <span class="o">|</span> <span class="nc">SQLException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//...</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_всегда_ли_исполняется_блок_finally">Всегда ли исполняется блок <code>finally</code>?</h2>
+<h2 id="_всегда_ли_исполняется_блок_finally">103. Всегда ли исполняется блок <code>finally</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Код в блоке <code>finally</code> будет выполнен всегда, независимо от того, выброшено исключение или нет.</p>
@@ -2925,24 +3329,24 @@ finally {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_существуют_ли_ситуации_когда_блок_finally_не_будет_выполнен">Существуют ли ситуации, когда блок <code>finally</code> не будет выполнен?</h2>
+<h2 id="_существуют_ли_ситуации_когда_блок_finally_не_будет_выполнен">104. Существуют ли ситуации, когда блок <code>finally</code> не будет выполнен?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Например, когда JVM «умирает» - в такой ситуации <code>finally</code> недостижим и не будет выполнен, так как происходит принудительный системный выход из программы:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">try {
-    System.exit(0);
-} catch(Exception e) {
-    e.printStackTrace();
-} finally { }</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="k">try</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span> <span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_может_ли_метод_main_выбросить_исключение_во_вне_и_если_да_то_где_будет_происходить_обработка_данного_исключения">Может ли метод <em>main()</em> выбросить исключение во вне и если да, то где будет происходить обработка данного исключения?</h2>
+<h2 id="_может_ли_метод_main_выбросить_исключение_во_вне_и_если_да_то_где_будет_происходить_обработка_данного_исключения">105. Может ли метод <em>main()</em> выбросить исключение во вне и если да, то где будет происходить обработка данного исключения?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Может и оно будет передано в виртуальную машину Java (JVM).</p>
@@ -2950,7 +3354,7 @@ finally {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_предположим_есть_метод_который_может_выбросить_ioexception_и_filenotfoundexception_в_какой_последовательности_должны_идти_блоки_catch_сколько_блоков_catch_будет_выполнено">Предположим, есть метод, который может выбросить <code>IOException</code> и <code>FileNotFoundException</code> в какой последовательности должны идти блоки <code>catch</code>? Сколько блоков <code>catch</code> будет выполнено?</h2>
+<h2 id="_предположим_есть_метод_который_может_выбросить_ioexception_и_filenotfoundexception_в_какой_последовательности_должны_идти_блоки_catch_сколько_блоков_catch_будет_выполнено">106. Предположим, есть метод, который может выбросить <code>IOException</code> и <code>FileNotFoundException</code> в какой последовательности должны идти блоки <code>catch</code>? Сколько блоков <code>catch</code> будет выполнено?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Общее правило: обрабатывать исключения нужно от «младшего» к старшему. Т.е. нельзя поставить в первый блок <code>catch(Exception ex) {}</code>, иначе все дальнейшие блоки <code>catch()</code> уже ничего не смогут обработать, т.к. любое исключение будет соответствовать обработчику <code>catch(Exception ex)</code>.</p>
@@ -2960,21 +3364,21 @@ finally {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">void method() {
-    try {
-        //...
-    } catch (FileNotFoundException ex) {
-        //...
-    } catch (IOException ex) {
-        //...
-    }
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kt">void</span> <span class="nf">method</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="c1">//...</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">FileNotFoundException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//...</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//...</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_generics">Что такое <em>generics</em>?</h2>
+<h2 id="_что_такое_generics">107. Что такое <em>generics</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Generics</strong> - это технический термин, обозначающий набор свойств языка позволяющих определять и использовать обобщенные типы и методы. Обобщенные типы или методы отличаются от обычных тем, что имеют типизированные параметры.</p>
@@ -2985,7 +3389,7 @@ finally {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_интернационализация_локализация">Что такое <em>«интернационализация»</em>, <em>«локализация»</em>?</h2>
+<h2 id="_что_такое_интернационализация_локализация">108. Что такое <em>«интернационализация»</em>, <em>«локализация»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Интернационализация (internationalization)</strong> - способ создания приложений, при котором их можно легко адаптировать для разных аудиторий, говорящих на разных языках.</p>
@@ -2996,7 +3400,7 @@ finally {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">109. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -3020,15 +3424,12 @@ finally {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

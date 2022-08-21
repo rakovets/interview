@@ -1,5 +1,6 @@
-
 = ООП
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _ООП_?
 
@@ -400,4 +401,4 @@ ____
 * https://habrahabr.ru/post/87119/[Хабрахабр]
 * https://ru.wikipedia.org/wiki/Объектно-ориентированное_программирование[Википедия]
 
-xref:README.adoc[Вопросы для собеседования]
+

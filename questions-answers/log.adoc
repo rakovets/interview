@@ -1,5 +1,6 @@
-
 = Журналирование
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Какие существуют типы логов?
 
@@ -97,4 +98,4 @@ ____
 * http://www.quizful.net/[Quizful]
 * http://skipy.ru/useful/logging.html#log4j_concepts_logger[Skipy]
 
-xref:README.adoc[Вопросы для собеседования]
+

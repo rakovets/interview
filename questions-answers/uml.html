@@ -435,14 +435,104 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>UML</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_что_такое_uml">1. Что такое <em>UML</em>?</a></li>
+<li><a href="#_что_такое_диаграмма_нотация_и_метамодель_в_uml">2. Что такое <em>«диаграмма»</em>, <em>«нотация»</em> и <em>«метамодель»</em> в UML?</a></li>
+<li><a href="#_какие_существуют_типы_диаграмм">3. Какие существуют типы диаграмм?</a></li>
+<li><a href="#_структурные_диаграммы">4. Структурные диаграммы:</a></li>
+<li><a href="#_диаграммы_поведения">5. Диаграммы поведения:</a></li>
+<li><a href="#_какие_виды_отношений_существуют_в_структурной_диаграмме_классов">6. Какие виды отношений существуют в структурной диаграмме классов?</a></li>
+<li><a href="#_взаимосвязи_классов">7. Взаимосвязи классов</a></li>
+<li><a href="#_взаимосвязи_объектов_классов">8. Взаимосвязи объектов классов</a></li>
+<li><a href="#_общие_взаимосвязи">9. #Общие взаимосвязи</a></li>
+<li><a href="#_источники">10. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_что_такое_uml">Что такое <em>UML</em>?</h2>
+<h2 id="_что_такое_uml">1. Что такое <em>UML</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>UML</strong>&#8201;&#8212;&#8201;это унифицированный графический язык моделирования для описания, визуализации, проектирования и документирования объектно-ориентированных систем. UML призван поддерживать процесс моделирования на основе объектно-ориентированного подхода, организовывать взаимосвязь концептуальных и программных понятий, отражать проблемы масштабирования сложных систем.</p>
@@ -453,7 +543,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_диаграмма_нотация_и_метамодель_в_uml">Что такое <em>«диаграмма»</em>, <em>«нотация»</em> и <em>«метамодель»</em> в UML?</h2>
+<h2 id="_что_такое_диаграмма_нотация_и_метамодель_в_uml">2. Что такое <em>«диаграмма»</em>, <em>«нотация»</em> и <em>«метамодель»</em> в UML?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Диаграмма</strong> - графическое представление совокупности элементов модели в форме связного графа, вершинам и ребрам (дугам) которого приписывается определенная семантика</p>
@@ -469,13 +559,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_существуют_типы_диаграмм">Какие существуют типы диаграмм?</h2>
+<h2 id="_какие_существуют_типы_диаграмм">3. Какие существуют типы диаграмм?</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_структурные_диаграммы">Структурные диаграммы:</h2>
+<h2 id="_структурные_диаграммы">4. Структурные диаграммы:</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>классов (Class diagram)</strong> описывает структуру системы, демонстрирующая классы системы, их атрибуты, методы и зависимости между классами.</p>
@@ -512,7 +602,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_диаграммы_поведения">Диаграммы поведения:</h2>
+<h2 id="_диаграммы_поведения">5. Диаграммы поведения:</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>деятельности (Activity diagram)</strong> показывает разложение некоторой деятельности на её составные части. Под деятельностью понимается спецификация исполняемого поведения в виде координированного последовательного и параллельного выполнения подчинённых элементов&#8201;&#8212;&#8201;вложенных видов деятельности и отдельных действий, соединённых между собой потоками, которые идут от выходов одного узла к входам другого. Диаграммы деятельности используются при моделировании бизнес-процессов, технологических процессов, последовательных и параллельных вычислений.</p>
@@ -545,13 +635,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_виды_отношений_существуют_в_структурной_диаграмме_классов">Какие виды отношений существуют в структурной диаграмме классов?</h2>
+<h2 id="_какие_виды_отношений_существуют_в_структурной_диаграмме_классов">6. Какие виды отношений существуют в структурной диаграмме классов?</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_взаимосвязи_классов">Взаимосвязи классов</h2>
+<h2 id="_взаимосвязи_классов">7. Взаимосвязи классов</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Обобщение (Generalization)</strong> показывает, что один из двух связанных классов (подтип) является частной формой другого (супертипа), который называется обобщением первого. На практике это означает, что любой экземпляр подтипа является также экземпляром супертипа. Обобщение также известно как <em>наследование</em>, <em>«is a» взаимосвязь</em> или <em>отношение «является»</em>.</p>
@@ -576,7 +666,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_взаимосвязи_объектов_классов">Взаимосвязи объектов классов</h2>
+<h2 id="_взаимосвязи_объектов_классов">8. Взаимосвязи объектов классов</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Зависимость (Dependency)</strong> обозначает такое отношение между классами, что изменение спецификации класса-поставщика может повлиять на работу зависимого класса, но не наоборот.</p>
@@ -621,7 +711,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_общие_взаимосвязи">#Общие взаимосвязи</h2>
+<h2 id="_общие_взаимосвязи">9. #Общие взаимосвязи</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Зависимость</strong>&#8201;&#8212;&#8201;это слабая форма отношения использования, при котором изменение в спецификации одного влечёт за собой изменение другого, причём обратное не обязательно. Возникает, когда объект выступает, например, в форме параметра или локальной переменной. Существует несколько именованных вариантов. Зависимость может быть между экземплярами, классами или экземпляром и классом.</p>
@@ -671,7 +761,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">10. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -683,15 +773,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

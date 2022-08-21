@@ -1,5 +1,6 @@
-
 = Тестирование
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _«модульное тестирование»_?
 
@@ -89,4 +90,4 @@ _mock_ использует подмену результатов вызова, 
 * https://habrahabr.ru/post/116372/[Хабрахабр]
 * http://www.intuit.ru/department/se/testing/5/2.html[Интуит]
 
-xref:README.adoc[Вопросы для собеседования]
+

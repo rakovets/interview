@@ -1,5 +1,6 @@
-
 = Java Collections Framework
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _«коллекция»_?
 
@@ -937,4 +938,4 @@ for (Map.Entry<K, V> entry : set) {
 * http://info.javarush.ru/[JavaRush]
 * https://habrahabr.ru/post/237043/[Хабрахабр:Справочник по Java Collections Framework]
 
-xref:README.adoc[Вопросы для собеседования]
+

@@ -435,14 +435,337 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>Потоки ввода/вывода в Java</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_в_чём_заключается_разница_между_io_и_nio">1. В чём заключается разница между IO и NIO?</a></li>
+<li><a href="#_какие_особенности_nio_вы_знаете">2. Какие особенности NIO вы знаете?</a></li>
+<li><a href="#_какие_существуют_виды_потоков_вводавывода">3. Какие существуют виды потоков ввода/вывода?</a></li>
+<li><a href="#_назовите_основные_классы_потоков_вводавывода">4. Назовите основные классы потоков ввода/вывода.</a></li>
+<li><a href="#_в_каких_пакетах_расположены_классы_потоков_вводавывода">5. В каких пакетах расположены классы потоков ввода/вывода?</a></li>
+<li><a href="#_какие_подклассы_класса_inputstream_вы_знаете_для_чего_они_предназначены">6. Какие подклассы класса <code>InputStream</code> вы знаете, для чего они предназначены?</a></li>
+<li><a href="#_для_чего_используется_pushbackinputstream">7. Для чего используется <code>PushbackInputStream</code>?</a></li>
+<li><a href="#_для_чего_используется_sequenceinputstream">8. Для чего используется <code>SequenceInputStream</code>?</a></li>
+<li><a href="#_какой_класс_позволяет_читать_данные_из_входного_байтового_потока_в_формате_примитивных_типов_данных">9. Какой класс позволяет читать данные из входного байтового потока в формате примитивных типов данных?</a></li>
+<li><a href="#_какие_подклассы_класса_outputstream_вы_знаете_для_чего_они_предназначены">10. Какие подклассы класса <code>OutputStream</code> вы знаете, для чего они предназначены?</a></li>
+<li><a href="#_какие_подклассы_класса_reader_вы_знаете_для_чего_они_предназначены">11. Какие подклассы класса <code>Reader</code> вы знаете, для чего они предназначены?</a></li>
+<li><a href="#_какие_подклассы_класса_writer_вы_знаете_для_чего_они_предназначены">12. Какие подклассы класса <code>Writer</code> вы знаете, для чего они предназначены?</a></li>
+<li><a href="#_в_чем_отличие_класса_printwriter_от_printstream">13. В чем отличие класса <code>PrintWriter</code> от <code>PrintStream</code>?</a></li>
+<li><a href="#_чем_отличаются_и_что_общего_у_inputstream_outputstream_reader_writer">14. Чем отличаются и что общего у <code>InputStream</code>, <code>OutputStream</code>, <code>Reader</code>, <code>Writer</code>?</a></li>
+<li><a href="#_какие_классы_позволяют_преобразовать_байтовые_потоки_в_символьные_и_обратно">15. Какие классы позволяют преобразовать байтовые потоки в символьные и обратно?</a></li>
+<li><a href="#_какие_классы_позволяют_ускорить_чтениезапись_за_счет_использования_буфера">16. Какие классы позволяют ускорить чтение/запись за счет использования буфера?</a></li>
+<li><a href="#_какой_класс_предназначен_для_работы_с_элементами_файловой_системы">17. Какой класс предназначен для работы с элементами файловой системы?</a></li>
+<li><a href="#_какие_методы_класса_file_вы_знаете">18. Какие методы класса <code>File</code> вы знаете?</a></li>
+<li><a href="#_что_вы_знаете_об_интерфейсе_filefilter">19. Что вы знаете об интерфейсе <code>FileFilter</code>?</a></li>
+<li><a href="#_как_выбрать_все_элементы_определенного_каталога_по_критерию_например_с_определенным_расширением">20. Как выбрать все элементы определенного каталога по критерию (например, с определенным расширением)?</a></li>
+<li><a href="#_что_вы_знаете_о_randomaccessfile">21. Что вы знаете о <code>RandomAccessFile</code>?</a></li>
+<li><a href="#_какие_режимы_доступа_к_файлу_есть_у_randomaccessfile">22. Какие режимы доступа к файлу есть у <code>RandomAccessFile</code>?</a></li>
+<li><a href="#_какие_классы_поддерживают_чтение_и_запись_потоков_в_компрессированном_формате">23. Какие классы поддерживают чтение и запись потоков в компрессированном формате?</a></li>
+<li><a href="#_существует_ли_возможность_перенаправить_потоки_стандартного_вводавывода">24. Существует ли возможность перенаправить потоки стандартного ввода/вывода?</a></li>
+<li><a href="#_какой_символ_является_разделителем_при_указании_пути_в_файловой_системе">25. Какой символ является разделителем при указании пути в файловой системе?</a></li>
+<li><a href="#_что_такое_абсолютный_путь_и_относительный_путь">26. Что такое <em>«абсолютный путь»</em> и <em>«относительный путь»</em>?</a></li>
+<li><a href="#_что_такое_символьная_ссылка">27. Что такое <em>«символьная ссылка»</em>?</a></li>
+<li><a href="#_источники">28. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_в_чём_заключается_разница_между_io_и_nio">В чём заключается разница между IO и NIO?</h2>
+<h2 id="_в_чём_заключается_разница_между_io_и_nio">1. В чём заключается разница между IO и NIO?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -460,7 +783,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_особенности_nio_вы_знаете">Какие особенности NIO вы знаете?</h2>
+<h2 id="_какие_особенности_nio_вы_знаете">2. Какие особенности NIO вы знаете?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -485,13 +808,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_существуют_виды_потоков_вводавывода">Какие существуют виды потоков ввода/вывода?</h2>
+<h2 id="_какие_существуют_виды_потоков_вводавывода">3. Какие существуют виды потоков ввода/вывода?</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_назовите_основные_классы_потоков_вводавывода">Назовите основные классы потоков ввода/вывода.</h2>
+<h2 id="_назовите_основные_классы_потоков_вводавывода">4. Назовите основные классы потоков ввода/вывода.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Разделяют два вида потоков ввода/вывода:</p>
@@ -509,7 +832,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_каких_пакетах_расположены_классы_потоков_вводавывода">В каких пакетах расположены классы потоков ввода/вывода?</h2>
+<h2 id="_в_каких_пакетах_расположены_классы_потоков_вводавывода">5. В каких пакетах расположены классы потоков ввода/вывода?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>java.io</code>, <code>java.nio</code>. Для работы с потоками компрессированных данных используются классы из пакета <code>java.util.zip</code></p>
@@ -517,7 +840,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_подклассы_класса_inputstream_вы_знаете_для_чего_они_предназначены">Какие подклассы класса <code>InputStream</code> вы знаете, для чего они предназначены?</h2>
+<h2 id="_какие_подклассы_класса_inputstream_вы_знаете_для_чего_они_предназначены">6. Какие подклассы класса <code>InputStream</code> вы знаете, для чего они предназначены?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -559,7 +882,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_используется_pushbackinputstream">Для чего используется <code>PushbackInputStream</code>?</h2>
+<h2 id="_для_чего_используется_pushbackinputstream">7. Для чего используется <code>PushbackInputStream</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Разновидность буферизации, обеспечивающая чтение байта с последующим его возвратом в поток. Класс <code>PushbackInputStream</code> представляет механизм «заглянуть» во входной поток и увидеть, что оттуда поступит в следующий момент, не извлекая информации.</p>
@@ -570,7 +893,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_используется_sequenceinputstream">Для чего используется <code>SequenceInputStream</code>?</h2>
+<h2 id="_для_чего_используется_sequenceinputstream">8. Для чего используется <code>SequenceInputStream</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Класс <code>SequenceInputStream</code> позволяет сливать вместе несколько экземпляров класса <code>InputStream</code>. Конструктор принимает в качестве аргумента либо пару объектов класса <code>InputStream</code>, либо интерфейс <code>Enumeration</code>.</p>
@@ -581,7 +904,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какой_класс_позволяет_читать_данные_из_входного_байтового_потока_в_формате_примитивных_типов_данных">Какой класс позволяет читать данные из входного байтового потока в формате примитивных типов данных?</h2>
+<h2 id="_какой_класс_позволяет_читать_данные_из_входного_байтового_потока_в_формате_примитивных_типов_данных">9. Какой класс позволяет читать данные из входного байтового потока в формате примитивных типов данных?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Класс <code>DataInputStream</code> представляет поток ввода и предназначен для записи данных примитивных типов, таких, как <code>int</code>, <code>double</code> и т.д. Для каждого примитивного типа определен свой метод для считывания:</p>
@@ -620,7 +943,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_подклассы_класса_outputstream_вы_знаете_для_чего_они_предназначены">Какие подклассы класса <code>OutputStream</code> вы знаете, для чего они предназначены?</h2>
+<h2 id="_какие_подклассы_класса_outputstream_вы_знаете_для_чего_они_предназначены">10. Какие подклассы класса <code>OutputStream</code> вы знаете, для чего они предназначены?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -656,7 +979,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_подклассы_класса_reader_вы_знаете_для_чего_они_предназначены">Какие подклассы класса <code>Reader</code> вы знаете, для чего они предназначены?</h2>
+<h2 id="_какие_подклассы_класса_reader_вы_знаете_для_чего_они_предназначены">11. Какие подклассы класса <code>Reader</code> вы знаете, для чего они предназначены?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -695,7 +1018,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_подклассы_класса_writer_вы_знаете_для_чего_они_предназначены">Какие подклассы класса <code>Writer</code> вы знаете, для чего они предназначены?</h2>
+<h2 id="_какие_подклассы_класса_writer_вы_знаете_для_чего_они_предназначены">12. Какие подклассы класса <code>Writer</code> вы знаете, для чего они предназначены?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -731,7 +1054,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_отличие_класса_printwriter_от_printstream">В чем отличие класса <code>PrintWriter</code> от <code>PrintStream</code>?</h2>
+<h2 id="_в_чем_отличие_класса_printwriter_от_printstream">13. В чем отличие класса <code>PrintWriter</code> от <code>PrintStream</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Прежде всего, в классе <code>PrintWriter</code> применен усовершенствованный способ работы с символами Unicode и другой механизм буферизации вывода: в классе PrintStream буфер вывода сбрасывался всякий раз, когда вызывался метод <code>print()</code> или <code>println()</code>, а при использовании класса <code>PrintWriter</code> существует возможность отказаться от автоматического сброса буферов, выполняя его явным образом при помощи метода <code>flush()</code>.</p>
@@ -742,7 +1065,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_отличаются_и_что_общего_у_inputstream_outputstream_reader_writer">Чем отличаются и что общего у <code>InputStream</code>, <code>OutputStream</code>, <code>Reader</code>, <code>Writer</code>?</h2>
+<h2 id="_чем_отличаются_и_что_общего_у_inputstream_outputstream_reader_writer">14. Чем отличаются и что общего у <code>InputStream</code>, <code>OutputStream</code>, <code>Reader</code>, <code>Writer</code>?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -763,7 +1086,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_классы_позволяют_преобразовать_байтовые_потоки_в_символьные_и_обратно">Какие классы позволяют преобразовать байтовые потоки в символьные и обратно?</h2>
+<h2 id="_какие_классы_позволяют_преобразовать_байтовые_потоки_в_символьные_и_обратно">15. Какие классы позволяют преобразовать байтовые потоки в символьные и обратно?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -778,7 +1101,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_классы_позволяют_ускорить_чтениезапись_за_счет_использования_буфера">Какие классы позволяют ускорить чтение/запись за счет использования буфера?</h2>
+<h2 id="_какие_классы_позволяют_ускорить_чтениезапись_за_счет_использования_буфера">16. Какие классы позволяют ускорить чтение/запись за счет использования буфера?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -799,7 +1122,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какой_класс_предназначен_для_работы_с_элементами_файловой_системы">Какой класс предназначен для работы с элементами файловой системы?</h2>
+<h2 id="_какой_класс_предназначен_для_работы_с_элементами_файловой_системы">17. Какой класс предназначен для работы с элементами файловой системы?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>File</code> работает непосредственно с файлами и каталогами. Данный класс позволяет создавать новые элементы и получать информацию существующих: размер, права доступа, время и дату создания, путь к родительскому каталогу.</p>
@@ -807,7 +1130,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_методы_класса_file_вы_знаете">Какие методы класса <code>File</code> вы знаете?</h2>
+<h2 id="_какие_методы_класса_file_вы_знаете">18. Какие методы класса <code>File</code> вы знаете?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Наиболее используемые методы класса <code>File</code>:</p>
@@ -864,22 +1187,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_вы_знаете_об_интерфейсе_filefilter">Что вы знаете об интерфейсе <code>FileFilter</code>?</h2>
+<h2 id="_что_вы_знаете_об_интерфейсе_filefilter">19. Что вы знаете об интерфейсе <code>FileFilter</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Интерфейс <code>FileFilter</code> применяется для проверки, попадает ли объект <code>File</code> под некоторое условие. Этот интерфейс содержит единственный метод <code>boolean accept(File pathName)</code>. Этот метод необходимо переопределить и реализовать. Например:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public boolean accept(final File file) {
-    return file.isExists() &amp;&amp; file.isDirectory();
-}</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">accept</span><span class="o">(</span><span class="kd">final</span> <span class="nc">File</span> <span class="n">file</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">file</span><span class="o">.</span><span class="na">isExists</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">file</span><span class="o">.</span><span class="na">isDirectory</span><span class="o">();</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_выбрать_все_элементы_определенного_каталога_по_критерию_например_с_определенным_расширением">Как выбрать все элементы определенного каталога по критерию (например, с определенным расширением)?</h2>
+<h2 id="_как_выбрать_все_элементы_определенного_каталога_по_критерию_например_с_определенным_расширением">20. Как выбрать все элементы определенного каталога по критерию (например, с определенным расширением)?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Метод <code>File.listFiles()</code> возвращает массив объектов <code>File</code>, содержащихся в каталоге. Метод может принимать в качестве параметра объект класса, реализующего <code>FileFilter</code>. Это позволяет включить в список только те элементы, для которых метод <code>accept</code> возвращает <code>true</code> (критерием может быть длина имени файла или его расширение).</p>
@@ -887,7 +1210,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_вы_знаете_о_randomaccessfile">Что вы знаете о <code>RandomAccessFile</code>?</h2>
+<h2 id="_что_вы_знаете_о_randomaccessfile">21. Что вы знаете о <code>RandomAccessFile</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Класс <code>java.io.RandomAccessFile</code> обеспечивает чтение и запись данных в произвольном месте файла. Он не является частью иерархии <code>InputStream</code> или <code>OutputStream</code>. Это полностью отдельный класс, имеющий свои собственные (в большинстве своем <em>native</em>) методы. Объяснением этого может быть то, что <code>RandomAccessFile</code> имеет во многом отличающееся поведение по сравнению с остальными классами ввода/вывода так как позволяет, в пределах файла, перемещаться вперед и назад.</p>
@@ -929,7 +1252,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_режимы_доступа_к_файлу_есть_у_randomaccessfile">Какие режимы доступа к файлу есть у <code>RandomAccessFile</code>?</h2>
+<h2 id="_какие_режимы_доступа_к_файлу_есть_у_randomaccessfile">22. Какие режимы доступа к файлу есть у <code>RandomAccessFile</code>?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -950,7 +1273,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_классы_поддерживают_чтение_и_запись_потоков_в_компрессированном_формате">Какие классы поддерживают чтение и запись потоков в компрессированном формате?</h2>
+<h2 id="_какие_классы_поддерживают_чтение_и_запись_потоков_в_компрессированном_формате">23. Какие классы поддерживают чтение и запись потоков в компрессированном формате?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -983,7 +1306,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_существует_ли_возможность_перенаправить_потоки_стандартного_вводавывода">Существует ли возможность перенаправить потоки стандартного ввода/вывода?</h2>
+<h2 id="_существует_ли_возможность_перенаправить_потоки_стандартного_вводавывода">24. Существует ли возможность перенаправить потоки стандартного ввода/вывода?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Класс <code>System</code> позволяет вам перенаправлять стандартный ввод, вывод и поток вывода ошибок, используя простой вызов статического метода:</p>
@@ -1004,7 +1327,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какой_символ_является_разделителем_при_указании_пути_в_файловой_системе">Какой символ является разделителем при указании пути в файловой системе?</h2>
+<h2 id="_какой_символ_является_разделителем_при_указании_пути_в_файловой_системе">25. Какой символ является разделителем при указании пути в файловой системе?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Для различных операционных систем символ разделителя различается. Для Windows это <code>\</code>, для Linux - <code>/</code>.</p>
@@ -1015,7 +1338,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_абсолютный_путь_и_относительный_путь">Что такое <em>«абсолютный путь»</em> и <em>«относительный путь»</em>?</h2>
+<h2 id="_что_такое_абсолютный_путь_и_относительный_путь">26. Что такое <em>«абсолютный путь»</em> и <em>«относительный путь»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Абсолютный (полный) путь</strong>&#8201;&#8212;&#8201;это путь, который указывает на одно и то же место в файловой системе, вне зависимости от текущей рабочей директории или других обстоятельств. Полный путь всегда начинается с корневого каталога.</p>
@@ -1026,7 +1349,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_символьная_ссылка">Что такое <em>«символьная ссылка»</em>?</h2>
+<h2 id="_что_такое_символьная_ссылка">27. Что такое <em>«символьная ссылка»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Символьная (символическая) ссылка</strong> (также «симлинк», Symbolic link)&#8201;&#8212;&#8201;специальный файл в файловой системе, в котором, вместо пользовательских данных, содержится путь к файлу, который должен быть открыт при попытке обратиться к данной ссылке (файлу). Целью ссылки может быть любой объект: например, другая ссылка, файл, каталог или даже несуществующий файл (в последнем случае, при попытке открыть его, должно выдаваться сообщение об отсутствии файла).</p>
@@ -1047,7 +1370,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">28. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1071,15 +1394,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

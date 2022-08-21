@@ -435,14 +435,103 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>Тестирование</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_что_такое_модульное_тестирование">1. Что такое <em>«модульное тестирование»</em>?</a></li>
+<li><a href="#_что_такое_интеграционное_тестирование">2. Что такое <em>«интеграционное тестирование»</em>?</a></li>
+<li><a href="#_чем_интеграционное_тестирование_отличается_от_модульного">3. Чем интеграционное тестирование отличается от модульного?</a></li>
+<li><a href="#_какие_существуют_виды_тестовых_объектов">4. Какие существуют виды тестовых объектов?</a></li>
+<li><a href="#_чем_stub_отличается_от_mock">5. Чем <em>stub</em> отличается от <em>mock</em>?</a></li>
+<li><a href="#_что_такое_фикстуры">6. Что такое <em>«фикстуры»</em>?</a></li>
+<li><a href="#_какие_аннотации_фикстур_существуют_в_junit">7. Какие аннотации фикстур существуют в JUnit?</a></li>
+<li><a href="#_для_чего_в_junit_используется_аннотация_ignore">8. Для чего в JUnit используется аннотация <code>@Ignore</code>?</a></li>
+<li><a href="#_источники">9. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_что_такое_модульное_тестирование">Что такое <em>«модульное тестирование»</em>?</h2>
+<h2 id="_что_такое_модульное_тестирование">1. Что такое <em>«модульное тестирование»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Модульное/компонентное тестирование (unit testing)</strong> - процесс в программировании, позволяющий проверить на корректность отдельные модули исходного кода программы. Идея состоит в том, чтобы писать тесты для каждой нетривиальной функции или метода. Это позволяет достаточно быстро проверить, не привело ли очередное изменение кода к регрессии, то есть к появлению ошибок в уже оттестированных местах программы, а также облегчает обнаружение и устранение таких ошибок.</p>
@@ -463,7 +552,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_интеграционное_тестирование">Что такое <em>«интеграционное тестирование»</em>?</h2>
+<h2 id="_что_такое_интеграционное_тестирование">2. Что такое <em>«интеграционное тестирование»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Интеграционное тестирование (integration testing)</strong>&#8201;&#8212;&#8201;это тестирование, проверяющие работоспособность двух или более модулей системы в совокупности&#8201;&#8212;&#8201;то есть нескольких объектов как единого блока. В тестах взаимодействия же тестируется конкретный, определенный объект и то, как именно он взаимодействует с внешними зависимостями.</p>
@@ -471,7 +560,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_интеграционное_тестирование_отличается_от_модульного">Чем интеграционное тестирование отличается от модульного?</h2>
+<h2 id="_чем_интеграционное_тестирование_отличается_от_модульного">3. Чем интеграционное тестирование отличается от модульного?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>С технологической точки зрения интеграционное тестирование является количественным развитием модульного, поскольку так же, как и модульное тестирование, оперирует интерфейсами модулей и подсистем и требует создания тестового окружения, включая заглушки на месте отсутствующих модулей. Основная разница между модульным и интеграционным тестированием состоит в целях, то есть в типах обнаруживаемых дефектов, которые, в свою очередь, определяют стратегию выбора входных данных и методов анализа.</p>
@@ -519,7 +608,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_существуют_виды_тестовых_объектов">Какие существуют виды тестовых объектов?</h2>
+<h2 id="_какие_существуют_виды_тестовых_объектов">4. Какие существуют виды тестовых объектов?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>пустышка (dummy)</strong> - объект, который обычно передается в тестируемый класс в качестве параметра, но не имеет поведения: с ним ничего не происходит и никакие его методы не вызываются.</p>
@@ -567,7 +656,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_stub_отличается_от_mock">Чем <em>stub</em> отличается от <em>mock</em>?</h2>
+<h2 id="_чем_stub_отличается_от_mock">5. Чем <em>stub</em> отличается от <em>mock</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>stub</em> используется как заглушка сервисов, методов, классов и т.д. с заранее запрограммированным ответом на вызовы.</p>
@@ -578,7 +667,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_фикстуры">Что такое <em>«фикстуры»</em>?</h2>
+<h2 id="_что_такое_фикстуры">6. Что такое <em>«фикстуры»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Фикстуры (fixtures)</strong> - состояние среды тестирования, которое требуется для успешного выполнения теста. Основная задача фикстур заключается в подготовке тестового окружения с заранее фиксированным/известным состоянием, чтобы гарантировать повторяемость процесса тестирования.</p>
@@ -586,7 +675,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_аннотации_фикстур_существуют_в_junit">Какие аннотации фикстур существуют в JUnit?</h2>
+<h2 id="_какие_аннотации_фикстур_существуют_в_junit">7. Какие аннотации фикстур существуют в JUnit?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -607,7 +696,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_в_junit_используется_аннотация_ignore">Для чего в JUnit используется аннотация <code>@Ignore</code>?</h2>
+<h2 id="_для_чего_в_junit_используется_аннотация_ignore">8. Для чего в JUnit используется аннотация <code>@Ignore</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>@Ignore</code> указывает JUnit на необходимость пропустить данный тестовый метод.</p>
@@ -615,7 +704,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">9. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -630,15 +719,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

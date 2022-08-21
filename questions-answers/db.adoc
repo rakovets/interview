@@ -1,5 +1,6 @@
-
 = Базы данных
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _«база данных»_?
 
@@ -265,4 +266,4 @@ ____
 * http://tokarchuk.ru/2012/08/indexes-classification/[tokarchuk.ru]
 * http://www.quizful.net/interview/sql/[Quizful]
 
-xref:README.adoc[Вопросы для собеседования]
+

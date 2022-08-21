@@ -435,14 +435,345 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>SQL</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_что_такое_sql">1. Что такое <em>«SQL»</em>?</a></li>
+<li><a href="#_какие_существуют_операторы_sql">2. Какие существуют операторы SQL?</a></li>
+<li><a href="#_что_означает_null_в_sql">3. Что означает <code>NULL</code> в SQL?</a></li>
+<li><a href="#_что_такое_временная_таблица_для_чего_она_используется">4. Что такое <em>«временная таблица»</em>? Для чего она используется?</a></li>
+<li><a href="#_что_такое_представление_view_и_для_чего_оно_применяется">5. Что такое <em>«представление» (view)</em> и для чего оно применяется?</a></li>
+<li><a href="#_каков_общий_синтаксис_оператора_select">6. Каков общий синтаксис оператора <code>SELECT</code>?</a></li>
+<li><a href="#_что_такое_join">7. Что такое <code>JOIN</code>?</a></li>
+<li><a href="#_какие_существуют_типы_join">8. Какие существуют типы <code>JOIN</code>?</a></li>
+<li><a href="#_что_лучше_использовать_join_или_подзапросы">9. Что лучше использовать <code>JOIN</code> или подзапросы?</a></li>
+<li><a href="#_для_чего_используется_оператор_having">10. Для чего используется оператор <code>HAVING</code>?</a></li>
+<li><a href="#_в_чем_различие_между_операторами_having_и_where">11. В чем различие между операторами <code>HAVING</code> и <code>WHERE</code>?</a></li>
+<li><a href="#_для_чего_используется_оператор_order_by">12. Для чего используется оператор <code>ORDER BY</code>?</a></li>
+<li><a href="#_для_чего_используется_оператор_group_by">13. Для чего используется оператор <code>GROUP BY</code>?</a></li>
+<li><a href="#_как_group_by_обрабатывает_значение_null">14. Как <code>GROUP BY</code> обрабатывает значение <code>NULL</code>?</a></li>
+<li><a href="#_в_чем_разница_между_операторами_group_by_и_distinct">15. В чем разница между операторами <code>GROUP BY</code> и <code>DISTINCT</code>?</a></li>
+<li><a href="#_перечислите_основные_агрегатные_функции">16. Перечислите основные агрегатные функции.</a></li>
+<li><a href="#_в_чем_разница_между_count_и_countcolumn">17. В чем разница между <code>COUNT(*)</code> и <code>COUNT({column})</code>?</a></li>
+<li><a href="#_что_делает_оператор_exists">18. Что делает оператор <code>EXISTS</code>?</a></li>
+<li><a href="#_для_чего_используются_операторы_in_between_like">19. Для чего используются операторы <code>IN</code>, <code>BETWEEN</code>, <code>LIKE</code>?</a></li>
+<li><a href="#_для_чего_применяется_ключевое_слово_union">20. Для чего применяется ключевое слово <code>UNION</code>?</a></li>
+<li><a href="#_какие_ограничения_на_целостность_данных_существуют_в_sql">21. Какие ограничения на целостность данных существуют в SQL?</a></li>
+<li><a href="#_какие_отличия_между_ограничениями_primary_и_unique">22. Какие отличия между ограничениями <code>PRIMARY</code> и <code>UNIQUE</code>?</a></li>
+<li><a href="#_может_ли_значение_в_столбце_на_который_наложено_ограничение_foreign_key_равняться_null">23. Может ли значение в столбце, на который наложено ограничение <code>FOREIGN KEY</code>, равняться <code>NULL</code>?</a></li>
+<li><a href="#_как_создать_индекс">24. Как создать индекс?</a></li>
+<li><a href="#_что_делает_оператор_merge">25. Что делает оператор <code>MERGE</code>?</a></li>
+<li><a href="#_в_чем_отличие_между_операторами_delete_и_truncate">26. В чем отличие между операторами <code>DELETE</code> и <code>TRUNCATE</code>?</a></li>
+<li><a href="#_что_такое_хранимая_процедура">27. Что такое <em>«хранимая процедура»</em>?</a></li>
+<li><a href="#_что_такое_триггер">28. Что такое <em>«триггер»</em>?</a></li>
+<li><a href="#_что_такое_курсор">29. Что такое <em>«курсор»</em>?</a></li>
+<li><a href="#_опишите_разницу_типов_данных_datetime_и_timestamp">30. Опишите разницу типов данных <code>DATETIME</code> и <code>TIMESTAMP</code>.</a></li>
+<li><a href="#_для_каких_числовых_типов_недопустимо_использовать_операции_сложениявычитания">31. Для каких числовых типов недопустимо использовать операции сложения/вычитания?</a></li>
+<li><a href="#_какое_назначение_у_операторов_pivot_и_unpivot_в_transact_sql">32. Какое назначение у операторов <code>PIVOT</code> и <code>UNPIVOT</code> в Transact-SQL?</a></li>
+<li><a href="#_расскажите_об_основных_функциях_ранжирования_в_transact_sql">33. Расскажите об основных функциях ранжирования в Transact-SQL.</a></li>
+<li><a href="#_для_чего_используются_операторы_intersect_except_в_transact_sql">34. Для чего используются операторы <code>INTERSECT</code>, <code>EXCEPT</code> в Transact-SQL?</a></li>
+<li><a href="#_напишите_запрос">35. Напишите запрос&#8230;&#8203;</a></li>
+<li><a href="#_источники">36. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_что_такое_sql">Что такое <em>«SQL»</em>?</h2>
+<h2 id="_что_такое_sql">1. Что такое <em>«SQL»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>SQL, Structured query language («язык структурированных запросов»)&#8201;&#8212;&#8201;формальный непроцедурный язык программирования, применяемый для создания, модификации и управления данными в произвольной реляционной базе данных, управляемой соответствующей системой управления базами данных (СУБД).</p>
@@ -450,7 +781,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_существуют_операторы_sql">Какие существуют операторы SQL?</h2>
+<h2 id="_какие_существуют_операторы_sql">2. Какие существуют операторы SQL?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>операторы определения данных (Data Definition Language, DDL)</strong>:</p>
@@ -522,7 +853,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_означает_null_в_sql">Что означает <code>NULL</code> в SQL?</h2>
+<h2 id="_что_означает_null_в_sql">3. Что означает <code>NULL</code> в SQL?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>NULL</code> - специальное значение (псевдозначение), которое может быть записано в поле таблицы базы данных. NULL соответствует понятию «пустое поле», то есть «поле, не содержащее никакого значения».</p>
@@ -533,7 +864,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_временная_таблица_для_чего_она_используется">Что такое <em>«временная таблица»</em>? Для чего она используется?</h2>
+<h2 id="_что_такое_временная_таблица_для_чего_она_используется">4. Что такое <em>«временная таблица»</em>? Для чего она используется?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Временная таблица</strong> - это объект базы данных, который хранится и управляется системой базы данных на временной основе. Они могут быть локальными или глобальными. Используется для сохранения результатов вызова хранимой процедуры, уменьшение числа строк при соединениях, агрегирование данных из различных источников или как замена курсоров и параметризованных представлений.</p>
@@ -541,7 +872,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_представление_view_и_для_чего_оно_применяется">Что такое <em>«представление» (view)</em> и для чего оно применяется?</h2>
+<h2 id="_что_такое_представление_view_и_для_чего_оно_применяется">5. Что такое <em>«представление» (view)</em> и для чего оно применяется?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Представление</strong>, View - виртуальная таблица, представляющая данные одной или более таблиц альтернативным образом.</p>
@@ -552,27 +883,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_каков_общий_синтаксис_оператора_select">Каков общий синтаксис оператора <code>SELECT</code>?</h2>
+<h2 id="_каков_общий_синтаксис_оператора_select">6. Каков общий синтаксис оператора <code>SELECT</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>SELECT</code> - оператор DML SQL, возвращающий набор данных (выборку) из базы данных, удовлетворяющих заданному условию. Имеет следующую структуру:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT
-       [DISTINCT | DISTINCTROW | ALL]
-       select_expression,...
-   FROM table_references
-     [WHERE where_definition]
-     [GROUP BY {unsigned_integer | column | formula}]
-     [HAVING where_definition]
-     [ORDER BY {unsigned_integer | column | formula} [ASC | DESC], ...]</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span>
+       <span class="p">[</span><span class="k">DISTINCT</span> <span class="o">|</span> <span class="n">DISTINCTROW</span> <span class="o">|</span> <span class="k">ALL</span><span class="p">]</span>
+       <span class="n">select_expression</span><span class="p">,...</span>
+   <span class="k">FROM</span> <span class="n">table_references</span>
+     <span class="p">[</span><span class="k">WHERE</span> <span class="n">where_definition</span><span class="p">]</span>
+     <span class="p">[</span><span class="k">GROUP</span> <span class="k">BY</span> <span class="p">{</span><span class="n">unsigned_integer</span> <span class="o">|</span> <span class="k">column</span> <span class="o">|</span> <span class="n">formula</span><span class="p">}]</span>
+     <span class="p">[</span><span class="k">HAVING</span> <span class="n">where_definition</span><span class="p">]</span>
+     <span class="p">[</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="p">{</span><span class="n">unsigned_integer</span> <span class="o">|</span> <span class="k">column</span> <span class="o">|</span> <span class="n">formula</span><span class="p">}</span> <span class="p">[</span><span class="k">ASC</span> <span class="o">|</span> <span class="k">DESC</span><span class="p">],</span> <span class="p">...]</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_join">Что такое <code>JOIN</code>?</h2>
+<h2 id="_что_такое_join">7. Что такое <code>JOIN</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>JOIN</strong> - оператор языка SQL, который является реализацией операции соединения реляционной алгебры. Предназначен для обеспечения выборки данных из двух таблиц и включения этих данных в один результирующий набор.</p>
@@ -595,19 +926,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT
-  field_name [,... n]
-FROM
-  Table1
-  {INNER | {LEFT | RIGHT | FULL} OUTER | CROSS } JOIN
-  Table2
-    {ON &lt;condition&gt; | USING (field_name [,... n])}</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span>
+  <span class="n">field_name</span> <span class="p">[,...</span> <span class="n">n</span><span class="p">]</span>
+<span class="k">FROM</span>
+  <span class="n">Table1</span>
+  <span class="p">{</span><span class="k">INNER</span> <span class="o">|</span> <span class="p">{</span><span class="k">LEFT</span> <span class="o">|</span> <span class="k">RIGHT</span> <span class="o">|</span> <span class="k">FULL</span><span class="p">}</span> <span class="k">OUTER</span> <span class="o">|</span> <span class="k">CROSS</span> <span class="p">}</span> <span class="k">JOIN</span>
+  <span class="n">Table2</span>
+    <span class="p">{</span><span class="k">ON</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span> <span class="o">|</span> <span class="k">USING</span> <span class="p">(</span><span class="n">field_name</span> <span class="p">[,...</span> <span class="n">n</span><span class="p">])}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_существуют_типы_join">Какие существуют типы <code>JOIN</code>?</h2>
+<h2 id="_какие_существуют_типы_join">8. Какие существуют типы <code>JOIN</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>(INNER) JOIN</strong>
@@ -632,7 +963,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_лучше_использовать_join_или_подзапросы">Что лучше использовать <code>JOIN</code> или подзапросы?</h2>
+<h2 id="_что_лучше_использовать_join_или_подзапросы">9. Что лучше использовать <code>JOIN</code> или подзапросы?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Обычно лучше использовать <code>JOIN</code>, поскольку в большинстве случаев он более понятен и лучше оптимизируется СУБД (но 100% этого гарантировать нельзя). Так же <code>JOIN</code> имеет заметное преимущество над подзапросами в случае, когда список выбора <code>SELECT</code> содержит столбцы более чем из одной таблицы.</p>
@@ -643,7 +974,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_используется_оператор_having">Для чего используется оператор <code>HAVING</code>?</h2>
+<h2 id="_для_чего_используется_оператор_having">10. Для чего используется оператор <code>HAVING</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>HAVING</code> используется для фильтрации результата <code>GROUP BY</code> по заданным логическим условиям.</p>
@@ -651,7 +982,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_различие_между_операторами_having_и_where">В чем различие между операторами <code>HAVING</code> и <code>WHERE</code>?</h2>
+<h2 id="_в_чем_различие_между_операторами_having_и_where">11. В чем различие между операторами <code>HAVING</code> и <code>WHERE</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Основное отличие 'WHERE' от 'HAVING' заключается в том, что 'WHERE' сначала выбирает строки, а затем группирует их и вычисляет агрегатные функции (таким образом, она отбирает строки для вычисления агрегатов), тогда как 'HAVING' отбирает строки групп после группировки и вычисления агрегатных функций. Как следствие, предложение 'WHERE' не должно содержать агрегатных функций; не имеет смысла использовать агрегатные функции для определения строк для вычисления агрегатных функций. Предложение 'HAVING', напротив, всегда содержит агрегатные функции. (Строго говоря, вы можете написать предложение 'HAVING', не используя агрегаты, но это редко бывает полезно. То же самое условие может работать более эффективно на стадии 'WHERE'.)</p>
@@ -659,7 +990,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_используется_оператор_order_by">Для чего используется оператор <code>ORDER BY</code>?</h2>
+<h2 id="_для_чего_используется_оператор_order_by">12. Для чего используется оператор <code>ORDER BY</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>ORDER BY</strong> упорядочивает вывод запроса согласно значениям в том или ином количестве выбранных столбцов. Многочисленные столбцы упорядочиваются один внутри другого. Возможно определять возрастание <code>ASC</code> или убывание <code>DESC</code> для каждого столбца. По умолчанию установлено - возрастание.</p>
@@ -667,7 +998,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_используется_оператор_group_by">Для чего используется оператор <code>GROUP BY</code>?</h2>
+<h2 id="_для_чего_используется_оператор_group_by">13. Для чего используется оператор <code>GROUP BY</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>GROUP BY</code> используется для агрегации записей результата по заданным признакам-атрибутам.</p>
@@ -675,7 +1006,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_group_by_обрабатывает_значение_null">Как <code>GROUP BY</code> обрабатывает значение <code>NULL</code>?</h2>
+<h2 id="_как_group_by_обрабатывает_значение_null">14. Как <code>GROUP BY</code> обрабатывает значение <code>NULL</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>При использовании <code>GROUP BY</code> все значения <code>NULL</code> считаются равными.</p>
@@ -683,7 +1014,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_разница_между_операторами_group_by_и_distinct">В чем разница между операторами <code>GROUP BY</code> и <code>DISTINCT</code>?</h2>
+<h2 id="_в_чем_разница_между_операторами_group_by_и_distinct">15. В чем разница между операторами <code>GROUP BY</code> и <code>DISTINCT</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>DISTINCT</code> указывает, что для вычислений используются только уникальные значения столбца. <code>NULL</code> считается как отдельное значение.
@@ -695,7 +1026,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_перечислите_основные_агрегатные_функции">Перечислите основные агрегатные функции.</h2>
+<h2 id="_перечислите_основные_агрегатные_функции">16. Перечислите основные агрегатные функции.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Агрегатных функции</strong> - функции, которые берут группы значений и сводят их к одиночному значению.</p>
@@ -713,7 +1044,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_разница_между_count_и_countcolumn">В чем разница между <code>COUNT(*)</code> и <code>COUNT({column})</code>?</h2>
+<h2 id="_в_чем_разница_между_count_и_countcolumn">17. В чем разница между <code>COUNT(*)</code> и <code>COUNT({column})</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>COUNT (*)</code> подсчитывает количество записей в таблице, не игнорируя значение NULL, поскольку эта функция оперирует записями, а не столбцами.</p>
@@ -724,7 +1055,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_делает_оператор_exists">Что делает оператор <code>EXISTS</code>?</h2>
+<h2 id="_что_делает_оператор_exists">18. Что делает оператор <code>EXISTS</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>EXISTS</code> берет подзапрос, как аргумент, и оценивает его как <code>TRUE</code>, если подзапрос возвращает какие-либо записи и <code>FALSE</code>, если нет.</p>
@@ -732,14 +1063,14 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_используются_операторы_in_between_like">Для чего используются операторы <code>IN</code>, <code>BETWEEN</code>, <code>LIKE</code>?</h2>
+<h2 id="_для_чего_используются_операторы_in_between_like">19. Для чего используются операторы <code>IN</code>, <code>BETWEEN</code>, <code>LIKE</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>IN</code> - определяет набор значений.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT * FROM Persons WHERE name IN ('Ivan','Petr','Pavel');</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">Persons</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">'Ivan'</span><span class="p">,</span><span class="s1">'Petr'</span><span class="p">,</span><span class="s1">'Pavel'</span><span class="p">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -747,7 +1078,7 @@ FROM
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT * FROM Persons WHERE age BETWEEN 20 AND 25;</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">Persons</span> <span class="k">WHERE</span> <span class="n">age</span> <span class="k">BETWEEN</span> <span class="mi">20</span> <span class="k">AND</span> <span class="mi">25</span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -765,13 +1096,13 @@ FROM
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT * FROM UNIVERSITY WHERE NAME LIKE '%o';</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">UNIVERSITY</span> <span class="k">WHERE</span> <span class="n">NAME</span> <span class="k">LIKE</span> <span class="s1">'%o'</span><span class="p">;</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_применяется_ключевое_слово_union">Для чего применяется ключевое слово <code>UNION</code>?</h2>
+<h2 id="_для_чего_применяется_ключевое_слово_union">20. Для чего применяется ключевое слово <code>UNION</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>В языке SQL ключевое слово <code>UNION</code> применяется для объединения результатов двух SQL-запросов в единую таблицу, состоящую из схожих записей. Оба запроса должны возвращать одинаковое число столбцов и совместимые типы данных в соответствующих столбцах. Необходимо отметить, что <code>UNION</code> сам по себе не гарантирует порядок записей. Записи из второго запроса могут оказаться в начале, в конце или вообще перемешаться с записями из первого запроса. В случаях, когда требуется определенный порядок, необходимо использовать <code>ORDER BY</code>.</p>
@@ -779,7 +1110,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_ограничения_на_целостность_данных_существуют_в_sql">Какие ограничения на целостность данных существуют в SQL?</h2>
+<h2 id="_какие_ограничения_на_целостность_данных_существуют_в_sql">21. Какие ограничения на целостность данных существуют в SQL?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>PRIMARY KEY</code> - набор полей (1 или более), значения которых образуют уникальную комбинацию и используются для однозначной идентификации записи в таблице. Для таблицы может быть создано только одно такое ограничение. Данное ограничение используется для обеспечения целостности сущности, которая описана таблицей.</p>
@@ -796,7 +1127,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_отличия_между_ограничениями_primary_и_unique">Какие отличия между ограничениями <code>PRIMARY</code> и <code>UNIQUE</code>?</h2>
+<h2 id="_какие_отличия_между_ограничениями_primary_и_unique">22. Какие отличия между ограничениями <code>PRIMARY</code> и <code>UNIQUE</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>По умолчанию ограничение <code>PRIMARY</code> создает кластерный индекс на столбце, а <code>UNIQUE</code> - некластерный. Другим отличием является то, что <code>PRIMARY</code> не разрешает <code>NULL</code> записей, в то время как <code>UNIQUE</code> разрешает одну (а в некоторых СУБД несколько) <code>NULL</code> запись.</p>
@@ -804,7 +1135,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_может_ли_значение_в_столбце_на_который_наложено_ограничение_foreign_key_равняться_null">Может ли значение в столбце, на который наложено ограничение <code>FOREIGN KEY</code>, равняться <code>NULL</code>?</h2>
+<h2 id="_может_ли_значение_в_столбце_на_который_наложено_ограничение_foreign_key_равняться_null">23. Может ли значение в столбце, на который наложено ограничение <code>FOREIGN KEY</code>, равняться <code>NULL</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Может, если на данный столбец не наложено ограничение <code>NOT NULL</code>.</p>
@@ -812,14 +1143,14 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_создать_индекс">Как создать индекс?</h2>
+<h2 id="_как_создать_индекс">24. Как создать индекс?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Индекс можно создать либо с помощью выражения <code>CREATE INDEX</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">CREATE INDEX index_name ON table_name (column_name)</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">index_name</span> <span class="k">ON</span> <span class="k">table_name</span> <span class="p">(</span><span class="k">column_name</span><span class="p">)</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -828,7 +1159,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_делает_оператор_merge">Что делает оператор <code>MERGE</code>?</h2>
+<h2 id="_что_делает_оператор_merge">25. Что делает оператор <code>MERGE</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>MERGE</code> позволяет осуществить слияние данных одной таблицы с данными другой таблицы. При слиянии таблиц проверяется условие, и если оно истинно, то выполняется <code>UPDATE</code>, а если нет - <code>INSERT</code>. При этом изменять поля таблицы в секции <code>UPDATE</code>, по которым идет связывание двух таблиц, нельзя.</p>
@@ -836,7 +1167,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_отличие_между_операторами_delete_и_truncate">В чем отличие между операторами <code>DELETE</code> и <code>TRUNCATE</code>?</h2>
+<h2 id="_в_чем_отличие_между_операторами_delete_и_truncate">26. В чем отличие между операторами <code>DELETE</code> и <code>TRUNCATE</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>DELETE</code> - оператор DML, удаляет записи из таблицы, которые удовлетворяют критерию <code>WHERE</code> при этом задействуются триггеры, ограничения и т.д.</p>
@@ -847,7 +1178,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_хранимая_процедура">Что такое <em>«хранимая процедура»</em>?</h2>
+<h2 id="_что_такое_хранимая_процедура">27. Что такое <em>«хранимая процедура»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Хранимая процедура</strong>&#8201;&#8212;&#8201;объект базы данных, представляющий собой набор SQL-инструкций, который хранится на сервере. Хранимые процедуры очень похожи на обыкновенные процедуры языков высокого уровня, у них могут быть входные и выходные параметры и локальные переменные, в них могут производиться числовые вычисления и операции над символьными данными, результаты которых могут присваиваться переменным и параметрам. В хранимых процедурах могут выполняться стандартные операции с базами данных (как DDL, так и DML). Кроме того, в хранимых процедурах возможны циклы и ветвления, то есть в них могут использоваться инструкции управления процессом исполнения.</p>
@@ -858,7 +1189,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_триггер">Что такое <em>«триггер»</em>?</h2>
+<h2 id="_что_такое_триггер">28. Что такое <em>«триггер»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Триггер (trigger)</strong>&#8201;&#8212;&#8201;это хранимая процедура особого типа, которую пользователь не вызывает непосредственно, а исполнение которой обусловлено действием по модификации данных: добавлением, удалением или изменением данных в заданной таблице реляционной базы данных. Триггеры применяются для обеспечения целостности данных и реализации сложной бизнес-логики. Триггер запускается сервером автоматически и все производимые им модификации данных рассматриваются как выполняемые в транзакции, в которой выполнено действие, вызвавшее срабатывание триггера. Соответственно, в случае обнаружения ошибки или нарушения целостности данных может произойти откат этой транзакции.</p>
@@ -869,7 +1200,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_курсор">Что такое <em>«курсор»</em>?</h2>
+<h2 id="_что_такое_курсор">29. Что такое <em>«курсор»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Курсор</strong>&#8201;&#8212;&#8201;это объект базы данных, который позволяет приложениям работать с записями «по-одной», а не сразу с множеством, как это делается в обычных SQL командах.</p>
@@ -902,7 +1233,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_опишите_разницу_типов_данных_datetime_и_timestamp">Опишите разницу типов данных <code>DATETIME</code> и <code>TIMESTAMP</code>.</h2>
+<h2 id="_опишите_разницу_типов_данных_datetime_и_timestamp">30. Опишите разницу типов данных <code>DATETIME</code> и <code>TIMESTAMP</code>.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>DATETIME</code> предназначен для хранения целого числа: <code>YYYYMMDDHHMMSS</code>. И это время не зависит от временной зоны, настроенной на сервере.
@@ -914,7 +1245,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_каких_числовых_типов_недопустимо_использовать_операции_сложениявычитания">Для каких числовых типов недопустимо использовать операции сложения/вычитания?</h2>
+<h2 id="_для_каких_числовых_типов_недопустимо_использовать_операции_сложениявычитания">31. Для каких числовых типов недопустимо использовать операции сложения/вычитания?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>В качестве операндов операций сложения и вычитания нельзя использовать числовой тип <code>BIT</code>.</p>
@@ -922,7 +1253,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какое_назначение_у_операторов_pivot_и_unpivot_в_transact_sql">Какое назначение у операторов <code>PIVOT</code> и <code>UNPIVOT</code> в Transact-SQL?</h2>
+<h2 id="_какое_назначение_у_операторов_pivot_и_unpivot_в_transact_sql">32. Какое назначение у операторов <code>PIVOT</code> и <code>UNPIVOT</code> в Transact-SQL?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>PIVOT</code> и <code>UNPIVOT</code> являются нестандартными реляционными операторами, которые поддерживаются Transact-SQL.</p>
@@ -933,7 +1264,7 @@ FROM
 </div>
 </div>
 <div class="sect1">
-<h2 id="_расскажите_об_основных_функциях_ранжирования_в_transact_sql">Расскажите об основных функциях ранжирования в Transact-SQL.</h2>
+<h2 id="_расскажите_об_основных_функциях_ранжирования_в_transact_sql">33. Расскажите об основных функциях ранжирования в Transact-SQL.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Ранжирующие функции - это функции, которые возвращают значение для каждой записи группы в результирующем наборе данных. На практике они могут быть использованы, например, для простой нумерации списка, составления рейтинга или постраничной навигации.</p>
@@ -943,7 +1274,7 @@ FROM
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SQL/image.png" alt="image">
+<img src="..//assets/img/images/SQL/image.png" alt="image">
 </div>
 </div>
 <div class="paragraph">
@@ -954,11 +1285,11 @@ FROM
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT Studentname,
-       Subject,
-       Marks,
-       ROW_NUMBER() OVER(ORDER BY Marks) RowNumber
-FROM ExamResult;</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">Studentname</span><span class="p">,</span>
+       <span class="n">Subject</span><span class="p">,</span>
+       <span class="n">Marks</span><span class="p">,</span>
+       <span class="n">ROW_NUMBER</span><span class="p">()</span> <span class="n">OVER</span><span class="p">(</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Marks</span><span class="p">)</span> <span class="n">RowNumber</span>
+<span class="k">FROM</span> <span class="n">ExamResult</span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -966,7 +1297,7 @@ FROM ExamResult;</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SQL/row_number-sql-rank-function.png" alt="row number sql rank function">
+<img src="..//assets/img/images/SQL/row_number-sql-rank-function.png" alt="row number sql rank function">
 </div>
 </div>
 <div class="paragraph">
@@ -974,11 +1305,11 @@ FROM ExamResult;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT Studentname,
-       Subject,
-       Marks,
-       ROW_NUMBER() OVER(ORDER BY Marks desc) RowNumber
-FROM ExamResult;</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">Studentname</span><span class="p">,</span>
+       <span class="n">Subject</span><span class="p">,</span>
+       <span class="n">Marks</span><span class="p">,</span>
+       <span class="n">ROW_NUMBER</span><span class="p">()</span> <span class="n">OVER</span><span class="p">(</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Marks</span> <span class="k">desc</span><span class="p">)</span> <span class="n">RowNumber</span>
+<span class="k">FROM</span> <span class="n">ExamResult</span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -986,7 +1317,7 @@ FROM ExamResult;</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SQL/row_number-example.png" alt="row number example">
+<img src="..//assets/img/images/SQL/row_number-example.png" alt="row number example">
 </div>
 </div>
 <div class="paragraph">
@@ -997,13 +1328,13 @@ FROM ExamResult;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT Studentname,
-       Subject,
-       Marks,
-       RANK() OVER(PARTITION BY Studentname ORDER BY Marks DESC) Rank
-FROM ExamResult
-ORDER BY Studentname,
-         Rank;</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">Studentname</span><span class="p">,</span>
+       <span class="n">Subject</span><span class="p">,</span>
+       <span class="n">Marks</span><span class="p">,</span>
+       <span class="n">RANK</span><span class="p">()</span> <span class="n">OVER</span><span class="p">(</span><span class="k">PARTITION</span> <span class="k">BY</span> <span class="n">Studentname</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Marks</span> <span class="k">DESC</span><span class="p">)</span> <span class="n">Rank</span>
+<span class="k">FROM</span> <span class="n">ExamResult</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Studentname</span><span class="p">,</span>
+         <span class="n">Rank</span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1011,7 +1342,7 @@ ORDER BY Studentname,
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SQL/ranksql-rank-function.png" alt="ranksql rank function">
+<img src="..//assets/img/images/SQL/ranksql-rank-function.png" alt="ranksql rank function">
 </div>
 </div>
 <div class="paragraph">
@@ -1019,12 +1350,12 @@ ORDER BY Studentname,
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT Studentname,
-       Subject,
-       Marks,
-       RANK() OVER(ORDER BY Marks DESC) Rank
-FROM ExamResult
-ORDER BY Rank;</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">Studentname</span><span class="p">,</span>
+       <span class="n">Subject</span><span class="p">,</span>
+       <span class="n">Marks</span><span class="p">,</span>
+       <span class="n">RANK</span><span class="p">()</span> <span class="n">OVER</span><span class="p">(</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Marks</span> <span class="k">DESC</span><span class="p">)</span> <span class="n">Rank</span>
+<span class="k">FROM</span> <span class="n">ExamResult</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Rank</span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1032,7 +1363,7 @@ ORDER BY Rank;</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SQL/output-of-rank-function-for-similar-values.png" alt="output of rank function for similar values">
+<img src="..//assets/img/images/SQL/output-of-rank-function-for-similar-values.png" alt="output of rank function for similar values">
 </div>
 </div>
 <div class="paragraph">
@@ -1043,12 +1374,12 @@ ORDER BY Rank;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT Studentname,
-       Subject,
-       Marks,
-       DENSE_RANK() OVER(ORDER BY Marks DESC) Rank
-FROM ExamResult
-ORDER BY Rank;</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">Studentname</span><span class="p">,</span>
+       <span class="n">Subject</span><span class="p">,</span>
+       <span class="n">Marks</span><span class="p">,</span>
+       <span class="n">DENSE_RANK</span><span class="p">()</span> <span class="n">OVER</span><span class="p">(</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Marks</span> <span class="k">DESC</span><span class="p">)</span> <span class="n">Rank</span>
+<span class="k">FROM</span> <span class="n">ExamResult</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Rank</span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1056,7 +1387,7 @@ ORDER BY Rank;</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SQL/dense_ranksql-rank-function.png" alt="dense ranksql rank function">
+<img src="..//assets/img/images/SQL/dense_ranksql-rank-function.png" alt="dense ranksql rank function">
 </div>
 </div>
 <div class="paragraph">
@@ -1064,13 +1395,13 @@ ORDER BY Rank;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT Studentname,
-       Subject,
-       Marks,
-       DENSE_RANK() OVER(PARTITION BY Subject ORDER BY Marks DESC) Rank
-FROM ExamResult
-ORDER BY Studentname,
-         Rank;</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">Studentname</span><span class="p">,</span>
+       <span class="n">Subject</span><span class="p">,</span>
+       <span class="n">Marks</span><span class="p">,</span>
+       <span class="n">DENSE_RANK</span><span class="p">()</span> <span class="n">OVER</span><span class="p">(</span><span class="k">PARTITION</span> <span class="k">BY</span> <span class="n">Subject</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Marks</span> <span class="k">DESC</span><span class="p">)</span> <span class="n">Rank</span>
+<span class="k">FROM</span> <span class="n">ExamResult</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Studentname</span><span class="p">,</span>
+         <span class="n">Rank</span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1078,7 +1409,7 @@ ORDER BY Studentname,
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SQL/output-of-dense_rank-function.png" alt="output of dense rank function">
+<img src="..//assets/img/images/SQL/output-of-dense_rank-function.png" alt="output of dense rank function">
 </div>
 </div>
 <div class="paragraph">
@@ -1086,34 +1417,34 @@ ORDER BY Studentname,
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT Studentname,
-       Subject,
-       Marks,
-       RANK() OVER(PARTITION BY StudentName ORDER BY Marks ) Rank
-FROM ExamResult
-ORDER BY Studentname,
-         Rank;</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">Studentname</span><span class="p">,</span>
+       <span class="n">Subject</span><span class="p">,</span>
+       <span class="n">Marks</span><span class="p">,</span>
+       <span class="n">RANK</span><span class="p">()</span> <span class="n">OVER</span><span class="p">(</span><span class="k">PARTITION</span> <span class="k">BY</span> <span class="n">StudentName</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Marks</span> <span class="p">)</span> <span class="n">Rank</span>
+<span class="k">FROM</span> <span class="n">ExamResult</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Studentname</span><span class="p">,</span>
+         <span class="n">Rank</span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT Studentname,
-       Subject,
-       Marks,
-       DENSE_RANK() OVER(PARTITION BY StudentName ORDER BY Marks ) Rank
-FROM ExamResult
-ORDER BY Studentname,
-         Rank;</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">Studentname</span><span class="p">,</span>
+       <span class="n">Subject</span><span class="p">,</span>
+       <span class="n">Marks</span><span class="p">,</span>
+       <span class="n">DENSE_RANK</span><span class="p">()</span> <span class="n">OVER</span><span class="p">(</span><span class="k">PARTITION</span> <span class="k">BY</span> <span class="n">StudentName</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Marks</span> <span class="p">)</span> <span class="n">Rank</span>
+<span class="k">FROM</span> <span class="n">ExamResult</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Studentname</span><span class="p">,</span>
+         <span class="n">Rank</span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SQL/difference-between-rank-and-dense_rank.png" alt="difference between rank and dense rank">
+<img src="..//assets/img/images/SQL/difference-between-rank-and-dense_rank.png" alt="difference between rank and dense rank">
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SQL/difference-between-rank-and-dense_rank-functio.png" alt="difference between rank and dense rank functio">
+<img src="..//assets/img/images/SQL/difference-between-rank-and-dense_rank-functio.png" alt="difference between rank and dense rank functio">
 </div>
 </div>
 <div class="paragraph">
@@ -1124,11 +1455,11 @@ ORDER BY Studentname,
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT *,
-       NTILE(2) OVER(
-       ORDER BY Marks DESC) Rank
-FROM ExamResult
-ORDER BY rank;</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span><span class="p">,</span>
+       <span class="n">NTILE</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">OVER</span><span class="p">(</span>
+       <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Marks</span> <span class="k">DESC</span><span class="p">)</span> <span class="n">Rank</span>
+<span class="k">FROM</span> <span class="n">ExamResult</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">rank</span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1136,7 +1467,7 @@ ORDER BY rank;</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SQL/ntilen-sql-rank-function.png" alt="ntilen sql rank function">
+<img src="..//assets/img/images/SQL/ntilen-sql-rank-function.png" alt="ntilen sql rank function">
 </div>
 </div>
 <div class="paragraph">
@@ -1144,11 +1475,11 @@ ORDER BY rank;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT *,
-       NTILE(3) OVER(
-       ORDER BY Marks DESC) Rank
-FROM ExamResult
-ORDER BY rank;</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span><span class="p">,</span>
+       <span class="n">NTILE</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">OVER</span><span class="p">(</span>
+       <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Marks</span> <span class="k">DESC</span><span class="p">)</span> <span class="n">Rank</span>
+<span class="k">FROM</span> <span class="n">ExamResult</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">rank</span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1156,7 +1487,7 @@ ORDER BY rank;</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SQL/ntilen-function-with-partition.png" alt="ntilen function with partition">
+<img src="..//assets/img/images/SQL/ntilen-function-with-partition.png" alt="ntilen function with partition">
 </div>
 </div>
 <div class="paragraph">
@@ -1164,10 +1495,10 @@ ORDER BY rank;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT *,
-       NTILE(2) OVER(PARTITION  BY subject ORDER BY Marks DESC) Rank
-FROM ExamResult
-ORDER BY subject, rank;</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span><span class="p">,</span>
+       <span class="n">NTILE</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">OVER</span><span class="p">(</span><span class="k">PARTITION</span>  <span class="k">BY</span> <span class="n">subject</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Marks</span> <span class="k">DESC</span><span class="p">)</span> <span class="n">Rank</span>
+<span class="k">FROM</span> <span class="n">ExamResult</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">subject</span><span class="p">,</span> <span class="n">rank</span><span class="p">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1175,13 +1506,13 @@ ORDER BY subject, rank;</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SQL/output-of-ntilen-function-with-partition.png" alt="output of ntilen function with partition">
+<img src="..//assets/img/images/SQL/output-of-ntilen-function-with-partition.png" alt="output of ntilen function with partition">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_используются_операторы_intersect_except_в_transact_sql">Для чего используются операторы <code>INTERSECT</code>, <code>EXCEPT</code> в Transact-SQL?</h2>
+<h2 id="_для_чего_используются_операторы_intersect_except_в_transact_sql">34. Для чего используются операторы <code>INTERSECT</code>, <code>EXCEPT</code> в Transact-SQL?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Оператор <code>EXCEPT</code> возвращает уникальные записи из левого входного запроса, которые не выводятся правым входным запросом.</p>
@@ -1192,15 +1523,15 @@ ORDER BY subject, rank;</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_напишите_запрос">Напишите запрос&#8230;&#8203;</h2>
+<h2 id="_напишите_запрос">35. Напишите запрос&#8230;&#8203;</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">CREATE TABLE table (
-  id BIGINT(20) NOT NULL AUTO_INCREMENT,
-  created TIMESTAMP NOT NULL DEFAULT 0,
-  PRIMARY KEY (id)
-);</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table</span> <span class="p">(</span>
+  <span class="n">id</span> <span class="nb">BIGINT</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="n">created</span> <span class="nb">TIMESTAMP</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1208,19 +1539,19 @@ ORDER BY subject, rank;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT id, created FROM table where id = (SELECT MAX(id) FROM table);</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">created</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">where</span> <span class="n">id</span> <span class="o">=</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">MAX</span><span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">FROM</span> <span class="k">table</span><span class="p">);</span></code></pre>
 </div>
 </div>
 <hr>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">CREATE TABLE track_downloads (
-  download_id BIGINT(20) NOT NULL AUTO_INCREMENT,
-  track_id INT NOT NULL,
-  user_id BIGINT(20) NOT NULL,
-  download_time TIMESTAMP NOT NULL DEFAULT 0,
-  PRIMARY KEY (download_id)
-);</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">track_downloads</span> <span class="p">(</span>
+  <span class="n">download_id</span> <span class="nb">BIGINT</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="n">track_id</span> <span class="nb">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">user_id</span> <span class="nb">BIGINT</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">download_time</span> <span class="nb">TIMESTAMP</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">download_id</span><span class="p">)</span>
+<span class="p">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1228,19 +1559,19 @@ ORDER BY subject, rank;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">SELECT DISTINCT download_count, COUNT(*) AS user_count
-FROM (
-    SELECT COUNT(*) AS download_count
-    FROM track_downloads WHERE download_time="2010-11-19"
-    GROUP BY user_id)
-AS download_count
-GROUP BY download_count;</code></pre>
+<pre class="rouge highlight"><code data-lang="sql"><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">download_count</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">user_count</span>
+<span class="k">FROM</span> <span class="p">(</span>
+    <span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">download_count</span>
+    <span class="k">FROM</span> <span class="n">track_downloads</span> <span class="k">WHERE</span> <span class="n">download_time</span><span class="o">=</span><span class="nv">"2010-11-19"</span>
+    <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">user_id</span><span class="p">)</span>
+<span class="k">AS</span> <span class="n">download_count</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">download_count</span><span class="p">;</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">36. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1252,15 +1583,12 @@ GROUP BY download_count;</code></pre>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

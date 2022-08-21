@@ -1,5 +1,6 @@
-
 = Сериализация
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _«сериализация»_?
 
@@ -135,4 +136,4 @@ public class Person implements java.io.Serializable,
 * http://bit.ly/1xwRA2D[JavaRush]
 * http://www.skipy.ru/technics/serialization.html[Записки трезвого практика]
 
-xref:README.adoc[Вопросы для собеседования]
+

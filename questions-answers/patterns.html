@@ -435,14 +435,104 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>Шаблоны проектирования</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_что_такое_шаблон_проектирования">1. Что такое <em>«шаблон проектирования»</em>?</a></li>
+<li><a href="#_назовите_основные_характеристики_шаблонов">2. Назовите основные характеристики шаблонов.</a></li>
+<li><a href="#_типы_шаблонов_проектирования">3. Типы шаблонов проектирования.</a></li>
+<li><a href="#_приведите_примеры_основных_шаблонов_проектирования">4. Приведите примеры основных шаблонов проектирования.</a></li>
+<li><a href="#_приведите_примеры_порождающих_шаблонов_проектирования">5. Приведите примеры порождающих шаблонов проектирования.</a></li>
+<li><a href="#_приведите_примеры_структурных_шаблонов_проектирования">6. Приведите примеры структурных шаблонов проектирования.</a></li>
+<li><a href="#_приведите_примеры_поведенческих_шаблонов_проектирования">7. Приведите примеры поведенческих шаблонов проектирования.</a></li>
+<li><a href="#_что_такое_антипаттерн_какие_антипаттерны_вы_знаете">8. Что такое <em>«антипаттерн»</em>? Какие антипаттерны вы знаете?</a></li>
+<li><a href="#_что_такое_dependency_injection">9. Что такое <em>Dependency Injection</em>?</a></li>
+<li><a href="#_источники">10. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_что_такое_шаблон_проектирования">Что такое <em>«шаблон проектирования»</em>?</h2>
+<h2 id="_что_такое_шаблон_проектирования">1. Что такое <em>«шаблон проектирования»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Шаблон (паттерн) проектирования (design pattern)</strong>&#8201;&#8212;&#8201;это проверенное и готовое к использованию решение. Это не класс и не библиотека, которую можно подключить к проекту, это нечто большее - он не зависит от языка программирования, не является законченным образцом, который может быть прямо преобразован в код и может быть реализован по-разному в разных языках программирования.</p>
@@ -485,7 +575,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_назовите_основные_характеристики_шаблонов">Назовите основные характеристики шаблонов.</h2>
+<h2 id="_назовите_основные_характеристики_шаблонов">2. Назовите основные характеристики шаблонов.</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -515,7 +605,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_типы_шаблонов_проектирования">Типы шаблонов проектирования.</h2>
+<h2 id="_типы_шаблонов_проектирования">3. Типы шаблонов проектирования.</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -536,7 +626,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_приведите_примеры_основных_шаблонов_проектирования">Приведите примеры основных шаблонов проектирования.</h2>
+<h2 id="_приведите_примеры_основных_шаблонов_проектирования">4. Приведите примеры основных шаблонов проектирования.</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -566,7 +656,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_приведите_примеры_порождающих_шаблонов_проектирования">Приведите примеры порождающих шаблонов проектирования.</h2>
+<h2 id="_приведите_примеры_порождающих_шаблонов_проектирования">5. Приведите примеры порождающих шаблонов проектирования.</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -590,7 +680,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_приведите_примеры_структурных_шаблонов_проектирования">Приведите примеры структурных шаблонов проектирования.</h2>
+<h2 id="_приведите_примеры_структурных_шаблонов_проектирования">6. Приведите примеры структурных шаблонов проектирования.</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -620,7 +710,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_приведите_примеры_поведенческих_шаблонов_проектирования">Приведите примеры поведенческих шаблонов проектирования.</h2>
+<h2 id="_приведите_примеры_поведенческих_шаблонов_проектирования">7. Приведите примеры поведенческих шаблонов проектирования.</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -662,7 +752,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_антипаттерн_какие_антипаттерны_вы_знаете">Что такое <em>«антипаттерн»</em>? Какие антипаттерны вы знаете?</h2>
+<h2 id="_что_такое_антипаттерн_какие_антипаттерны_вы_знаете">8. Что такое <em>«антипаттерн»</em>? Какие антипаттерны вы знаете?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Антипаттерн (anti-pattern)</strong>&#8201;&#8212;&#8201;это распространённый подход к решению класса часто встречающихся проблем, являющийся неэффективным, рискованным или непродуктивным.</p>
@@ -753,7 +843,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_dependency_injection">Что такое <em>Dependency Injection</em>?</h2>
+<h2 id="_что_такое_dependency_injection">9. Что такое <em>Dependency Injection</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Dependency Injection (внедрение зависимости)</strong> - это набор паттернов и принципов разработки програмного обеспечения, которые позволяют писать слабосвязный код. В полном соответствии с принципом единой обязанности объект отдаёт заботу о построении требуемых ему зависимостей внешнему, специально предназначенному для этого общему механизму.</p>
@@ -761,7 +851,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">10. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -773,15 +863,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

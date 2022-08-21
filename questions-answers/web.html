@@ -435,14 +435,117 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>Основы Web</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_что_такое_www">1. Что такое <em>WWW</em>?</a></li>
+<li><a href="#_что_такое_w3c">2. Что такое <em>W3C</em>?</a></li>
+<li><a href="#_какие_существуют_уровни_модели_osi">3. Какие существуют уровни модели <em>OSI</em>?</a></li>
+<li><a href="#_что_такое_tcpip">4. Что такое <em>TCP/IP</em>?</a></li>
+<li><a href="#_что_такое_udp">5. Что такое <em>UDP</em>?</a></li>
+<li><a href="#_чем_отличаются_tcp_и_udp">6. Чем отличаются <em>TCP</em> и <em>UDP</em>?</a></li>
+<li><a href="#_что_такое_протокол_передачи_данных_какие_протоколы_вы_знаете">7. Что такое протокол передачи данных? Какие протоколы вы знаете?</a></li>
+<li><a href="#_что_такое_http_и_https_чем_они_отличаются">8. Что такое <em>HTTP</em> и <em>HTTPS</em>? Чем они отличаются?</a></li>
+<li><a href="#_что_такое_ftp">9. Что такое <em>FTP</em>?</a></li>
+<li><a href="#_чем_отличаются_методы_get_и_post">10. Чем отличаются методы <em>GET</em> и <em>POST</em>?</a></li>
+<li><a href="#_что_такое_mime_тип">11. Что такое <em>MIME тип</em>?</a></li>
+<li><a href="#_что_такое_web_server">12. Что такое <em>Web server</em>?</a></li>
+<li><a href="#_что_такое_web_application">13. Что такое <em>Web application</em>?</a></li>
+<li><a href="#_что_такое_application_server">14. Что такое <em>Application server</em>?</a></li>
+<li><a href="#_чем_отличаются_web_server_и_application_server">15. Чем отличаются <em>Web server</em> и <em>Application server</em>?</a></li>
+<li><a href="#_что_такое_ajax_как_принципиально_устроена_эта_технология">16. Что такое <em>AJAX</em>? Как принципиально устроена эта технология?</a></li>
+<li><a href="#_что_такое_websocket">17. Что такое <em>WebSocket</em>?</a></li>
+<li><a href="#_что_такое_json">18. Что такое <em>JSON</em>?</a></li>
+<li><a href="#_что_такое_json_схема">19. Что такое <em>JSON схема</em>?</a></li>
+<li><a href="#_что_такое_cookies">20. Что такое <em>cookies</em>?</a></li>
+<li><a href="#_что_такое_сессия">21. Что такое <em>«сессия»</em>?</a></li>
+<li><a href="#_что_такое_авторизация_и_аутентификация_чем_они_отличаются">22. Что такое <em>«авторизация»</em> и <em>«аутентификация»</em>? Чем они отличаются?</a></li>
+<li><a href="#_источники">23. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_что_такое_www">Что такое <em>WWW</em>?</h2>
+<h2 id="_что_такое_www">1. Что такое <em>WWW</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>WWW, World Wide Web (Всемирная паутина)</strong>&#8201;&#8212;&#8201;распределённая система, предоставляющая доступ к связанным между собой документам, расположенным на различных компьютерах, подключённых к Интернету. Для обозначения этого термина также используют слово <em>web</em>.</p>
@@ -450,7 +553,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_w3c">Что такое <em>W3C</em>?</h2>
+<h2 id="_что_такое_w3c">2. Что такое <em>W3C</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>W3C, World Wide Web Consortium (Консорциум Всемирной паутины)</strong>&#8201;&#8212;&#8201;организация, разрабатывающая и внедряющая технологические стандарты для WWW.</p>
@@ -461,7 +564,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_существуют_уровни_модели_osi">Какие существуют уровни модели <em>OSI</em>?</h2>
+<h2 id="_какие_существуют_уровни_модели_osi">3. Какие существуют уровни модели <em>OSI</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>| # |                  Уровень (layer)                 |               Тип данных (PDU)            |                          Функции                         |          Примеры           |
@@ -477,7 +580,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_tcpip">Что такое <em>TCP/IP</em>?</h2>
+<h2 id="_что_такое_tcpip">4. Что такое <em>TCP/IP</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>TCP/IP</strong> - это два основных сетевых протокола Internet. Часто это название используют и для обозначения сетей, работающих на их основе.</p>
@@ -558,7 +661,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_udp">Что такое <em>UDP</em>?</h2>
+<h2 id="_что_такое_udp">5. Что такое <em>UDP</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>UDP, User Datagram Protocol (Протокол пользовательских датаграмм)</strong>&#8201;&#8212;&#8201;протокол, который обеспечивает доставку без требований соединения с удаленным модулем UDP и обязательного подтверждения получения.</p>
@@ -591,7 +694,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_отличаются_tcp_и_udp">Чем отличаются <em>TCP</em> и <em>UDP</em>?</h2>
+<h2 id="_чем_отличаются_tcp_и_udp">6. Чем отличаются <em>TCP</em> и <em>UDP</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>TCP</strong>&#8201;&#8212;&#8201;ориентированный на соединение протокол, что означает необходимость «рукопожатия» для установки соединения между двумя хостами. Как только соединение установлено, пользователи могут отправлять данные в обоих направлениях.</p>
@@ -637,7 +740,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_протокол_передачи_данных_какие_протоколы_вы_знаете">Что такое протокол передачи данных? Какие протоколы вы знаете?</h2>
+<h2 id="_что_такое_протокол_передачи_данных_какие_протоколы_вы_знаете">7. Что такое протокол передачи данных? Какие протоколы вы знаете?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Протокол передачи данных</strong>&#8201;&#8212;&#8201;набор соглашений интерфейса логического уровня, которые определяют обмен данными между различными программами. Эти соглашения задают единообразный способ передачи сообщений и обработки ошибок при взаимодействии программного обеспечения разнесённой в пространстве аппаратуры, соединённой тем или иным интерфейсом.</p>
@@ -667,7 +770,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_http_и_https_чем_они_отличаются">Что такое <em>HTTP</em> и <em>HTTPS</em>? Чем они отличаются?</h2>
+<h2 id="_что_такое_http_и_https_чем_они_отличаются">8. Что такое <em>HTTP</em> и <em>HTTPS</em>? Чем они отличаются?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>HTTP, HyperText Transfer Protocol (Протокол передачи гипертекста)</strong>&#8201;&#8212;&#8201;протокол прикладного уровня передачи данных.</p>
@@ -735,7 +838,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_ftp">Что такое <em>FTP</em>?</h2>
+<h2 id="_что_такое_ftp">9. Что такое <em>FTP</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>FTP, File Transfer Protocol (Протокол передачи файлов)</strong>&#8201;&#8212;&#8201;протокол передачи файлов между компьютерами в сети TCP. С его помощью можно подключаться к FTP-серверам, просматривать содержимое их каталогов и загружать файлы с сервера или на сервер. Протокол построен на архитектуре «клиент-сервер» и использует разные сетевые соединения для передачи команд и данных между клиентом и сервером.</p>
@@ -746,7 +849,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_отличаются_методы_get_и_post">Чем отличаются методы <em>GET</em> и <em>POST</em>?</h2>
+<h2 id="_чем_отличаются_методы_get_и_post">10. Чем отличаются методы <em>GET</em> и <em>POST</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>GET</strong> передает данные серверу, используя URL, тогда как <strong>POST</strong> передает данные, используя тело HTTP запроса. Длина URL ограничена 1024 символами, это и будет верхним ограничением для данных, которые можно отослать через GET. POST может отправлять гораздо большие объемы данных. Лимит устанавливается web-server и составляет обычно около 2 Mb.</p>
@@ -757,7 +860,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_mime_тип">Что такое <em>MIME тип</em>?</h2>
+<h2 id="_что_такое_mime_тип">11. Что такое <em>MIME тип</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>MIME, Multipurpose Internet Mail Extension (Многоцелевые расширения Интернет-почты)</strong>&#8201;&#8212;&#8201;спецификация для передачи по сети файлов различного типа: изображений, музыки, текстов, видео, архивов и др. В HTML указание MIME-типа используется при  передаче данных форм и вставки на страницу различных объектов.</p>
@@ -765,7 +868,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_web_server">Что такое <em>Web server</em>?</h2>
+<h2 id="_что_такое_web_server">12. Что такое <em>Web server</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Web server (Веб-сервер)</strong>&#8201;&#8212;&#8201;сервер, принимающий HTTP-запросы от клиентов и выдающий им HTTP-ответы. Так называют как программное обеспечение, выполняющее функции web-сервера, так и непосредственно компьютер, на котором это программное обеспечение работает.</p>
@@ -811,7 +914,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_web_application">Что такое <em>Web application</em>?</h2>
+<h2 id="_что_такое_web_application">13. Что такое <em>Web application</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Web application (Веб-приложение)</strong> - клиент-серверное приложение, в котором клиентом выступает браузер, а сервером&#8201;&#8212;&#8201;web-сервер. Логика web application распределена между сервером и клиентом, хранение данных осуществляется, преимущественно, на сервере, а обмен информацией происходит по сети. Одним из преимуществ такого подхода является тот факт, что клиенты не зависят от конкретной операционной системы пользователя, поэтому web application является кроссплатформенным сервисом.</p>
@@ -819,7 +922,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_application_server">Что такое <em>Application server</em>?</h2>
+<h2 id="_что_такое_application_server">14. Что такое <em>Application server</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Application Server (Сервер приложений)</strong>&#8201;&#8212;&#8201;программа, представляющая собой сервер, который занимается системной поддержкой приложений и обеспечивает их жизненный цикл в соответствии с правилами, определёнными в спецификациях. Может работать как полноценный самостоятельный web-сервер или быть поставщиком страниц для другого web-сервера. Обеспечивает обмен данными между приложениями и клиентами, берёт на себя выполнение таких функций, как создание программной среды для функционирующего приложения, идентификацию и авторизацию клиентов, организацию сессии для каждого из них.</p>
@@ -852,7 +955,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_отличаются_web_server_и_application_server">Чем отличаются <em>Web server</em> и <em>Application server</em>?</h2>
+<h2 id="_чем_отличаются_web_server_и_application_server">15. Чем отличаются <em>Web server</em> и <em>Application server</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Понятие web server относится скорее к способу передачи данных (конкретно, по протоколу HTTP), в то время как понятие Application server относится к способу выполнения этих самых приложений (конкретно, удаленная обработка запросов клиентов при помощи каких-то программ, размещенных на сервере). Эти понятия нельзя ставить в один ряд. Они обозначают разные признаки программы. Какие-то программы удовлетворяют только одному признаку, какие-то - нескольким сразу.</p>
@@ -869,7 +972,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_ajax_как_принципиально_устроена_эта_технология">Что такое <em>AJAX</em>? Как принципиально устроена эта технология?</h2>
+<h2 id="_что_такое_ajax_как_принципиально_устроена_эта_технология">16. Что такое <em>AJAX</em>? Как принципиально устроена эта технология?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>AJAX, Asynchronous Javascript and XML (Асинхронный Javascript и XML)</strong>&#8201;&#8212;&#8201;подход к построению интерактивных пользовательских интерфейсов web-приложений, заключающийся в «фоновом» обмене данными браузера и web-сервера. В результате, при обновлении данных web-страница не перезагружается полностью и web-приложения становятся быстрее и удобнее.</p>
@@ -944,7 +1047,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_websocket">Что такое <em>WebSocket</em>?</h2>
+<h2 id="_что_такое_websocket">17. Что такое <em>WebSocket</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>WebSocket</strong>&#8201;&#8212;&#8201;протокол полнодуплексной связи поверх TCP-соединения, предназначенный для обмена сообщениями между браузером и web-сервером в режиме реального времени.</p>
@@ -965,7 +1068,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_json">Что такое <em>JSON</em>?</h2>
+<h2 id="_что_такое_json">18. Что такое <em>JSON</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>JSON, JavaScript Object Notation</strong>&#8201;&#8212;&#8201;текстовый формат обмена данными, основанный на JavaScript.</p>
@@ -1011,7 +1114,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_json_схема">Что такое <em>JSON схема</em>?</h2>
+<h2 id="_что_такое_json_схема">19. Что такое <em>JSON схема</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>JSON Schema</strong>&#8201;&#8212;&#8201;один из языков описания структуры JSON-документа, используя синтаксис JSON.</p>
@@ -1022,7 +1125,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_cookies">Что такое <em>cookies</em>?</h2>
+<h2 id="_что_такое_cookies">20. Что такое <em>cookies</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Сookies («куки»)</strong>&#8201;&#8212;&#8201;небольшой фрагмент данных, отправленный web-сервером и хранимый на устройстве пользователя. Всякий раз при попытке открыть страницу сайта, web-клиент пересылает соответствующие этому сайту cookies web-серверу в составе HTTP-запроса. Применяется для сохранения данных на стороне пользователя и на практике обычно используется для:</p>
@@ -1046,7 +1149,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_сессия">Что такое <em>«сессия»</em>?</h2>
+<h2 id="_что_такое_сессия">21. Что такое <em>«сессия»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Сессия</strong>&#8201;&#8212;&#8201;промежуток времени между первым и последним запросами, которые пользователь отправляет со своего устройства на сервер сайта. Завершается сессия в случае, если со стороны пользователя не поступало запросов в течение определенного промежутка времени или же при обрыве связи.</p>
@@ -1054,7 +1157,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_авторизация_и_аутентификация_чем_они_отличаются">Что такое <em>«авторизация»</em> и <em>«аутентификация»</em>? Чем они отличаются?</h2>
+<h2 id="_что_такое_авторизация_и_аутентификация_чем_они_отличаются">22. Что такое <em>«авторизация»</em> и <em>«аутентификация»</em>? Чем они отличаются?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Аутентификация</strong> - это проверка соответствия субъекта и того, за кого он пытается себя выдать, с помощью некой уникальной информации (отпечатки пальцев, цвет радужки, голос и тд.), в простейшем случае - с помощью имени входа и пароля.</p>
@@ -1068,7 +1171,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">23. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1077,15 +1180,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

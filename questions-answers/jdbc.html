@@ -435,14 +435,325 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>JDBC</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_что_такое_jdbc">1. Что такое <em>JDBC</em>?</a></li>
+<li><a href="#_в_чем_заключаются_преимущества_использования_jdbc">2. В чем заключаются преимущества использования JDBC?</a></li>
+<li><a href="#_что_из_себя_представляет_jdbc_url">3. Что из себя представляет JDBC URL?</a></li>
+<li><a href="#_из_каких_частей_стоит_jdbc">4. Из каких частей стоит JDBC?</a></li>
+<li><a href="#_перечислите_основные_классы_и_интерфейсы_jdbc">5. Перечислите основные классы и интерфейсы JDBC.</a></li>
+<li><a href="#_перечислите_основные_типы_данных_используемые_в_jdbc_как_они_связаны_с_типами_java">6. Перечислите основные типы данных используемые в JDBC. Как они связаны с типами Java?</a></li>
+<li><a href="#_опишите_основные_этапы_работы_с_базой_данных_при_использовании_jdbc">7. Опишите основные этапы работы с базой данных при использовании JDBC.</a></li>
+<li><a href="#_как_зарегистрировать_драйвер_jdbc">8. Как зарегистрировать драйвер JDBC?</a></li>
+<li><a href="#_как_установить_соединение_с_базой_данных">9. Как установить соединение с базой данных?</a></li>
+<li><a href="#_какие_уровни_изоляции_транзакций_поддерживаются_в_jdbc">10. Какие уровни изоляции транзакций поддерживаются в JDBC?</a></li>
+<li><a href="#_при_помощи_чего_формируются_запросы_к_базе_данных">11. При помощи чего формируются запросы к базе данных?</a></li>
+<li><a href="#_чем_отличается_statement_от_preparedstatement">12. Чем отличается Statement от PreparedStatement?</a></li>
+<li><a href="#_как_осуществляется_запрос_к_базе_данных_и_обработка_результатов">13. Как осуществляется запрос к базе данных и обработка результатов?</a></li>
+<li><a href="#_как_вызвать_хранимую_процедуру">14. Как вызвать хранимую процедуру?</a></li>
+<li><a href="#_как_закрыть_соединение_с_базой_данных">15. Как закрыть соединение с базой данных?</a></li>
+<li><a href="#_источники">16. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_что_такое_jdbc">Что такое <em>JDBC</em>?</h2>
+<h2 id="_что_такое_jdbc">1. Что такое <em>JDBC</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>JDBC, Java DataBase Connectivity (соединение с базами данных на Java)</strong>&#8201;&#8212;&#8201;промышленный стандарт взаимодействия Java-приложений с различными СУБД. Реализован в виде пакета <code>java.sql</code>, входящего в состав Java SE.</p>
@@ -453,7 +764,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_заключаются_преимущества_использования_jdbc">В чем заключаются преимущества использования JDBC?</h2>
+<h2 id="_в_чем_заключаются_преимущества_использования_jdbc">2. В чем заключаются преимущества использования JDBC?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Преимуществами JDBC считают:</p>
@@ -477,7 +788,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_из_себя_представляет_jdbc_url">Что из себя представляет JDBC URL?</h2>
+<h2 id="_что_из_себя_представляет_jdbc_url">3. Что из себя представляет JDBC URL?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>JDBC URL</strong> состоит из:</p>
@@ -501,7 +812,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_из_каких_частей_стоит_jdbc">Из каких частей стоит JDBC?</h2>
+<h2 id="_из_каких_частей_стоит_jdbc">4. Из каких частей стоит JDBC?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>JDBC состоит из двух частей:</p>
@@ -522,7 +833,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_перечислите_основные_классы_и_интерфейсы_jdbc">Перечислите основные классы и интерфейсы JDBC.</h2>
+<h2 id="_перечислите_основные_классы_и_интерфейсы_jdbc">5. Перечислите основные классы и интерфейсы JDBC.</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -552,7 +863,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_перечислите_основные_типы_данных_используемые_в_jdbc_как_они_связаны_с_типами_java">Перечислите основные типы данных используемые в JDBC. Как они связаны с типами Java?</h2>
+<h2 id="_перечислите_основные_типы_данных_используемые_в_jdbc_как_они_связаны_с_типами_java">6. Перечислите основные типы данных используемые в JDBC. Как они связаны с типами Java?</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -675,7 +986,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_опишите_основные_этапы_работы_с_базой_данных_при_использовании_jdbc">Опишите основные этапы работы с базой данных при использовании JDBC.</h2>
+<h2 id="_опишите_основные_этапы_работы_с_базой_данных_при_использовании_jdbc">7. Опишите основные этапы работы с базой данных при использовании JDBC.</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -702,7 +1013,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_зарегистрировать_драйвер_jdbc">Как зарегистрировать драйвер JDBC?</h2>
+<h2 id="_как_зарегистрировать_драйвер_jdbc">8. Как зарегистрировать драйвер JDBC?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Регистрацию драйвера можно осуществить несколькими способами:</p>
@@ -723,7 +1034,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_установить_соединение_с_базой_данных">Как установить соединение с базой данных?</h2>
+<h2 id="_как_установить_соединение_с_базой_данных">9. Как установить соединение с базой данных?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Для установки соединения с базой данных используется статический вызов <code>java.sql.DriverManager.getConnection(...)</code> .</p>
@@ -737,7 +1048,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>URL базы данных</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">static Connection getConnection(String url)</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">static</span> <span class="nc">Connection</span> <span class="nf">getConnection</span><span class="o">(</span><span class="nc">String</span> <span class="n">url</span><span class="o">)</span></code></pre>
 </div>
 </div>
 </li>
@@ -745,7 +1056,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>URL базы данных и набор свойств для инициализации</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">static Connection getConnection(String url, Properties info)</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">static</span> <span class="nc">Connection</span> <span class="nf">getConnection</span><span class="o">(</span><span class="nc">String</span> <span class="n">url</span><span class="o">,</span> <span class="nc">Properties</span> <span class="n">info</span><span class="o">)</span></code></pre>
 </div>
 </div>
 </li>
@@ -753,7 +1064,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>URL базы данных, имя пользователя и пароль</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">static Connection getConnection(String url, String user, String password)</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">static</span> <span class="nc">Connection</span> <span class="nf">getConnection</span><span class="o">(</span><span class="nc">String</span> <span class="n">url</span><span class="o">,</span> <span class="nc">String</span> <span class="n">user</span><span class="o">,</span> <span class="nc">String</span> <span class="n">password</span><span class="o">)</span></code></pre>
 </div>
 </div>
 </li>
@@ -765,7 +1076,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_уровни_изоляции_транзакций_поддерживаются_в_jdbc">Какие уровни изоляции транзакций поддерживаются в JDBC?</h2>
+<h2 id="_какие_уровни_изоляции_транзакций_поддерживаются_в_jdbc">10. Какие уровни изоляции транзакций поддерживаются в JDBC?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Уровень изолированности транзакций</strong>&#8201;&#8212;&#8201;значение, определяющее уровень, при котором в транзакции допускаются несогласованные данные, то есть степень изолированности одной транзакции от другой. Более высокий уровень изолированности повышает точность данных, но при этом может снижаться количество параллельно выполняемых транзакций. С другой стороны, более низкий уровень изолированности позволяет выполнять больше параллельных транзакций, но снижает точность данных.</p>
@@ -821,7 +1132,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_при_помощи_чего_формируются_запросы_к_базе_данных">При помощи чего формируются запросы к базе данных?</h2>
+<h2 id="_при_помощи_чего_формируются_запросы_к_базе_данных">11. При помощи чего формируются запросы к базе данных?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Для выполнения запросов к базе данных в Java используются три интерфейса:</p>
@@ -858,7 +1169,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_отличается_statement_от_preparedstatement">Чем отличается Statement от PreparedStatement?</h2>
+<h2 id="_чем_отличается_statement_от_preparedstatement">12. Чем отличается Statement от PreparedStatement?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -879,7 +1190,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_осуществляется_запрос_к_базе_данных_и_обработка_результатов">Как осуществляется запрос к базе данных и обработка результатов?</h2>
+<h2 id="_как_осуществляется_запрос_к_базе_данных_и_обработка_результатов">13. Как осуществляется запрос к базе данных и обработка результатов?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Выполнение запросов осуществляется при помощи вызова методов объекта, реализующего интерфейс <code>java.sql.Statement</code>:</p>
@@ -916,7 +1227,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_вызвать_хранимую_процедуру">Как вызвать хранимую процедуру?</h2>
+<h2 id="_как_вызвать_хранимую_процедуру">14. Как вызвать хранимую процедуру?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Хранимые процедуры</strong>&#8201;&#8212;&#8201;это именованный набор операторов SQL хранящийся на сервере. Такую процедуру можно вызвать из Java-класса с помощью вызова методов объекта реализующего интерфейс <code>java.sql.Statement</code>.</p>
@@ -949,38 +1260,38 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public vois runStoredProcedure(final Connection connection) throws Exception {
-    // описываем хранимую процедуру
-    String procedure = "{ call procedureExample(?, ?, ?) }";
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="n">vois</span> <span class="nf">runStoredProcedure</span><span class="o">(</span><span class="kd">final</span> <span class="nc">Connection</span> <span class="n">connection</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+    <span class="c1">// описываем хранимую процедуру</span>
+    <span class="nc">String</span> <span class="n">procedure</span> <span class="o">=</span> <span class="s">"{ call procedureExample(?, ?, ?) }"</span><span class="o">;</span>
 
-    // подготавливаем запрос
-    CallableStatement cs = connection.prepareCall(procedure);
+    <span class="c1">// подготавливаем запрос</span>
+    <span class="nc">CallableStatement</span> <span class="n">cs</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">prepareCall</span><span class="o">(</span><span class="n">procedure</span><span class="o">);</span>
 
-    // устанавливаем входные параметры
-    cs.setString(1, "abcd");
-    cs.setBoolean(2, true);
-    cs.setInt(3, 10);
+    <span class="c1">// устанавливаем входные параметры</span>
+    <span class="n">cs</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="s">"abcd"</span><span class="o">);</span>
+    <span class="n">cs</span><span class="o">.</span><span class="na">setBoolean</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+    <span class="n">cs</span><span class="o">.</span><span class="na">setInt</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
 
-    // описываем выходные параметры
-    cs.registerOutParameter(1, java.sql.Types.VARCHAR);
-    cs.registerOutParameter(2, java.sql.Types.INTEGER);
+    <span class="c1">// описываем выходные параметры</span>
+    <span class="n">cs</span><span class="o">.</span><span class="na">registerOutParameter</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">java</span><span class="o">.</span><span class="na">sql</span><span class="o">.</span><span class="na">Types</span><span class="o">.</span><span class="na">VARCHAR</span><span class="o">);</span>
+    <span class="n">cs</span><span class="o">.</span><span class="na">registerOutParameter</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">java</span><span class="o">.</span><span class="na">sql</span><span class="o">.</span><span class="na">Types</span><span class="o">.</span><span class="na">INTEGER</span><span class="o">);</span>
 
-    // запускаем выполнение хранимой процедуры
-    cs.execute();
+    <span class="c1">// запускаем выполнение хранимой процедуры</span>
+    <span class="n">cs</span><span class="o">.</span><span class="na">execute</span><span class="o">();</span>
 
-    // получаем результаты
-    String parameter1 = cs.getString(1);
-    int parameter2 = cs.getInt(2);
+    <span class="c1">// получаем результаты</span>
+    <span class="nc">String</span> <span class="n">parameter1</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+    <span class="kt">int</span> <span class="n">parameter2</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
 
-    // заканчиваем работу с запросом
-    cs.close();
-}</code></pre>
+    <span class="c1">// заканчиваем работу с запросом</span>
+    <span class="n">cs</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_закрыть_соединение_с_базой_данных">Как закрыть соединение с базой данных?</h2>
+<h2 id="_как_закрыть_соединение_с_базой_данных">15. Как закрыть соединение с базой данных?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Соединение с базой данной закрывается вызовом метода <code>close()</code> у соответствующего объекта <code>java.sql.Connection</code> или посредством использования механизма try-with-resources при создании такого объекта, появившегося в Java 7.</p>
@@ -995,7 +1306,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">16. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1013,15 +1324,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

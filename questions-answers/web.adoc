@@ -1,5 +1,6 @@
-
 = Основы Web
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _WWW_?
 
@@ -278,4 +279,4 @@ JSON представляет собой (в закодированном вид
 
 * https://ru.wikipedia.org/[Википедия]
 
-xref:README.adoc[Вопросы для собеседования]
+

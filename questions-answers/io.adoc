@@ -1,5 +1,6 @@
-
 = Потоки ввода/вывода в Java
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == В чём заключается разница между IO и NIO?
 
@@ -245,4 +246,4 @@ public boolean accept(final File file) {
 * http://javastudy.ru/interview/input-output/[javastudy.ru]
 * http://iais.kemsu.ru/odocs/java/Chapter11.html[Bruce Eckel «Thinking in Java»]
 
-xref:README.adoc[Вопросы для собеседования]
+

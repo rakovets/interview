@@ -1,4 +1,6 @@
 = Основы CSS
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _«CSS»_?
 
@@ -126,4 +128,3 @@ p {
 * http://stepbystep.htmlbook.ru/?id=43[htmlbook.ru]
 * https://itchief.ru/lessons/html-and-css/css-selectors[itchief.ru]
 
-xref:README.adoc[Вопросы для собеседования]

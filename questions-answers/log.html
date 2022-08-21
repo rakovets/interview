@@ -435,14 +435,102 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>Журналирование</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_какие_существуют_типы_логов">1. Какие существуют типы логов?</a></li>
+<li><a href="#_из_каких_частей_состоит_система_журналирования_log4j">2. Из каких частей состоит система журналирования log4j?</a></li>
+<li><a href="#_что_такое_logger_в_log4j">3. Что такое <em>Logger</em> в log4j?</a></li>
+<li><a href="#_что_такое_appender_в_log4j">4. Что такое <em>Appender</em> в log4j?</a></li>
+<li><a href="#_что_такое_layout_в_log4j">5. Что такое <em>Layout</em> в log4j?</a></li>
+<li><a href="#_перечислите_уровни_журналирования_в_log4j_назовите_порядок_их_приоритетности">6. Перечислите уровни журналирования в log4j? Назовите порядок их приоритетности.</a></li>
+<li><a href="#_какие_существуют_способы_конфигурирования_log4j">7. Какие существуют способы конфигурирования log4j?</a></li>
+<li><a href="#_источники">8. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_какие_существуют_типы_логов">Какие существуют типы логов?</h2>
+<h2 id="_какие_существуют_типы_логов">1. Какие существуют типы логов?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -467,7 +555,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_из_каких_частей_состоит_система_журналирования_log4j">Из каких частей состоит система журналирования log4j?</h2>
+<h2 id="_из_каких_частей_состоит_система_журналирования_log4j">2. Из каких частей состоит система журналирования log4j?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Система журналирования состоит из трёх основных частей:</p>
@@ -488,7 +576,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_logger_в_log4j">Что такое <em>Logger</em> в log4j?</h2>
+<h2 id="_что_такое_logger_в_log4j">3. Что такое <em>Logger</em> в log4j?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Logger</strong> представляет собой объект класса <code>org.apache.log4j.Logger</code>, который используется как управляющий интерфейс для журналирования сообщений с возможностью задавать уровень детализации. Именно logger проверяет нужно ли обрабатывать сообщение и если журналирование необходимо, то сообщение передаётся в appender, если нет - система завершает обработку данного сообщения.</p>
@@ -496,7 +584,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_appender_в_log4j">Что такое <em>Appender</em> в log4j?</h2>
+<h2 id="_что_такое_appender_в_log4j">4. Что такое <em>Appender</em> в log4j?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Appender</strong> - это именованный объект журнала событий, реализующий интерфейс <code>org.apache.log4j.Appender</code> и добавляющий события в журнал. Appender вызывает разные вспомогательные инструменты - компоновщик, фильтр, обработчик ошибок (если они определены и необходимы). В ходе этой работы окончательно устанавливается необходимость записи сообщения, сообщению придаются окончательные содержание и форма.</p>
@@ -593,7 +681,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_layout_в_log4j">Что такое <em>Layout</em> в log4j?</h2>
+<h2 id="_что_такое_layout_в_log4j">5. Что такое <em>Layout</em> в log4j?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Layout</strong> - наследник класса <code>org.apache.log4j.Layout</code> предоставляющий возможность форматирования сообщения перед добавлением в журнал.</p>
@@ -623,7 +711,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_перечислите_уровни_журналирования_в_log4j_назовите_порядок_их_приоритетности">Перечислите уровни журналирования в log4j? Назовите порядок их приоритетности.</h2>
+<h2 id="_перечислите_уровни_журналирования_в_log4j_назовите_порядок_их_приоритетности">6. Перечислите уровни журналирования в log4j? Назовите порядок их приоритетности.</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -659,7 +747,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_существуют_способы_конфигурирования_log4j">Какие существуют способы конфигурирования log4j?</h2>
+<h2 id="_какие_существуют_способы_конфигурирования_log4j">7. Какие существуют способы конфигурирования log4j?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Для того, чтобы log4j начал работать нужно предоставить ему конфигурацию. Это можно сделать несколькими путями:</p>
@@ -680,7 +768,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">8. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -692,15 +780,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

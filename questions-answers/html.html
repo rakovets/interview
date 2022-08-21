@@ -435,14 +435,325 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>Основы HTML</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_что_такое_html">1. Что такое <em>«HTML»</em>?</a></li>
+<li><a href="#_что_такое_xhtml">2. Что такое <em>«XHTML»</em>?</a></li>
+<li><a href="#_что_такое_doctype_и_зачем_он_нужен">3. Что такое <code>DOCTYPE</code> и зачем он нужен?</a></li>
+<li><a href="#_для_чего_предназначен_тег_head">4. Для чего предназначен тег <code>&lt;head&gt;</code>?</a></li>
+<li><a href="#_чем_отличается_div_от_span">5. Чем отличается <code>&lt;div&gt;</code> от <code>&lt;span&gt;</code>?</a></li>
+<li><a href="#_как_обозначаются_комментарии_в_html">6. Как обозначаются комментарии в HTML?</a></li>
+<li><a href="#_каким_образом_задаётся_адрес_документа_на_который_следует_перейти">7. Каким образом задаётся адрес документа, на который следует перейти?</a></li>
+<li><a href="#_как_сделать_ссылку_на_адрес_электронной_почты">8. Как сделать ссылку на адрес электронной почты?</a></li>
+<li><a href="#_для_чего_предназначен_тег_em">9. Для чего предназначен тег <code>&lt;em&gt;</code>?</a></li>
+<li><a href="#_для_чего_предназначены_теги_ol_ul_li">10. Для чего предназначены теги <code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>?</a></li>
+<li><a href="#_для_чего_предназначены_теги_dl_dt_dd">11. Для чего предназначены теги <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code>?</a></li>
+<li><a href="#_для_чего_предназначены_теги_tr_th_td">12. Для чего предназначены теги <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>?</a></li>
+<li><a href="#_обязательно_ли_писать_атрибут_alt_в_теге_img">13. Обязательно ли писать атрибут <code>alt</code> в теге <code>&lt;img&gt;</code>?</a></li>
+<li><a href="#_в_каком_регистре_лучше_писать_html_код">14. В каком регистре лучше писать HTML-код?</a></li>
+<li><a href="#_что_такое_мнемоника_entity">15. Что такое «мнемоника (entity)»?</a></li>
+<li><a href="#_источники">16. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_что_такое_html">Что такое <em>«HTML»</em>?</h2>
+<h2 id="_что_такое_html">1. Что такое <em>«HTML»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>HTML</strong>, HyperText Markup Language («язык гипертекстовой разметки»)&#8201;&#8212;&#8201;стандартизированный язык разметки документов в WWW. На данный момент актуальна 5 версия этого языка - HTML5.</p>
@@ -450,7 +761,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_xhtml">Что такое <em>«XHTML»</em>?</h2>
+<h2 id="_что_такое_xhtml">2. Что такое <em>«XHTML»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>XHTML</strong>, eXtensible HyperText Markup Language («расширяемый язык гипертекстовой разметки») - более строгий вариант HTML, следующий всем ограничениям XML и, фактически являющийся приложением языка XML к области разметки гипертекста.</p>
@@ -458,7 +769,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_doctype_и_зачем_он_нужен">Что такое <code>DOCTYPE</code> и зачем он нужен?</h2>
+<h2 id="_что_такое_doctype_и_зачем_он_нужен">3. Что такое <code>DOCTYPE</code> и зачем он нужен?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Элемент <code>&lt;!DOCTYPE&gt;</code> предназначен для указания типа текущего документа. Это необходимо, чтобы браузер понимал, согласно какому стандарту, необходимо интерпретировать данную web-страницу.</p>
@@ -528,7 +839,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_предназначен_тег_head">Для чего предназначен тег <code>&lt;head&gt;</code>?</h2>
+<h2 id="_для_чего_предназначен_тег_head">4. Для чего предназначен тег <code>&lt;head&gt;</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Тег <code>&lt;head&gt;</code> предназначен для хранения других элементов, цель которых&#8201;&#8212;&#8201;помочь браузеру в работе с данными. Также внутри этого контейнера находятся <em>метатеги</em>, которые используются для хранения информации предназначенной для браузеров и поисковых систем. Например, механизмы поисковых систем обращаются к метатегам для получения описания сайта, ключевых слов и других данных.</p>
@@ -544,9 +855,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-html" data-lang="html">&lt;head&gt;
+<pre class="rouge highlight"><code data-lang="html"><span class="nt">&lt;head&gt;</span>
   ...
-&lt;/head&gt;</code></pre>
+<span class="nt">&lt;/head&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -562,7 +873,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_отличается_div_от_span">Чем отличается <code>&lt;div&gt;</code> от <code>&lt;span&gt;</code>?</h2>
+<h2 id="_чем_отличается_div_от_span">5. Чем отличается <code>&lt;div&gt;</code> от <code>&lt;span&gt;</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>&lt;div&gt;</code> - блочный, а <code>&lt;span&gt;</code> - строчный элементы. Поэтому <code>&lt;div&gt;</code> формирует блок из того, что в нем располагается с новой строки, а <code>&lt;span&gt;</code> не переносит элементы, размещая их в строку. Так же стоит отметь, что согласно рекомендациям w3c линейный тег не может включать в себя блочные теги, поэтому <code>&lt;div&gt;</code> обычно используется для разметки блоков, а <code>&lt;span&gt;</code> - отрывков текста.</p>
@@ -570,7 +881,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_обозначаются_комментарии_в_html">Как обозначаются комментарии в HTML?</h2>
+<h2 id="_как_обозначаются_комментарии_в_html">6. Как обозначаются комментарии в HTML?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Комментарий в HTML-коде задаётся так: <code>&lt;!-- комментарий --&gt;</code></p>
@@ -581,7 +892,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_каким_образом_задаётся_адрес_документа_на_который_следует_перейти">Каким образом задаётся адрес документа, на который следует перейти?</h2>
+<h2 id="_каким_образом_задаётся_адрес_документа_на_который_следует_перейти">7. Каким образом задаётся адрес документа, на который следует перейти?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Для создания ссылок на другие документы используется тег <code>&lt;a&gt;</code>. В зависимости от присутствия атрибутов <code>name</code> или <code>href</code> тег <code>&lt;a&gt;</code> устанавливает ссылку или якорь. Якорем называется закладка внутри страницы, которую можно указать в качестве цели ссылки. При использовании ссылки, которая указывает на якорь, происходит переход к закладке внутри web-страницы.</p>
@@ -648,33 +959,33 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_как_сделать_ссылку_на_адрес_электронной_почты">Как сделать ссылку на адрес электронной почты?</h2>
+<h2 id="_как_сделать_ссылку_на_адрес_электронной_почты">8. Как сделать ссылку на адрес электронной почты?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Создание ссылки на адрес электронной почты делается почти также, как и ссылка на web-страницу. Только вместо URL указывается <code>mailto:"адрес электронной почты"</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-html" data-lang="html">&lt;a href="mailto:user@address.net"&gt;Напиши мне!&lt;/a&gt;</code></pre>
+<pre class="rouge highlight"><code data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"mailto:user@address.net"</span><span class="nt">&gt;</span>Напиши мне!<span class="nt">&lt;/a&gt;</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_предназначен_тег_em">Для чего предназначен тег <code>&lt;em&gt;</code>?</h2>
+<h2 id="_для_чего_предназначен_тег_em">9. Для чего предназначен тег <code>&lt;em&gt;</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Тег <code>&lt;em&gt;</code> предназначен для акцентирования текста. Браузеры отображают такой текст курсивным начертанием.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-html" data-lang="html">&lt;em&gt;Текст&lt;/em&gt;</code></pre>
+<pre class="rouge highlight"><code data-lang="html"><span class="nt">&lt;em&gt;</span>Текст<span class="nt">&lt;/em&gt;</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_предназначены_теги_ol_ul_li">Для чего предназначены теги <code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>?</h2>
+<h2 id="_для_чего_предназначены_теги_ol_ul_li">10. Для чего предназначены теги <code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Теги <code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code> и <code>&lt;li&gt;</code> предназначены для оформления списков.</p>
@@ -694,23 +1005,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-html" data-lang="html">&lt;ol&gt;Нумерованый список
-    &lt;li&gt;первый&lt;/li&gt;
-    &lt;li&gt;второй&lt;/li&gt;
-    &lt;li&gt;третий&lt;/li&gt;
-&lt;/ol&gt;
+<pre class="rouge highlight"><code data-lang="html"><span class="nt">&lt;ol&gt;</span>Нумерованый список
+    <span class="nt">&lt;li&gt;</span>первый<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>второй<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>третий<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
 
-&lt;ul&gt;Маркированный список
-    &lt;li&gt;первый&lt;/li&gt;
-    &lt;li&gt;второй&lt;/li&gt;
-    &lt;li&gt;третий&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+<span class="nt">&lt;ul&gt;</span>Маркированный список
+    <span class="nt">&lt;li&gt;</span>первый<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>второй<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>третий<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_предназначены_теги_dl_dt_dd">Для чего предназначены теги <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code>?</h2>
+<h2 id="_для_чего_предназначены_теги_dl_dt_dd">11. Для чего предназначены теги <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Теги <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code> предназначены для создания списка определений.</p>
@@ -720,16 +1031,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-html" data-lang="html">&lt;dl&gt;Список определений
-    &lt;dt&gt;Термин&lt;/dt&gt;
-    &lt;dd&gt;Определение&lt;/dd&gt;
-&lt;/dl&gt;</code></pre>
+<pre class="rouge highlight"><code data-lang="html"><span class="nt">&lt;dl&gt;</span>Список определений
+    <span class="nt">&lt;dt&gt;</span>Термин<span class="nt">&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;</span>Определение<span class="nt">&lt;/dd&gt;</span>
+<span class="nt">&lt;/dl&gt;</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_для_чего_предназначены_теги_tr_th_td">Для чего предназначены теги <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>?</h2>
+<h2 id="_для_чего_предназначены_теги_tr_th_td">12. Для чего предназначены теги <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>&lt;tr&gt;</code>: служит контейнером для создания строки таблицы. Каждая ячейка в пределах такой строки может задаваться с помощью тега <code>&lt;th&gt;</code> или <code>&lt;td&gt;</code>.
@@ -738,20 +1049,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-html" data-lang="html">&lt;table&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Заголовок&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Строка&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;</code></pre>
+<pre class="rouge highlight"><code data-lang="html"><span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th&gt;</span>Заголовок<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Строка<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_обязательно_ли_писать_атрибут_alt_в_теге_img">Обязательно ли писать атрибут <code>alt</code> в теге <code>&lt;img&gt;</code>?</h2>
+<h2 id="_обязательно_ли_писать_атрибут_alt_в_теге_img">13. Обязательно ли писать атрибут <code>alt</code> в теге <code>&lt;img&gt;</code>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Да, писать его обязательно.</p>
@@ -761,13 +1072,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-html" data-lang="html">&lt;img src="forest.jpg" alt="Лес"&gt;</code></pre>
+<pre class="rouge highlight"><code data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"forest.jpg"</span> <span class="na">alt=</span><span class="s">"Лес"</span><span class="nt">&gt;</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_каком_регистре_лучше_писать_html_код">В каком регистре лучше писать HTML-код?</h2>
+<h2 id="_в_каком_регистре_лучше_писать_html_код">14. В каком регистре лучше писать HTML-код?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Весь HTML-код рекомендуется писать в нижнем регистре: это относится к названиям элементов, названиям атрибутов, значениям атрибутов (кроме текста/<code>CDATA</code>), селекторам, свойствам и их значениям (кроме текста).</p>
@@ -777,7 +1088,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-html" data-lang="html">&lt;A HREF="/"&gt;Домой&lt;/A&gt;</code></pre>
+<pre class="rouge highlight"><code data-lang="html"><span class="nt">&lt;A</span> <span class="na">HREF=</span><span class="s">"/"</span><span class="nt">&gt;</span>Домой<span class="nt">&lt;/A&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -785,13 +1096,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-html" data-lang="html">&lt;img src="forest.jpg" alt="Лес"&gt;</code></pre>
+<pre class="rouge highlight"><code data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"forest.jpg"</span> <span class="na">alt=</span><span class="s">"Лес"</span><span class="nt">&gt;</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_мнемоника_entity">Что такое «мнемоника (entity)»?</h2>
+<h2 id="_что_такое_мнемоника_entity">15. Что такое «мнемоника (entity)»?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Мнемоника (entity)</strong> - это конструкция из символа <code>&amp;</code> и буквенного (или цифрового кода) после нее, предназначенная для замещения символов, которые запрещены для использования в HTML в «явном виде».</p>
@@ -806,7 +1117,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">16. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -818,15 +1129,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

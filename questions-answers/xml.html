@@ -435,14 +435,321 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>XML</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_что_такое_xml">1. Что такое <em>XML</em>?</a></li>
+<li><a href="#_что_такое_dtd">2. Что такое <em>DTD</em>?</a></li>
+<li><a href="#_чем_well_formed_xml_отличается_от_valid_xml">3. Чем <em>well-formed XML</em> отличается от <em>valid XML</em>?</a></li>
+<li><a href="#_что_такое_пространство_имен_в_xml">4. Что такое «<em>пространство имен</em>» в XML?</a></li>
+<li><a href="#_что_такое_xsd_в_чём_его_преимущества_перед_xml_dtd">5. Что такое XSD? В чём его преимущества перед XML DTD?</a></li>
+<li><a href="#_какие_типы_существуют_в_xsd">6. Какие типы существуют в XSD?</a></li>
+<li><a href="#_какие_вы_знаете_методы_чтения_xml_опишите_сильные_и_слабые_стороны_каждого_метода">7. Какие вы знаете методы чтения XML? Опишите сильные и слабые стороны каждого метода.</a></li>
+<li><a href="#_когда_следует_использовать_dom_а_когда_sax_stax_анализаторы">8. Когда следует использовать <em>DOM</em>, а когда <em>SAX</em>, <em>StAX</em> анализаторы?</a></li>
+<li><a href="#_какие_вы_знаете_способы_записи_xml">9. Какие вы знаете способы записи XML?</a></li>
+<li><a href="#_что_такое_jaxp">10. Что такое <em>JAXP</em>?</a></li>
+<li><a href="#_что_такое_xslt">11. Что такое <em>XSLT</em>?</a></li>
+<li><a href="#_источники">12. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_что_такое_xml">Что такое <em>XML</em>?</h2>
+<h2 id="_что_такое_xml">1. Что такое <em>XML</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>XML, eXtensible Markup Language (расширяемый язык разметки)</strong> - язык с простым формальным синтаксисом, хорошо приспособленный для создания и обработки документов программами и одновременно удобный для чтения и создания документов человеком.</p>
@@ -453,7 +760,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_dtd">Что такое <em>DTD</em>?</h2>
+<h2 id="_что_такое_dtd">2. Что такое <em>DTD</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>DTD, Document Type Definition (определение типа документа)</strong>&#8201;&#8212;&#8201;это заранее определённый свод правил, задающий связи между элементами и атрибутами.</p>
@@ -471,7 +778,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_чем_well_formed_xml_отличается_от_valid_xml">Чем <em>well-formed XML</em> отличается от <em>valid XML</em>?</h2>
+<h2 id="_чем_well_formed_xml_отличается_от_valid_xml">3. Чем <em>well-formed XML</em> отличается от <em>valid XML</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>В зависимости от уровня соответствия стандартам документ может быть «well-formed» («правильно построенный»), либо «valid» («действительный»).</p>
@@ -516,7 +823,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_пространство_имен_в_xml">Что такое «<em>пространство имен</em>» в XML?</h2>
+<h2 id="_что_такое_пространство_имен_в_xml">4. Что такое «<em>пространство имен</em>» в XML?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Пространство имён XML (XML namespace)</strong> - это идентифицируемая с помощью ссылки URI коллекция имен, используемых в XML документах для обозначения типов элементов и именования атрибутов. Пространство имен XML отличается от тех «пространств имен», которые обычно используются в компьютерных дисциплинах, тем, что в варианте для XML оно имеет внутреннюю структуру, и, с математической точки зрения, набором не является.</p>
@@ -540,7 +847,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_xsd_в_чём_его_преимущества_перед_xml_dtd">Что такое XSD? В чём его преимущества перед XML DTD?</h2>
+<h2 id="_что_такое_xsd_в_чём_его_преимущества_перед_xml_dtd">5. Что такое XSD? В чём его преимущества перед XML DTD?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>XSD, XML Schema Definition, XML Schema (XML схема)</strong>&#8201;&#8212;&#8201;язык описания структуры XML-документа. В частности, XML Schema описывает:</p>
@@ -583,14 +890,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_типы_существуют_в_xsd">Какие типы существуют в XSD?</h2>
+<h2 id="_какие_типы_существуют_в_xsd">6. Какие типы существуют в XSD?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Простой тип</strong> - это определение типа для значения, которое может использоваться в качестве содержимого элемента или атрибута. Этот тип данных не может содержать элементы или иметь атрибуты.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-xsd" data-lang="xsd">&lt;xsd:element name='price' type='xsd:decimal'/&gt;
+<pre class="rouge highlight"><code data-lang="xsd">&lt;xsd:element name='price' type='xsd:decimal'/&gt;
 ...
 &lt;price&gt;45.50&lt;/price&gt;</code></pre>
 </div>
@@ -600,7 +907,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-xsd" data-lang="xsd">&lt;xsd:element name='price'&gt;
+<pre class="rouge highlight"><code data-lang="xsd">&lt;xsd:element name='price'&gt;
     &lt;xsd:complexType base='xsd:decimal'&gt;
         &lt;xsd:attribute name='currency' type='xsd:string'/&gt;
     &lt;/xsd:complexType&gt;
@@ -612,7 +919,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_вы_знаете_методы_чтения_xml_опишите_сильные_и_слабые_стороны_каждого_метода">Какие вы знаете методы чтения XML? Опишите сильные и слабые стороны каждого метода.</h2>
+<h2 id="_какие_вы_знаете_методы_чтения_xml_опишите_сильные_и_слабые_стороны_каждого_метода">7. Какие вы знаете методы чтения XML? Опишите сильные и слабые стороны каждого метода.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>DOM (Document Object Model)</strong> - <em>объектный</em> - считывает XML, воссоздавая его в памяти в виде объектной структуры при этом XML документ представляется в виде набора тегов&#8201;&#8212;&#8201;узлов. Каждый узел может иметь неограниченное количество дочерних узлов. Каждый дочерний тоже может содержать несколько уровней потомков или не содержать их вовсе. Таким образом в итоге получается некое дерево.</p>
@@ -731,7 +1038,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_когда_следует_использовать_dom_а_когда_sax_stax_анализаторы">Когда следует использовать <em>DOM</em>, а когда <em>SAX</em>, <em>StAX</em> анализаторы?</h2>
+<h2 id="_когда_следует_использовать_dom_а_когда_sax_stax_анализаторы">8. Когда следует использовать <em>DOM</em>, а когда <em>SAX</em>, <em>StAX</em> анализаторы?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>DOM - естественный выбор, когда объектом предметной области является сам XML: когда нужно знать и иметь возможность изменять структуру документа, а также в случае многократного использования информации из документа.</p>
@@ -742,7 +1049,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_какие_вы_знаете_способы_записи_xml">Какие вы знаете способы записи XML?</h2>
+<h2 id="_какие_вы_знаете_способы_записи_xml">9. Какие вы знаете способы записи XML?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Прямая запись</strong> - пишет XML тег за тегом, атрибут за атрибутом.</p>
@@ -795,7 +1102,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_jaxp">Что такое <em>JAXP</em>?</h2>
+<h2 id="_что_такое_jaxp">10. Что такое <em>JAXP</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>JAXP, The Java API for XML Processing (Java API для обработки XML)</strong>&#8201;&#8212;&#8201;набор API, упрощающих обработку XML данных в программах написанных на Java. Содержит реализации  DOM, SAX и StAX парсеров, поддерживает XSLT и возможность работать с DTD.</p>
@@ -803,7 +1110,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_xslt">Что такое <em>XSLT</em>?</h2>
+<h2 id="_что_такое_xslt">11. Что такое <em>XSLT</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>XSLT, eXtensible Stylesheet Language Transformations</strong>&#8201;&#8212;&#8201;язык преобразования XML-документов.</p>
@@ -814,7 +1121,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">12. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -829,15 +1136,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

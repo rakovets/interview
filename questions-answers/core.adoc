@@ -1,6 +1,6 @@
-:pp: {plus}{plus}
-
 = Java Core
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Чем различаются JRE, JVM и JDK?
 
@@ -1383,4 +1383,3 @@ void method() {
 * http://oop-java.blogspot.ru/2006/02/blog-post_21.html[Объектно-ориентированное программирование]
 * http://info.javarush.ru/[JavaRush]
 
-xref:README.adoc[Вопросы для собеседования]

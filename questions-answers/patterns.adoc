@@ -1,5 +1,6 @@
-
 = Шаблоны проектирования
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _«шаблон проектирования»_?
 
@@ -133,4 +134,4 @@
 * https://ru.wikipedia.org/wiki/Шаблон_проектирования[Википедия]
 * http://www.javenue.info/post/56[Javenue]
 
-xref:README.adoc[Вопросы для собеседования]
+

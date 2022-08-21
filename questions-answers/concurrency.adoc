@@ -1,5 +1,6 @@
-
 = Многопоточность
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Расскажите о модели памяти Java?
 
@@ -1018,4 +1019,3 @@ class QueueReentrantLock<T> {
 * https://habrahabr.ru/post/129494/[Хабрахабр - Правильный Singleton в Java]
 * http://www.duct-tape-architect.ru/?p=294#3%5F%5F171_187%5F%5F_Java_HotSpot_JVM6[duct-tape-architect.ru]
 
-xref:README.adoc[Вопросы для собеседования]

@@ -1,5 +1,6 @@
-
 = JDBC
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _JDBC_?
 
@@ -302,4 +303,4 @@ ____
 * https://docs.oracle.com/javase/7/docs/api/java/sql/package-summary.html[Документация к пакету java.sql]
 * https://ru.wikipedia.org/wiki/Уровень_изолированности_транзакций[Википедия - Уровень изолированности транзакции]
 
-xref:README.adoc[Вопросы для собеседования]
+

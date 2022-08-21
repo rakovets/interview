@@ -435,14 +435,322 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
 <h1>ООП</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_что_такое_ооп">1. Что такое <em>ООП</em>?</a></li>
+<li><a href="#_назовите_основные_принципы_ооп">2. Назовите основные принципы <em>ООП</em>.</a></li>
+<li><a href="#_что_такое_инкапсуляция">3. Что такое <em>«инкапсуляция»</em>?</a></li>
+<li><a href="#_что_такое_наследование">4. Что такое <em>«наследование»</em>?</a></li>
+<li><a href="#_что_такое_полиморфизм">5. Что такое <em>«полиморфизм»</em>?</a></li>
+<li><a href="#_что_такое_абстракция">6. Что такое <em>«абстракция»</em>?</a></li>
+<li><a href="#_что_представляет_собой_обмен_сообщениями">7. Что представляет собой <em>«обмен сообщениями»</em>?</a></li>
+<li><a href="#_расскажите_про_основные_понятия_ооп_класс_объект_интерфейс">8. Расскажите про основные понятия ООП: <em>«класс»</em>, <em>«объект»</em>, <em>«интерфейс»</em>.</a></li>
+<li><a href="#_в_чем_заключаются_преимущества_и_недостатки_объектно_ориентированного_подхода_в_программировании">9. В чем заключаются преимущества и недостатки объектно-ориентированного подхода в программировании?</a></li>
+<li><a href="#_что_подразумевают_в_плане_принципов_ооп_выражения_является_и_имеет">10. Что подразумевают в плане принципов ООП выражения <em>«является»</em> и <em>«имеет»</em>?</a></li>
+<li><a href="#_в_чем_разница_между_композицией_и_агрегацией">11. В чем разница между <em>композицией</em> и <em>агрегацией</em>?</a></li>
+<li><a href="#_что_такое_статическое_и_динамическое_связывание">12. Что такое <em>статическое</em> и <em>динамическое связывание</em>?</a></li>
+<li><a href="#_источники">13. Источники</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_что_такое_ооп">Что такое <em>ООП</em>?</h2>
+<h2 id="_что_такое_ооп">1. Что такое <em>ООП</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Объектно-ориентированное программирование (ООП)</strong>&#8201;&#8212;&#8201;методология программирования, основанная на представлении программы в виде совокупности объектов, каждый из которых является экземпляром определенного класса, а классы образуют иерархию наследования.</p>
@@ -469,7 +777,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_назовите_основные_принципы_ооп">Назовите основные принципы <em>ООП</em>.</h2>
+<h2 id="_назовите_основные_принципы_ооп">2. Назовите основные принципы <em>ООП</em>.</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -499,7 +807,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_инкапсуляция">Что такое <em>«инкапсуляция»</em>?</h2>
+<h2 id="_что_такое_инкапсуляция">3. Что такое <em>«инкапсуляция»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Инкапсуляция</strong>&#8201;&#8212;&#8201;это свойство системы, позволяющее объединить данные и методы, работающие с ними, в классе и скрыть детали реализации от пользователя, открыв только то, что необходимо при последующем использовании.</p>
@@ -526,28 +834,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class SomePhone {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SomePhone</span> <span class="o">{</span>
 
-    private int year;
-    private String company;
-    public SomePhone(int year, String company) {
-        this.year = year;
-        this.company = company;
-    }
-    private void openConnection(){
-        //findComutator
-        //openNewConnection...
-    }
-    public void call() {
-        openConnection();
-        System.out.println("Вызываю номер");
-    }
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">year</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">company</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">SomePhone</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">,</span> <span class="nc">String</span> <span class="n">company</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">year</span> <span class="o">=</span> <span class="n">year</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">company</span> <span class="o">=</span> <span class="n">company</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">openConnection</span><span class="o">(){</span>
+        <span class="c1">//findComutator</span>
+        <span class="c1">//openNewConnection...</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">openConnection</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Вызываю номер"</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    public void ring() {
-        System.out.println("Дзынь-дзынь");
-    }
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">ring</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Дзынь-дзынь"</span><span class="o">);</span>
+    <span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -562,7 +870,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_наследование">Что такое <em>«наследование»</em>?</h2>
+<h2 id="_что_такое_наследование">4. Что такое <em>«наследование»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Наследование</strong>&#8201;&#8212;&#8201;это свойство системы, позволяющее описать новый класс на основе уже существующего с частично или полностью заимствующейся функциональностью.</p>
@@ -597,15 +905,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public abstract class WirelessPhone extends AbstractPhone {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">WirelessPhone</span> <span class="kd">extends</span> <span class="nc">AbstractPhone</span> <span class="o">{</span>
 
-    private int hour;
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">;</span>
 
-    public WirelessPhone(int year, int hour) {
-        super(year);
-        this.hour = hour;
-    }
-}</code></pre>
+    <span class="kd">public</span> <span class="nf">WirelessPhone</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">,</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">year</span><span class="o">);</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -613,21 +921,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class CellPhone extends WirelessPhone {
-    public CellPhone(int year, int hour) {
-        super(year, hour);
-    }
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CellPhone</span> <span class="kd">extends</span> <span class="nc">WirelessPhone</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">CellPhone</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">,</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">year</span><span class="o">,</span> <span class="n">hour</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    @Override
-    public void call(int outputNumber) {
-        System.out.println("Вызываю номер " + outputNumber);
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="kt">int</span> <span class="n">outputNumber</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Вызываю номер "</span> <span class="o">+</span> <span class="n">outputNumber</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    @Override
-    public void ring(int inputNumber) {
-        System.out.println("Вам звонит абонент " + inputNumber);
-    }
-}</code></pre>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">ring</span><span class="o">(</span><span class="kt">int</span> <span class="n">inputNumber</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Вам звонит абонент "</span> <span class="o">+</span> <span class="n">inputNumber</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -635,20 +943,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class Smartphone extends CellPhone {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Smartphone</span> <span class="kd">extends</span> <span class="nc">CellPhone</span> <span class="o">{</span>
 
-    private String operationSystem;
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">operationSystem</span><span class="o">;</span>
 
-    public Smartphone(int year, int hour, String operationSystem) {
-        super(year, hour);
-        this.operationSystem = operationSystem;
-    }
+    <span class="kd">public</span> <span class="nf">Smartphone</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">,</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">,</span> <span class="nc">String</span> <span class="n">operationSystem</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">year</span><span class="o">,</span> <span class="n">hour</span><span class="o">);</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">operationSystem</span> <span class="o">=</span> <span class="n">operationSystem</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    public void install(String program){
-        System.out.println("Устанавливаю " + program + "для" + operationSystem);
-    }
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">install</span><span class="o">(</span><span class="nc">String</span> <span class="n">program</span><span class="o">){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Устанавливаю "</span> <span class="o">+</span> <span class="n">program</span> <span class="o">+</span> <span class="s">"для"</span> <span class="o">+</span> <span class="n">operationSystem</span><span class="o">);</span>
+    <span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -657,7 +965,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_полиморфизм">Что такое <em>«полиморфизм»</em>?</h2>
+<h2 id="_что_такое_полиморфизм">5. Что такое <em>«полиморфизм»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Полиморфизм</strong>&#8201;&#8212;&#8201;это свойство системы использовать объекты с одинаковым интерфейсом без информации о типе и внутренней структуре объекта.</p>
@@ -705,18 +1013,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class User {
-    private String name;
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
 
-    public User(String name) {
-        this.name = name;
-    }
+    <span class="kd">public</span> <span class="nf">User</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    public void callAnotherUser(int number, AbstractPhone phone) {
-// вот он полиморфизм - использование в коде абстактного типа AbstractPhone phone!
-        phone.call(number);
-    }
-}</code></pre>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">callAnotherUser</span><span class="o">(</span><span class="kt">int</span> <span class="n">number</span><span class="o">,</span> <span class="nc">AbstractPhone</span> <span class="n">phone</span><span class="o">)</span> <span class="o">{</span>
+<span class="c1">// вот он полиморфизм - использование в коде абстактного типа AbstractPhone phone!</span>
+        <span class="n">phone</span><span class="o">.</span><span class="na">call</span><span class="o">(</span><span class="n">number</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -724,23 +1032,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class ThomasEdisonPhone extends AbstractPhone {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ThomasEdisonPhone</span> <span class="kd">extends</span> <span class="nc">AbstractPhone</span> <span class="o">{</span>
 
-    public ThomasEdisonPhone(int year) {
-        super(year);
-    }
+    <span class="kd">public</span> <span class="nf">ThomasEdisonPhone</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">year</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    @Override
-    public void call(int outputNumber) {
-        System.out.println("Вращайте ручку");
-        System.out.println("Сообщите номер абонента, сэр");
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="kt">int</span> <span class="n">outputNumber</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Вращайте ручку"</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Сообщите номер абонента, сэр"</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    @Override
-    public void ring(int inputNumber) {
-        System.out.println("Телефон звонит");
-    }
-}</code></pre>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">ring</span><span class="o">(</span><span class="kt">int</span> <span class="n">inputNumber</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Телефон звонит"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -748,22 +1056,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class Phone extends AbstractPhone {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Phone</span> <span class="kd">extends</span> <span class="nc">AbstractPhone</span> <span class="o">{</span>
 
-    public Phone(int year) {
-        super(year);
-    }
+    <span class="kd">public</span> <span class="nf">Phone</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">year</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    @Override
-    public void call(int outputNumber) {
-        System.out.println("Вызываю номер" + outputNumber);
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="kt">int</span> <span class="n">outputNumber</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Вызываю номер"</span> <span class="o">+</span> <span class="n">outputNumber</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    @Override
-    public void ring(int inputNumber) {
-        System.out.println("Телефон звонит");
-    }
-}</code></pre>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">ring</span><span class="o">(</span><span class="kt">int</span> <span class="n">inputNumber</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Телефон звонит"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -771,22 +1079,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class VideoPhone extends AbstractPhone {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">VideoPhone</span> <span class="kd">extends</span> <span class="nc">AbstractPhone</span> <span class="o">{</span>
 
-    public VideoPhone(int year) {
-        super(year);
-    }
+    <span class="kd">public</span> <span class="nf">VideoPhone</span><span class="o">(</span><span class="kt">int</span> <span class="n">year</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">year</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    @Override
-    public void call(int outputNumber) {
-        System.out.println("Подключаю видеоканал для абонента " + outputNumber);
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="kt">int</span> <span class="n">outputNumber</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Подключаю видеоканал для абонента "</span> <span class="o">+</span> <span class="n">outputNumber</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    @Override
-    public void ring(int inputNumber) {
-        System.out.println("У вас входящий видеовызов..." + inputNumber);
-    }
-}</code></pre>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">ring</span><span class="o">(</span><span class="kt">int</span> <span class="n">inputNumber</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"У вас входящий видеовызов..."</span> <span class="o">+</span> <span class="n">inputNumber</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -794,17 +1102,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">AbstractPhone firstPhone = new ThomasEdisonPhone(1879);
-AbstractPhone phone = new Phone(1984);
-AbstractPhone videoPhone=new VideoPhone(2018);
-User user = new User("Андрей");
-user.callAnotherUser(224466,firstPhone);
-// Вращайте ручку
-//Сообщите номер абонента, сэр
-user.callAnotherUser(224466,phone);
-//Вызываю номер 224466
-user.callAnotherUser(224466,videoPhone);
-//Подключаю видеоканал для абонента 224466</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">AbstractPhone</span> <span class="n">firstPhone</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThomasEdisonPhone</span><span class="o">(</span><span class="mi">1879</span><span class="o">);</span>
+<span class="nc">AbstractPhone</span> <span class="n">phone</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Phone</span><span class="o">(</span><span class="mi">1984</span><span class="o">);</span>
+<span class="nc">AbstractPhone</span> <span class="n">videoPhone</span><span class="o">=</span><span class="k">new</span> <span class="nc">VideoPhone</span><span class="o">(</span><span class="mi">2018</span><span class="o">);</span>
+<span class="nc">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">User</span><span class="o">(</span><span class="s">"Андрей"</span><span class="o">);</span>
+<span class="n">user</span><span class="o">.</span><span class="na">callAnotherUser</span><span class="o">(</span><span class="mi">224466</span><span class="o">,</span><span class="n">firstPhone</span><span class="o">);</span>
+<span class="c1">// Вращайте ручку</span>
+<span class="c1">//Сообщите номер абонента, сэр</span>
+<span class="n">user</span><span class="o">.</span><span class="na">callAnotherUser</span><span class="o">(</span><span class="mi">224466</span><span class="o">,</span><span class="n">phone</span><span class="o">);</span>
+<span class="c1">//Вызываю номер 224466</span>
+<span class="n">user</span><span class="o">.</span><span class="na">callAnotherUser</span><span class="o">(</span><span class="mi">224466</span><span class="o">,</span><span class="n">videoPhone</span><span class="o">);</span>
+<span class="c1">//Подключаю видеоканал для абонента 224466</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -819,7 +1127,7 @@ user.callAnotherUser(224466,videoPhone);
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_абстракция">Что такое <em>«абстракция»</em>?</h2>
+<h2 id="_что_такое_абстракция">6. Что такое <em>«абстракция»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>Абстрагирование</em>&#8201;&#8212;&#8201;это способ выделить набор общих характеристик объекта, исключая из рассмотрения частные и незначимые. Соответственно, <strong>абстракция</strong>&#8201;&#8212;&#8201;это набор всех таких характеристик.</p>
@@ -836,38 +1144,38 @@ user.callAnotherUser(224466,videoPhone);
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">// Abstract class
-abstract class Animal {
-    // Abstract method (does not have a body)
-    public abstract void animalSound();
+<pre class="rouge highlight"><code data-lang="java"><span class="c1">// Abstract class</span>
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="c1">// Abstract method (does not have a body)</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">animalSound</span><span class="o">();</span>
 
-    // Regular method
-    public void sleep() {
-        System.out.println("Zzz");
-    }
-}
+    <span class="c1">// Regular method</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sleep</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Zzz"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-// Subclass (inherit from Animal)
-class Pig extends Animal {
-    public void animalSound() {
-        // The body of animalSound() is provided here
-        System.out.println("The pig says: wee wee");
-    }
-}
+<span class="c1">// Subclass (inherit from Animal)</span>
+<span class="kd">class</span> <span class="nc">Pig</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">animalSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// The body of animalSound() is provided here</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The pig says: wee wee"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-class MyMainClass {
-    public static void main(String[] args) {
-        Pig myPig = new Pig(); // Create a Pig object
-        myPig.animalSound();
-        myPig.sleep();
-    }
-}</code></pre>
+<span class="kd">class</span> <span class="nc">MyMainClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Pig</span> <span class="n">myPig</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Pig</span><span class="o">();</span> <span class="c1">// Create a Pig object</span>
+        <span class="n">myPig</span><span class="o">.</span><span class="na">animalSound</span><span class="o">();</span>
+        <span class="n">myPig</span><span class="o">.</span><span class="na">sleep</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_представляет_собой_обмен_сообщениями">Что представляет собой <em>«обмен сообщениями»</em>?</h2>
+<h2 id="_что_представляет_собой_обмен_сообщениями">7. Что представляет собой <em>«обмен сообщениями»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Объекты взаимодействуют, посылая и получая сообщения. Сообщение&#8201;&#8212;&#8201;это запрос на выполнение действия, дополненный набором аргументов, которые могут понадобиться при выполнении действия. В ООП посылка сообщения (вызов метода)&#8201;&#8212;&#8201;это единственный путь передать управление объекту. Если объект должен «отвечать» на это сообщение, то у него должна иметься соответствующий данному сообщению метод. Так же объекты, используя свои методы, могут и сами посылать сообщения другим объектам. Обмен сообщениями реализуется с помощью динамических вызовов, что приводит к чрезвычайно позднему связыванию (extreme late binding).</p>
@@ -882,7 +1190,7 @@ class MyMainClass {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_расскажите_про_основные_понятия_ооп_класс_объект_интерфейс">Расскажите про основные понятия ООП: <em>«класс»</em>, <em>«объект»</em>, <em>«интерфейс»</em>.</h2>
+<h2 id="_расскажите_про_основные_понятия_ооп_класс_объект_интерфейс">8. Расскажите про основные понятия ООП: <em>«класс»</em>, <em>«объект»</em>, <em>«интерфейс»</em>.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Класс</strong>&#8201;&#8212;&#8201;это способ описания сущности, определяющий состояние и поведение, зависящее от этого состояния, а также правила для взаимодействия с данной сущностью (контракт).</p>
@@ -902,7 +1210,7 @@ class MyMainClass {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_заключаются_преимущества_и_недостатки_объектно_ориентированного_подхода_в_программировании">В чем заключаются преимущества и недостатки объектно-ориентированного подхода в программировании?</h2>
+<h2 id="_в_чем_заключаются_преимущества_и_недостатки_объектно_ориентированного_подхода_в_программировании">9. В чем заключаются преимущества и недостатки объектно-ориентированного подхода в программировании?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Преимущества:</p>
@@ -989,7 +1297,7 @@ class MyMainClass {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_подразумевают_в_плане_принципов_ооп_выражения_является_и_имеет">Что подразумевают в плане принципов ООП выражения <em>«является»</em> и <em>«имеет»</em>?</h2>
+<h2 id="_что_подразумевают_в_плане_принципов_ооп_выражения_является_и_имеет">10. Что подразумевают в плане принципов ООП выражения <em>«является»</em> и <em>«имеет»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>«является»</strong> подразумевает наследование.
@@ -998,7 +1306,7 @@ class MyMainClass {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_в_чем_разница_между_композицией_и_агрегацией">В чем разница между <em>композицией</em> и <em>агрегацией</em>?</h2>
+<h2 id="_в_чем_разница_между_композицией_и_агрегацией">11. В чем разница между <em>композицией</em> и <em>агрегацией</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Ассоциация обозначает связь между объектами. Композиция и агрегация&#8201;&#8212;&#8201;частные случаи ассоциации «часть-целое».</p>
@@ -1017,7 +1325,7 @@ class MyMainClass {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_что_такое_статическое_и_динамическое_связывание">Что такое <em>статическое</em> и <em>динамическое связывание</em>?</h2>
+<h2 id="_что_такое_статическое_и_динамическое_связывание">12. Что такое <em>статическое</em> и <em>динамическое связывание</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Присоединение вызова метода к телу метода называется связыванием. Если связывание проводится компилятором (компоновщиком) перед запуском программы, то оно называется <em>статическим</em> или <em>ранним связыванием (early binding)</em>.</p>
@@ -1031,7 +1339,7 @@ class MyMainClass {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_источники">Источники</h2>
+<h2 id="_источники">13. Источники</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1046,15 +1354,12 @@ class MyMainClass {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="README.html">Вопросы для собеседования</a></p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>

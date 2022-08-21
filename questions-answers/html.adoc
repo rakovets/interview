@@ -1,5 +1,6 @@
-
 = Основы HTML
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _«HTML»_?
 
@@ -213,4 +214,4 @@ ____
 * http://htmlbook.ru/html/[htmlbook]
 * https://habrahabr.ru/post/143452/[Хабрахабр]
 
-xref:README.adoc[Вопросы для собеседования]
+

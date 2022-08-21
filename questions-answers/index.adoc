@@ -1,6 +1,6 @@
 = Interview - Questions
 include::../_attributes-lvl-1.adoc[]
-include::../_toc.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Используемые ресурсы
 

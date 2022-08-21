@@ -1,5 +1,6 @@
-
 = XML
+include::../_attributes-lvl-1.adoc[]
+include::../_toc-q&a.adoc[]
 
 == Что такое _XML_?
 
@@ -210,4 +211,4 @@ XSLT создавался для применения в _XSL (eXtensible Styles
 * http://citforum.ru/internet/xnamsps/index.shtml#ns-decl[CIT Forum]
 * http://www.quizful.net/interview/java/xml-and-parsers[Quizful]
 
-xref:README.adoc[Вопросы для собеседования]
+

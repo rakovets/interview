@@ -435,40 +435,100 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65X7WESXG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K65X7WESXG');
+</script>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (mybutton === null) {
+            mybutton = document.getElementById("btn-back-to-top");
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+            mybutton.addEventListener("touchend", backToTop);
+        }
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<style>
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 100;
+    }
+
+    #btn-back-to-main {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+        background-color: #ff5555;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: #5AF;
+        border-radius: 50%;
+        border: 0;
+        font-size: 150%;
+    }
+</style>
+<a href="/#_тестовые_задания">
+    <button type="button" class="btn" id="btn-back-to-main">
+        <i class="fa-solid fa-house"></i>
+    </button>
+</a>
+<button type="button" class="btn" id="btn-back-to-top">
+    <i class="fa-solid fa-angle-up"></i>
+</button>
+
 </head>
 <body class="article">
 <div id="header">
-</div>
-<div id="content">
-<div class="sect1">
-<h2 id="_jvm">JVM</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="jvm.md#За-что-отвечает-JVM">За что отвечает JVM</a></p>
-</li>
-<li>
-<p><a href="jvm.md#Classloader">Classloader</a></p>
-</li>
-<li>
-<p><a href="jvm.md#Области-данных-времени-выполнения">Области данных времени выполнения</a></p>
-</li>
-<li>
-<p><a href="jvm.md#Frames">Frames</a></p>
-</li>
-<li>
-<p><a href="jvm.md#Execution-Engine">Execution Engine</a></p>
-</li>
-<li>
-<p><a href="jvm.md#Полезные-ссылки">Полезные ссылки</a></p>
-</li>
+<h1>JVM</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_за_что_отвечает_jvm">1. За что отвечает <em>JVM</em></a></li>
+<li><a href="#_classloader">2. Classloader</a></li>
+<li><a href="#_области_данных_времени_выполнения">3. Области данных времени выполнения</a></li>
+<li><a href="#_frames">4. Frames</a></li>
+<li><a href="#_execution_engine">5. Execution Engine</a></li>
+<li><a href="#_полезные_ссылки">6. Полезные ссылки:</a></li>
 </ul>
 </div>
 </div>
-</div>
+<div id="content">
 <div class="sect1">
-<h2 id="_за_что_отвечает_jvm">За что отвечает <em>JVM</em>:</h2>
+<h2 id="_за_что_отвечает_jvm">1. За что отвечает <em>JVM</em></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -513,7 +573,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_classloader">Classloader</h2>
+<h2 id="_classloader">2. Classloader</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Загрузчик классов является частью JRE, которая динамически загружает Java классы в JVM.
@@ -624,7 +684,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_области_данных_времени_выполнения">Области данных времени выполнения</h2>
+<h2 id="_области_данных_времени_выполнения">3. Области данных времени выполнения</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Run-Time Data Areas. JVM выделяет множество областей данных во время выполнения, которые используются во время выполнения программы. Некоторые участки данных
@@ -689,7 +749,7 @@ JVM не предполагает какого-либо конкретного �
 </div>
 </div>
 <div class="sect1">
-<h2 id="_frames">Frames</h2>
+<h2 id="_frames">4. Frames</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Frame используется для хранения данных и частичных результатов, а также для выполнения динамического связывания, возврата значений для методов и отправки исключений.
@@ -783,7 +843,7 @@ JVM не предполагает какого-либо конкретного �
 </div>
 </div>
 <div class="sect1">
-<h2 id="_execution_engine">Execution Engine</h2>
+<h2 id="_execution_engine">5. Execution Engine</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Байт-код, назначенный <strong>run-time data areas</strong>, будет выполнен <strong>execution engine</strong>. Механизм выполнения считывает байт-код и выполняет его по частям.</p>
@@ -824,7 +884,7 @@ JVM не предполагает какого-либо конкретного �
 </div>
 </div>
 <div class="sect1">
-<h2 id="_полезные_ссылки">Полезные ссылки:</h2>
+<h2 id="_полезные_ссылки">6. Полезные ссылки:</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -839,15 +899,12 @@ JVM не предполагает какого-либо конкретного �
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>to_delete_text</p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-21 04:05:09 UTC
+Last updated 2022-08-21 04:28:41 UTC
 </div>
 </div>
 </body>
