@@ -1,51 +1,31 @@
 = Interview - Questions
 include::../_attributes-lvl-1.adoc[]
-include::../_toc.adoc[]
+include::../_toc-q&a.adoc[]
 
-Используемые ресурсы
+== Используемые ресурсы
 
 - https://github.com/enhorse/java-interview
 - https://jsehelper.blogspot.com/p/welcome.html
 - https://javastudy.ru/reference/interview/
 
-:leveloffset: +1
+== Оглавление
 
-include::concurrency.adoc[]
-
-include::core.adoc[]
-
-include::css.adoc[]
-
-include::db.adoc[]
-
-include::html.adoc[]
-
-include::io.adoc[]
-
-include::java8.adoc[]
-
-include::jcf.adoc[]
-
-include::jdbc.adoc[]
-
-include::jvm.adoc[]
-
-include::log.adoc[]
-
-include::oop.adoc[]
-
-include::serialization.adoc[]
-
-include::servlets.adoc[]
-
-include::sql.adoc[]
-
-include::test.adoc[]
-
-include::uml.adoc[]
-
-include::web.adoc[]
-
-include::xml.adoc[]
-
-:leveloffset: -1
+* link:concurrency.html[Многопоточность]
+* link:core.html[Java Core]
+* link:css.html[Основы CSS]
+* link:db.html[Базы данных]
+* link:html.html[Основы HTML]
+* link:io.html[Потоки ввода/вывода в Java]
+* link:java8.html[Java 8]
+* link:jcf.html[Java Collections Framework]
+* link:jdbc.html[JDBC]
+* link:jvm.html[JVM]
+* link:log.html[Журналирование]
+* link:oop.html[ООП]
+* link:serialization.html[Сериализация]
+* link:servlets.html[Servlets, JSP, JSTL]
+* link:sql.html[SQL]
+* link:test.html[Тестирование]
+* link:uml.html[UML]
+* link:web.html[Основы Web]
+* link:xml.html[XML]

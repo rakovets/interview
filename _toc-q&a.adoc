@@ -1,0 +1,5 @@
+:sectnums:
+:toc: center
+:toclevels: 1
+
+:toc!:
