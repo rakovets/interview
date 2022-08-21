@@ -441,67 +441,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>Основы HTML</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Что-такое-html">Что такое <em>«HTML»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-xhtml">Что такое <em>«XHTML»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-doctype-и-зачем-он-нужен">Что такое <code>DOCTYPE</code> и зачем он нужен?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-предназначен-тег-head">Для чего предназначен тег <code>&lt;head&gt;</code>?</a></p>
-</li>
-<li>
-<p><a href="#Чем-отличается-div-от-span">Чем отличается <code>&lt;div&gt;</code> от <code>&lt;span&gt;</code>?</a></p>
-</li>
-<li>
-<p><a href="#Как-обозначаются-комментарии-в-html">Как обозначаются комментарии в HTML?</a></p>
-</li>
-<li>
-<p><a href="#Каким-образом-задаётся-адрес-документа-на-который-следует-перейти">Каким образом задаётся адрес документа, на который следует перейти?</a></p>
-</li>
-<li>
-<p><a href="#Как-сделать-ссылку-на-адрес-электронной-почты">Как сделать ссылку на адрес электронной почты?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-предназначен-тег-em">Для чего предназначен тег <code>&lt;em&gt;</code>?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-предназначены-теги-ol-ul-li">Для чего предназначены теги <code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-предназначены-теги-dl-dt-dd">Для чего предназначены теги <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code>?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-предназначены-теги-tr-th-td">Для чего предназначены теги <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>?</a></p>
-</li>
-<li>
-<p><a href="#Обязательно-ли-писать-атрибут-alt-в-теге-img">Обязательно ли писать атрибут <code>alt</code> в теге <code>&lt;img&gt;</code>?</a></p>
-</li>
-<li>
-<p><a href="#В-каком-регистре-лучше-писать-html-код">В каком регистре лучше писать HTML-код?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-мнемоника-entity">Что такое «мнемоника (entity)»?</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_что_такое_html">Что такое <em>«HTML»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>HTML</strong>, HyperText Markup Language («язык гипертекстовой разметки»)&#8201;&#8212;&#8201;стандартизированный язык разметки документов в WWW. На данный момент актуальна 5 версия этого языка - HTML5.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -510,9 +454,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>XHTML</strong>, eXtensible HyperText Markup Language («расширяемый язык гипертекстовой разметки») - более строгий вариант HTML, следующий всем ограничениям XML и, фактически являющийся приложением языка XML к области разметки гипертекста.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -584,9 +525,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -621,9 +559,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -631,9 +566,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>&lt;div&gt;</code> - блочный, а <code>&lt;span&gt;</code> - строчный элементы. Поэтому <code>&lt;div&gt;</code> формирует блок из того, что в нем располагается с новой строки, а <code>&lt;span&gt;</code> не переносит элементы, размещая их в строку. Так же стоит отметь, что согласно рекомендациям w3c линейный тег не может включать в себя блочные теги, поэтому <code>&lt;div&gt;</code> обычно используется для разметки блоков, а <code>&lt;span&gt;</code> - отрывков текста.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -645,9 +577,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>Комментарии можно использовать в любом месте страницы, кроме тега <code>&lt;title&gt;</code>&#8201;&#8212;&#8201;внутри него они не работают. Внутри тега <code>&lt;style&gt;</code> HTML-комментарии тоже не работают, так как в CSS код комментируется другим способом.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -716,9 +645,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -732,9 +658,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <pre class="highlight"><code class="language-html" data-lang="html">&lt;a href="mailto:user@address.net"&gt;Напиши мне!&lt;/a&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -747,9 +670,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <pre class="highlight"><code class="language-html" data-lang="html">&lt;em&gt;Текст&lt;/em&gt;</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -787,9 +707,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 &lt;/ul&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -808,9 +725,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
     &lt;dd&gt;Определение&lt;/dd&gt;
 &lt;/dl&gt;</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -834,9 +748,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 &lt;/table&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -852,9 +763,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <pre class="highlight"><code class="language-html" data-lang="html">&lt;img src="forest.jpg" alt="Лес"&gt;</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -880,9 +788,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <pre class="highlight"><code class="language-html" data-lang="html">&lt;img src="forest.jpg" alt="Лес"&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -897,9 +802,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>&num; имеет мнемонику <code>&amp;num;</code></p>
 </div>
 </blockquote>
-</div>
-<div class="paragraph">
-<p><a href="#Основы-html">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -924,7 +826,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-20 03:29:06 UTC
+Last updated 2022-08-21 04:05:09 UTC
 </div>
 </div>
 </body>

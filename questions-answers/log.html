@@ -441,35 +441,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>Журналирование</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Какие-существуют-типы-логов">Какие существуют типы логов?</a></p>
-</li>
-<li>
-<p><a href="#Из-каких-частей-состоит-система-журналирования-log4j">Из каких частей состоит система журналирования log4j?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-logger-в-log4j">Что такое <em>Logger</em> в log4j?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-appender-в-log4j">Что такое <em>Appender</em> в log4j?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-layout-в-log4j">Что такое <em>Layout</em> в log4j?</a></p>
-</li>
-<li>
-<p><a href="#Перечислите-уровни-журналирования-в-log4j-Назовите-порядок-их-приоритетности">Перечислите уровни журналирования в log4j? Назовите порядок их приоритетности.</a></p>
-</li>
-<li>
-<p><a href="#Какие-существуют-способы-конфигурирования-log4j">Какие существуют способы конфигурирования log4j?</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_какие_существуют_типы_логов">Какие существуют типы логов?</h2>
 <div class="sectionbody">
@@ -493,9 +464,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </blockquote>
 </div>
-<div class="paragraph">
-<p><a href="#Журналирование">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -517,9 +485,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Журналирование">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -527,9 +492,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Logger</strong> представляет собой объект класса <code>org.apache.log4j.Logger</code>, который используется как управляющий интерфейс для журналирования сообщений с возможностью задавать уровень детализации. Именно logger проверяет нужно ли обрабатывать сообщение и если журналирование необходимо, то сообщение передаётся в appender, если нет - система завершает обработку данного сообщения.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Журналирование">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -628,9 +590,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Журналирование">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -660,9 +619,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><code>org.apache.log4j.PatternLayout</code> / <code>org.apache.log4j.EnhancedPatternLayout</code> - настройка форматирования сообщения при помощи шаблона заданного пользователем.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#Журналирование">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -700,9 +656,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p><code>ALL &lt; TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL &lt; OFF</code></p>
 </div>
-<div class="paragraph">
-<p><a href="#Журналирование">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -723,9 +676,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Загрузить конфигурацию из файла в формате <code>XML</code> или <code>.properties</code>: log4j ищет файл конфигурации в classpath. Сначала ищется файл <code>log4j.xml</code> и, если таковой не найден, -  файл <code>log4j.properties</code>.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#Журналирование">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -750,7 +700,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-20 03:29:06 UTC
+Last updated 2022-08-21 04:05:09 UTC
 </div>
 </div>
 </body>

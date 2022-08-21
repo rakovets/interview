@@ -441,38 +441,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>Тестирование</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Что-такое-модульное-тестирование">Что такое <em>«модульное тестирование»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-интеграционное-тестирование">Что такое <em>«интеграционное тестирование»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Чем-интеграционное-тестирование-отличается-от-модульного">Чем интеграционное тестирование отличается от модульного?</a></p>
-</li>
-<li>
-<p><a href="#Какие-существуют-виды-тестовых-объектов">Какие существуют виды тестовых объектов?</a></p>
-</li>
-<li>
-<p><a href="#Чем-stub-отличается-от-mock">Чем <em>stub</em> отличается от <em>mock</em>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-фикстуры">Что такое <em>«фикстуры»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Какие-аннотации-фикстур-существуют-в-junit">Какие аннотации фикстур существуют в JUnit?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-в-junit-используется-аннотация-ignore">Для чего в JUnit используется аннотация <code>@Ignore</code>?</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_что_такое_модульное_тестирование">Что такое <em>«модульное тестирование»</em>?</h2>
 <div class="sectionbody">
@@ -492,9 +460,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Тестирование">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -502,9 +467,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Интеграционное тестирование (integration testing)</strong>&#8201;&#8212;&#8201;это тестирование, проверяющие работоспособность двух или более модулей системы в совокупности&#8201;&#8212;&#8201;то есть нескольких объектов как единого блока. В тестах взаимодействия же тестируется конкретный, определенный объект и то, как именно он взаимодействует с внешними зависимостями.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Тестирование">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -554,9 +516,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </blockquote>
 </div>
-<div class="paragraph">
-<p><a href="#Тестирование">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -605,9 +564,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p><strong>фикция (mock object)</strong> похож на <em>шпиона</em>, но обладает расширенной функциональностью, заранее заданными поведением и реакцией на вызовы.</p>
 </div>
-<div class="paragraph">
-<p><a href="#Тестирование">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -619,9 +575,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p><em>mock</em> использует подмену результатов вызова, проверяет сам факт взаимодействия, протоколирует и контролирует его.</p>
 </div>
-<div class="paragraph">
-<p><a href="#Тестирование">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -629,9 +582,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Фикстуры (fixtures)</strong> - состояние среды тестирования, которое требуется для успешного выполнения теста. Основная задача фикстур заключается в подготовке тестового окружения с заранее фиксированным/известным состоянием, чтобы гарантировать повторяемость процесса тестирования.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Тестирование">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -654,9 +604,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Тестирование">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -664,9 +611,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>@Ignore</code> указывает JUnit на необходимость пропустить данный тестовый метод.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Тестирование">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -694,7 +638,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-20 03:29:06 UTC
+Last updated 2022-08-21 04:05:09 UTC
 </div>
 </div>
 </body>

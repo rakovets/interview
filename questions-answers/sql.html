@@ -441,127 +441,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>SQL</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Что-такое-sql">Что такое <em>«SQL»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Какие-существуют-операторы-sql">Какие существуют операторы SQL?</a></p>
-</li>
-<li>
-<p><a href="#Что-означает-null-в-sql">Что означает <code>NULL</code> в SQL?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-временная-таблица-Для-чего-она-используется">Что такое <em>«временная таблица»</em>? Для чего она используется?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-представление-view-и-для-чего-оно-применяется">Что такое <em>«представление» (view)</em> и для чего оно применяется?</a></p>
-</li>
-<li>
-<p><a href="#Каков-общий-синтаксис-оператора-select">Каков общий синтаксис оператора <code>SELECT</code>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-join">Что такое <code>JOIN</code>?</a></p>
-</li>
-<li>
-<p><a href="#Какие-существуют-типы-join">Какие существуют типы <code>JOIN</code>?</a></p>
-</li>
-<li>
-<p><a href="#Что-лучше-использовать-join-или-подзапросы">Что лучше использовать <code>JOIN</code> или подзапросы?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-используется-оператор-having">Для чего используется оператор <code>HAVING</code>?</a></p>
-</li>
-<li>
-<p><a href="#В-чем-различие-между-операторами-having-и-where">В чем различие между операторами <code>HAVING</code> и <code>WHERE</code>?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-используется-оператор-order-by">Для чего используется оператор <code>ORDER BY</code>?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-используется-оператор-group-by">Для чего используется оператор <code>GROUP BY</code>?</a></p>
-</li>
-<li>
-<p><a href="#Как-group-by-обрабатывает-значение-null">Как <code>GROUP BY</code> обрабатывает значение <code>NULL</code>?</a></p>
-</li>
-<li>
-<p><a href="#В-чем-разница-между-операторами-group-by-и-distinct">В чем разница между операторами <code>GROUP BY</code> и <code>DISTINCT</code>?</a></p>
-</li>
-<li>
-<p><a href="#Перечислите-основные-агрегатные-функции">Перечислите основные агрегатные функции.</a></p>
-</li>
-<li>
-<p><a href="#В-чем-разница-между-count-и-countcolumn">В чем разница между <code>COUNT(*)</code> и <code>COUNT({column})</code>?</a></p>
-</li>
-<li>
-<p><a href="#Что-делает-оператор-exists">Что делает оператор <code>EXISTS</code>?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-используются-операторы-in-between-like">Для чего используются операторы <code>IN</code>, <code>BETWEEN</code>, <code>LIKE</code>?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-применяется-ключевое-слово-union">Для чего применяется ключевое слово <code>UNION</code>?</a></p>
-</li>
-<li>
-<p><a href="#Какие-ограничения-на-целостность-данных-существуют-в-sql">Какие ограничения на целостность данных существуют в SQL?</a></p>
-</li>
-<li>
-<p><a href="#Какие-отличия-между-ограничениями-primary-и-unique">Какие отличия между ограничениями <code>PRIMARY</code> и <code>UNIQUE</code>?</a></p>
-</li>
-<li>
-<p><a href="#Может-ли-значение-в-столбце-на-который-наложено-ограничение-foreign-key-равняться-null">Может ли значение в столбце, на который наложено ограничение <code>FOREIGN KEY</code>, равняться <code>NULL</code>?</a></p>
-</li>
-<li>
-<p><a href="#Как-создать-индекс">Как создать индекс?</a></p>
-</li>
-<li>
-<p><a href="#Что-делает-оператор-merge">Что делает оператор <code>MERGE</code>?</a></p>
-</li>
-<li>
-<p><a href="#В-чем-отличие-между-операторами-delete-и-truncate">В чем отличие между операторами <code>DELETE</code> и <code>TRUNCATE</code>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-хранимая-процедура">Что такое <em>«хранимая процедура»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-триггер">Что такое <em>«триггер»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-курсор">Что такое <em>«курсор»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Опишите-разницу-типов-данных-datetime-и-timestamp">Опишите разницу типов данных <code>DATETIME</code> и <code>TIMESTAMP</code>.</a></p>
-</li>
-<li>
-<p><a href="#Для-каких-числовых-типов-недопустимо-использовать-операции-сложениявычитания">Для каких числовых типов недопустимо использовать операции сложения/вычитания?</a></p>
-</li>
-<li>
-<p><a href="#Какое-назначение-у-операторов-pivot-и-unpivot-в-transact-sql">Какое назначение у операторов <code>PIVOT</code> и <code>UNPIVOT</code> в Transact-SQL?</a></p>
-</li>
-<li>
-<p><a href="#Расскажите-об-основных-функциях-ранжирования-в-transact-sql">Расскажите об основных функциях ранжирования в Transact-SQL.</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-используются-операторы-intersect-except-в-transact-sql">Для чего используются операторы <code>INTERSECT</code>, <code>EXCEPT</code> в Transact-SQL?</a></p>
-</li>
-<li>
-<p><a href="#Напишите-запрос">Напишите запрос&#8230;&#8203;</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_что_такое_sql">Что такое <em>«SQL»</em>?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>SQL, Structured query language («язык структурированных запросов»)&#8201;&#8212;&#8201;формальный непроцедурный язык программирования, применяемый для создания, модификации и управления данными в произвольной реляционной базе данных, управляемой соответствующей системой управления базами данных (СУБД).</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -635,9 +519,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -649,9 +530,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p><code>NULL</code> означает отсутствие, неизвестность информации. Значение <code>NULL</code> не является значением в полном смысле слова: по определению оно означает отсутствие значения и не принадлежит ни одному типу данных. Поэтому <code>NULL</code> не равно ни логическому значению <code>FALSE</code>, ни <em>пустой строке</em>, ни <code>0</code>. При сравнении <code>NULL</code> с любым значением будет получен результат <code>NULL</code>, а не <code>FALSE</code> и не <code>0</code>. Более того, <code>NULL</code> не равно <code>NULL</code>!</p>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -659,9 +537,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Временная таблица</strong> - это объект базы данных, который хранится и управляется системой базы данных на временной основе. Они могут быть локальными или глобальными. Используется для сохранения результатов вызова хранимой процедуры, уменьшение числа строк при соединениях, агрегирование данных из различных источников или как замена курсоров и параметризованных представлений.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -673,9 +548,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>В действительности представление&#8201;&#8212;&#8201;всего лишь результат выполнения оператора <code>SELECT</code>, который хранится в структуре памяти, напоминающей SQL таблицу. Они работают в запросах и операторах DML точно также как и основные таблицы, но не содержат никаких собственных данных. Представления значительно расширяют возможности управления данными. Это способ дать публичный доступ к некоторой (но не всей) информации в таблице.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -696,9 +568,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
      [HAVING where_definition]
      [ORDER BY {unsigned_integer | column | formula} [ASC | DESC], ...]</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -735,9 +604,6 @@ FROM
     {ON &lt;condition&gt; | USING (field_name [,... n])}</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -763,9 +629,6 @@ FROM
 <p><strong>CROSS JOIN (декартово произведение)</strong>
 При выборе каждая строка одной таблицы объединяется с каждой строкой второй таблицы, давая тем самым все возможные сочетания строк двух таблиц. Порядок таблиц для оператора не важен, поскольку оператор является симметричным.</p>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -777,9 +640,6 @@ FROM
 <div class="paragraph">
 <p>Подзапросы лучше использовать в случаях, когда нужно вычислять агрегатные значения и использовать их для сравнений во внешних запросах.</p>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -787,9 +647,6 @@ FROM
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>HAVING</code> используется для фильтрации результата <code>GROUP BY</code> по заданным логическим условиям.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -799,9 +656,6 @@ FROM
 <div class="paragraph">
 <p>Основное отличие 'WHERE' от 'HAVING' заключается в том, что 'WHERE' сначала выбирает строки, а затем группирует их и вычисляет агрегатные функции (таким образом, она отбирает строки для вычисления агрегатов), тогда как 'HAVING' отбирает строки групп после группировки и вычисления агрегатных функций. Как следствие, предложение 'WHERE' не должно содержать агрегатных функций; не имеет смысла использовать агрегатные функции для определения строк для вычисления агрегатных функций. Предложение 'HAVING', напротив, всегда содержит агрегатные функции. (Строго говоря, вы можете написать предложение 'HAVING', не используя агрегаты, но это редко бывает полезно. То же самое условие может работать более эффективно на стадии 'WHERE'.)</p>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -809,9 +663,6 @@ FROM
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>ORDER BY</strong> упорядочивает вывод запроса согласно значениям в том или ином количестве выбранных столбцов. Многочисленные столбцы упорядочиваются один внутри другого. Возможно определять возрастание <code>ASC</code> или убывание <code>DESC</code> для каждого столбца. По умолчанию установлено - возрастание.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -821,9 +672,6 @@ FROM
 <div class="paragraph">
 <p><code>GROUP BY</code> используется для агрегации записей результата по заданным признакам-атрибутам.</p>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -831,9 +679,6 @@ FROM
 <div class="sectionbody">
 <div class="paragraph">
 <p>При использовании <code>GROUP BY</code> все значения <code>NULL</code> считаются равными.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -846,9 +691,6 @@ FROM
 </div>
 <div class="paragraph">
 <p>Если нужно удалить только дубликаты лучше использовать <code>DISTINCT</code>, <code>GROUP BY</code> лучше использовать для определения групп записей, к которым могут применяться агрегатные функции.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -868,9 +710,6 @@ FROM
 <code>MAX</code> - определяет наибольшее из всех выбранных значений;
 <code>MIN</code> - определяет наименьшее из всех выбранных значений.</p>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -882,9 +721,6 @@ FROM
 <div class="paragraph">
 <p><code>COUNT ({column})</code> подсчитывает количество значений в <code>{column}</code>. При подсчете количества значений столбца эта форма функции <code>COUNT</code> не принимает во внимание значение <code>NULL</code>.</p>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -892,9 +728,6 @@ FROM
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>EXISTS</code> берет подзапрос, как аргумент, и оценивает его как <code>TRUE</code>, если подзапрос возвращает какие-либо записи и <code>FALSE</code>, если нет.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -935,9 +768,6 @@ FROM
 <pre class="highlight"><code class="language-sql" data-lang="sql">SELECT * FROM UNIVERSITY WHERE NAME LIKE '%o';</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -945,9 +775,6 @@ FROM
 <div class="sectionbody">
 <div class="paragraph">
 <p>В языке SQL ключевое слово <code>UNION</code> применяется для объединения результатов двух SQL-запросов в единую таблицу, состоящую из схожих записей. Оба запроса должны возвращать одинаковое число столбцов и совместимые типы данных в соответствующих столбцах. Необходимо отметить, что <code>UNION</code> сам по себе не гарантирует порядок записей. Записи из второго запроса могут оказаться в начале, в конце или вообще перемешаться с записями из первого запроса. В случаях, когда требуется определенный порядок, необходимо использовать <code>ORDER BY</code>.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -966,9 +793,6 @@ FROM
 <div class="paragraph">
 <p><code>FOREIGN KEY</code> защищает от действий, которые могут нарушить связи между таблицами. <code>FOREIGN KEY</code> в одной таблице указывает на <code>PRIMARY KEY</code> в другой. Поэтому данное ограничение нацелено на то, чтобы не было записей <code>FOREIGN KEY</code>, которым не отвечают записи <code>PRIMARY KEY</code>.</p>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -977,9 +801,6 @@ FROM
 <div class="paragraph">
 <p>По умолчанию ограничение <code>PRIMARY</code> создает кластерный индекс на столбце, а <code>UNIQUE</code> - некластерный. Другим отличием является то, что <code>PRIMARY</code> не разрешает <code>NULL</code> записей, в то время как <code>UNIQUE</code> разрешает одну (а в некоторых СУБД несколько) <code>NULL</code> запись.</p>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -987,9 +808,6 @@ FROM
 <div class="sectionbody">
 <div class="paragraph">
 <p>Может, если на данный столбец не наложено ограничение <code>NOT NULL</code>.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1007,9 +825,6 @@ FROM
 <div class="paragraph">
 <p>либо указав ограничение целостности в виде уникального <code>UNIQUE</code> или первичного <code>PRIMARY</code> ключа в операторе создания таблицы <code>CREATE TABLE</code>.</p>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1017,9 +832,6 @@ FROM
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>MERGE</code> позволяет осуществить слияние данных одной таблицы с данными другой таблицы. При слиянии таблиц проверяется условие, и если оно истинно, то выполняется <code>UPDATE</code>, а если нет - <code>INSERT</code>. При этом изменять поля таблицы в секции <code>UPDATE</code>, по которым идет связывание двух таблиц, нельзя.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1032,9 +844,6 @@ FROM
 <div class="paragraph">
 <p><code>TRUNCATE</code> - DDL оператор (удаляет таблицу и создает ее заново. Причем если на эту таблицу есть ссылки <code>FOREGIN KEY</code> или таблица используется в репликации, то пересоздать такую таблицу не получится).</p>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1046,9 +855,6 @@ FROM
 <div class="paragraph">
 <p>Хранимые процедуры позволяют повысить производительность, расширяют возможности программирования и поддерживают функции безопасности данных. В большинстве СУБД при первом запуске хранимой процедуры она компилируется (выполняется синтаксический анализ и генерируется план доступа к данным) и в дальнейшем её обработка осуществляется быстрее.</p>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1059,9 +865,6 @@ FROM
 </div>
 <div class="paragraph">
 <p>Момент запуска триггера определяется с помощью ключевых слов <code>BEFORE</code> (триггер запускается до выполнения связанного с ним события) или <code>AFTER</code> (после события). В случае, если триггер вызывается до события, он может внести изменения в модифицируемую событием запись. Кроме того, триггеры могут быть привязаны не к таблице, а к представлению (VIEW). В этом случае с их помощью реализуется механизм «обновляемого представления». В этом случае ключевые слова <code>BEFORE</code> и <code>AFTER</code> влияют лишь на последовательность вызова триггеров, так как собственно событие (удаление, вставка или обновление) не происходит.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1096,9 +899,6 @@ FROM
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1111,9 +911,6 @@ FROM
 <div class="paragraph">
 <p><code>TIMESTAMP</code> хранит значение равное количеству секунд, прошедших с полуночи 1 января 1970 года по усреднённому времени Гринвича. При получении из базы отображается с учётом часового пояса. Размер: 4 байта</p>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1121,9 +918,6 @@ FROM
 <div class="sectionbody">
 <div class="paragraph">
 <p>В качестве операндов операций сложения и вычитания нельзя использовать числовой тип <code>BIT</code>.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1135,9 +929,6 @@ FROM
 </div>
 <div class="paragraph">
 <p>Оператор <code>PIVOT</code> разворачивает возвращающее табличное значение выражение, преобразуя уникальные значения одного столбца выражения в несколько выходных столбцов, а также, в случае необходимости, объединяет оставшиеся повторяющиеся значения столбца и отображает их в выходных данных. Оператор <code>UNPIVOT</code> производит действия, обратные <code>PIVOT</code>, преобразуя столбцы возвращающего табличное значение выражения в значения столбца.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1387,9 +1178,6 @@ ORDER BY subject, rank;</code></pre>
 <img src="images/SQL/output-of-ntilen-function-with-partition.png" alt="output of ntilen function with partition">
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1400,9 +1188,6 @@ ORDER BY subject, rank;</code></pre>
 </div>
 <div class="paragraph">
 <p>Оператор <code>INTERSECT</code> возвращает уникальные записи, выводимые левым и правым входными запросами.</p>
-</div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1452,9 +1237,6 @@ AS download_count
 GROUP BY download_count;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#sql">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1478,7 +1260,7 @@ GROUP BY download_count;</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-20 03:29:06 UTC
+Last updated 2022-08-21 04:05:09 UTC
 </div>
 </div>
 </body>

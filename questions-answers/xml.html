@@ -441,47 +441,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>XML</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Что-такое-xml">Что такое <em>XML</em>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-dtd">Что такое <em>DTD</em>?</a></p>
-</li>
-<li>
-<p><a href="#Чем-well-formed-xml-отличается-от-valid-xml">Чем <em>well-formed XML</em> отличается от <em>valid XML</em>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-пространство-имен-в-xml">Что такое «<em>пространство имен</em>» в XML?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-xsd-В-чём-его-преимущества-перед-xml-dtd">Что такое XSD? В чём его преимущества перед XML DTD?</a></p>
-</li>
-<li>
-<p><a href="#Какие-типы-существуют-в-xsd">Какие типы существуют в XSD?</a></p>
-</li>
-<li>
-<p><a href="#Какие-вы-знаете-методы-чтения-xml-Опишите-сильные-и-слабые-стороны-каждого-метода">Какие вы знаете методы чтения XML? Опишите сильные и слабые стороны каждого метода.</a></p>
-</li>
-<li>
-<p><a href="#Когда-следует-использовать-dom-а-когда-sax-stax-анализаторы">Когда следует использовать <em>DOM</em>, а когда <em>SAX</em>, <em>StAX</em> анализаторы?</a>?</p>
-</li>
-<li>
-<p><a href="#Какие-вы-знаете-способы-записи-xml">Какие вы знаете способы записи XML?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-jaxp">Что такое <em>JAXP</em>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-xslt">Что такое <em>XSLT</em>?</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_что_такое_xml">Что такое <em>XML</em>?</h2>
 <div class="sectionbody">
@@ -490,9 +449,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>XML расширяем, он не фиксирует разметку, используемую в документах, и разработчик волен создавать разметку в соответствии с потребностями конкретной области, будучи ограниченным лишь синтаксическими правилами языка.</p>
-</div>
-<div class="paragraph">
-<p><a href="#xml">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -511,9 +467,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>DTD обычно описывается непосредственно в документе в виде строки-формулировки, начинающейся с <code>&lt;!DOCTYPE ... &gt;</code> или отдельном файле.</p>
-</div>
-<div class="paragraph">
-<p><a href="#xml">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -560,9 +513,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p><strong><em>well-formed XML</em> - корректен синтаксически (может быть разобран парсером), а <em>valid XML</em> - корректен как синтаксически так и семантически (удовлетворяет правилам заранее описанных словаря и грамматики (DTD)).</strong></p>
 </div>
-<div class="paragraph">
-<p><a href="#xml">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -586,9 +536,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>XML-документ может содержать имена элементов и атрибутов из нескольких словарей XML. В каждом словаре задано своё пространство имён&#8201;&#8212;&#8201;так разрешается проблема неоднозначности имён элементов и атрибутов.</p>
-</div>
-<div class="paragraph">
-<p><a href="#xml">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -633,9 +580,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#xml">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -664,9 +608,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 ...
 &lt;price currency='US'&gt;45.50&lt;/price&gt;</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p><a href="#xml">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -787,9 +728,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </blockquote>
 </div>
-<div class="paragraph">
-<p><a href="#xml">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -800,9 +738,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>Для быстрого одноразового чтения оптимальным является использование SAX или StAX.</p>
-</div>
-<div class="paragraph">
-<p><a href="#xml">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -857,9 +792,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </blockquote>
 </div>
-<div class="paragraph">
-<p><a href="#xml">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -867,9 +799,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>JAXP, The Java API for XML Processing (Java API для обработки XML)</strong>&#8201;&#8212;&#8201;набор API, упрощающих обработку XML данных в программах написанных на Java. Содержит реализации  DOM, SAX и StAX парсеров, поддерживает XSLT и возможность работать с DTD.</p>
-</div>
-<div class="paragraph">
-<p><a href="#xml">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -881,9 +810,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>XSLT создавался для применения в <em>XSL (eXtensible Stylesheet Language)</em> - языке стилей для XML. Во время XSL-преобразования XSLT-процессор считывает XML-документ и таблицу(ы) стилей XSLT. На основе инструкций, которые процессор находит в таблице(ах) стилей XSLT, он вырабатывает новый XML-документ или его фрагмент.</p>
-</div>
-<div class="paragraph">
-<p><a href="#xml">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -911,7 +837,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-20 03:29:06 UTC
+Last updated 2022-08-21 04:05:09 UTC
 </div>
 </div>
 </body>

@@ -441,50 +441,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>Сериализация</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Что-такое-сериализация">Что такое <em>«сериализация»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Опишите-процесс-сериализациидесериализации-с-использованием-serializable">Опишите процесс сериализации/десериализации с использованием <code>Serializable</code>.</a></p>
-</li>
-<li>
-<p><a href="#Как-изменить-стандартное-поведение-сериализациидесериализации">Как изменить стандартное поведение сериализации/десериализации?</a></p>
-</li>
-<li>
-<p><a href="#Как-исключить-поля-из-сериализации">Как исключить поля из сериализации?</a></p>
-</li>
-<li>
-<p><a href="#Что-обозначает-ключевое-слово-transient">Что обозначает ключевое слово <code>transient</code>?</a></p>
-</li>
-<li>
-<p><a href="#Какое-влияние-оказывают-на-сериализуемость-модификаторы-полей-static-и-final">Какое влияние оказывают на сериализуемость модификаторы полей <code>static</code> и <code>final</code></a></p>
-</li>
-<li>
-<p><a href="#Как-не-допустить-сериализацию">Как не допустить сериализацию?</a></p>
-</li>
-<li>
-<p><a href="#Как-создать-собственный-протокол-сериализации">Как создать собственный протокол сериализации?</a></p>
-</li>
-<li>
-<p><a href="#Какая-роль-поля-serialversionuid-в-сериализации">Какая роль поля <code>serialVersionUID</code> в сериализации?</a></p>
-</li>
-<li>
-<p><a href="#Когда-стоит-изменять-значение-поля-serialversionuid">Когда стоит изменять значение поля <code>serialVersionUID</code>?</a></p>
-</li>
-<li>
-<p><a href="#В-чем-проблема-сериализации-singleton">В чем проблема сериализации Singleton?</a></p>
-</li>
-<li>
-<p><a href="#Какие-существуют-способы-контроля-за-значениями-десериализованного-объекта">Какие существуют способы контроля за значениями десериализованного объекта</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_что_такое_сериализация">Что такое <em>«сериализация»</em>?</h2>
 <div class="sectionbody">
@@ -512,9 +468,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>Обратные изменения (из нестатических полей в статические и из нетранзитных в транзитные) или удаление полей требуют определенной дополнительной обработки в зависимости от того, какая степень обратной совместимости необходима.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -545,9 +498,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>Для выполнения десериализации под объект выделяется память, после чего его поля заполняются значениями из потока. Конструктор объекта при этом не вызывается. Однако при десериализации будет вызван конструктор без параметров родительского несериализуемого класса, а его отсутствие повлечёт ошибку десериализации.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -580,9 +530,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Сериализация">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -590,9 +537,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p>Для управления сериализацией при определении полей можно использовать ключевое слово <code>transient</code>, таким образом исключив поля из общего процесса сериализации.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -605,9 +549,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Обычно в таких полях хранится промежуточное состояние объекта, которое, к примеру, проще вычислить. Другой пример такого поля - ссылка на экземпляр объекта, который не требует сериализации или не может быть сериализован.</p>
 </div>
-<div class="paragraph">
-<p><a href="#Сериализация">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -618,9 +559,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>Поля с модификатором <code>final</code> сериализуются как и обычные. За одним исключением&#8201;&#8212;&#8201;их невозможно десериализовать при использовании <code>Externalizable</code>, поскольку <code>final</code> поля должны быть инициализированы в конструкторе, а после этого в <code>readExternal()</code> изменить значение этого поля будет невозможно. Соответственно, если необходимо сериализовать объект с <code>final</code> полем необходимо использовать только стандартную сериализацию.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -644,9 +582,6 @@ private void readObject(ObjectInputStream in) throws IOException {
 <div class="paragraph">
 <p>Любая попытка записать или прочитать этот объект теперь приведет к возникновению исключительной ситуации.</p>
 </div>
-<div class="paragraph">
-<p><a href="#Сериализация">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -660,9 +595,6 @@ private void readObject(ObjectInputStream in) throws IOException {
 <pre class="highlight"><code class="language-java" data-lang="java">public void writeExternal(ObjectOutput out) throws IOException;
 public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException;</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -683,9 +615,6 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 <pre class="highlight"><code class="language-java" data-lang="java">private static final long serialVersionUID = 20161013L;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#Сериализация">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -693,9 +622,6 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>serialVersionUID</code> нужно изменять при внесении в класс несовместимых изменений, например при удалении какого-либо его атрибута.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -714,9 +640,6 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 <p>определение метода с сигнатурой <code>(default/public/private/protected/) Object readResolve() throws ObjectStreamException</code>, назначением которого станет возврат замещающего объекта вместо объекта, на котором он вызван.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#Сериализация">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -753,9 +676,6 @@ public class Person implements java.io.Serializable,
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Сериализация">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -788,7 +708,7 @@ public class Person implements java.io.Serializable,
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-20 03:29:06 UTC
+Last updated 2022-08-21 04:05:09 UTC
 </div>
 </div>
 </body>

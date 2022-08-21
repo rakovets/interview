@@ -441,296 +441,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>Servlets, JSP, JSTL</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Что-такое-сервлет">Что такое <em>«сервлет»</em>?</a></p>
-</li>
-<li>
-<p><a href="#В-чем-заключаются-преимущества-технологии-сервлетов-над-cgi-common-gateway-interface">В чем заключаются преимущества технологии сервлетов над CGI (Common Gateway Interface)?</a></p>
-</li>
-<li>
-<p><a href="#Какова-структура-веб-проекта">Какова структура веб-проекта?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-контейнер-сервлетов">Что такое <em>«контейнер сервлетов»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Зачем-нужны-сервера-приложений-если-есть-контейнеры-сервлетов">Зачем нужны сервера приложений, если есть контейнеры сервлетов?</a></p>
-</li>
-<li>
-<p><a href="#Как-контейнер-сервлетов-управляет-жизненным-циклом-сервлета-когда-и-какие-методы-вызываются">Как контейнер сервлетов управляет жизненным циклом сервлета, когда и какие методы вызываются?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-дескриптор-развертывания">Что такое <em>«дескриптор развертывания»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Какие-действия-необходимо-проделать-при-создании-сервлетов">Какие действия необходимо проделать при создании сервлетов?</a></p>
-</li>
-<li>
-<p><a href="#В-каком-случае-требуется-переопределять-метод-service">В каком случае требуется переопределять метод <code>service()</code>?</a></p>
-</li>
-<li>
-<p><a href="#Есть-ли-смысл-определять-для-сервлета-конструктор-Каким-образом-лучше-инициализировать-данные">Есть ли смысл определять для сервлета конструктор? Каким образом лучше инициализировать данные?</a></p>
-</li>
-<li>
-<p><a href="#Почему-необходимо-переопределить-только-init-метод-без-аргументов">Почему необходимо переопределить только <code>init()</code> метод без аргументов?</a></p>
-</li>
-<li>
-<p><a href="#Какие-наиболее-распространенные-задачи-выполняются-в-контейнере-сервлетов">Какие наиболее распространенные задачи выполняются в контейнере сервлетов?</a></p>
-</li>
-<li>
-<p><a href="#Что-вы-знаете-о-сервлетных-фильтрах">Что вы знаете о <em>сервлетных фильтрах</em>?</a></p>
-</li>
-<li>
-<p><a href="#Зачем-в-сервлетах-используются-различные-listener">Зачем в сервлетах используются различные <em>listener</em>?</a></p>
-</li>
-<li>
-<p><a href="#Когда-стоит-использовать-фильтры-сервлетов-а-когда-слушателей">Когда стоит использовать фильтры сервлетов, а когда слушателей?</a></p>
-</li>
-<li>
-<p><a href="#Как-реализовать-запуск-сервлета-одновременно-с-запуском-приложения">Как реализовать запуск сервлета одновременно с запуском приложения?</a></p>
-</li>
-<li>
-<p><a href="#Как-обработать-в-приложении-исключения-выброшенные-другим-сервлетом">Как обработать в приложении исключения, выброшенные другим сервлетом?</a></p>
-</li>
-<li>
-<p><a href="#Что-представляет-собой-servletconfig">Что представляет собой <code>ServletConfig</code>?</a></p>
-</li>
-<li>
-<p><a href="#Что-представляет-собой-servletcontext">Что представляет собой <code>ServletContext</code>?</a></p>
-</li>
-<li>
-<p><a href="#В-чем-отличия-servletcontext-и-servletconfig">В чем отличия <code>ServletContext</code> и <code>ServletConfig</code>?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-нужен-интерфейс-servletresponse">Для чего нужен интерфейс <code>ServletResponse</code>?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-нужен-интерфейс-servletrequest">Для чего нужен интерфейс <code>ServletRequest</code>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-request-dispatcher">Что такое <code>Request Dispatcher</code>?</a></p>
-</li>
-<li>
-<p><a href="#Как-из-одного-сервлета-вызвать-другой-сервлет">Как из одного сервлета вызвать другой сервлет?</a></p>
-</li>
-<li>
-<p><a href="#Чем-отличается-sendredirect-от-forward">Чем отличается <code>sendRedirect()</code> от <code>forward()</code>?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-используются-атрибуты-сервлетов-и-как-происходит-работа-с-ними">Для чего используются атрибуты сервлетов и как происходит работа с ними?</a></p>
-</li>
-<li>
-<p><a href="#Каким-образом-можно-допустить-в-сервлете-deadlock">Каким образом можно допустить в сервлете deadlock?</a></p>
-</li>
-<li>
-<p><a href="#Как-получить-реальное-расположение-сервлета-на-сервере">Как получить реальное расположение сервлета на сервере?</a></p>
-</li>
-<li>
-<p><a href="#Как-получить-информацию-о-сервере-из-сервлета">Как получить информацию о сервере из сервлета?</a></p>
-</li>
-<li>
-<p><a href="#Как-получить-ip-адрес-клиента-на-сервере">Как получить IP адрес клиента на сервере?</a></p>
-</li>
-<li>
-<p><a href="#Какие-классы-обертки-для-сервлетов-вы-знаете">Какие классы-обертки для сервлетов вы знаете?</a></p>
-</li>
-<li>
-<p><a href="#В-чем-отличия-genericservlet-и-httpservlet">В чем отличия <code>GenericServlet</code> и <code>HttpServlet</code>?</a></p>
-</li>
-<li>
-<p><a href="#Почему-httpservlet-класс-объявлен-как-абстрактный">Почему <code>HttpServlet</code> класс объявлен как абстрактный?</a></p>
-</li>
-<li>
-<p><a href="#Какие-основные-методы-присутствуют-в-классе-httpservlet">Какие основные методы присутствуют в классе <code>HttpServlet</code>?</a></p>
-</li>
-<li>
-<p><a href="#Стоит-ли-волноваться-о-многопоточной-безопасности-работая-с-сервлетами">Стоит ли волноваться о многопоточной безопасности работая с сервлетами?</a></p>
-</li>
-<li>
-<p><a href="#Какой-метод-http-не-является-неизменяемым">Какой метод HTTP не является неизменяемым?</a></p>
-</li>
-<li>
-<p><a href="#Какие-есть-методы-отправки-данных-с-клиента-на-сервер">Какие есть методы отправки данных с клиента на сервер?</a></p>
-</li>
-<li>
-<p><a href="#В-чем-разница-между-методами-get-и-post">В чем разница между методами <code>GET</code> и <code>POST</code>?</a></p>
-</li>
-<li>
-<p><a href="#В-чем-разница-между-printwriter-и-servletoutputstream">В чем разница между <code>PrintWriter</code> и <code>ServletOutputStream</code>?</a></p>
-</li>
-<li>
-<p><a href="#Можно-ли-одновременно-использовать-в-сервлете-printwriter-и-servletoutputstream">Можно ли одновременно использовать в сервлете <code>PrintWriter</code> и <code>ServletOutputStream</code>?</a></p>
-</li>
-<li>
-<p><a href="#Расскажите-об-интерфейсе-singlethreadmodel">Расскажите об интерфейсе <code>SingleThreadModel</code>.</a></p>
-</li>
-<li>
-<p><a href="#Что-означает-url-encoding-Как-это-осуществить-в-java">Что означает <em>URL encoding</em>? Как это осуществить в Java?</a></p>
-</li>
-<li>
-<p><a href="#Какие-различные-методы-управления-сессией-в-сервлетах-вы-знаете">Какие различные методы управления сессией в сервлетах вы знаете?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-cookies">Что такое <em>cookies</em>?</a></p>
-</li>
-<li>
-<p><a href="#Какие-методы-для-работы-с-cookies-предусмотрены-в-сервлетах">Какие методы для работы с cookies предусмотрены в сервлетах?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-url-rewriting">Что такое <em>URL Rewriting</em>?</a></p>
-</li>
-<li>
-<p><a href="#Зачем-нужны-и-чем-отличаются-методы-encodeurl-и-encoderedirecturl">Зачем нужны и чем отличаются методы <code>encodeURL()</code> и <code>encodeRedirectURL()</code>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-сессия">Что такое <em>«сессия»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Как-уведомить-объект-в-сессии-что-сессия-недействительна-или-закончилась">Как уведомить объект в сессии, что сессия недействительна или закончилась?</a></p>
-</li>
-<li>
-<p><a href="#Какой-существует-эффективный-способ-удостоверится-что-все-сервлеты-доступны-только-для-пользователя-с-верной-сессией">Какой существует эффективный способ удостоверится, что все сервлеты доступны только для пользователя с верной сессией?</a></p>
-</li>
-<li>
-<p><a href="#Как-мы-можем-обеспечить-transport-layer-security-для-нашего-веб-приложения">Как мы можем обеспечить <em>transport layer security</em> для нашего веб приложения?</a></p>
-</li>
-<li>
-<p><a href="#Как-организовать-подключение-к-базе-данных-обеспечить-журналирование-в-сервлете">Как организовать подключение к базе данных, обеспечить журналирование в сервлете?</a></p>
-</li>
-<li>
-<p><a href="#Какие-основные-особенности-появились-в-спецификации-servlet-3">Какие основные особенности появились в спецификации <em>Servlet 3</em>?</a></p>
-</li>
-<li>
-<p><a href="#Какие-способы-аутентификации-доступны-сервлету">Какие способы аутентификации доступны сервлету?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-java-server-pages-jsp">Что такое <em>Java Server Pages (JSP)</em>?</a></p>
-</li>
-<li>
-<p><a href="#Зачем-нужен-jsp">Зачем нужен JSP?</a></p>
-</li>
-<li>
-<p><a href="#Опишите-как-обрабатываются-jsp-страницы-начиная-от-запроса-к-серверу-заканчивая-ответом-пользователю">Опишите, как обрабатываются JSP страницы, начиная от запроса к серверу, заканчивая ответом пользователю.</a></p>
-</li>
-<li>
-<p><a href="#Расскажите-об-этапах-фазах-жизненного-цикла-jsp">Расскажите об этапах (фазах) жизненного цикла JSP.</a></p>
-</li>
-<li>
-<p><a href="#Расскажите-о-методах-жизненного-цикла-jsp">Расскажите о методах жизненного цикла JSP.</a></p>
-</li>
-<li>
-<p><a href="#Какие-методы-жизненного-цикла-jsp-могут-быть-переопределены">Какие методы жизненного цикла JSP могут быть переопределены?</a></p>
-</li>
-<li>
-<p><a href="#Как-можно-предотвратить-прямой-доступ-к-jsp-странице-из-браузера">Как можно предотвратить прямой доступ к JSP странице из браузера?</a></p>
-</li>
-<li>
-<p><a href="#Какая-разница-между-динамическим-и-статическим-содержимым-jsp">Какая разница между <em>динамическим</em> и <em>статическим</em> содержимым JSP?</a></p>
-</li>
-<li>
-<p><a href="#Как-закомментировать-код-в-jsp">Как закомментировать код в JSP?</a></p>
-</li>
-<li>
-<p><a href="#Какие-существуют-основные-типы-тегов-jsp">Какие существуют основные типы тегов JSP?</a></p>
-</li>
-<li>
-<p><a href="#Что-вы-знаете-о-действиях-jsp-action-tag-и-jsp-action-elements">Что вы знаете о действиях JSP (<em>Action tag</em> и <em>JSP Action Elements</em>).</a></p>
-</li>
-<li>
-<p><a href="#Взаимодействие-jsp---сервлет---jsp">Взаимодействие <em>JSP - сервлет - JSP</em>.</a></p>
-</li>
-<li>
-<p><a href="#Какие-области-видимости-переменных-существуют-в-jsp">Какие области видимости переменных существуют в JSP?</a></p>
-</li>
-<li>
-<p><a href="#Какие-неявные-внутренние-объекты-и-методы-есть-на-jsp-странице">Какие неявные, внутренние объекты и методы есть на JSP странице?</a></p>
-</li>
-<li>
-<p><a href="#Какие-неявные-объекты-не-доступны-в-обычной-jsp-странице">Какие неявные объекты не доступны в обычной JSP странице?</a></p>
-</li>
-<li>
-<p><a href="#Что-вы-знаете-о-pagecontext-и-какие-преимущества-его-использования">Что вы знаете о <code>PageContext</code> и какие преимущества его использования?</a></p>
-</li>
-<li>
-<p><a href="#Как-сконфигурировать-параметры-инициализации-для-jsp">Как сконфигурировать параметры инициализации для JSP?</a></p>
-</li>
-<li>
-<p><a href="#Почему-не-рекомендуется-использовать-скриплеты-скриптовые-элементы-в-jsp">Почему не рекомендуется использовать скриплеты (скриптовые элементы) в JSP?</a></p>
-</li>
-<li>
-<p><a href="#Можно-ли-определить-класс-внутри-jsp-страницы">Можно ли определить класс внутри JSP страницы?</a></p>
-</li>
-<li>
-<p><a href="Что-вы-знаете-о-Языке-выражений-jsp-jsp-expression-language&.html#8212;&#8203;el">Что вы знаете о Языке выражений JSP (JSP Expression Language&#8201;&#8212;&#8201;EL)?</a></p>
-</li>
-<li>
-<p><a href="#Какие-типы-el-операторов-вы-знаете">Какие типы EL операторов вы знаете?</a></p>
-</li>
-<li>
-<p><a href="#Назовите-неявные-внутренние-объекты-jsp-el-и-их-отличия-от-объектов-jsp">Назовите неявные, внутренние объекты JSP EL и их отличия от объектов JSP.</a></p>
-</li>
-<li>
-<p><a href="#Как-отключить-возможность-использования-el-в-jsp">Как отключить возможность использования EL в JSP?</a></p>
-</li>
-<li>
-<p><a href="#Как-узнать-тип-http-метода-используя-jsp-el">Как узнать тип HTTP метода используя JSP EL?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-jstl-jsp-standard-tag-library">Что такое <em>JSTL (JSP Standard tag library)</em>?</a></p>
-</li>
-<li>
-<p><a href="#Из-каких-групп-тегов-состоит-библиотека-jstl">Из каких групп тегов состоит библиотека <em>JSTL</em>?</a></p>
-</li>
-<li>
-<p><a href="#Какая-разница-между-cset-и-jspusebean">Какая разница между <code>&lt;c:set&gt;</code> и <code>&lt;jsp:useBean&gt;</code>?</a></p>
-</li>
-<li>
-<p><a href="#Чем-отличается-cimport-от-jspinclude-и-директивы-include-">Чем отличается <code>&lt;c:import&gt;</code> от <code>&lt;jsp:include&gt;</code> и директивы <code>&lt;%@include %&gt;</code>?</a></p>
-</li>
-<li>
-<p><a href="#Как-можно-расширить-функциональность-jsp">Как можно расширить функциональность JSP?</a></p>
-</li>
-<li>
-<p><a href="#Что-вы-знаете-о-написании-пользовательских-jsp-тегов">Что вы знаете о написании пользовательских JSP тегов?</a></p>
-</li>
-<li>
-<p><a href="#Приведите-пример-использования-собственных-тегов">Приведите пример использования собственных тегов.</a></p>
-</li>
-<li>
-<p><a href="#Как-сделать-перенос-строки-в-html-средствами-jsp">Как сделать перенос строки в HTML средствами JSP?</a></p>
-</li>
-<li>
-<p><a href="#Почему-не-нужно-конфигурировать-стандартные-jsp-теги-в-webxml">Почему не нужно конфигурировать стандартные JSP теги в <code>web.xml</code>?</a></p>
-</li>
-<li>
-<p><a href="#Как-можно-обработать-ошибки-jsp-страниц">Как можно обработать ошибки JSP страниц?</a></p>
-</li>
-<li>
-<p><a href="#Как-происходит-обработка-ошибок-с-помощью-jstl">Как происходит обработка ошибок с помощью JSTL?</a></p>
-</li>
-<li>
-<p><a href="#Как-конфигурируется-jsp-в-дескрипторе-развертывания">Как конфигурируется JSP в дескрипторе развертывания.</a></p>
-</li>
-<li>
-<p><a href="#Можно-ли-использовать-javascript-на-jsp-странице">Можно ли использовать Javascript на JSP странице?</a></p>
-</li>
-<li>
-<p><a href="#Всегда-ли-создается-объект-сессии-на-jsp-странице-можно-ли-отключить-его-создание">Всегда ли создается объект сессии на JSP странице, можно ли отключить его создание?</a></p>
-</li>
-<li>
-<p><a href="#Какая-разница-между-jspwriter-и-сервлетным-printwriter">Какая разница между <code>JSPWriter</code> и сервлетным <code>PrintWriter</code>?</a></p>
-</li>
-<li>
-<p><a href="#Опишите-общие-практические-принципы-работы-с-jsp">Опишите общие практические принципы работы с JSP.</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_что_такое_сервлет">Что такое <em>«сервлет»</em>?</h2>
 <div class="sectionbody">
@@ -765,9 +475,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Текущая спецификация - Servlet 3.1 описана в JSR-340 и принята в 2013 году.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -788,9 +495,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Сервлеты относительно легки в изучении и поддержке, таким образом разработчику необходимо заботиться только о бизнес-логике приложения, а не внутренней реализации веб-технологий.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -836,9 +540,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p><code>README.txt</code> Описание проекта</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -877,9 +578,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Oracle Weblogic</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1028,9 +726,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1070,9 +765,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><code>public void destroy()</code>&#8201;&#8212;&#8201;вызывается для уничтожения сервлета (один раз за время жизни сервлета).</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1126,9 +818,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Для веб-приложений дескриптор развертывания должен называться <code>web.xml</code> и находиться в директории <code>WEB-INF</code>, в корне веб-приложения. Этот файл является стандартным дескриптором развертывания, определенным в спецификации. Также есть и другие типы дескрипторов, такие, как файл дескриптора развертывания <code>sun-web.xml</code>, содержащий специфичные для <em>Sun GlassFish Enterprise Server</em> данные для развертывания именно для этого сервера приложений или файл <code>application.xml</code> в директории <code>META-INF</code> для приложений <em>J2EE</em>.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1156,9 +845,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Затем создать класс <code>xyz.company.ExampleServlet</code> путём наследования от <code>HttpServlet</code> и реализовать логику его работы в методе <code>service()</code> или методах <code>doGet()</code>/<code>doPost()</code>.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1170,9 +856,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Когда контейнер сервлетов получает запрос клиента, то происходит вызов метода <code>service()</code>, который в зависимости от поступившего запроса вызывает или метод <code>doGet()</code> или метод <code>doPost()</code>.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1180,9 +863,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p>Большого смысла определять для сервлета конструктор нет, т.к. инициализировать данные лучше не в конструкторе, а переопределив метод <code>init()</code>, в котором имеется возможность доступа к параметрам инициализации сервлета через использование объекта <code>ServletConfig</code>.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1197,9 +877,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>Необходимо использовать переопределенный метод <code>init()</code> без параметров для инициализации данных во избежание каких-либо проблем, например ошибку, когда вызов <code>super()</code> не указан в переопределенном <code>init(ServletConfig config)</code>.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1224,9 +901,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Различные задачи. Контейнер сервлетов управляет пулом ресурсов, памятью приложения, сборщиком мусора. Предоставляются возможности настройки безопасности и многое другое.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1349,9 +1023,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1439,9 +1110,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1449,9 +1117,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p>Следует использовать фильтры, если необходимо обрабатывать входящие или исходящие данные (например: для аутентификации, преобразования формата, компрессии, шифрования и т.д.), в случае, когда необходимо реагировать на события - лучше применять слушателей.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1475,9 +1140,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
     &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
 &lt;/servlet&gt;</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1505,9 +1167,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>Основная задача таких сервлетов - обработать ошибку/исключение и сформировать понятный ответ пользователю. Например, предоставить ссылку на главную страницу или же описание ошибки.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1551,9 +1210,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p>Для получения <code>ServletConfig</code> сервлета используется метод <code>getServletConfig()</code>.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1577,9 +1233,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p>Объект <code>ServletContext</code> можно получить с помощью метода <code>getServletContext()</code> у интерфейса <code>ServletConfig</code>. Контейнеры сервлетов так же могут предоставлять контекстные объекты, уникальные для группы сервлетов. Каждая из групп будет связана со своим набором URL-путей хоста. В спецификации Servlet 3 <code>ServletContext</code> был расширен и теперь предоставляет возможности программного добавления слушателей и фильтров в приложение. Так же у этого интерфейса имеется множество полезных методов таких как 	<code>getServerInfo()</code>, <code>getMimeType()</code>, <code>getResourceAsStream()</code> и т.д.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1597,9 +1250,6 @@ public class ExampleServlet extends HttpServlet {
 <p>для <code>ServletConfig</code> возможности модифицировать атрибуты отсутствуют, атрибуты в объекте <code>ServletContext</code> можно изменять.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1634,9 +1284,6 @@ public class ExampleServlet extends HttpServlet {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1644,9 +1291,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Интерфейс <code>ServletRequest</code> используется для получения параметров соединения, запроса, а также заголовков, входящего потока данных и т.д.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1672,9 +1316,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p>Доступ к интерфейсу можно получить с помощью метода интерфейса <code>ServletContext</code> - <code>RequestDispatcher getRequestDispatcher(String path)</code>, где путь начинающийся с <code>/</code>, интерпретируется относительно текущего корневого пути контекста.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1695,9 +1336,6 @@ public class ExampleServlet extends HttpServlet {
 </div>
 <div class="paragraph">
 <p>Если необходимо вызывать сервлет принадлежащий другому приложению, то использовать <code>RequestDispatcher</code> уже не получится, т.к. он определен только для текущего приложения. Для подобных целей необходимо использовать метод <code>ServletResponse</code> - <code>sendRedirect()</code> которому предоставляется полный URL другого сервлета. Для передачи данных между сервлетами можно использовать <code>cookies</code>.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1760,9 +1398,6 @@ public class ExampleServlet extends HttpServlet {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1774,9 +1409,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p>В веб-приложении существует возможность работы с атрибутами используя методы <code>setAttribute()</code>, <code>getAttribute()</code>, <code>removeAttribute()</code>, <code>getAttributeNames()</code>, которые предоставлены интерфейсами <code>ServletRequest</code>, <code>HttpSession</code> и <code>ServletContext</code> (для областей видимости <em>request</em>, <em>session</em>, <em>context</em> соответственно).</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1784,9 +1416,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Можно получить блокировку, например, допустив циклические вызовы метода <code>doPost()</code> в методе <code>doGet()</code> и метода <code>doGet()</code> в методе <code>doPost()</code>.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1799,9 +1428,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p><code>getServletContext().getRealPath(request.getServletPath())</code>.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1813,9 +1439,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p><code>getServletContext().getServerInfo()</code>.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1823,9 +1446,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="sectionbody">
 <div class="paragraph">
 <p>IP адрес клиента можно получить вызвав <code>request.getRemoteAddr()</code>.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1835,9 +1455,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p>Собственные обработчики <code>ServletRequest</code> и <code>ServletResponse</code> можно реализовать, добавив новые или переопределив существующие методы у классов-обёрток <code>ServletRequestWrapper</code> (<code>HttpServletRequestWrapper</code>) и <code>ServletResponseWrapper</code> (<code>HttpServletRequestWrapper</code>).</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1846,9 +1463,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p>Абстрактный класс <code>GenericServlet</code>&#8201;&#8212;&#8201;независимая от используемого протокола реализация интерфейса <code>Servlet</code>, а абстрактный класс <code>HttpServlet</code> в свою очередь расширяет <code>GenericServlet</code> для протокола HTTP..</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1856,9 +1470,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Класс <code>HTTPServlet</code> предоставляет лишь общую реализацию сервлета для HTTP протокола. Реализация ключевых методов <code>doGet()</code> и <code>doPost()</code>, содержащих основную бизнес-логику перекладывается на разработчика и по умолчанию возвращает <code>HTTP 405 Method Not Implemented error</code>.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1890,9 +1501,6 @@ public class ExampleServlet extends HttpServlet {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1904,9 +1512,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p>Методы <code>doGet()</code>, <code>doPost()</code>, <code>service()</code> вызываются на каждый запрос клиента и т.к. сервлеты используют многопоточность, то здесь задумываться о потокобезопасной работе обязательно. При этом правила использования многопоточности остаются теми же: локальные переменные этих методов будут созданы отдельно для каждого потока, а при использовании глобальных разделяемых ресурсов необходимо использовать синхронизацию или другие приёмы многопоточного программирования.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1917,9 +1522,6 @@ public class ExampleServlet extends HttpServlet {
 </div>
 <div class="paragraph">
 <p>К примеру, для доступа к статической HTML странице используется метод <code>GET</code>, т.к. он всегда возвращает одинаковый результат. При необходимости сохранять какую-либо информацию, например в базе данных, нужно использовать <code>POST</code> метод.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1935,9 +1537,6 @@ public class ExampleServlet extends HttpServlet {
 <p><code>POST</code> - используется для передачи пользовательских данных в содержимом HTTP-запроса на сервер. Пользовательские данные упакованы в тело запроса согласно полю заголовка Content-Type и/или включены в URI запроса. При использовании метода POST под URI подразумевается ресурс, который будет обрабатывать запрос.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1957,9 +1556,6 @@ public class ExampleServlet extends HttpServlet {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1971,9 +1567,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p><code>ServletOutputStream</code>&#8201;&#8212;&#8201;класс для работы байтовым потоком. Для получения его экземпляра используется метод <code>ServletResponse</code> <code>getOutputStream()</code>.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1981,9 +1574,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Так сделать не получится, т.к. при попытке одновременного вызова <code>getWriter()</code> и <code>getOutputStream()</code> будет выброшено исключение <code>java.lang.IllegalStateException</code> с сообщением, что уже был вызван другой метод.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1993,9 +1583,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p>Интерфейс <code>SingleThreadModel</code> является маркерным - в нем не объявлен ни один метод, однако, если сервлет реализует этот интерфейс, то метод <code>service()</code> этого сервлета гарантированно не будет одновременно выполняться в двух потоках. Контейнер сервлетов либо синхронизирует обращения к единственному экземпляру, либо обеспечивает поддержку пула экземпляров и перенаправление запроса свободному сервлету.
 Другими словами, контейнер гарантирует отсутствие конфликтов при одновременном обращении к переменным или методам экземпляра сервлета. Однако существуют также и другие разделяемые ресурсы, которые даже при использовании этого интерфейса, остаются всё так же доступны обработчикам запросов в других потоках. Т.о. пользы от использования этого интерфейса немного и в спецификации Servlet 2.4 он был объявлен <code>deprecated</code>.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2011,9 +1598,6 @@ public class ExampleServlet extends HttpServlet {
 <p><code>Hello мир!</code> преобразовывается в <code>Hello%20%D0%BC%D0%B8%D1%80!</code>.</p>
 </div>
 </blockquote>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2055,9 +1639,6 @@ public class ExampleServlet extends HttpServlet {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2082,9 +1663,6 @@ public class ExampleServlet extends HttpServlet {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2103,9 +1681,6 @@ public class ExampleServlet extends HttpServlet {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2113,9 +1688,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>URL Rewriting</strong> - специальная перезапись (перекодирование) оригинального URL. Данный механизм может использоваться для управления сессией в сервлетах, когда <em>cookies</em> отключены.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2131,9 +1703,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p>Таким образом для HTML гиперссылок при <em>URL rewriting</em> необходимо использовать <code>encodeURL()</code>, а для URL при перенаправлении - <code>encodeRedirectUrl()</code>.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2141,9 +1710,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Сессия</strong>  - это сеанс связи между клиентом и сервером, устанавливаемый на определенное время. Сеанс устанавливается непосредственно между клиентом и веб-сервером в момент получения первого запроса к веб-приложению. Каждый клиент устанавливает с сервером свой собственный сеанс, который сохраняется до окончания работы с приложением.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2153,9 +1719,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p>Чтобы быть уверенным в том, что объект будет оповещён о прекращении сессии, нужно реализовать интерфейс <code>javax.servlet.http.HttpSessionBindingListener</code>. Два метода этого интерфейса: <code>valueBound()</code> и <code>valueUnbound()</code> используются при добавлении объекта в качестве атрибута к сессии и при уничтожении сессии соответственно.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2164,9 +1727,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p>Сервлет фильтры используются для перехвата всех запросов между контейнером сервлетов и сервлетом. Поэтому логично использовать соответствующий фильтр для проверки необходимой информации (например валидности сессии) в запросе.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2174,9 +1734,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Для обеспечения <em>transport layer security</em> необходимо настроить поддержку SSL сервлет контейнера. Как это сделать зависит от конкретной реализации сервлет-контейнера.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2188,9 +1745,6 @@ public class ExampleServlet extends HttpServlet {
 </div>
 <div class="paragraph">
 <p>Журналирование подключается к сервлету стандартным для логгера способом (например для <em>log4j</em> это может быть property-файл или XML-конфигурация) , а далее эта информация используется при настройке соответствующего <em>context listener</em>.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2212,9 +1766,6 @@ public class ExampleServlet extends HttpServlet {
 <p><strong>Асинхронное выполнение</strong>. Поддержка асинхронной обработки позволяет передать выполнение запроса в другой поток без удержания всего сервера занятым.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2251,9 +1802,6 @@ public class ExampleServlet extends HttpServlet {
 &lt;/login-config&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2267,9 +1815,6 @@ public class ExampleServlet extends HttpServlet {
 </div>
 <div class="paragraph">
 <p>JSP-страницы загружаются на сервере и управляются Java EE Web Application. Обычно такие страницы упакованы в файловые архивы .war и .ear.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2288,9 +1833,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="paragraph">
 <p>Однако рекомендуется избегать написания серьёзной бизнес-логики в JSP и использовать страницу только в качестве представления.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2298,9 +1840,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Когда пользователь переходит по ссылке на страницу <code>page.jsp</code>, он отправляет http-запрос на сервер <code>GET /page.jsp</code>. Затем, на основе этого запроса и текста самой страницы, сервер генерирует java-класс, компилирует его и выполняет полученный сервлет, формирующий ответ пользователю в виде представления этой страницы, который сервер и перенаправляет обратно пользователю.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2338,9 +1877,6 @@ public class ExampleServlet extends HttpServlet {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2362,9 +1898,6 @@ public class ExampleServlet extends HttpServlet {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2372,9 +1905,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Возможно переопределить лишь <code>jspInit()</code> и <code>jspDestroy()</code> методы.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2401,9 +1931,6 @@ public class ExampleServlet extends HttpServlet {
 &lt;/servlet-mapping&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2414,9 +1941,6 @@ public class ExampleServlet extends HttpServlet {
 </div>
 <div class="paragraph">
 <p>Динамические ресурсы созданы для того, чтобы отображать свое содержимое в зависимости от пользовательских действий. Обычно они представлены в виде выражений EL (Expression Language), библиотек JSP-тегов и пр.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2432,9 +1956,6 @@ public class ExampleServlet extends HttpServlet {
 <p><code>&lt;%—- JSP комментарий; не отображается на странице JSP —-%&gt;</code> такие комментарии описываются в созданном сервлете и не посылаются клиенту. Для любых комментариев по коду или отладочной информации необходимо использовать именно такой тип комментариев.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2462,9 +1983,6 @@ public class ExampleServlet extends HttpServlet {
 <p><em>Комментарий JSP</em>: <code>&lt;%-- comment --%&gt;</code> - комментарий; игнорируется при трансляции JSP страницы в сервлет.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2496,9 +2014,6 @@ public class ExampleServlet extends HttpServlet {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2519,9 +2034,6 @@ public class ExampleServlet extends HttpServlet {
 <p><em>Controller</em> - сервлеты.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2563,9 +2075,6 @@ public class ExampleServlet extends HttpServlet {
 </div>
 <div class="paragraph">
 <p>Если не указывать атрибут <code>scope</code>, то по умолчанию задается область видимости страницы <code>page</code></p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2687,9 +2196,6 @@ public class ExampleServlet extends HttpServlet {
 <pre>&lt;strong&gt;Exception occured&lt;/strong&gt;: &lt;%=exception %&gt;&lt;br&gt;</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2697,9 +2203,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Неявный объект исключений JSP недоступен в обычных JSP страницах и используется на страницах ошибок JSP (<em>errorpage</em>) только для того, чтобы перехватить исключение, выброшенное JSP страницей и далее предоставить какую-либо полезную информацию клиенту.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2741,9 +2244,6 @@ public class ExampleServlet extends HttpServlet {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2764,9 +2264,6 @@ public class ExampleServlet extends HttpServlet {
 &lt;/servlet&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2774,9 +2271,6 @@ public class ExampleServlet extends HttpServlet {
 <div class="sectionbody">
 <div class="paragraph">
 <p>JSP страницы используются в основном  для целей отображения представления (<em>view</em>), а вся бизнес-логика (<em>controller</em>) и модель (<em>model</em>) должны быть реализованы в сервлетах или классах-моделях. Обязанность JSP страницы - создание HTML ответа из переданных через атрибуты параметров. Большая часть JSP содержит HTML код, а для того, чтобы помочь верстальщикам понять JSP код страницы предоставляется функционал элементов <em>action</em>, <em>JSP EL</em>, <em>JSP Standart Tag Library</em>. Именно их и необходимо использовать вместо скриптлетов для создания моста между (JSP)HTML и (JSP)Java частями.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2800,9 +2294,6 @@ private class ExampleTwo {
 }
 %&gt;</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2837,9 +2328,6 @@ private class ExampleTwo {
 <div class="paragraph">
 <p>Язык выражений используется внутри конструкции <code>${ ... }</code>. Подобная конструкция может размещаться либо отдельно, либо в правой части выражения установки атрибута тега.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2867,9 +2355,6 @@ private class ExampleTwo {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2877,9 +2362,6 @@ private class ExampleTwo {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Язык выражений JSP предоставляет множество неявных объектов, которые можно использовать для получения атрибутов в различных областях видимости (scopes) и для значений параметров. Важно отметить, что они отличаются от неявных объектов JSP и содержат атрибуты в заданной области видимости. Наиболее часто использующийся implicit object в JSP EL и JSP page&#8201;&#8212;&#8201;это объект pageContext. Ниже представлена таблица неявных объектов JSP EL.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2909,9 +2391,6 @@ private class ExampleTwo {
 &lt;/jsp-config&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2919,9 +2398,6 @@ private class ExampleTwo {
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>${pageContext.request.method}</code>.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -2974,9 +2450,6 @@ private class ExampleTwo {
 &lt;%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %&gt;</pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -3004,9 +2477,6 @@ private class ExampleTwo {
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -3015,9 +2485,6 @@ private class ExampleTwo {
 <div class="paragraph">
 <p>Оба тега создают и помещают экземпляры в заданную область видимости, но <code>&lt;jsp:useBean&gt;</code> только создаёт экземпляр конкретного типа, а <code>&lt;c:set&gt;</code>, создав экземпляр, позволяет дополнительно извлекать значение, например, из параметров запроса, сессии и т. д.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -3025,9 +2492,6 @@ private class ExampleTwo {
 <div class="sectionbody">
 <div class="paragraph">
 <p>По сравнению с action-тегом <code>&lt;jsp:include&gt;</code> и директивой <code>&lt;%@include %&gt;</code> тег <code>&lt;c:import&gt;</code> обеспечивает более совершенное включение динамических ресурсов, т.к. получает доступ к источнику, чтение информации из которого происходит непосредственно без буферизации и контент включается в исходную JSP построчно.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -3136,9 +2600,6 @@ public class ExampleTag extends TagSupport{
 <div class="paragraph">
 <p>Используя входные параметры, число должно быть преобразовано на JSP странице в таком виде <code>123,456.79</code> согласно шаблону. Т.к. JSTL не предоставляет такой функциональности, необходимо создать пользовательский тег для получения необходимого результата.</p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -3150,9 +2611,6 @@ public class ExampleTag extends TagSupport{
 <div class="paragraph">
 <p><code>&lt;c:out value="&lt;br&gt; creates a new line in HTML" escapeXml="true"&gt;&lt;/c:out&gt;</code></p>
 </div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -3163,9 +2621,6 @@ public class ExampleTag extends TagSupport{
 </div>
 <div class="paragraph">
 <p>Когда контейнер загружает веб-приложение и находит tld файлы в в jar файле в директории <code>/META-INF/</code>, то он автоматически настраивает их для непосредственного использования на JSP страницах. Остается только задать пространство имен на JSP странице.</p>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -3187,9 +2642,6 @@ public class ExampleTag extends TagSupport{
      &lt;location&gt;/error.jsp&lt;/location&gt;
 &lt;/error-page&gt;</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p><a href="#servlets-jsp-jstl">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -3233,13 +2685,9 @@ Exception Message: ${exception.message}+++&lt;/c:if&gt;+++
 &lt;/jsp-config&gt;
 ----
 
-&lt;&lt;servlets-jsp-jstl,к оглавлению&gt;&gt;
-
 == Можно ли использовать Javascript на JSP странице?
 
 Да, это возможно. Несмотря на то, что JSP это серверная технология, на выходе она всё равно создает `HTML` страницу, на которую можно добавлять Javascript и CSS.
-
-&lt;&lt;servlets-jsp-jstl,к оглавлению&gt;&gt;
 
 == Всегда ли создается объект сессии на JSP странице, можно ли отключить его создание?
 
@@ -3247,13 +2695,9 @@ Jsp-страница, по умолчанию, всегда создает се�
 
 `&lt;%@ page session ="false" %&gt;`
 
-&lt;&lt;servlets-jsp-jstl,к оглавлению&gt;&gt;
-
 == Какая разница между `JSPWriter` и сервлетным `PrintWriter`?
 
 `PrintWriter` является объектом отвечающим за запись содержания ответа на запрос. `JspWriter` использует объект `PrintWriter` для буферизации. Когда буфер заполняется или сбрасывается, `JspWriter` использует объект `PrintWriter` для записи содержания в ответ.
-
-&lt;&lt;servlets-jsp-jstl,к оглавлению&gt;&gt;
 
 == Опишите общие практические принципы работы с JSP.
 
@@ -3268,8 +2712,6 @@ Jsp-страница, по умолчанию, всегда создает се�
 * Обработку исключений нужно производить с помощью страниц ошибок. Это помогает избегать запуска специальных служебных методов и может повысить производительность.
 * Использующиеся CSS и JavaScript должны быть разнесены в разные файлы и подключаться в начале страницы.
 * В большинстве случаев JSTL должно хватать для всех нужд. Если это не так, то в начале следует проанализировать логику своего приложения, и попробовать перенести выполнения кода в сервлет, а далее с помощью установки атрибутов использовать на JSP странице только результат.
-
-&lt;&lt;servlets-jsp-jstl,к оглавлению&gt;&gt;
 
 == Источники
 
@@ -3289,7 +2731,7 @@ xref:README.adoc[Вопросы для собеседования]</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-20 03:29:06 UTC
+Last updated 2022-08-21 04:05:09 UTC
 </div>
 </div>
 </body>

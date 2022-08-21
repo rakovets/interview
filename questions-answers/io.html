@@ -441,101 +441,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>Потоки ввода/вывода в Java</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#В-чём-заключается-разница-между-io-и-nio">В чём заключается разница между IO и NIO?</a></p>
-</li>
-<li>
-<p><a href="#Какие-особенности-nio-вы-знаете">Какие особенности NIO вы знаете?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-каналы">Что такое <em>«каналы»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Какие-существуют-виды-потоков-вводавывода">Какие существуют виды потоков ввода/вывода?</a></p>
-</li>
-<li>
-<p><a href="#Назовите-основные-классы-потоков-вводавывода">Назовите основные классы потоков ввода/вывода.</a></p>
-</li>
-<li>
-<p><a href="#В-каких-пакетах-расположены-классы-потоков-вводавывода">В каких пакетах расположены классы потоков ввода/вывода?</a></p>
-</li>
-<li>
-<p><a href="#Какие-подклассы-класса-inputstream-вы-знаете-для-чего-они-предназначены">Какие подклассы класса <code>InputStream</code> вы знаете, для чего они предназначены?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-используется-pushbackinputstream">Для чего используется <code>PushbackInputStream</code>?</a></p>
-</li>
-<li>
-<p><a href="#Для-чего-используется-sequenceinputstream">Для чего используется <code>SequenceInputStream</code>?</a></p>
-</li>
-<li>
-<p><a href="#Какой-класс-позволяет-читать-данные-из-входного-байтового-потока-в-формате-примитивных-типов-данных">Какой класс позволяет читать данные из входного байтового потока в формате примитивных типов данных?</a></p>
-</li>
-<li>
-<p><a href="#Какие-подклассы-класса-outputstream-вы-знаете-для-чего-они-предназначены">Какие подклассы класса <code>OutputStream</code> вы знаете, для чего они предназначены?</a></p>
-</li>
-<li>
-<p><a href="#Какие-подклассы-класса-reader-вы-знаете-для-чего-они-предназначены">Какие подклассы класса <code>Reader</code> вы знаете, для чего они предназначены?</a></p>
-</li>
-<li>
-<p><a href="#Какие-подклассы-класса-writer-вы-знаете-для-чего-они-предназначены">Какие подклассы класса <code>Writer</code> вы знаете, для чего они предназначены?</a></p>
-</li>
-<li>
-<p><a href="#В-чем-отличие-класса-printwriter-от-printstream">В чем отличие класса <code>PrintWriter</code> от <code>PrintStream</code>?</a></p>
-</li>
-<li>
-<p><a href="#Чем-отличаются-и-что-общего-у-inputstream-outputstream-reader-writer">Чем отличаются и что общего у <code>InputStream</code>, <code>OutputStream</code>, <code>Reader</code>, <code>Writer</code>?</a></p>
-</li>
-<li>
-<p><a href="#Какие-классы-позволяют-преобразовать-байтовые-потоки-в-символьные-и-обратно">Какие классы позволяют преобразовать байтовые потоки в символьные и обратно?</a></p>
-</li>
-<li>
-<p><a href="#Какие-классы-позволяют-ускорить-чтениезапись-за-счет-использования-буфера">Какие классы позволяют ускорить чтение/запись за счет использования буфера?</a></p>
-</li>
-<li>
-<p><a href="#Какой-класс-предназначен-для-работы-с-элементами-файловой-системы">Какой класс предназначен для работы с элементами файловой системы?</a></p>
-</li>
-<li>
-<p><a href="#Какие-методы-класса-file-вы-знаете">Какие методы класса <code>File</code> вы знаете?</a></p>
-</li>
-<li>
-<p><a href="#Что-вы-знаете-об-интерфейсе-filefilter">Что вы знаете об интерфейсе <code>FileFilter</code>?</a></p>
-</li>
-<li>
-<p><a href="#Как-выбрать-все-элементы-определенного-каталога-по-критерию-например-с-определенным-расширением">Как выбрать все элементы определенного каталога по критерию (например, с определенным расширением)?</a></p>
-</li>
-<li>
-<p><a href="#Что-вы-знаете-о-randomaccessfile">Что вы знаете о <code>RandomAccessFile</code>?</a></p>
-</li>
-<li>
-<p><a href="#Какие-режимы-доступа-к-файлу-есть-у-randomaccessfile">Какие режимы доступа к файлу есть у <code>RandomAccessFile</code>?</a></p>
-</li>
-<li>
-<p><a href="#Какие-классы-поддерживают-чтение-и-запись-потоков-в-компрессированном-формате">Какие классы поддерживают чтение и запись потоков в компрессированном формате?</a></p>
-</li>
-<li>
-<p><a href="#Существует-ли-возможность-перенаправить-потоки-стандартного-вводавывода">Существует ли возможность перенаправить потоки стандартного ввода/вывода?</a></p>
-</li>
-<li>
-<p><a href="#Какой-символ-является-разделителем-при-указании-пути-в-файловой-системе">Какой символ является разделителем при указании пути в файловой системе?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-абсолютный-путь-и-относительный-путь">Что такое <em>«абсолютный путь»</em> и <em>«относительный путь»</em>?</a></p>
-</li>
-<li>
-<p><a href="#Что-такое-символьная-ссылка">Что такое <em>«символьная ссылка»</em>?</a></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_в_чём_заключается_разница_между_io_и_nio">В чём заключается разница между IO и NIO?</h2>
 <div class="sectionbody">
@@ -552,9 +457,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -570,23 +472,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p><strong>Кодировки</strong>: появились кодеры и декодеры для отображения байт и символов Unicode.
-<a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+== Что такое <em>«каналы»</em>?</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_что_такое_каналы">Что такое <em>«каналы»</em>?</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Каналы (channels)&#8201;&#8212;&#8201;это логические (не физические) порталы, абстракции объектов более низкого уровня файловой системы (например, отображенные в памяти файлы и блокировки файлов), через которые осуществляется ввод/вывод данных, а буферы являются источниками или приёмниками этих переданных данных. При организации вывода, данные, которые необходимо отправить, помещаются в буфер, который затем передается в канал. При вводе, данные из канала помещаются в заранее предоставленный буфер.</p>
 </div>
 <div class="paragraph">
 <p>Каналы напоминают трубопроводы, по которым эффективно транспортируются данные между буферами байтов и сущностями по ту сторону каналов. Каналы&#8201;&#8212;&#8201;это шлюзы, которые позволяют получить доступ к сервисам ввода/вывода операционной системы с минимальными накладными расходами, а буферы&#8201;&#8212;&#8201;внутренние конечные точки этих шлюзов, используемые для передачи и приема данных.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -612,9 +506,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -622,9 +513,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>java.io</code>, <code>java.nio</code>. Для работы с потоками компрессированных данных используются классы из пакета <code>java.util.zip</code></p>
-</div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -668,9 +556,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -682,9 +567,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>У класса есть дополнительный метод unread().</p>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -695,9 +577,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>Во время работы класс выполняет запросы на чтение из первого объекта класса <code>InputStream</code> и до конца, а затем переключается на второй. При использовании интерфейса работа продолжится по всем объектам класса <code>InputStream</code>. По достижении конца, связанный с ним поток закрывается. Закрытие потока, созданного объектом класса <code>SequenceInputStream</code>, приводит к закрытию всех открытых потоков.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -738,9 +617,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -776,9 +652,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><code>PipedOutputStream</code> реализует понятие выходного канала.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -819,9 +692,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -858,9 +728,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -871,9 +738,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>Кроме того, методы класса <code>PrintWriter</code> никогда не создают исключений. Для проверки ошибок необходимо явно вызвать метод <code>checkError()</code>.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -896,9 +760,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -913,9 +774,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><code>InputStreamReader</code>&#8201;&#8212;&#8201;аналог для чтения. При помощи методов класса <code>Reader</code> читаются байты из потока <code>InputStream</code> и далее преобразуются в символы.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -938,9 +796,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -948,9 +803,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>File</code> работает непосредственно с файлами и каталогами. Данный класс позволяет создавать новые элементы и получать информацию существующих: размер, права доступа, время и дату создания, путь к родительскому каталогу.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1009,9 +861,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1027,9 +876,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1037,9 +883,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p>Метод <code>File.listFiles()</code> возвращает массив объектов <code>File</code>, содержащихся в каталоге. Метод может принимать в качестве параметра объект класса, реализующего <code>FileFilter</code>. Это позволяет включить в список только те элементы, для которых метод <code>accept</code> возвращает <code>true</code> (критерием может быть длина имени файла или его расширение).</p>
-</div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1083,9 +926,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Так же следует отметить, что конструкторы <code>RandomAccessFile</code> требуют второй аргумент, указывающий необходимый режим доступа к файлу - только чтение (<code>"r"</code>), чтение и запись (<code>"rw"</code>) или иную их разновидность.</p>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1106,9 +946,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><code>"rwd"</code> открывает файл для чтения и записи подобно <code>"rws"</code>, но требует от системы синхронно записывать изменения на физический носитель только при каждом изменении содержимого файла. Если изменяются метаданные, синхронная запись не требуется.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1143,9 +980,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1167,9 +1001,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1181,9 +1012,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>В Java получить разделитель для текущей операционной системы можно через обращение к статическому полю <code>File.separator</code>.</p>
 </div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1194,9 +1022,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p><strong>Относительный путь</strong> представляет собой путь по отношению к текущему рабочему каталогу пользователя или активного приложения.</p>
-</div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1218,9 +1043,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>свободны от некоторых ограничений, присущих жёстким ссылкам (последние действуют только в пределах одной файловой системы (одного раздела) и не могут ссылаться на каталоги).</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1257,7 +1079,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-20 03:29:06 UTC
+Last updated 2022-08-21 04:05:09 UTC
 </div>
 </div>
 </body>

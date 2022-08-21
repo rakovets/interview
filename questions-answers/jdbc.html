@@ -441,59 +441,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>JDBC</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Что-такое-jdbc">Что такое <em>JDBC</em>?</a></p>
-</li>
-<li>
-<p><a href="#В-чем-заключаются-преимущества-использования-jdbc">В чем заключаются преимущества использования JDBC?</a></p>
-</li>
-<li>
-<p><a href="#Что-из-себя-представляет-jdbc-url">Что из себя представляет JDBC URL?</a></p>
-</li>
-<li>
-<p><a href="#Из-каких-частей-стоит-jdbc">Из каких частей стоит JDBC?</a></p>
-</li>
-<li>
-<p><a href="#Перечислите-основные-классы-и-интерфейсы-jdbc">Перечислите-основные-классы-и-интерфейсы-jdbc</a></p>
-</li>
-<li>
-<p><a href="#Опишите-основные-этапы-работы-с-базой-данных-при-использовании-jdbc">Опишите основные этапы работы с базой данных с использованием JDBC.</a></p>
-</li>
-<li>
-<p><a href="#Перечислите-основные-типы-данных-используемые-в-JDBC.-Как-они-связаны-с-типами-Java">Перечислите основные типы данных используемые в JDBC. Как они связаны с типами Java?</a></p>
-</li>
-<li>
-<p><a href="#Как-зарегистрировать-драйвер-jdbc">Как зарегистрировать драйвер JDBC?</a></p>
-</li>
-<li>
-<p><a href="#Как-установить-соединение-с-базой-данных">Как установить соединение с базой данных?</a></p>
-</li>
-<li>
-<p><a href="#Какие-уровни-изоляции-транзакций-поддерживаются-в-jdbc">Какие уровни изоляции транзакций поддерживаются в JDBC?</a></p>
-</li>
-<li>
-<p><a href="#При-помощи-чего-формируются-запросы-к-базе-данных">При помощи чего формируются запросы к базе данных?</a></p>
-</li>
-<li>
-<p><a href="#Чем-отличается-statement-от-preparedstatement">Чем отличается Statement от PreparedStatement?</a></p>
-</li>
-<li>
-<p><a href="#Как-осуществляется-запрос-к-базе-данных-и-обработка-результатов">Как осуществляется запрос к базе данных и обработка результатов?</a></p>
-</li>
-<li>
-<p><a href="#Как-вызвать-хранимую-процедуру">Как вызвать хранимую процедуру?</a></p>
-</li>
-<li>
-<p><a href="#Как-закрыть-соединение-с-базой-данных">Как закрыть соединение с базой данных?</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_что_такое_jdbc">Что такое <em>JDBC</em>?</h2>
 <div class="sectionbody">
@@ -502,9 +449,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>JDBC основан на концепции драйверов, которые позволяют получать соединение с базой данных по специально описанному URL. При загрузке драйвер регистрирует себя в системе и в дальнейшем автоматически вызывается, когда программа требует URL, содержащий протокол, за который этот драйвер отвечает.</p>
-</div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -530,9 +474,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -557,9 +498,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Пример JDBC URL для подключения к MySQL базе данных «Test» расположенной по адресу localhost и ожидающей соединений по порту 3306: <code>jdbc:mysql://localhost:3306/Test</code></p>
 </div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -580,9 +518,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>JDBC превращает вызовы уровня API в «родные» команды того или иного сервера баз данных.</p>
-</div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -613,9 +548,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><code>java.sql.DatabaseMetaData</code> - позволяет получить информацию о структуре источника данных.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -740,9 +672,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -770,9 +699,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -793,9 +719,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><code>Class.forName(«полное имя класса драйвера»)</code>;</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -838,9 +761,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>В результате вызова будет установлено соединение с базой данных и создан объект класса <code>java.sql.Connection</code> - своеобразная «сессия», внутри контекста которой и будет происходить дальнейшая работа с базой данных.</p>
-</div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -898,9 +818,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Уровень изоляции транзакции используемый СУБД можно задать с помощью метода <code>setTransactionIsolation()</code> объекта <code>java.sql.Connection</code>. Получить информацию о применяемом уровне изоляции поможет метод <code>getTransactionIsolation()</code>.</p>
 </div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -938,9 +855,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -961,9 +875,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>Суммируя: <em>PreparedStatement</em> выгодно отличается от <em>Statement</em> тем, что при повторном использовании с одним или несколькими наборами параметров позволяет получить преимущества заранее прекомпилированного и кэшированного запроса, помогая при этом избежать SQL Injection.</p>
-</div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1001,9 +912,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>Содержание полей текущей записи доступно через вызовы методов <code>getInt()</code>, <code>getFloat()</code>, <code>getString()</code>, <code>getDate()</code> и им подобных.</p>
-</div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1069,9 +977,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1086,9 +991,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>NB!</strong> Предварительно необходимо закрыть все запросы созданные этим соединением.</p>
 </div>
 </blockquote>
-</div>
-<div class="paragraph">
-<p><a href="#jdbc">к оглавлению</a></p>
 </div>
 </div>
 </div>
@@ -1119,7 +1021,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-08-20 03:29:06 UTC
+Last updated 2022-08-21 04:05:09 UTC
 </div>
 </div>
 </body>
