@@ -1,1 +1,12 @@
 = interview
+
+== Update
+
+. Copy .md files from https://github.com/enhorse/java-interview
+. Install *kramdown*:
+
+    sudo apt install kramdown
+
+. Run shell script:
+
+    ./convert-enhorse.sh
