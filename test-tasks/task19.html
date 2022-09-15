@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<title>Тестовое задание 14</title>
+<title>Тестовое задание 19</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,212 +438,97 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Тестовое задание 14</h1>
+<h1>Тестовое задание 19</h1>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>Разработать <strong>систему управления пользователями</strong>.</p>
+<p>Написать многопользовательский чат для обмена текстовыми сообщениями.</p>
 </div>
 <div class="paragraph">
-<p>Система должна представлять собой WEB-приложение, которое предоставляет интерфейс
-управления пользователями.</p>
-</div>
-<div class="paragraph">
-<p>Система должна поддерживать следующую ролевую модель</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Роль</th>
-<th class="tableblock halign-left valign-top">Доступные действия</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="4"><p class="tableblock"><strong>USER</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Авторизация (Login)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Просматривать список пользователей (List)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Просматривать детали любого пользователя (View)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Выход (Logout)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock"><strong>ADMIN</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Авторизация (Login)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Просматривать список пользователей (List)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Просматривать детали любого пользователя (View)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Создание нового пользователя (New/Edit)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Редактирование существующего пользователя (New/Edit)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lock/Unlock пользователя (Lock/Unlock)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Выход (Logout)</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Основная сущность в системе – <code>UserAccount</code>.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Length</th>
-<th class="tableblock halign-left valign-top">Validation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Username</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Имя пользователя для авторизации.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3-16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Только латинские символы; Должна быть уникальным</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Пароль пользователя</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3-16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Только латинские символы и цифры. Минимум один символ; Минимум одна цифра;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>First Name</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Имя.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1-16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Только латинские символы</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Last Name</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Фамилия</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1-16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Только латинские символы</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Role</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Роль пользователя. USER or ADMIN. На UI должно быть dropdown.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Состояние пользователя. ACTIVE or INACTIVE. На UI должно быть dropdown.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Created At</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Дата заведения пользователя. Проставляется автоматически при записи в БД.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Пароли в БД хранить в хешированным виде с применением алгоритма bcrypt.</p>
-</div>
-<div class="paragraph">
-<p>В системе должны быть следующие страницы:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Страница</th>
-<th class="tableblock halign-left valign-top">URL</th>
-<th class="tableblock halign-left valign-top">Описание</th>
-<th class="tableblock halign-left valign-top">Доступные действия (с учетом роли)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Login</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/login</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Авторизация в системе</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Вход в систему; Если состояние пользователя INACTIVE, то вход невозможен; Если логин/пароль не верен, то вход невозможен;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>List</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/user</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Список пользователей</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Опционально: 1. Фильтрация списка по Username; 2. Фильтрация списка по Role; 3. Пагинация</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>View</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/user/{id}</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Просмотр деталей пользователя</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lock/Unlock: должно приводить к смене состояния ACTIVE/INACTIVE</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/user/new</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Создание нового пользователя</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">При наличии валидационных ошибок должно показываться соответствующее сообщение на UI.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Edit</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/user/{id}/edit</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Редактирование пользователя</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">При наличии валидационных ошибок должно показываться соответствующее сообщение на UI.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Предпочтительный стэк технологий:</p>
+<p>Должна быть возможность:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Java 8+</p>
+<p>регистрации пользователей</p>
 </li>
 <li>
-<p>Spring (Spring Boot, Spring MVC, Spring Data, Spring Security)</p>
+<p>логина</p>
 </li>
 <li>
-<p>PostgreSQL</p>
+<p>получения списка комнат</p>
 </li>
 <li>
-<p>Html Template Engine - любой (Thymeleaf, Freemarker, etc.)</p>
+<p>создания комнаты</p>
 </li>
 <li>
-<p>Gradle</p>
+<p>получения истории сообщений в комнате</p>
 </li>
 <li>
-<p>Опционально: сборка docker-образов</p>
+<p>отправка и получение сообщений в реальном времени</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Можно использовать сторонние библиотеки</p>
+<p>Сообщения следует сохранять в базе данных. В качестве клиентов можно использовать простой веб интерфейс.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_обязательные_требования_по_стеку_технологий">Обязательные требования по стеку технологий</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Использование <strong>Java</strong></p>
+</li>
+<li>
+<p>Использование <strong>Maven</strong></p>
+</li>
+<li>
+<p>Использование event-driven архитектуры</p>
+</li>
+<li>
+<p>Использование <strong>Docker</strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_результат">Результат</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Загружен на Github</p>
+</li>
+<li>
+<p>Имеет файл для запуска всего необходимо с помощью Docker Compose</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_будет_плюсом">Будет плюсом</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Разбиение на отдельные небольшие модули</p>
+</li>
+<li>
+<p>Использование RabbitMQ для обмена данными между модулями</p>
+</li>
+<li>
+<p>На своё усмотрение можно добавить любую функциональность</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
