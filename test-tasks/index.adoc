@@ -1,6 +1,11 @@
 = Interview - Tests Tasks
 include::../_attributes-lvl-1.adoc[]
-include::../_toc.adoc[]
+Community and Dmitry Rakovets
+:sectnums:
+:toc: left
+:toclevels: 2
+
+:toc!:
 :imagesdir: {imagesdir}/test-tasks
 
 NOTE: Задания, в большинстве своем, представляют собой примеры, которые предлагают различные компании в качестве практического тестового задания для того, что бы отобрать специалистов на работу, стажировку или обучение.
@@ -9,17 +14,31 @@ WARNING: Задания представлены беспорядочно, т.е
 
 WARNING: Задания требуют различную степень подготовки и должно выбираться с учетов текущих знаний и умений.
 
-:leveloffset: +1
+== Java Core
 
-include::task1.adoc[Тестовое задание 1]
-
-include::task2.adoc[Тестовое задание 2]
-
-include::task3.adoc[Тестовое задание 3]
+:leveloffset: +2
 
 include::task4.adoc[Тестовое задание 4]
 
 include::task5.adoc[Тестовое задание 5]
+
+:leveloffset: -2
+
+== Java Core + SQL
+
+:leveloffset: +2
+
+include::task2.adoc[Тестовое задание 2]
+
+:leveloffset: -2
+
+== Java Core + Frameworks
+
+:leveloffset: +2
+
+include::task1.adoc[Тестовое задание 1]
+
+include::task3.adoc[Тестовое задание 3]
 
 include::task6.adoc[Тестовое задание 6]
 
@@ -39,9 +58,24 @@ include::task13.adoc[Тестовое задание 13]
 
 include::task14.adoc[Тестовое задание 14]
 
-include::task15.adoc[Тестовое задание 15]
-
 include::task16.adoc[Тестовое задание 16]
 
-:leveloffset: -1
+include::task17.adoc[Тестовое задание 17]
 
+include::task20.adoc[Тестовое задание 20]
+
+include::task21.adoc[Тестовое задание 21]
+
+:leveloffset: -2
+
+== Java Core + Frameworks + Advance topics
+
+:leveloffset: +2
+
+include::task15.adoc[Тестовое задание 15]
+
+include::task18.adoc[Тестовое задание 18]
+
+include::task19.adoc[Тестовое задание 19]
+
+:leveloffset: -2
